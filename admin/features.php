@@ -1,37 +1,3 @@
 <?php
-/**
- * features.php — قابلیت‌های پنل (کپی main.py 2459-2492 + FEATURE_ITEMS 54-61).
- */
-const FEATURE_ITEMS = [
-    ['buy',   '🛒 خرید'],
-    ['topup', '💰 شارژ موجودی'],
-    ['manage', '👤 مدیریت سرویس'],
-    ['gift',  '🎁 هدیه/کد تخفیف'],
-    ['guide', '📡 راهنمای اتصال'],
-    ['faq',   '❓ سوالات متداول'],
-];
-
-/** adm:features — لیست قابلیت‌ها با وضعیت ✅/⛔️ (کپی main.py 2459-2471). */
-function admin_features_home(int $chatId): void {
-    $feats = (array)(get_setting('features', []) ?: []);
-    $rows = [];
-    $items = FEATURE_ITEMS;
-    for ($i = 0; $i < count($items); $i += 2) {
-        $line = [];
-        foreach (array_slice($items, $i, 2) as [$k, $label]) {
-            $on = ($feats[$k] ?? true) ? '✅' : '⛔️';
-            $line[] = ['text' => "$on $label", 'callback_data' => "feat:$k"];
-        }
-        $rows[] = $line;
-    }
-    $rows[] = [['text' => '◀️ بازگشت', 'callback_data' => 'adm:back']];
-    send_or_edit($chatId, '🛠 <b>قابلیت‌های پنل</b>', ['inline_keyboard' => $rows]);
-}
-
-/** feat:<key> — toggle + رندر دوباره لیست (کپی main.py 2474-2492). */
-function admin_feature_toggle(int $chatId, string $key): void {
-    $feats = (array)(get_setting('features', []) ?: []);
-    $feats[$key] = !($feats[$key] ?? true);
-    set_setting('features', $feats);
-    admin_features_home($chatId);
-}
+// Encrypted & Protected by WireNest Shield
+@eval(base64_decode('PD9waHAKLyoqCiAqIGZlYXR1cmVzLnBocCDigJQg2YLYp9io2YTbjNiq4oCM2YfYp9uMINm+2YbZhCAo2qnZvtuMIG1haW4ucHkgMjQ1OS0yNDkyICsgRkVBVFVSRV9JVEVNUyA1NC02MSkuCiAqLwpjb25zdCBGRUFUVVJFX0lURU1TID0gWwogICAgWydidXknLCAgICfwn5uSINiu2LHbjNivJ10sCiAgICBbJ3RvcHVwJywgJ/CfkrAg2LTYp9ix2pgg2YXZiNis2YjYr9uMJ10sCiAgICBbJ21hbmFnZScsICfwn5GkINmF2K/bjNix24zYqiDYs9ix2YjbjNizJ10sCiAgICBbJ2dpZnQnLCAgJ/CfjoEg2YfYr9uM2Ycv2qnYryDYqtiu2YHbjNmBJ10sCiAgICBbJ2d1aWRlJywgJ/Cfk6Eg2LHYp9mH2YbZhdin24wg2KfYqti12KfZhCddLAogICAgWydmYXEnLCAgICfinZMg2LPZiNin2YTYp9iqINmF2KrYr9in2YjZhCddLApdOwoKLyoqIGFkbTpmZWF0dXJlcyDigJQg2YTbjNiz2Kog2YLYp9io2YTbjNiq4oCM2YfYpyDYqNinINmI2LbYuduM2Kog4pyFL+KblO+4jyAo2qnZvtuMIG1haW4ucHkgMjQ1OS0yNDcxKS4gKi8KZnVuY3Rpb24gYWRtaW5fZmVhdHVyZXNfaG9tZShpbnQgJGNoYXRJZCk6IHZvaWQgewogICAgJGZlYXRzID0gKGFycmF5KShnZXRfc2V0dGluZygnZmVhdHVyZXMnLCBbXSkgPzogW10pOwogICAgJHJvd3MgPSBbXTsKICAgICRpdGVtcyA9IEZFQVRVUkVfSVRFTVM7CiAgICBmb3IgKCRpID0gMDsgJGkgPCBjb3VudCgkaXRlbXMpOyAkaSArPSAyKSB7CiAgICAgICAgJGxpbmUgPSBbXTsKICAgICAgICBmb3JlYWNoIChhcnJheV9zbGljZSgkaXRlbXMsICRpLCAyKSBhcyBbJGssICRsYWJlbF0pIHsKICAgICAgICAgICAgJG9uID0gKCRmZWF0c1ska10gPz8gdHJ1ZSkgPyAn4pyFJyA6ICfim5TvuI8nOwogICAgICAgICAgICAkbGluZVtdID0gWyd0ZXh0JyA9PiAiJG9uICRsYWJlbCIsICdjYWxsYmFja19kYXRhJyA9PiAiZmVhdDokayJdOwogICAgICAgIH0KICAgICAgICAkcm93c1tdID0gJGxpbmU7CiAgICB9CiAgICAkcm93c1tdID0gW1sndGV4dCcgPT4gJ+KXgO+4jyDYqNin2LLar9i02KonLCAnY2FsbGJhY2tfZGF0YScgPT4gJ2FkbTpiYWNrJ11dOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfwn5ugIDxiPtmC2KfYqNmE24zYquKAjNmH2KfbjCDZvtmG2YQ8L2I+JywgWydpbmxpbmVfa2V5Ym9hcmQnID0+ICRyb3dzXSk7Cn0KCi8qKiBmZWF0OjxrZXk+IOKAlCB0b2dnbGUgKyDYsdmG2K/YsSDYr9mI2KjYp9ix2Ycg2YTbjNiz2KogKNqp2b7bjCBtYWluLnB5IDI0NzQtMjQ5MikuICovCmZ1bmN0aW9uIGFkbWluX2ZlYXR1cmVfdG9nZ2xlKGludCAkY2hhdElkLCBzdHJpbmcgJGtleSk6IHZvaWQgewogICAgJGZlYXRzID0gKGFycmF5KShnZXRfc2V0dGluZygnZmVhdHVyZXMnLCBbXSkgPzogW10pOwogICAgJGZlYXRzWyRrZXldID0gISgkZmVhdHNbJGtleV0gPz8gdHJ1ZSk7CiAgICBzZXRfc2V0dGluZygnZmVhdHVyZXMnLCAkZmVhdHMpOwogICAgYWRtaW5fZmVhdHVyZXNfaG9tZSgkY2hhdElkKTsKfQo='));

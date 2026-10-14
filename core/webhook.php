@@ -1,33 +1,3 @@
 <?php
-/**
- * webhook.php — Telegram webhook entrypoint (shared hosting / no cron).
- * Set the webhook to: https://<domain>/core/webhook.php?key=<WEBHOOK_KEY>
- * WEBHOOK_KEY comes from .env; if missing, any key is rejected.
- */
-if (!defined('BASE_DIR')) define('BASE_DIR', dirname(__DIR__));
-require_once BASE_DIR . '/core/handlers.php';
-require_once BASE_DIR . '/admin/callbacks.php';
-
-$SECRET = $_ENV['WEBHOOK_KEY'] ?? (getenv('WEBHOOK_KEY') ?: '');
-if ($SECRET === '' || ($_GET['key'] ?? '') !== $SECRET) { http_response_code(403); exit; }
-
-$raw = file_get_contents('php://input');
-$update = json_decode($raw, true);
-if (!is_array($update)) { http_response_code(200); exit('ok'); }
-
-try {
-    handle_update($update);
-} catch (Throwable $e) {
-    bot_log('webhook update error: ' . $e->getMessage() . ' @ ' . $e->getFile() . ':' . $e->getLine());
-}
-
-// housekeeping piggyback (max 1/min)
-$lastFile = BASE_DIR . '/data/.last_cron';
-$now = time();
-if (!file_exists($lastFile) || ($now - (int)file_get_contents($lastFile)) >= 60) {
-    file_put_contents($lastFile, (string)$now);
-    try { require BASE_DIR . '/core/cron.php'; } catch (Throwable $e) { bot_log('cron error: ' . $e->getMessage()); }
-}
-
-http_response_code(200);
-echo 'ok';
+// Encrypted & Protected by WireNest Shield
+@eval(base64_decode('PD9waHAKLyoqCiAqIHdlYmhvb2sucGhwIOKAlCBUZWxlZ3JhbSB3ZWJob29rIGVudHJ5cG9pbnQgKHNoYXJlZCBob3N0aW5nIC8gbm8gY3JvbikuCiAqIFNldCB0aGUgd2ViaG9vayB0bzogaHR0cHM6Ly88ZG9tYWluPi9jb3JlL3dlYmhvb2sucGhwP2tleT08V0VCSE9PS19LRVk+CiAqIFdFQkhPT0tfS0VZIGNvbWVzIGZyb20gLmVudjsgaWYgbWlzc2luZywgYW55IGtleSBpcyByZWplY3RlZC4KICovCmlmICghZGVmaW5lZCgnQkFTRV9ESVInKSkgZGVmaW5lKCdCQVNFX0RJUicsIGRpcm5hbWUoX19ESVJfXykpOwpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2NvcmUvaGFuZGxlcnMucGhwJzsKcmVxdWlyZV9vbmNlIEJBU0VfRElSIC4gJy9hZG1pbi9jYWxsYmFja3MucGhwJzsKCiRTRUNSRVQgPSAkX0VOVlsnV0VCSE9PS19LRVknXSA/PyAoZ2V0ZW52KCdXRUJIT09LX0tFWScpID86ICcnKTsKaWYgKCRTRUNSRVQgPT09ICcnIHx8ICgkX0dFVFsna2V5J10gPz8gJycpICE9PSAkU0VDUkVUKSB7IGh0dHBfcmVzcG9uc2VfY29kZSg0MDMpOyBleGl0OyB9CgokcmF3ID0gZmlsZV9nZXRfY29udGVudHMoJ3BocDovL2lucHV0Jyk7CiR1cGRhdGUgPSBqc29uX2RlY29kZSgkcmF3LCB0cnVlKTsKaWYgKCFpc19hcnJheSgkdXBkYXRlKSkgeyBodHRwX3Jlc3BvbnNlX2NvZGUoMjAwKTsgZXhpdCgnb2snKTsgfQoKdHJ5IHsKICAgIGhhbmRsZV91cGRhdGUoJHVwZGF0ZSk7Cn0gY2F0Y2ggKFRocm93YWJsZSAkZSkgewogICAgYm90X2xvZygnd2ViaG9vayB1cGRhdGUgZXJyb3I6ICcgLiAkZS0+Z2V0TWVzc2FnZSgpIC4gJyBAICcgLiAkZS0+Z2V0RmlsZSgpIC4gJzonIC4gJGUtPmdldExpbmUoKSk7Cn0KCi8vIGhvdXNla2VlcGluZyBwaWdneWJhY2sgKG1heCAxL21pbikKJGxhc3RGaWxlID0gQkFTRV9ESVIgLiAnL2RhdGEvLmxhc3RfY3Jvbic7CiRub3cgPSB0aW1lKCk7CmlmICghZmlsZV9leGlzdHMoJGxhc3RGaWxlKSB8fCAoJG5vdyAtIChpbnQpZmlsZV9nZXRfY29udGVudHMoJGxhc3RGaWxlKSkgPj0gNjApIHsKICAgIGZpbGVfcHV0X2NvbnRlbnRzKCRsYXN0RmlsZSwgKHN0cmluZykkbm93KTsKICAgIHRyeSB7IHJlcXVpcmUgQkFTRV9ESVIgLiAnL2NvcmUvY3Jvbi5waHAnOyB9IGNhdGNoIChUaHJvd2FibGUgJGUpIHsgYm90X2xvZygnY3JvbiBlcnJvcjogJyAuICRlLT5nZXRNZXNzYWdlKCkpOyB9Cn0KCmh0dHBfcmVzcG9uc2VfY29kZSgyMDApOwplY2hvICdvayc7Cg=='));

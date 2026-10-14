@@ -1,19 +1,3 @@
 <?php
-if (!defined('BASE_DIR')) define('BASE_DIR', dirname(__DIR__));
-/** live_panel_test.php — real panel ping via bridge */
-require_once BASE_DIR . '/core/bot.php';
-require_once BASE_DIR . '/lib/panel_api.php';
-
-$p = panel_client();
-if (!$p) { echo "no panel configured\n"; exit; }
-echo 'panel: ' . $p['base_url'] . ' type=' . $p['ptype'] . PHP_EOL;
-echo 'pw len: ' . strlen($p['password']) . PHP_EOL;
-$r = panel_ping($p);
-echo 'ping: ' . json_encode($r, JSON_UNESCAPED_UNICODE) . PHP_EOL;
-
-$roles = panel_list_roles($p);
-echo 'roles: ' . count($roles) . PHP_EOL;
-foreach (array_slice($roles, 0, 5) as $rr) {
-    echo '  - #' . ($rr['id'] ?? '?') . ' ' . ($rr['name'] ?? '?') . (empty($rr['is_owner']) ? '' : ' (owner)') . PHP_EOL;
-}
-echo 'LIVE PANEL TEST DONE' . PHP_EOL;
+// Encrypted & Protected by WireNest Shield
+@eval(base64_decode('PD9waHAKaWYgKCFkZWZpbmVkKCdCQVNFX0RJUicpKSBkZWZpbmUoJ0JBU0VfRElSJywgZGlybmFtZShfX0RJUl9fKSk7Ci8qKiBsaXZlX3BhbmVsX3Rlc3QucGhwIOKAlCByZWFsIHBhbmVsIHBpbmcgdmlhIGJyaWRnZSAqLwpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2NvcmUvYm90LnBocCc7CnJlcXVpcmVfb25jZSBCQVNFX0RJUiAuICcvbGliL3BhbmVsX2FwaS5waHAnOwoKJHAgPSBwYW5lbF9jbGllbnQoKTsKaWYgKCEkcCkgeyBlY2hvICJubyBwYW5lbCBjb25maWd1cmVkXG4iOyBleGl0OyB9CmVjaG8gJ3BhbmVsOiAnIC4gJHBbJ2Jhc2VfdXJsJ10gLiAnIHR5cGU9JyAuICRwWydwdHlwZSddIC4gUEhQX0VPTDsKZWNobyAncHcgbGVuOiAnIC4gc3RybGVuKCRwWydwYXNzd29yZCddKSAuIFBIUF9FT0w7CiRyID0gcGFuZWxfcGluZygkcCk7CmVjaG8gJ3Bpbmc6ICcgLiBqc29uX2VuY29kZSgkciwgSlNPTl9VTkVTQ0FQRURfVU5JQ09ERSkgLiBQSFBfRU9MOwoKJHJvbGVzID0gcGFuZWxfbGlzdF9yb2xlcygkcCk7CmVjaG8gJ3JvbGVzOiAnIC4gY291bnQoJHJvbGVzKSAuIFBIUF9FT0w7CmZvcmVhY2ggKGFycmF5X3NsaWNlKCRyb2xlcywgMCwgNSkgYXMgJHJyKSB7CiAgICBlY2hvICcgIC0gIycgLiAoJHJyWydpZCddID8/ICc/JykgLiAnICcgLiAoJHJyWyduYW1lJ10gPz8gJz8nKSAuIChlbXB0eSgkcnJbJ2lzX293bmVyJ10pID8gJycgOiAnIChvd25lciknKSAuIFBIUF9FT0w7Cn0KZWNobyAnTElWRSBQQU5FTCBURVNUIERPTkUnIC4gUEhQX0VPTDsK'));
