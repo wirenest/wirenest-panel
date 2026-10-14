@@ -38,10 +38,10 @@ fi
 print_color blue "[+] Updating package lists and installing dependencies..."
 if command -v apt-get >/dev/null 2>&1; then
     apt-get update -y
-    apt-get install -y -qq php php-cli php-curl php-mbstring php-sqlite3 git curl unzip
+    apt-get install -y -qq php php-cli php-curl php-mbstring php-sqlite3 git curl unzip apache2
 elif command -v yum >/dev/null 2>&1; then
     yum update -y
-    yum install -y php php-cli php-common php-mbstring php-pdo php-sqlite3 php-xml git curl unzip
+    yum install -y php php-cli php-common php-mbstring php-pdo php-sqlite3 php-xml httpd git curl unzip
 fi
 
 # 2. Setup directory and clone/copy files first
@@ -89,9 +89,27 @@ chmod 600 "$INSTALL_DIR/.env"
 chmod -R 775 "$INSTALL_DIR/data"
 chmod -R 775 "$INSTALL_DIR/logs"
 
+# 5. Automatically set Webhook on Telegram
+print_color blue "[+] Setting Telegram Webhook automatically..."
+if command -v systemctl >/dev/null 2>&1; then
+    systemctl enable apache2 || systemctl enable httpd || true
+    systemctl restart apache2 || systemctl restart httpd || true
+fi
+
+PUBLIC_IP=$(curl -s https://api.ipify.org || curl -s ifconfig.me || hostname -I | awk '{print $1}')
+
+if [ -d "/var/www/html" ]; then
+    ln -sfn "$INSTALL_DIR" /var/www/html/wirenest-panel
+    WEBHOOK_URL="http://$PUBLIC_IP/wirenest-panel/core/webhook.php?key=$WEBHOOK_KEY"
+else
+    WEBHOOK_URL="http://$PUBLIC_IP/core/webhook.php?key=$WEBHOOK_KEY"
+fi
+
+print_color blue "[+] Registering Webhook URL: $WEBHOOK_URL"
+TG_RESPONSE=$(curl -s "https://api.telegram.org/bot$BOT_TOKEN/setWebhook?url=$WEBHOOK_URL")
+echo "$TG_RESPONSE" | grep -q '"ok":true' && print_color green "[+] Telegram Webhook successfully set and bot is ready!" || print_color yellow "[!] Warning: Could not auto-set webhook via Telegram API."
+
 print_color green "[+]"
-print_color green "[+] WireNest Panel installed successfully!"
+print_color green "[+] WireNest Panel installed and fully configured successfully!"
 print_color green "[+] Files located at: $INSTALL_DIR"
-print_color green "[+] Webhook URL for Telegram:"
-print_color yellow "    https://yourdomain.com/path/to/wirenest-panel/core/webhook.php?key=$WEBHOOK_KEY"
 print_color blue "=================================================="
