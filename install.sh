@@ -1,82 +1,106 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
 export DEBIAN_FRONTEND=noninteractive
 
-COLOR_RED='[0;31m'
-COLOR_GREEN='[0;32m'
-COLOR_YELLOW='[1;33m'
-COLOR_BLUE='[0;34m'
-COLOR_RESET='[0m'
+RED=$'\033[0;31m'; GREEN=$'\033[0;32m'; YELLOW=$'\033[1;33m'; BLUE=$'\033[0;34m'; RESET=$'\033[0m'
+info()  { printf '%s[+] %s%s\n' "$BLUE" "$1" "$RESET"; }
+ok()    { printf '%s[+] %s%s\n' "$GREEN" "$1" "$RESET"; }
+warn()  { printf '%s[!] %s%s\n' "$YELLOW" "$1" "$RESET"; }
+fail()  { printf '%s[-] %s%s\n' "$RED" "$1" "$RESET"; exit 1; }
 
-print_color() {
-    local color="$1"
-    local text="$2"
-    case "$color" in
-        red) printf "${COLOR_RED}%s${COLOR_RESET}
-" "$text" ;;
-        green) printf "${COLOR_GREEN}%s${COLOR_RESET}
-" "$text" ;;
-        yellow) printf "${COLOR_YELLOW}%s${COLOR_RESET}
-" "$text" ;;
-        blue) printf "${COLOR_BLUE}%s${COLOR_RESET}
-" "$text" ;;
-        *) echo "$text" ;;
-    esac
+printf '%s==================================================\n' "$BLUE"
+printf '       WireNest Panel - Automated Installer\n'
+printf '==================================================%s\n' "$RESET"
+
+[ "$EUID" -eq 0 ] || fail "Please run this script as root."
+command -v apt-get >/dev/null 2>&1 || fail "This installer supports Ubuntu/Debian only."
+
+# ---------- ask(): reads from the terminal even when run via "curl | bash" ----------
+ask() {
+    # usage: ask VAR "Prompt"
+    local __var="$1" __prompt="$2" __val=""
+    if [ -n "${!__var:-}" ]; then return 0; fi
+    [ -r /dev/tty ] || fail "No terminal available. Pass $__var as an environment variable."
+    while [ -z "$__val" ]; do
+        read -r -p "$__prompt" __val </dev/tty
+    done
+    printf -v "$__var" '%s' "$__val"
 }
 
-print_color blue "=================================================="
-print_color blue "       WireNest Panel — Automated Installer       "
-print_color blue "=================================================="
+# ---------- 1. Collect input: domain, email, token, admin id ----------
+echo ""
+ask DOMAIN "Enter your domain (e.g. panel.example.com): "
+DOMAIN="${DOMAIN,,}"
+DOMAIN="${DOMAIN#http://}"; DOMAIN="${DOMAIN#https://}"; DOMAIN="${DOMAIN%%/*}"
+[[ "$DOMAIN" =~ ^([a-z0-9-]+\.)+[a-z]{2,}$ ]] || fail "Invalid domain: $DOMAIN"
 
-if [ "$EUID" -ne 0 ]; then
-    print_color red "[-] Please run this script as root (sudo bash)."
-    exit 1
+ask EMAIL "Enter your email (for SSL certificate): "
+[[ "$EMAIL" =~ ^[^@[:space:]]+@[^@[:space:]]+\.[^@[:space:]]+$ ]] || fail "Invalid email: $EMAIL"
+
+ask BOT_TOKEN "Enter your Telegram Bot Token: "
+ask INITIAL_ADMIN_ID "Enter your Admin Telegram ID (numeric): "
+while ! [[ "$INITIAL_ADMIN_ID" =~ ^[0-9]+$ ]]; do
+    warn "Admin ID must be numeric."
+    INITIAL_ADMIN_ID=""
+    ask INITIAL_ADMIN_ID "Enter your Admin Telegram ID (numeric): "
+done
+
+# ---------- 2. Validate bot token ----------
+info "Checking bot token with Telegram..."
+if ! curl -fsS "https://api.telegram.org/bot${BOT_TOKEN}/getMe" | grep -q '"ok":true'; then
+    fail "Telegram rejected this bot token. Check it and run again."
 fi
+ok "Bot token is valid."
 
-# 1. Update and install dependencies first
-print_color blue "[+] Updating package lists and installing dependencies..."
-if command -v apt-get >/dev/null 2>&1; then
-    apt-get update -y
-    apt-get install -y -qq php php-cli php-curl php-mbstring php-sqlite3 git curl unzip apache2
-elif command -v yum >/dev/null 2>&1; then
-    yum update -y
-    yum install -y php php-cli php-common php-mbstring php-pdo php-sqlite3 php-xml httpd git curl unzip
+# ---------- 3. Check that the domain points to this server ----------
+info "Checking DNS for $DOMAIN..."
+PUBLIC_IP="$(curl -fsS https://api.ipify.org || curl -fsS https://ifconfig.me || true)"
+DOMAIN_IP="$(getent ahostsv4 "$DOMAIN" | awk '{print $1; exit}' || true)"
+if [ -z "$DOMAIN_IP" ]; then
+    fail "Domain $DOMAIN does not resolve yet. Create an A record pointing to $PUBLIC_IP, wait a few minutes, and run again."
 fi
+if [ -n "$PUBLIC_IP" ] && [ "$DOMAIN_IP" != "$PUBLIC_IP" ]; then
+    warn "Domain resolves to $DOMAIN_IP but this server is $PUBLIC_IP."
+    warn "If you use Cloudflare, turn the proxy (orange cloud) OFF until the certificate is issued."
+    fail "DNS mismatch. Fix the A record and run again."
+fi
+ok "DNS OK: $DOMAIN -> $DOMAIN_IP"
 
-# 2. Setup directory and clone/copy files first
+# ---------- 4. Install dependencies ----------
+info "Installing dependencies..."
+apt-get update -y
+apt-get install -y -qq php php-cli php-curl php-mbstring php-sqlite3 php-xml \
+    git curl unzip apache2 libapache2-mod-php certbot python3-certbot-apache
+
+# ---------- 5. Install project files ----------
 INSTALL_DIR="/opt/wirenest-panel"
-print_color blue "[+] Setting up installation directory at $INSTALL_DIR..."
-mkdir -p "$INSTALL_DIR"
-mkdir -p "$INSTALL_DIR/data"
-mkdir -p "$INSTALL_DIR/logs"
+info "Installing project to $INSTALL_DIR..."
 
-if [ -d "./core" ]; then
+if [ -d "$INSTALL_DIR/.git" ]; then
+    git -C "$INSTALL_DIR" pull --ff-only || warn "git pull failed; keeping existing files."
+elif [ -d "./core" ] && [ "$(cd . && pwd)" != "$INSTALL_DIR" ]; then
+    mkdir -p "$INSTALL_DIR"
     cp -r ./* "$INSTALL_DIR/"
 else
-    print_color blue "[+] Cloning WireNest Panel repository..."
-    git clone https://github.com/wirenest/wirenest-panel.git "$INSTALL_DIR" || true
+    if [ -e "$INSTALL_DIR" ] && [ -n "$(ls -A "$INSTALL_DIR" 2>/dev/null)" ]; then
+        BACKUP="${INSTALL_DIR}.bak-$(date +%s)"
+        warn "$INSTALL_DIR is not empty; moving it to $BACKUP"
+        mv "$INSTALL_DIR" "$BACKUP"
+    fi
+    git clone https://github.com/wirenest/wirenest-panel.git "$INSTALL_DIR" \
+        || fail "git clone failed. Check the repository URL and your network."
 fi
 
-cd "$INSTALL_DIR"
+[ -d "$INSTALL_DIR/core" ] || fail "Project files are missing (no core/ directory). Installation aborted."
 
-# 3. Prompt for Telegram Bot Token & Admin ID interactively
-echo ""
-read -p "Enter your Telegram Bot Token: " BOT_TOKEN
-while [ -z "$BOT_TOKEN" ]; do
-    read -p "Bot Token cannot be empty. Enter Telegram Bot Token: " BOT_TOKEN
-done
+mkdir -p "$INSTALL_DIR/data" "$INSTALL_DIR/logs"
 
-read -p "Enter your Admin Telegram ID (numeric): " INITIAL_ADMIN_ID
-while ! [[ "$INITIAL_ADMIN_ID" =~ ^[0-9]+$ ]]; do
-    read -p "Invalid ID. Enter numeric Admin Telegram ID: " INITIAL_ADMIN_ID
-done
+# ---------- 6. Write .env ----------
+WEBHOOK_KEY="$(LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c 32 || true)"
 
-# 4. Generate random webhook key & create .env
-WEBHOOK_KEY=$(LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c 32)
-
-print_color blue "[+] Configuring .env file..."
-cat <<EOF > "$INSTALL_DIR/.env"
+info "Writing .env..."
+cat > "$INSTALL_DIR/.env" <<EOF
 BOT_TOKEN=$BOT_TOKEN
 INITIAL_ADMIN_ID=$INITIAL_ADMIN_ID
 WEBHOOK_KEY=$WEBHOOK_KEY
@@ -85,31 +109,79 @@ PANEL_RELAY_URL=
 PANEL_RELAY_KEY=
 EOF
 
-chmod 600 "$INSTALL_DIR/.env"
-chmod -R 775 "$INSTALL_DIR/data"
-chmod -R 775 "$INSTALL_DIR/logs"
+# Apache (www-data) must be able to read .env and write to data/ and logs/
+chown root:www-data "$INSTALL_DIR/.env"
+chmod 640 "$INSTALL_DIR/.env"
+chown -R www-data:www-data "$INSTALL_DIR/data" "$INSTALL_DIR/logs"
+chmod -R 775 "$INSTALL_DIR/data" "$INSTALL_DIR/logs"
 
-# 5. Automatically set Webhook on Telegram
-print_color blue "[+] Setting Telegram Webhook automatically..."
-if command -v systemctl >/dev/null 2>&1; then
-    systemctl enable apache2 || systemctl enable httpd || true
-    systemctl restart apache2 || systemctl restart httpd || true
+# ---------- 7. Apache virtual host ----------
+info "Configuring Apache for $DOMAIN..."
+cat > /etc/apache2/sites-available/wirenest.conf <<EOF
+<VirtualHost *:80>
+    ServerName $DOMAIN
+    DocumentRoot $INSTALL_DIR
+
+    <Directory $INSTALL_DIR>
+        Options -Indexes +FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    # Never expose secrets, database, logs or git data
+    <DirectoryMatch "^$INSTALL_DIR/(data|logs|\.git)">
+        Require all denied
+    </DirectoryMatch>
+    <FilesMatch "^\.(env|git)">
+        Require all denied
+    </FilesMatch>
+    <FilesMatch "\.(sqlite|sqlite3|db|log)$">
+        Require all denied
+    </FilesMatch>
+
+    ErrorLog \${APACHE_LOG_DIR}/wirenest-error.log
+    CustomLog \${APACHE_LOG_DIR}/wirenest-access.log combined
+</VirtualHost>
+EOF
+
+a2ensite wirenest.conf >/dev/null
+a2dissite 000-default.conf >/dev/null 2>&1 || true
+apache2ctl configtest
+systemctl enable apache2 >/dev/null 2>&1 || true
+systemctl restart apache2
+
+# ---------- 8. Firewall (only if ufw is active) ----------
+if command -v ufw >/dev/null 2>&1 && ufw status | grep -q "Status: active"; then
+    info "Opening ports 80 and 443 in ufw..."
+    ufw allow 80/tcp >/dev/null
+    ufw allow 443/tcp >/dev/null
 fi
 
-PUBLIC_IP=$(curl -s https://api.ipify.org || curl -s ifconfig.me || hostname -I | awk '{print $1}')
+# ---------- 9. SSL certificate ----------
+info "Requesting SSL certificate from Let's Encrypt..."
+if ! certbot --apache -d "$DOMAIN" -m "$EMAIL" --agree-tos --no-eff-email \
+        --redirect --non-interactive; then
+    fail "Certbot failed. Make sure ports 80/443 are open on your provider's firewall, the domain points to this server (no Cloudflare proxy), then run again."
+fi
+ok "SSL certificate installed for $DOMAIN."
 
-if [ -d "/var/www/html" ]; then
-    ln -sfn "$INSTALL_DIR" /var/www/html/wirenest-panel
-    WEBHOOK_URL="http://$PUBLIC_IP/wirenest-panel/core/webhook.php?key=$WEBHOOK_KEY"
+# ---------- 10. Set Telegram webhook over HTTPS ----------
+WEBHOOK_URL="https://$DOMAIN/core/webhook.php?key=$WEBHOOK_KEY"
+info "Registering webhook: https://$DOMAIN/core/webhook.php?key=****"
+
+TG_RESPONSE="$(curl -sS -X POST "https://api.telegram.org/bot${BOT_TOKEN}/setWebhook" \
+    --data-urlencode "url=${WEBHOOK_URL}" || true)"
+
+if echo "$TG_RESPONSE" | grep -q '"ok":true'; then
+    ok "Telegram webhook set successfully. Bot is ready!"
 else
-    WEBHOOK_URL="http://$PUBLIC_IP/core/webhook.php?key=$WEBHOOK_KEY"
+    warn "Could not set webhook. Telegram response:"
+    echo "$TG_RESPONSE"
+    warn "Check manually: curl https://api.telegram.org/bot<TOKEN>/getWebhookInfo"
 fi
 
-print_color blue "[+] Registering Webhook URL: $WEBHOOK_URL"
-TG_RESPONSE=$(curl -s "https://api.telegram.org/bot$BOT_TOKEN/setWebhook?url=$WEBHOOK_URL")
-echo "$TG_RESPONSE" | grep -q '"ok":true' && print_color green "[+] Telegram Webhook successfully set and bot is ready!" || print_color yellow "[!] Warning: Could not auto-set webhook via Telegram API."
-
-print_color green "[+]"
-print_color green "[+] WireNest Panel installed and fully configured successfully!"
-print_color green "[+] Files located at: $INSTALL_DIR"
-print_color blue "=================================================="
+echo ""
+ok "WireNest Panel installed."
+ok "Files:   $INSTALL_DIR"
+ok "Domain:  https://$DOMAIN"
+printf '%s==================================================%s\n' "$BLUE" "$RESET"
