@@ -69,11 +69,13 @@ During installation, the script will prompt you for:
 
 This project is licensed under the **MIT License**.
 
-> ⚠️ **Notice:** This is the **initial/base version** of the project. To complete, develop, and release the final fully-debugged version, we need a **$100 donation** to start development on the production release. Contact us after making the contribution.
+## 📜 License & Donation
+
+This project is open-source under MIT License.
+
+> ⚠️ **Notice:** This is an initial/base version of the project. To complete, develop, and write the final fully-debugged version, a $100 donation is required to start developing the advanced release.
 > 
 > **🪙 USDT (BEP20) Donation Address:**
 > ```text
 > 0x87696D2F1750AE4aac625864F9Ff70514089d5ef
 > ```
-
-Made with ❤️ for Internet freedom
