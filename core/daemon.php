@@ -1,10 +1,10 @@
 <?php
 /**
  * daemon.php — long-polling loop (replaces python app.run_polling)
- * Usage: php daemon.php   (systemd service marzbot-php)
+ * Usage: php daemon.php   (systemd service wirenest-php)
  */
 
-if (!defined('BASE_DIR')) define('BASE_DIR', dirname(__DIR__)); // project root (marzbot-php/)
+if (!defined('BASE_DIR')) define('BASE_DIR', dirname(__DIR__)); // project root (wirenest-php/)
 require_once BASE_DIR . '/core/handlers.php';
 require_once BASE_DIR . '/admin/callbacks.php';
 

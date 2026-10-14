@@ -1,6 +1,6 @@
 <?php
 /**
- * Marzbot PHP — Telegram Sales Bot (migration from Python PTB 21.10)
+ * WireNest PHP — Telegram Sales Bot (migration from Python PTB 21.10)
  * Same structure & features as the Python original.
  * Architecture: long-polling daemon (PHP CLI) + SQLite + PasarGuard API via cURL.
  *
@@ -30,7 +30,7 @@ if (file_exists($envFile)) {
     }
 }
 
-if (!defined('BASE_DIR')) define('BASE_DIR', dirname(__DIR__)); // project root (marzbot-php/)
+if (!defined('BASE_DIR')) define('BASE_DIR', dirname(__DIR__)); // project root (wirenest-php/)
 define('BOT_TOKEN', $_ENV['BOT_TOKEN'] ?? '');
 define('DB_PATH', $_ENV['DB_PATH'] ?? (BASE_DIR . '/data/bot.sqlite'));
 define('LOG_FILE', BASE_DIR . '/logs/bot.log');

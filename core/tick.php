@@ -1,7 +1,7 @@
 <?php
 /**
  * tick.php — single-poll entrypoint for shared-host cron (cPanel).
- * Cron: curl https://your-domain/marzbot/core/tick.php?key=SECRET
+ * Cron: curl https://your-domain/wirenest/core/tick.php?key=SECRET
  * One getUpdates cycle (short poll) + cron housekeeping. Web-safe (no long loop).
  */
 if (!defined('BASE_DIR')) define('BASE_DIR', dirname(__DIR__));
