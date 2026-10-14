@@ -5,7 +5,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PHP Version](https://img.shields.io/badge/PHP-%3E%3D8.1-blue.svg)](https://php.net/)
-[![Platform](https://img.shields.io/badge/Platform-cPanel%20%7C%20Linux-green.svg)]()
+[![Platform](https://img.shields.io/badge/Platform-Linux server%20%7C%20Linux-green.svg)]()
 
 [English](#-features) | [فارسی](./README_FA.md)
 
@@ -29,7 +29,7 @@ During installation, the script will prompt you for:
 
 ## ✨ Comprehensive Feature List
 
-- **Shared Hosting & cPanel Friendly:** Optimized to run seamlessly on standard shared hosting environments without permanent background daemons.
+- **Shared Hosting & Linux server Friendly:** Optimized to run seamlessly on standard Linux server environments without permanent background daemons.
 - **Multi-Panel & Multi-Node Architecture:** Connect, manage, and test connections for multiple PasarGuard, Marzban, and Sanaei proxy panels simultaneously.
 - **Advanced Security & Encryption:** Upgraded to `AES-256-GCM` authenticated encryption for securely storing sensitive admin credentials and panel tokens.
 - **Cloudflare & WAF Bypass:** Hybrid execution supporting both pure PHP cURL and a Python bridge (`panel_bridge.py`) for handling protected panels.
