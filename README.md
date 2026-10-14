@@ -60,3 +60,4 @@ During installation, the script will prompt you for:
 This project is licensed under the **MIT License**. 
 
 > ⚠️ **Notice:** To access the final production-ready version of this project, a $100 donation is required. Please contact the repository owner for details.
+\n\n> **USDT (BEP20) Donation Address:** `0x87696D2F1750AE4aac625864F9Ff70514089d5ef`
