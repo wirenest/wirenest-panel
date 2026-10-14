@@ -3,20 +3,24 @@ set -e
 
 export DEBIAN_FRONTEND=noninteractive
 
-COLOR_RED='\033[0;31m'
-COLOR_GREEN='\033[0;32m'
-COLOR_YELLOW='\033[1;33m'
-COLOR_BLUE='\033[0;34m'
-COLOR_RESET='\033[0m'
+COLOR_RED='[0;31m'
+COLOR_GREEN='[0;32m'
+COLOR_YELLOW='[1;33m'
+COLOR_BLUE='[0;34m'
+COLOR_RESET='[0m'
 
 print_color() {
     local color="$1"
     local text="$2"
     case "$color" in
-        red) printf "${COLOR_RED}%s${COLOR_RESET}\n" "$text" ;;
-        green) printf "${COLOR_GREEN}%s${COLOR_RESET}\n" "$text" ;;
-        yellow) printf "${COLOR_YELLOW}%s${COLOR_RESET}\n" "$text" ;;
-        blue) printf "${COLOR_BLUE}%s${COLOR_RESET}\n" "$text" ;;
+        red) printf "${COLOR_RED}%s${COLOR_RESET}
+" "$text" ;;
+        green) printf "${COLOR_GREEN}%s${COLOR_RESET}
+" "$text" ;;
+        yellow) printf "${COLOR_YELLOW}%s${COLOR_RESET}
+" "$text" ;;
+        blue) printf "${COLOR_BLUE}%s${COLOR_RESET}
+" "$text" ;;
         *) echo "$text" ;;
     esac
 }
@@ -31,7 +35,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # 1. Update and install dependencies first
-print_color blue "[+] Updating package lists and installing dependencies non-interactively..."
+print_color blue "[+] Updating package lists and installing dependencies..."
 if command -v apt-get >/dev/null 2>&1; then
     apt-get update -y
     apt-get install -y -qq php php-cli php-curl php-mbstring php-sqlite3 git curl unzip
@@ -40,19 +44,7 @@ elif command -v yum >/dev/null 2>&1; then
     yum install -y php php-cli php-common php-mbstring php-pdo php-sqlite3 php-xml git curl unzip
 fi
 
-# 2. Prompt for Telegram Bot Token & Admin ID
-echo ""
-read -p "Enter your Telegram Bot Token: " BOT_TOKEN
-while [ -z "$BOT_TOKEN" ]; do
-    read -p "Bot Token cannot be empty. Enter Telegram Bot Token: " BOT_TOKEN
-done
-
-read -p "Enter your Admin Telegram ID (numeric): " INITIAL_ADMIN_ID
-while ! [[ "$INITIAL_ADMIN_ID" =~ ^[0-9]+$ ]]; do
-    read -p "Invalid ID. Enter numeric Admin Telegram ID: " INITIAL_ADMIN_ID
-done
-
-# 3. Setup directory and clone/copy files
+# 2. Setup directory and clone/copy files first
 INSTALL_DIR="/opt/wirenest-panel"
 print_color blue "[+] Setting up installation directory at $INSTALL_DIR..."
 mkdir -p "$INSTALL_DIR"
@@ -67,6 +59,18 @@ else
 fi
 
 cd "$INSTALL_DIR"
+
+# 3. Prompt for Telegram Bot Token & Admin ID interactively
+echo ""
+read -p "Enter your Telegram Bot Token: " BOT_TOKEN
+while [ -z "$BOT_TOKEN" ]; do
+    read -p "Bot Token cannot be empty. Enter Telegram Bot Token: " BOT_TOKEN
+done
+
+read -p "Enter your Admin Telegram ID (numeric): " INITIAL_ADMIN_ID
+while ! [[ "$INITIAL_ADMIN_ID" =~ ^[0-9]+$ ]]; do
+    read -p "Invalid ID. Enter numeric Admin Telegram ID: " INITIAL_ADMIN_ID
+done
 
 # 4. Generate random webhook key & create .env
 WEBHOOK_KEY=$(LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c 32)
