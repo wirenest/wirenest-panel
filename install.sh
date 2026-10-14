@@ -1,5 +1,7 @@
-#!/usr/init/env bash
+#!/usr/bin/env bash
 set -e
+
+export DEBIAN_FRONTEND=noninteractive
 
 COLOR_RED='\033[0;31m'
 COLOR_GREEN='\033[0;32m'
@@ -29,11 +31,10 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # 1. Update and install dependencies first
-print_color blue "[+] Updating package lists..."
+print_color blue "[+] Updating package lists and installing dependencies non-interactively..."
 if command -v apt-get >/dev/null 2>&1; then
     apt-get update -y
-    print_color blue "[+] Installing PHP and required dependencies..."
-    apt-get install -y php php-cli php-curl php-mbstring php-sqlite3 git curl unzip
+    apt-get install -y -qq php php-cli php-curl php-mbstring php-sqlite3 git curl unzip
 elif command -v yum >/dev/null 2>&1; then
     yum update -y
     yum install -y php php-cli php-common php-mbstring php-pdo php-sqlite3 php-xml git curl unzip
