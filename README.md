@@ -13,37 +13,36 @@
 
 ---
 
-## 🌟 Overview
+## 🚀 Quick Installation
 
-**WireNest Panel** is a robust, lightweight, and modern PHP-based Telegram sales and management bot designed specifically for shared hosting (`cPanel`) and Linux servers. It seamlessly integrates with **PasarGuard**, **Marzban**, and **Sanaei** proxy panels, offering high performance without the overhead of heavy background daemons.
+Run the following command on your server to install WireNest Panel automatically:
 
----
+```bash
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/wirenest/wirenest-panel/master/install.sh)"
+```
 
-## ✨ Features
-
-- **Shared Hosting Friendly:** Runs smoothly on cPanel without requiring permanent background daemons (supports Webhook & Cron worker architecture).
-- **Multi-Panel Support:** Connect and manage multiple PasarGuard / Marzban / Sanaei nodes and panels simultaneously.
-- **Advanced Encryption:** Upgraded to `AES-256-GCM` for secure storage of panel credentials and tokens.
-- **Cloudflare / WAF Bypass:** Includes a hybrid Python bridge (`panel_bridge.py`) and pure PHP cURL implementation.
-- **Complete Sales Flow:** Wallet system, automated receipt verification, subscription delivery, traffic top-ups, and user management.
+During installation, the script will prompt you for:
+1. **Telegram Bot Token**
+2. **Admin Telegram ID (Numeric)**
 
 ---
 
-## ⚙️ Installation on cPanel / Shared Hosting
+## ✨ Comprehensive Feature List
 
-1. **Upload Files:** Upload the project files to your public directory or a dedicated subfolder on your cPanel hosting.
-2. **Configure Environment:**
-   Copy `.env.example` to `.env` and configure your bot credentials:
-   ```env
-   BOT_TOKEN=your_telegram_bot_token
-   INITIAL_ADMIN_ID=your_telegram_admin_id
-   WEBHOOK_KEY=random_secret_key
-   ```
-3. **Set Webhook:**
-   Set your Telegram bot webhook to:
-   `https://yourdomain.com/path/to/core/webhook.php?key=your_secret_key`
-4. **Setup Cron Job:**
-   Add a 1-minute cron job in cPanel to run `core/worker.php` for background tasks.
+- **Shared Hosting & cPanel Friendly:** Optimized to run seamlessly on standard shared hosting environments without permanent background daemons.
+- **Multi-Panel & Multi-Node Architecture:** Connect, manage, and test connections for multiple PasarGuard, Marzban, and Sanaei proxy panels simultaneously.
+- **Advanced Security & Encryption:** Upgraded to `AES-256-GCM` authenticated encryption for securely storing sensitive admin credentials and panel tokens.
+- **Cloudflare & WAF Bypass:** Hybrid execution supporting both pure PHP cURL and a Python bridge (`panel_bridge.py`) for handling protected panels.
+- **Complete Automated Sales Flow:**
+  - Instant subscription delivery & management.
+  - Wallet system with credit top-up and balance deduction.
+  - Automated receipt uploading and admin verification queue.
+  - Discount codes (vouchers) and gift code generation.
+- **Robust Admin Tools:**
+  - Broadcast messaging system (all users, buyers, non-buyers).
+  - Detailed statistics, user lookup, and mass balance adjustments.
+  - Ticket management and support messaging system.
+  - Panel status toggle & maintenance power switch.
 
 ---
 
@@ -56,11 +55,8 @@
 
 ---
 
-## 📜 License
+## 📜 License & Notice
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
-Made with ❤️ for Internet freedom
-
+This project is licensed under the **MIT License**. 
 
 > ⚠️ **Notice:** To access the final production-ready version of this project, a $100 donation is required. Please contact the repository owner for details.
