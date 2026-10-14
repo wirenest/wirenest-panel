@@ -1,7 +1,7 @@
 <div align="center" dir="rtl">
 
 # پنل وایبرنست (WireNest Panel) 🚀
-### ربات تلگرامی پیشرفته مدیریت و فروش سرویس برای پنل‌های پاسارگاد، مرزبان و سنایی (مبتنی بر PHP)
+### ربات تلگرامی پیشرفته فروش سرویس پنل ساز برای پنل‌های پاسارگاد (مبتنی بر PHP)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PHP Version](https://img.shields.io/badge/PHP-%3E%3D8.1-blue.svg)](https://php.net/)

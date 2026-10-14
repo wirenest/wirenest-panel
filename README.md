@@ -1,7 +1,7 @@
 <div align="center">
 
 # WireNest Panel 🚀
-### Unified PHP Telegram Sales & Management Bot for PasarGuard, Marzban & Sanaei Panels
+### Advanced PHP Telegram Panel Maker & Sales Bot for PasarGuard
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PHP Version](https://img.shields.io/badge/PHP-%3E%3D8.1-blue.svg)](https://php.net/)
