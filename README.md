@@ -61,3 +61,6 @@
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 Made with ❤️ for Internet freedom
+
+
+> ⚠️ **Notice:** To access the final production-ready version of this project, a $100 donation is required. Please contact the repository owner for details.
