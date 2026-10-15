@@ -1,3 +1,56 @@
 <?php
-// Encrypted & Protected by WireNest Shield
-@eval(base64_decode('PD9waHAKLyoqCiAqIGVkaXRfbWVudS5waHAg4oCUINqp2b7bjCBfZWRpdF9tZW51INm+2KfbjNiq2YjZhiAobWFpbi5weSAxNTg1LTE2MDApOgogKiDZvtuM2KfZhSDYrNin2LHbjCAo2YfZhdin2YYg2b7bjNin2YXbjCDaqdmHINiv2qnZhdmHINix2YjbjCDYotmGINin2LPYqikg2YjbjNix2KfbjNi0INmF24zigIzYtNmI2K/YmyDYp9qv2LEg2YjbjNix2KfbjNi0INmF2YXaqdmGINmG2KjZiNivCiAqINin2YjZhCBlZGl0X3JlcGx5X21hcmt1cNiMINio2LnYryDZiNuM2LHYp9uM2LQg2YXYqtmGINio2K/ZiNmGINqp24zYqNmI2LHYr9iMINmIINiv2LEg2YbZh9in24zYqiBmYWxsYmFjayDYp9ix2LPYp9mEINm+24zYp9mFINis2K/bjNivLgogKi8KCi8qKiDZiNuM2LHYp9uM2LQg2K/Ysdis2Kcg2KjYpyBmYWxsYmFjayDZh9mI2LTZhdmG2K8gKNin2LXZhNin2K0g2KjYp9qvINix2LbYpzog2KjYsdmI2LLYsdiz2KfZhtuM2ZAg2YXYrdiq2YjYp9uMINio2K/ZiNmGINiq2LrbjNuM2LHYjCDYr9qp2YXZh+KAjNmH2Kcg2LHYpyDYrdiw2YEg2YXbjOKAjNqp2LHYrykuCiAqICDYs9mG2KfYsduM2Yg6INmF2KrZhivaqduM2KjZiNix2K8g2LnbjNmG2KfZiyDZh9mF2KfZhiDZgtio2YTbjCDYp9iz2Kog4oaSINiq2YTar9ix2KfZhSDCq21lc3NhZ2UgaXMgbm90IG1vZGlmaWVkwrsg2YXbjOKAjNiv2YfYryDihpIg2KjYp9uM2K8g2YfZhdmI2YYg2b7bjNin2YUg2KjYpyDYr9qp2YXZh+KAjNmH2Kcg2K/Ys9iq4oCM2YbYrtmI2LHYr9mHINio2YXYp9mG2K8uICovCmZ1bmN0aW9uIGVkaXRfbWVudShpbnQgJGNoYXRJZCwgaW50ICRtc2dJZCwgc3RyaW5nICR0ZXh0LCA/YXJyYXkgJGtiID0gbnVsbCk6IHZvaWQgewogICAgaWYgKCRtc2dJZCkgewogICAgICAgICRwYXJhbXMgPSBbJ2NoYXRfaWQnID0+ICRjaGF0SWQsICdtZXNzYWdlX2lkJyA9PiAkbXNnSWQsICd0ZXh0JyA9PiAkdGV4dCwgJ3BhcnNlX21vZGUnID0+ICdIVE1MJ107CiAgICAgICAgaWYgKCRrYikgJHBhcmFtc1sncmVwbHlfbWFya3VwJ10gPSAka2I7CiAgICAgICAgJHIgPSB0ZygnZWRpdE1lc3NhZ2VUZXh0JywgJHBhcmFtcyk7CiAgICAgICAgaWYgKCgkclsnb2snXSA/PyBmYWxzZSkgPT09IHRydWUpIHJldHVybjsKICAgICAgICAkZGVzYyA9IChzdHJpbmcpKCRyWydkZXNjcmlwdGlvbiddID8/ICcnKTsKICAgICAgICAvLyDZhdit2KrZiNinINi524zZhtin2Ysg2YfZhdin2YYg2YLYqNmE24wg2KfYs9iqIOKAlCDZvtuM2KfZhSAo2KjYpyDYr9qp2YXZh+KAjNmH2KfbjNi0KSDYs9ixINis2KfbjNi0INmF24zigIzZhdin2YbYrwogICAgICAgIGlmIChzdHJfY29udGFpbnMoJGRlc2MsICdtZXNzYWdlIGlzIG5vdCBtb2RpZmllZCcpKSByZXR1cm47CiAgICAgICAgLy8g2YHYp9mE2KjaqSDbsjog2YHZgti3INqp24zYqNmI2LHYryDYudmI2LYg2LTZiNivCiAgICAgICAgaWYgKCRrYikgewogICAgICAgICAgICAkcjIgPSB0ZygnZWRpdE1lc3NhZ2VSZXBseU1hcmt1cCcsIFsnY2hhdF9pZCcgPT4gJGNoYXRJZCwgJ21lc3NhZ2VfaWQnID0+ICRtc2dJZCwgJ3JlcGx5X21hcmt1cCcgPT4gJGtiXSk7CiAgICAgICAgICAgIGlmICgoJHIyWydvayddID8/IGZhbHNlKSA9PT0gdHJ1ZSkgcmV0dXJuOwogICAgICAgICAgICBpZiAoc3RyX2NvbnRhaW5zKChzdHJpbmcpKCRyMlsnZGVzY3JpcHRpb24nXSA/PyAnJyksICdtZXNzYWdlIGlzIG5vdCBtb2RpZmllZCcpKSByZXR1cm47CiAgICAgICAgfQogICAgICAgIC8vINmB2KfZhNio2qkg27M6INmI24zYsdin24zYtCDZhdis2K/YryDZhdiq2YYgKNio2Kcg2qnbjNio2YjYsdivKSDigJQg2Kfar9ixINio2KfYsiDZhti02K/YjCDYqNiv2YjZhiDaqduM2KjZiNix2K8KICAgICAgICAkcjMgPSB0ZygnZWRpdE1lc3NhZ2VUZXh0JywgJHBhcmFtcyk7CiAgICAgICAgaWYgKCgkcjNbJ29rJ10gPz8gZmFsc2UpICE9PSB0cnVlKSB7CiAgICAgICAgICAgIHRnKCdlZGl0TWVzc2FnZVRleHQnLCBbJ2NoYXRfaWQnID0+ICRjaGF0SWQsICdtZXNzYWdlX2lkJyA9PiAkbXNnSWQsICd0ZXh0JyA9PiAkdGV4dCwgJ3BhcnNlX21vZGUnID0+ICdIVE1MJ10pOwogICAgICAgIH0KICAgICAgICByZXR1cm47CiAgICB9CiAgICB0Z19zZW5kKCRjaGF0SWQsICR0ZXh0LCAka2IpOwp9CgovKiogaGVscGVyOiBtc2dJZCDYsdinINin2LIgY2FsbGJhY2sg2KfYs9iq2K7Ysdin2Kwg2qnZhi4gKi8KZnVuY3Rpb24gY2JfbXNnX2lkKGFycmF5ICRjcSk6IGludCB7CiAgICByZXR1cm4gKGludCkoJGNxWydtZXNzYWdlJ11bJ21lc3NhZ2VfaWQnXSA/PyAwKTsKfQoKCi8qKiDYotuM2K/bjCDZvtuM2KfZhSBjYWxsYmFjayDYrNin2LHbjCAobnVsbCDYp9qv2LEg2KfYsiDZvtuM2KfZhSDZhdiq2YbbjCDYotmF2K/ZhykuICovCmZ1bmN0aW9uIGN0eF9tc2dfaWQoKTogP2ludCB7CiAgICBnbG9iYWwgJENCX01TR19JRDsKICAgIHJldHVybiAkQ0JfTVNHX0lEOwp9CmZ1bmN0aW9uIGN0eF9tc2dfaWRfc2V0KD9pbnQgJGlkKTogdm9pZCB7CiAgICBnbG9iYWwgJENCX01TR19JRDsKICAgICRDQl9NU0dfSUQgPSAkaWQ7Cn0KCi8qKiDYp9ix2LPYp9mEINmH2YjYtNmF2YbYrzog2Kfar9ixINiv2KfYrtmEIGNhbGxiYWNrINmH2LPYqtuM2YUg2YfZhdin2YYg2b7bjNin2YUg2LHYpyDZiNuM2LHYp9uM2LQg2qnZhtiMINmI2q/YsdmG2Ycg2b7bjNin2YUg2KzYr9uM2K8uICovCmZ1bmN0aW9uIHNlbmRfb3JfZWRpdChpbnQgJGNoYXRJZCwgc3RyaW5nICR0ZXh0LCA/YXJyYXkgJGtiID0gbnVsbCk6IHZvaWQgewogICAgJG1pZCA9IGN0eF9tc2dfaWQoKTsKICAgIGlmICgkbWlkKSBlZGl0X21lbnUoJGNoYXRJZCwgJG1pZCwgJHRleHQsICRrYik7CiAgICBlbHNlIHRnX3NlbmQoJGNoYXRJZCwgJHRleHQsICRrYik7Cn0K'));
+/**
+ * edit_menu.php — کپی _edit_menu پایتون (main.py 1585-1600):
+ * پیام جاری (همان پیامی که دکمه روی آن است) ویرایش می‌شود؛ اگر ویرایش ممکن نبود
+ * اول edit_reply_markup، بعد ویرایش متن بدون کیبورد، و در نهایت fallback ارسال پیام جدید.
+ */
+
+/** ویرایش درجا با fallback هوشمند (اصلاح باگ رضا: بروزرسانیِ محتوای بدون تغییر، دکمه‌ها را حذف می‌کرد).
+ *  سناریو: متن+کیبورد عیناً همان قبلی است → تلگرام «message is not modified» می‌دهد → باید همون پیام با دکمه‌ها دست‌نخورده بماند. */
+function edit_menu(int $chatId, int $msgId, string $text, ?array $kb = null): void {
+    if ($msgId) {
+        $params = ['chat_id' => $chatId, 'message_id' => $msgId, 'text' => $text, 'parse_mode' => 'HTML'];
+        if ($kb) $params['reply_markup'] = $kb;
+        $r = tg('editMessageText', $params);
+        if (($r['ok'] ?? false) === true) return;
+        $desc = (string)($r['description'] ?? '');
+        // محتوا عیناً همان قبلی است — پیام (با دکمه‌هایش) سر جایش می‌ماند
+        if (str_contains($desc, 'message is not modified')) return;
+        // فالبک ۲: فقط کیبورد عوض شود
+        if ($kb) {
+            $r2 = tg('editMessageReplyMarkup', ['chat_id' => $chatId, 'message_id' => $msgId, 'reply_markup' => $kb]);
+            if (($r2['ok'] ?? false) === true) return;
+            if (str_contains((string)($r2['description'] ?? ''), 'message is not modified')) return;
+        }
+        // فالبک ۳: ویرایش مجدد متن (با کیبورد) — اگر باز نشد، بدون کیبورد
+        $r3 = tg('editMessageText', $params);
+        if (($r3['ok'] ?? false) !== true) {
+            tg('editMessageText', ['chat_id' => $chatId, 'message_id' => $msgId, 'text' => $text, 'parse_mode' => 'HTML']);
+        }
+        return;
+    }
+    tg_send($chatId, $text, $kb);
+}
+
+/** helper: msgId را از callback استخراج کن. */
+function cb_msg_id(array $cq): int {
+    return (int)($cq['message']['message_id'] ?? 0);
+}
+
+
+/** آیدی پیام callback جاری (null اگر از پیام متنی آمده). */
+function ctx_msg_id(): ?int {
+    global $CB_MSG_ID;
+    return $CB_MSG_ID;
+}
+function ctx_msg_id_set(?int $id): void {
+    global $CB_MSG_ID;
+    $CB_MSG_ID = $id;
+}
+
+/** ارسال هوشمند: اگر داخل callback هستیم همان پیام را ویرایش کن، وگرنه پیام جدید. */
+function send_or_edit(int $chatId, string $text, ?array $kb = null): void {
+    $mid = ctx_msg_id();
+    if ($mid) edit_menu($chatId, $mid, $text, $kb);
+    else tg_send($chatId, $text, $kb);
+}
