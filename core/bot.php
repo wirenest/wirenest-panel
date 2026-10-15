@@ -35,7 +35,7 @@ define('BOT_TOKEN', $_ENV['BOT_TOKEN'] ?? '');
 define('DB_PATH', $_ENV['DB_PATH'] ?? (BASE_DIR . '/data/bot.sqlite'));
 define('LOG_FILE', BASE_DIR . '/logs/bot.log');
 
-if (!BOT_TOKEN) { fwrite(STDERR, "BOT_TOKEN missing\n"); exit(1); }
+if (!BOT_TOKEN) { error_log("BOT_TOKEN missing\n"); exit(1); }
 
 // ---------- DB (SQLite, same schema as Python bot) ----------
 $db = new PDO('sqlite:' . DB_PATH);
