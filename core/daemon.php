@@ -1,3 +1,62 @@
 <?php
-// Encrypted & Protected by WireNest Shield
-@eval(base64_decode('PD9waHAKLyoqCiAqIGRhZW1vbi5waHAg4oCUIGxvbmctcG9sbGluZyBsb29wIChyZXBsYWNlcyBweXRob24gYXBwLnJ1bl9wb2xsaW5nKQogKiBVc2FnZTogcGhwIGRhZW1vbi5waHAgICAoc3lzdGVtZCBzZXJ2aWNlIHdpcmVuZXN0LXBocCkKICovCgppZiAoIWRlZmluZWQoJ0JBU0VfRElSJykpIGRlZmluZSgnQkFTRV9ESVInLCBkaXJuYW1lKF9fRElSX18pKTsgLy8gcHJvamVjdCByb290ICh3aXJlbmVzdC1waHAvKQpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2NvcmUvaGFuZGxlcnMucGhwJzsKcmVxdWlyZV9vbmNlIEJBU0VfRElSIC4gJy9hZG1pbi9jYWxsYmFja3MucGhwJzsKCmJvdF9sb2coJ2RhZW1vbiBzdGFydGVkIChnZXRVcGRhdGVzIGxvb3ApJyk7Cgokb2Zmc2V0ID0gMDsKJGxhc3RDcm9uID0gMDsKCiR0aWNrcyA9IDA7CndoaWxlICh0cnVlKSB7CiAgICBpZiAoKyskdGlja3MgJSAxMDAgPT09IDApIHsKICAgICAgICBnY19jb2xsZWN0X2N5Y2xlcygpOwogICAgICAgIGlmIChtZW1vcnlfZ2V0X3VzYWdlKHRydWUpID4gMTI4ICogMTAyNCAqIDEwMjQpIHsKICAgICAgICAgICAgYm90X2xvZygnTWVtb3J5IGxpbWl0IGV4Y2VlZGVkICg+MTI4TUIpLCBleGl0aW5nIGZvciBjbGVhbiBzeXN0ZW1kIHJlc3RhcnQuJyk7CiAgICAgICAgICAgIGV4aXQoMCk7CiAgICAgICAgfQogICAgfQogICAgLy8gLS0tLSBjcm9uIHRpY2sgZXZlcnkgNjBzICh0ZXN0IGV4cGlyeSArIHF1b3RhIHdhcm5pbmdzKSAtLS0tCiAgICBpZiAodGltZSgpIC0gJGxhc3RDcm9uID49IDYwKSB7CiAgICAgICAgJGxhc3RDcm9uID0gdGltZSgpOwogICAgICAgIHRyeSB7IHJlcXVpcmUgQkFTRV9ESVIgLiAnL2NvcmUvY3Jvbi5waHAnOyB9IGNhdGNoIChUaHJvd2FibGUgJGUpIHsgYm90X2xvZygnY3JvbiBlcnJvcjogJyAuICRlLT5nZXRNZXNzYWdlKCkpOyB9CiAgICB9CgogICAgLy8gLS0tLSBnZXRVcGRhdGVzIGxvbmcgcG9sbCAtLS0tCiAgICAkY2ggPSBjdXJsX2luaXQoJ2h0dHBzOi8vYXBpLnRlbGVncmFtLm9yZy9ib3QnIC4gQk9UX1RPS0VOIC4gJy9nZXRVcGRhdGVzJyk7CiAgICBjdXJsX3NldG9wdF9hcnJheSgkY2gsIFsKICAgICAgICBDVVJMT1BUX1JFVFVSTlRSQU5TRkVSID0+IHRydWUsCiAgICAgICAgQ1VSTE9QVF9QT1NUID0+IHRydWUsCiAgICAgICAgQ1VSTE9QVF9QT1NURklFTERTID0+IGpzb25fZW5jb2RlKFsKICAgICAgICAgICAgJ29mZnNldCcgPT4gJG9mZnNldCwKICAgICAgICAgICAgJ3RpbWVvdXQnID0+IDI1LAogICAgICAgICAgICAnYWxsb3dlZF91cGRhdGVzJyA9PiBbJ21lc3NhZ2UnLCAnY2FsbGJhY2tfcXVlcnknXSwKICAgICAgICBdKSwKICAgICAgICBDVVJMT1BUX0hUVFBIRUFERVIgPT4gWydDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24nXSwKICAgICAgICBDVVJMT1BUX1RJTUVPVVQgPT4gMzAsCiAgICBdKTsKICAgICRyZXMgPSBjdXJsX2V4ZWMoJGNoKTsKICAgIGN1cmxfY2xvc2UoJGNoKTsKICAgICRqc29uID0ganNvbl9kZWNvZGUoKHN0cmluZykkcmVzLCB0cnVlKTsKCiAgICBpZiAoZW1wdHkoJGpzb25bJ29rJ10pKSB7CiAgICAgICAgYm90X2xvZygnZ2V0VXBkYXRlcyBmYWlsZWQ6ICcgLiBzdWJzdHIoKHN0cmluZykkcmVzLCAwLCAxMjApKTsKICAgICAgICBzbGVlcCgzKTsKICAgICAgICBjb250aW51ZTsKICAgIH0KCiAgICBmb3JlYWNoICgkanNvblsncmVzdWx0J10gPz8gW10gYXMgJHUpIHsKICAgICAgICAkb2Zmc2V0ID0gJHVbJ3VwZGF0ZV9pZCddICsgMTsKICAgICAgICB0cnkgewogICAgICAgICAgICBoYW5kbGVfdXBkYXRlKCR1KTsKICAgICAgICB9IGNhdGNoIChUaHJvd2FibGUgJGUpIHsKICAgICAgICAgICAgYm90X2xvZygndXBkYXRlIGVycm9yOiAnIC4gJGUtPmdldE1lc3NhZ2UoKSAuICcgQCAnIC4gJGUtPmdldEZpbGUoKSAuICc6JyAuICRlLT5nZXRMaW5lKCkpOwogICAgICAgIH0KICAgIH0KfQo='));
+/**
+ * daemon.php — long-polling loop (replaces python app.run_polling)
+ * Usage: php daemon.php   (systemd service wirenest-php)
+ */
+
+if (!defined('BASE_DIR')) define('BASE_DIR', dirname(__DIR__)); // project root (wirenest-php/)
+require_once BASE_DIR . '/core/handlers.php';
+require_once BASE_DIR . '/admin/callbacks.php';
+
+bot_log('daemon started (getUpdates loop)');
+
+$offset = 0;
+$lastCron = 0;
+
+$ticks = 0;
+while (true) {
+    if (++$ticks % 100 === 0) {
+        gc_collect_cycles();
+        if (memory_get_usage(true) > 128 * 1024 * 1024) {
+            bot_log('Memory limit exceeded (>128MB), exiting for clean systemd restart.');
+            exit(0);
+        }
+    }
+    // ---- cron tick every 60s (test expiry + quota warnings) ----
+    if (time() - $lastCron >= 60) {
+        $lastCron = time();
+        try { require BASE_DIR . '/core/cron.php'; } catch (Throwable $e) { bot_log('cron error: ' . $e->getMessage()); }
+    }
+
+    // ---- getUpdates long poll ----
+    $ch = curl_init('https://api.telegram.org/bot' . BOT_TOKEN . '/getUpdates');
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => json_encode([
+            'offset' => $offset,
+            'timeout' => 25,
+            'allowed_updates' => ['message', 'callback_query'],
+        ]),
+        CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+        CURLOPT_TIMEOUT => 30,
+    ]);
+    $res = curl_exec($ch);
+    curl_close($ch);
+    $json = json_decode((string)$res, true);
+
+    if (empty($json['ok'])) {
+        bot_log('getUpdates failed: ' . substr((string)$res, 0, 120));
+        sleep(3);
+        continue;
+    }
+
+    foreach ($json['result'] ?? [] as $u) {
+        $offset = $u['update_id'] + 1;
+        try {
+            handle_update($u);
+        } catch (Throwable $e) {
+            bot_log('update error: ' . $e->getMessage() . ' @ ' . $e->getFile() . ':' . $e->getLine());
+        }
+    }
+}
