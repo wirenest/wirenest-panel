@@ -1,3 +1,113 @@
 <?php
-// Encrypted & Protected by WireNest Shield
-@eval(base64_decode('PD9waHAKLyoqCiAqIGFkbWluL2Rpc2NvdW50cy5waHAg4oCUINqp2K8g2KrYrtmB24zZgSDZiCDaqdivINmH2K/bjNmHICjaqdm+24wg2YXZiOKAjNio2YfigIzZhdmI24wgbWFpbi5weSAyMDk3LTIxNDQsIDM3NDAtMzc4MCk6CiAqINmE24zYs9iqINio2Kcg2K/aqdmF2Ycg2K3YsNmB2Iwg2YHZhNmIIGRzY19jb2Rl4oaSZHNjX3ZhbHVl2Iwg2YHZhNmIIGdpZnRfY29kZeKGkmdpZnRfYW1vdW502Iwgb2tkZWwuCiAqLwoKcmVxdWlyZV9vbmNlIEJBU0VfRElSIC4gJy9jb3JlL2JvdC5waHAnOwpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2NvcmUvbWVudXMucGhwJzsKCi8qKiBhZG06ZGlzY291bnRzIOKAlCDaqdm+24wgbWFpbi5weSAyMDk3LTIxMDcuICovCmZ1bmN0aW9uIGFkbWluX2Rpc2NvdW50c19ob21lKGludCAkY2hhdElkKTogdm9pZCB7CiAgICAkY29kZXMgPSBkYigpLT5xdWVyeSgnU0VMRUNUICogRlJPTSBkaXNjb3VudF9jb2RlcyBPUkRFUiBCWSBpZCBERVNDJyktPmZldGNoQWxsKCk7CiAgICAkcm93cyA9IFtdOwogICAgZm9yZWFjaCAoJGNvZGVzIGFzICRjKSB7CiAgICAgICAgJGtpbmQgPSAkY1sna2luZCddID09PSAncGVyY2VudCcgPyAn2aonIDogJ9iqJzsKICAgICAgICAkbGltaXQgPSAkY1snbWF4X3VzZXMnXSA/OiAn4oieJzsKICAgICAgICAkcm93c1tdID0gW1sndGV4dCcgPT4gIvCfl5EgeyRjWydjb2RlJ119ICh7JGNbJ3ZhbHVlJ119eyRraW5kfSDigJQgeyRjWyd1c2VkJ119LyRsaW1pdCkiLCAnY2FsbGJhY2tfZGF0YScgPT4gIm9rZGVsOmRpc2NvdW50OnskY1snaWQnXX0iXV07CiAgICB9CiAgICAkcm93c1tdID0gW1sndGV4dCcgPT4gJ+KelSDYp9mB2LLZiNiv2YYg2qnYryDYqtiu2YHbjNmBJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdkc2M6YWRkJ11dOwogICAgJHJvd3NbXSA9IFtbJ3RleHQnID0+ICfil4DvuI8g2KjYp9iy2q/YtNiqJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdhZG06YmFjayddXTsKICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAi8J+Pt++4jyA8Yj7aqdiv2YfYp9uMINiq2K7ZgduM2YE8L2I+XG7wn5eRID0g2K3YsNmBIiwgWydpbmxpbmVfa2V5Ym9hcmQnID0+ICRyb3dzXSk7Cn0KCi8qKiBhZG06Z2lmdHMg4oCUINqp2b7bjCBtYWluLnB5IDIxMTgtMjEyNy4gKi8KZnVuY3Rpb24gYWRtaW5fZ2lmdHNfaG9tZShpbnQgJGNoYXRJZCk6IHZvaWQgewogICAgJGNvZGVzID0gZGIoKS0+cXVlcnkoJ1NFTEVDVCAqIEZST00gZ2lmdF9jb2RlcyBPUkRFUiBCWSBpZCBERVNDJyktPmZldGNoQWxsKCk7CiAgICAkcm93cyA9IFtdOwogICAgZm9yZWFjaCAoJGNvZGVzIGFzICRjKSB7CiAgICAgICAgJGxpbWl0ID0gJGNbJ21heF91c2VzJ10gPzogJ+KInic7CiAgICAgICAgJHJvd3NbXSA9IFtbJ3RleHQnID0+ICLwn5eRIHskY1snY29kZSddfSAoIiAuIGZtdF9wcmljZSgoaW50KSRjWydhbW91bnQnXSkgLiAiIOKAlCB7JGNbJ3VzZWQnXX0vJGxpbWl0KSIsICdjYWxsYmFja19kYXRhJyA9PiAib2tkZWw6Z2lmdDp7JGNbJ2lkJ119Il1dOwogICAgfQogICAgJHJvd3NbXSA9IFtbJ3RleHQnID0+ICfinpUg2KfZgdiy2YjYr9mGINqp2K8g2YfYr9uM2YcnLCAnY2FsbGJhY2tfZGF0YScgPT4gJ2dpZnQ6YWRkJ11dOwogICAgJHJvd3NbXSA9IFtbJ3RleHQnID0+ICfil4DvuI8g2KjYp9iy2q/YtNiqJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdhZG06YmFjayddXTsKICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAi8J+OgSA8Yj7aqdiv2YfYp9uMINmH2K/bjNmHPC9iPlxu8J+XkSA9INit2LDZgSIsIFsnaW5saW5lX2tleWJvYXJkJyA9PiAkcm93c10pOwp9CgovKiogZHNjOmFkZCAvIGdpZnQ6YWRkIOKAlCDaqdm+24wgbWFpbi5weSAyMTA5LTIxMTUsIDIxMjktMjEzNS4gKi8KZnVuY3Rpb24gYWRtaW5fY29kZV9hZGRfc3RhcnQoaW50ICRjaGF0SWQsIHN0cmluZyAkdHlwZSk6IHZvaWQgewogICAgc3Rfc2V0KCRjaGF0SWQsIFsnYXdhaXQnID0+ICR0eXBlID09PSAnZHNjJyA/ICdkc2NfY29kZScgOiAnZ2lmdF9jb2RlJ10pOwogICAgaWYgKCR0eXBlID09PSAnZHNjJykgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfwn4+3INqp2K8g2KrYrtmB24zZgSAo2YTYp9iq24zZhtiMINio2K/ZiNmGINmB2KfYtdmE2YcpOicpOwogICAgZWxzZSBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ/CfjoEg2qnYryDZh9iv24zZhyAo2YTYp9iq24zZhtiMINio2K/ZiNmGINmB2KfYtdmE2YcpOicpOwp9CgovKiogb2tkZWw6ZGlzY291bnQ6PGlkPiAvIG9rZGVsOmdpZnQ6PGlkPiDigJQg2qnZvtuMIG1haW4ucHkgMjEzOC0yMTQ0ICsgZ2lmdCBkZWxldGUuICovCmZ1bmN0aW9uIGFkbWluX2NvZGVfZGVsZXRlKGludCAkY2hhdElkLCBzdHJpbmcgJGRhdGEpOiB2b2lkIHsKICAgICRwYXJ0cyA9IGV4cGxvZGUoJzonLCAkZGF0YSk7CiAgICAkdHlwZSA9ICRwYXJ0c1sxXTsKICAgICRpZCA9IChpbnQpJHBhcnRzWzJdOwogICAgaWYgKCR0eXBlID09PSAnZGlzY291bnQnKSB7CiAgICAgICAgZGIoKS0+cHJlcGFyZSgnREVMRVRFIEZST00gZGlzY291bnRfY29kZXMgV0hFUkUgaWQ9PycpLT5leGVjdXRlKFskaWRdKTsKICAgICAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ9qp2K8g2KrYrtmB24zZgSDYrdiw2YEg2LTYrycpOwogICAgfSBlbHNlIHsKICAgICAgICBkYigpLT5wcmVwYXJlKCdERUxFVEUgRlJPTSBnaWZ0X2NvZGVzIFdIRVJFIGlkPT8nKS0+ZXhlY3V0ZShbJGlkXSk7CiAgICAgICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfaqdivINmH2K/bjNmHINit2LDZgSDYtNivJyk7CiAgICB9Cn0KCi8qKiBkc2NfY29kZSBzdGF0ZSDigJQg2qnZvtuMIG1haW4ucHkgMzc0MC0zNzQ1LiAqLwpmdW5jdGlvbiBhZG1pbl9kc2NfY29kZV9hcHBseShpbnQgJGNoYXRJZCwgc3RyaW5nICR0ZXh0KTogdm9pZCB7CiAgICAkY29kZSA9IHN0cl9yZXBsYWNlKCcgJywgJycsIHRyaW0oJHRleHQpKTsKICAgIGlmICghJGNvZGUgfHwgIXByZWdfbWF0Y2goJy9eW0EtWmEtejAtOV9cLV17MywzMn0kLycsICRjb2RlKSkgewogICAgICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn2qnYryDZhtin2YXYudiq2KjYsSDigJQg2YTYp9iq24zZhi/Yudiv2K8g27Mg2KrYpyDbs9uyINqp2KfYsdin2qnYqtixOicpOwogICAgICAgIHJldHVybjsKICAgIH0KICAgIHN0X3NldCgkY2hhdElkLCBbJ2F3YWl0JyA9PiAnZHNjX3ZhbHVlJywgJ2Rjb2RlJyA9PiAkY29kZV0pOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICLwn5KwINmF2YLYr9in2LEg2KrYrtmB24zZgSDYsdinINio2YHYsdiz2Ko6XG7Yr9ix2LXYrzog2YXYq9mE2KcgMjBcbtmF2KjZhNi6INir2KfYqNiqINiq2YjZhdin2YY6INmF2KvZhNinIDUwMDAwXG4o2KjYsdin24wg2KrYuduM24zZhiDZhtmI2LnYjCDZvtiz2YjZhtivINio2LLZhjogMjAlINuM2KcgNTAwMDB0KSIpOwp9CgovKiogZHNjX3ZhbHVlIHN0YXRlIOKAlCDaqdm+24wgbWFpbi5weSAzNzQ3LTM3NjUuICovCmZ1bmN0aW9uIGFkbWluX2RzY192YWx1ZV9hcHBseShpbnQgJGNoYXRJZCwgc3RyaW5nICR0ZXh0KTogdm9pZCB7CiAgICAkdiA9IHRyaW0oJHRleHQpOwogICAgJGtpbmQgPSAncGVyY2VudCc7ICR2YWwgPSAwOwogICAgaWYgKHByZWdfbWF0Y2goJy9eKFxkKylccyolJC8nLCAkdiwgJG0pKSB7CiAgICAgICAgJGtpbmQgPSAncGVyY2VudCc7ICR2YWwgPSAoaW50KSRtWzFdOwogICAgfSBlbHNlaWYgKHByZWdfbWF0Y2goJy9eKFxkKylccyp0JC9pJywgJHYsICRtKSkgewogICAgICAgICRraW5kID0gJ2ZpeGVkJzsgJHZhbCA9IChpbnQpJG1bMV07CiAgICB9IGVsc2VpZiAocHJlZ19tYXRjaCgnL15cZCskLycsICR2KSkgewogICAgICAgICRraW5kID0gJ2ZpeGVkJzsgJHZhbCA9IChpbnQpJHY7CiAgICB9IGVsc2UgewogICAgICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn2YHYsdmF2Ko6IDIwJSDbjNinIDUwMDAwdCDbjNinIDUwMDAwJyk7CiAgICAgICAgcmV0dXJuOwogICAgfQogICAgJGNvZGUgPSAoc3RyaW5nKXN0X2dldCgkY2hhdElkLCAnZGNvZGUnLCAnJyk7CiAgICBzdF9wb3AoJGNoYXRJZCk7CiAgICBkYigpLT5wcmVwYXJlKCdJTlNFUlQgT1IgUkVQTEFDRSBJTlRPIGRpc2NvdW50X2NvZGVzKGNvZGUsIGtpbmQsIHZhbHVlLCB1c2VkKSBWQUxVRVMoPyw/LD8sMCknKQogICAgICAgLT5leGVjdXRlKFskY29kZSwgJGtpbmQsICR2YWxdKTsKICAgICRzdWZmaXggPSAka2luZCA9PT0gJ3BlcmNlbnQnID8gJyUnIDogJyDYqtmI2YXYp9mGJzsKICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAi4pyFINqp2K8g2KrYrtmB24zZgSDCq3skY29kZX3CuyDYs9in2K7YqtmHINi02K8gKHskdmFsfXskc3VmZml4fSkuIik7Cn0KCi8qKiBnaWZ0X2NvZGUgc3RhdGUg4oCUINqp2b7bjCBtYWluLnB5IDM3NjctMzc3Mi4gKi8KZnVuY3Rpb24gYWRtaW5fZ2lmdF9jb2RlX2FwcGx5KGludCAkY2hhdElkLCBzdHJpbmcgJHRleHQpOiB2b2lkIHsKICAgICRjb2RlID0gc3RyX3JlcGxhY2UoJyAnLCAnJywgdHJpbSgkdGV4dCkpOwogICAgaWYgKCEkY29kZSB8fCAhcHJlZ19tYXRjaCgnL15bQS1aYS16MC05X1wtXXszLDMyfSQvJywgJGNvZGUpKSB7CiAgICAgICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfaqdivINmG2KfZhdi52KrYqNixIOKAlCDZhNin2KrbjNmGL9i52K/YryDbsyDYqtinINuz27Ig2qnYp9ix2Kfaqdiq2LE6Jyk7CiAgICAgICAgcmV0dXJuOwogICAgfQogICAgc3Rfc2V0KCRjaGF0SWQsIFsnYXdhaXQnID0+ICdnaWZ0X2Ftb3VudCcsICdnY29kZScgPT4gJGNvZGVdKTsKICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn8J+SsCDZhdio2YTYuiDZh9iv24zZhyAo2KrZiNmF2KfZhikg2LHYpyDYqNmB2LHYs9iqOicpOwp9CgovKiogZ2lmdF9hbW91bnQgc3RhdGUg4oCUINqp2b7bjCBtYWluLnB5IDM3NzQtMzc4MC4gKi8KZnVuY3Rpb24gYWRtaW5fZ2lmdF9hbW91bnRfYXBwbHkoaW50ICRjaGF0SWQsIHN0cmluZyAkdGV4dCk6IHZvaWQgewogICAgaWYgKCFwcmVnX21hdGNoKCcvXGQrLycsIHN0cl9yZXBsYWNlKCcsJywgJycsICR0ZXh0KSwgJG0pKSB7CiAgICAgICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfYudiv2K8g2KjZgdix2LPYqi4nKTsKICAgICAgICByZXR1cm47CiAgICB9CiAgICAkY29kZSA9IChzdHJpbmcpc3RfZ2V0KCRjaGF0SWQsICdnY29kZScsICcnKTsKICAgIHN0X3BvcCgkY2hhdElkKTsKICAgIGRiKCktPnByZXBhcmUoJ0lOU0VSVCBPUiBSRVBMQUNFIElOVE8gZ2lmdF9jb2Rlcyhjb2RlLCBhbW91bnQsIHVzZWQpIFZBTFVFUyg/LD8sMCknKQogICAgICAgLT5leGVjdXRlKFskY29kZSwgKGludCkkbVswXV0pOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICLinIUg2qnYryDZh9iv24zZhyDCq3skY29kZX3CuyDYs9in2K7YqtmHINi02K8uIik7Cn0K'));
+/**
+ * admin/discounts.php — کد تخفیف و کد هدیه (کپی مو‌به‌موی main.py 2097-2144, 3740-3780):
+ * لیست با دکمه حذف، فلو dsc_code→dsc_value، فلو gift_code→gift_amount، okdel.
+ */
+
+require_once BASE_DIR . '/core/bot.php';
+require_once BASE_DIR . '/core/menus.php';
+
+/** adm:discounts — کپی main.py 2097-2107. */
+function admin_discounts_home(int $chatId): void {
+    $codes = db()->query('SELECT * FROM discount_codes ORDER BY id DESC')->fetchAll();
+    $rows = [];
+    foreach ($codes as $c) {
+        $kind = $c['kind'] === 'percent' ? '٪' : 'ت';
+        $limit = $c['max_uses'] ?: '∞';
+        $rows[] = [['text' => "🗑 {$c['code']} ({$c['value']}{$kind} — {$c['used']}/$limit)", 'callback_data' => "okdel:discount:{$c['id']}"]];
+    }
+    $rows[] = [['text' => '➕ افزودن کد تخفیف', 'callback_data' => 'dsc:add']];
+    $rows[] = [['text' => '◀️ بازگشت', 'callback_data' => 'adm:back']];
+    send_or_edit($chatId, "🏷️ <b>کدهای تخفیف</b>\n🗑 = حذف", ['inline_keyboard' => $rows]);
+}
+
+/** adm:gifts — کپی main.py 2118-2127. */
+function admin_gifts_home(int $chatId): void {
+    $codes = db()->query('SELECT * FROM gift_codes ORDER BY id DESC')->fetchAll();
+    $rows = [];
+    foreach ($codes as $c) {
+        $limit = $c['max_uses'] ?: '∞';
+        $rows[] = [['text' => "🗑 {$c['code']} (" . fmt_price((int)$c['amount']) . " — {$c['used']}/$limit)", 'callback_data' => "okdel:gift:{$c['id']}"]];
+    }
+    $rows[] = [['text' => '➕ افزودن کد هدیه', 'callback_data' => 'gift:add']];
+    $rows[] = [['text' => '◀️ بازگشت', 'callback_data' => 'adm:back']];
+    send_or_edit($chatId, "🎁 <b>کدهای هدیه</b>\n🗑 = حذف", ['inline_keyboard' => $rows]);
+}
+
+/** dsc:add / gift:add — کپی main.py 2109-2115, 2129-2135. */
+function admin_code_add_start(int $chatId, string $type): void {
+    st_set($chatId, ['await' => $type === 'dsc' ? 'dsc_code' : 'gift_code']);
+    if ($type === 'dsc') send_or_edit($chatId, '🏷 کد تخفیف (لاتین، بدون فاصله):');
+    else send_or_edit($chatId, '🎁 کد هدیه (لاتین، بدون فاصله):');
+}
+
+/** okdel:discount:<id> / okdel:gift:<id> — کپی main.py 2138-2144 + gift delete. */
+function admin_code_delete(int $chatId, string $data): void {
+    $parts = explode(':', $data);
+    $type = $parts[1];
+    $id = (int)$parts[2];
+    if ($type === 'discount') {
+        db()->prepare('DELETE FROM discount_codes WHERE id=?')->execute([$id]);
+        send_or_edit($chatId, 'کد تخفیف حذف شد');
+    } else {
+        db()->prepare('DELETE FROM gift_codes WHERE id=?')->execute([$id]);
+        send_or_edit($chatId, 'کد هدیه حذف شد');
+    }
+}
+
+/** dsc_code state — کپی main.py 3740-3745. */
+function admin_dsc_code_apply(int $chatId, string $text): void {
+    $code = str_replace(' ', '', trim($text));
+    if (!$code || !preg_match('/^[A-Za-z0-9_\-]{3,32}$/', $code)) {
+        send_or_edit($chatId, 'کد نامعتبر — لاتین/عدد ۳ تا ۳۲ کاراکتر:');
+        return;
+    }
+    st_set($chatId, ['await' => 'dsc_value', 'dcode' => $code]);
+    send_or_edit($chatId, "💰 مقدار تخفیف را بفرست:\nدرصد: مثلا 20\nمبلغ ثابت تومان: مثلا 50000\n(برای تعیین نوع، پسوند بزن: 20% یا 50000t)");
+}
+
+/** dsc_value state — کپی main.py 3747-3765. */
+function admin_dsc_value_apply(int $chatId, string $text): void {
+    $v = trim($text);
+    $kind = 'percent'; $val = 0;
+    if (preg_match('/^(\d+)\s*%$/', $v, $m)) {
+        $kind = 'percent'; $val = (int)$m[1];
+    } elseif (preg_match('/^(\d+)\s*t$/i', $v, $m)) {
+        $kind = 'fixed'; $val = (int)$m[1];
+    } elseif (preg_match('/^\d+$/', $v)) {
+        $kind = 'fixed'; $val = (int)$v;
+    } else {
+        send_or_edit($chatId, 'فرمت: 20% یا 50000t یا 50000');
+        return;
+    }
+    $code = (string)st_get($chatId, 'dcode', '');
+    st_pop($chatId);
+    db()->prepare('INSERT OR REPLACE INTO discount_codes(code, kind, value, used) VALUES(?,?,?,0)')
+       ->execute([$code, $kind, $val]);
+    $suffix = $kind === 'percent' ? '%' : ' تومان';
+    send_or_edit($chatId, "✅ کد تخفیف «{$code}» ساخته شد ({$val}{$suffix}).");
+}
+
+/** gift_code state — کپی main.py 3767-3772. */
+function admin_gift_code_apply(int $chatId, string $text): void {
+    $code = str_replace(' ', '', trim($text));
+    if (!$code || !preg_match('/^[A-Za-z0-9_\-]{3,32}$/', $code)) {
+        send_or_edit($chatId, 'کد نامعتبر — لاتین/عدد ۳ تا ۳۲ کاراکتر:');
+        return;
+    }
+    st_set($chatId, ['await' => 'gift_amount', 'gcode' => $code]);
+    send_or_edit($chatId, '💰 مبلغ هدیه (تومان) را بفرست:');
+}
+
+/** gift_amount state — کپی main.py 3774-3780. */
+function admin_gift_amount_apply(int $chatId, string $text): void {
+    if (!preg_match('/\d+/', str_replace(',', '', $text), $m)) {
+        send_or_edit($chatId, 'عدد بفرست.');
+        return;
+    }
+    $code = (string)st_get($chatId, 'gcode', '');
+    st_pop($chatId);
+    db()->prepare('INSERT OR REPLACE INTO gift_codes(code, amount, used) VALUES(?,?,0)')
+       ->execute([$code, (int)$m[0]]);
+    send_or_edit($chatId, "✅ کد هدیه «{$code}» ساخته شد.");
+}
