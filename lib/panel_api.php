@@ -1,3 +1,231 @@
 <?php
-// Encrypted & Protected by WireNest Shield
-@eval(base64_decode('PD9waHAKLyoqCiAqIHBhbmVsX2FwaS5waHAg4oCUIFBhbmVsIGJyaWRnZSArIGVuY3J5cHRpb24gKyBBUEkgY2xpZW50cy4KICogVXBncmFkZWQgdG8gQUVTLTI1Ni1HQ00gYXV0aGVudGljYXRlZCBlbmNyeXB0aW9uIChwaHBlbmMyOikgd2hpbGUgcHJlc2VydmluZyBwaHBlbmM6IChDQkMpIGRlY3J5cHRpb24uCiAqLwoKaWYgKCFmdW5jdGlvbl9leGlzdHMoInBhbmVsX2NsZWFuX2Jhc2VfdXJsIikpIHsKZnVuY3Rpb24gcGFuZWxfY2xlYW5fYmFzZV91cmwoc3RyaW5nICR1cmwpOiBzdHJpbmcgewogICAgZm9yZWFjaCAoWycvZGFzaGJvYXJkJywgJy9kYXNoYm9hcmQvJ10gYXMgJGZyYWcpIHsKICAgICAgICBpZiAoc3RyX2VuZHNfd2l0aCgkdXJsLCAkZnJhZykpICR1cmwgPSBzdWJzdHIoJHVybCwgMCwgLXN0cmxlbigkZnJhZykpOwogICAgfQogICAgJHVybCA9IHJ0cmltKCR1cmwsICcvJyk7CiAgICBpZiAoIXByZWdfbWF0Y2goJyNeaHR0cHM/Oi8vIycsICR1cmwpKSAkdXJsID0gJ2h0dHBzOi8vJyAuICR1cmw7CiAgICByZXR1cm4gJHVybDsKfQp9CgppZiAoIWZ1bmN0aW9uX2V4aXN0cygicGFuZWxfbG9naW5fdXJsIikpIHsKZnVuY3Rpb24gcGFuZWxfbG9naW5fdXJsKHN0cmluZyAkc3RvcmVkQmFzZSk6IHN0cmluZyB7CiAgICAvLyBwYXJpdHkgd2l0aCBweXRob24gKG1haW4ucHkgOTAxLzEwMzMvMzA1MCk6IHdlYiBsb2dpbiA9IGJhc2VfdXJsICsgL2Rhc2hib2FyZAogICAgcmV0dXJuIHJ0cmltKCRzdG9yZWRCYXNlLCAnLycpIC4gJy9kYXNoYm9hcmQnOyAvLyDZhtmF2KfbjNi0ID0g2LnbjNmGINmF2YLYr9in2LEg2LDYrtuM2LHZh+KAjNi02K/ZhyAo2YLYp9mG2YjZhiDYsdi22KcpCn0KfQoKaWYgKCFmdW5jdGlvbl9leGlzdHMoInBhbmVsX2NsaWVudCIpKSB7CmZ1bmN0aW9uIHBhbmVsX2NsaWVudCg/c3RyaW5nICRiYXNlVXJsID0gbnVsbCwgP3N0cmluZyAkcHR5cGUgPSBudWxsKTogP2FycmF5IHsKICAgICRwYW5lbHMgPSBnZXRfc2V0dGluZygncGFuZWxzJywgW10pID86IFtdOwogICAgaWYgKCFpc19hcnJheSgkcGFuZWxzKSB8fCBlbXB0eSgkcGFuZWxzKSkgcmV0dXJuIG51bGw7CiAgICBpZiAoJGJhc2VVcmwgIT09IG51bGwpIHsKICAgICAgICAkZGF0YSA9IG51bGw7CiAgICAgICAgZm9yZWFjaCAoJHBhbmVscyBhcyAkcG4gPT4gJGQpIHsKICAgICAgICAgICAgaWYgKCgkZFsnYmFzZV91cmwnXSA/PyAnJykgPT09ICRiYXNlVXJsIHx8ICRwbiA9PT0gJGJhc2VVcmwpIHsgJGRhdGEgPSAkZDsgYnJlYWs7IH0KICAgICAgICB9CiAgICAgICAgaWYgKCRkYXRhID09PSBudWxsKSB7CiAgICAgICAgICAgIC8vIHJlcXVlc3RlZCBpZC9iYXNlX3VybCBub3QgZm91bmQ6INin2YjZhNuM2YYg2b7ZhtmEINmB2LnYp9mEICjZgdix2YXYp9mGINix2LbYpzog2b7ZhtmEINm+2YbZhNmHKSDigJQg2KjYr9mI2YYg2YTYp9qvINin2LbYp9mB2YcKICAgICAgICAgICAgZm9yZWFjaCAoJHBhbmVscyBhcyAkcGQpIHsKICAgICAgICAgICAgICAgIGlmICghZW1wdHkoJHBkWydhY3RpdmUnXSkpIHsgJGRhdGEgPSAkcGQ7IGJyZWFrOyB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgaWYgKCRkYXRhID09PSBudWxsKSAkZGF0YSA9IHJlc2V0KCRwYW5lbHMpOwogICAgICAgIH0KICAgICAgICBpZiAoJHB0eXBlKSAkZGF0YVsncHR5cGUnXSA9ICRwdHlwZTsKICAgIH0gZWxzZSB7CiAgICAgICAgJHNlbCA9IChzdHJpbmcpZ2V0X3NldHRpbmcoJ3NlbGVjdGVkX3BhbmVsJywgJycpOwogICAgICAgIGlmICgkc2VsICE9PSAnJyAmJiBpc3NldCgkcGFuZWxzWyRzZWxdKSkgewogICAgICAgICAgICAkZGF0YSA9ICRwYW5lbHNbJHNlbF07CiAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgLy8g2b7ZhtmEIMKr2b7bjNi04oCM2YHYsdi2wrsg2YXZgdmH2YjZhduMINmG2K/Yp9ix2K8gKNmB2LHZhdin2YYg2LHYttinKSDigJQg2KfZiNmE24zZhiDZvtmG2YQgwqvZgdi52KfZhMK7INmF2YTYp9qpINin2LPYqgogICAgICAgICAgICAkZGF0YSA9IG51bGw7CiAgICAgICAgICAgIGZvcmVhY2ggKCRwYW5lbHMgYXMgJHBkKSB7CiAgICAgICAgICAgICAgICBpZiAoIWVtcHR5KCRwZFsnYWN0aXZlJ10pKSB7ICRkYXRhID0gJHBkOyBicmVhazsgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIGlmICgkZGF0YSA9PT0gbnVsbCkgJGRhdGEgPSByZXNldCgkcGFuZWxzKTsKICAgICAgICB9CiAgICB9CiAgICAkZGF0YVsncGFzc3dvcmQnXSA9IHBhbmVsX2RlY3J5cHRfcHcoJGRhdGFbJ3Bhc3N3b3JkJ10gPz8gJycpOwogICAgJGRhdGFbJ2Jhc2VfdXJsJ10gPSBydHJpbSgoc3RyaW5nKSRkYXRhWydiYXNlX3VybCddLCAnLycpOwogICAgcmV0dXJuICRkYXRhOwp9Cn0KCmlmICghZnVuY3Rpb25fZXhpc3RzKCJwYW5lbF9jcnlwdG9fa2V5IikpIHsKZnVuY3Rpb24gcGFuZWxfY3J5cHRvX2tleSgpOiBzdHJpbmcgewogICAgJGVudktleSA9ICRfRU5WWydQQU5FTF9DUllQVE9fS0VZJ10gPz8gJyc7CiAgICBpZiAoJGVudktleSkgcmV0dXJuICRlbnZLZXk7CiAgICAka2YgPSBCQVNFX0RJUiAuICcvZGF0YS9jcnlwdG8ua2V5JzsKICAgIGlmIChmaWxlX2V4aXN0cygka2YpKSByZXR1cm4gdHJpbShmaWxlX2dldF9jb250ZW50cygka2YpKTsKICAgICRrZXkgPSBiYXNlNjRfZW5jb2RlKHJhbmRvbV9ieXRlcygzMikpOwogICAgQGZpbGVfcHV0X2NvbnRlbnRzKCRrZiwgJGtleSk7CiAgICByZXR1cm4gJGtleTsKfQp9CgppZiAoIWZ1bmN0aW9uX2V4aXN0cygicGFuZWxfZGVjcnlwdF9wdyIpKSB7CmZ1bmN0aW9uIHBhbmVsX2RlY3J5cHRfcHcoc3RyaW5nICRlbmMpOiBzdHJpbmcgewogICAgaWYgKCEkZW5jKSByZXR1cm4gJyc7CiAgICAka2V5ID0gYmFzZTY0X2RlY29kZShwYW5lbF9jcnlwdG9fa2V5KCkpOwogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZW5jLCAncGhwZW5jMjonKSkgewogICAgICAgICRyYXcgPSBiYXNlNjRfZGVjb2RlKHN1YnN0cigkZW5jLCA4KSk7CiAgICAgICAgaWYgKHN0cmxlbigkcmF3KSA8IDI4KSByZXR1cm4gJyc7CiAgICAgICAgJGl2ID0gc3Vic3RyKCRyYXcsIDAsIDEyKTsKICAgICAgICAkdGFnID0gc3Vic3RyKCRyYXcsIDEyLCAxNik7CiAgICAgICAgJGN0ID0gc3Vic3RyKCRyYXcsIDI4KTsKICAgICAgICAkZGVjID0gb3BlbnNzbF9kZWNyeXB0KCRjdCwgJ2Flcy0yNTYtZ2NtJywgJGtleSwgT1BFTlNTTF9SQVdfREFUQSwgJGl2LCAkdGFnKTsKICAgICAgICByZXR1cm4gJGRlYyAhPT0gZmFsc2UgPyAkZGVjIDogJyc7CiAgICB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRlbmMsICdwaHBlbmM6JykpIHsKICAgICAgICAkcmF3ID0gYmFzZTY0X2RlY29kZShzdWJzdHIoJGVuYywgNykpOwogICAgICAgIGlmIChzdHJsZW4oJHJhdykgPCAxNikgcmV0dXJuICcnOwogICAgICAgICRpdiA9IHN1YnN0cigkcmF3LCAwLCAxNik7CiAgICAgICAgJGN0ID0gc3Vic3RyKCRyYXcsIDE2KTsKICAgICAgICAkZGVjID0gb3BlbnNzbF9kZWNyeXB0KCRjdCwgJ2Flcy0yNTYtY2JjJywgJGtleSwgT1BFTlNTTF9SQVdfREFUQSwgJGl2KTsKICAgICAgICByZXR1cm4gJGRlYyAhPT0gZmFsc2UgPyAkZGVjIDogJyc7CiAgICB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRlbmMsICdweWZlcjonKSkgewogICAgICAgIHJldHVybiBzdWJzdHIoJGVuYywgNik7CiAgICB9CiAgICAvLyByYXcgcHl0aG9uIEZlcm5ldCB0b2tlbiAobm8gcHJlZml4LCBzdGFydHMgd2l0aCBnQUFBQSkg4oCUIGRlY3J5cHQgdmlhIHB5dGhvbiBicmlkZ2UgZmFsbGJhY2sKICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGVuYywgJ2dBQUFBJykpIHsKICAgICAgICAkcHkgPSAkX0VOVlsnUEFORUxfUFknXSA/PyAnJzsKICAgICAgICBpZiAoISRweSB8fCAhZmlsZV9leGlzdHMoJHB5KSkgeyBmb3JlYWNoIChbQkFTRV9ESVIgLiAnL3ZlbnYvYmluL3B5dGhvbicsICcvdXNyL2Jpbi9weXRob24zJywgJy91c3IvbG9jYWwvYmluL3B5dGhvbjMnXSBhcyAkYykgaWYgKGZpbGVfZXhpc3RzKCRjKSkgeyAkcHkgPSAkYzsgYnJlYWs7IH0gfQogICAgICAgIGlmICgkcHkgJiYgZmlsZV9leGlzdHMoJHB5KSkgewogICAgICAgICAgICAkdG9rID0gZXNjYXBlc2hlbGxhcmcoJGVuYyk7CiAgICAgICAgICAgICRvdXQgPSBzaGVsbF9leGVjKCIkcHkgIiAuIGVzY2FwZXNoZWxsYXJnKEJBU0VfRElSIC4gJy9saWIvZmVybmV0X2RlY3J5cHQucHknKSAuICIgJHRvayAyPi9kZXYvbnVsbCIpOwogICAgICAgICAgICBpZiAoaXNfc3RyaW5nKCRvdXQpICYmIHRyaW0oJG91dCkgIT09ICcnICYmICFzdHJfc3RhcnRzX3dpdGgodHJpbSgkb3V0KSwgJ2dBQUFBJykpIHJldHVybiB0cmltKCRvdXQpOwogICAgICAgIH0KICAgICAgICByZXR1cm4gJyc7CiAgICB9CiAgICByZXR1cm4gJGVuYzsKfQp9CgppZiAoIWZ1bmN0aW9uX2V4aXN0cygicGFuZWxfZW5jcnlwdF9wdyIpKSB7CmZ1bmN0aW9uIHBhbmVsX2VuY3J5cHRfcHcoc3RyaW5nICRwbGFpbik6IHN0cmluZyB7CiAgICBpZiAoISRwbGFpbikgcmV0dXJuICcnOwogICAgJGtleSA9IGJhc2U2NF9kZWNvZGUocGFuZWxfY3J5cHRvX2tleSgpKTsKICAgICRpdiA9IHJhbmRvbV9ieXRlcygxMik7CiAgICAkdGFnID0gJyc7CiAgICAkY3QgPSBvcGVuc3NsX2VuY3J5cHQoJHBsYWluLCAnYWVzLTI1Ni1nY20nLCAka2V5LCBPUEVOU1NMX1JBV19EQVRBLCAkaXYsICR0YWcpOwogICAgcmV0dXJuICdwaHBlbmMyOicgLiBiYXNlNjRfZW5jb2RlKCRpdiAuICR0YWcgLiAkY3QpOwp9Cn0KCmlmICghZnVuY3Rpb25fZXhpc3RzKCJwYW5lbF9icmlkZ2VfY2FsbCIpKSB7CnJlcXVpcmVfb25jZSBfX0RJUl9fIC4gIi9wYW5lbF9odHRwLnBocCI7CmZ1bmN0aW9uIHBhbmVsX2JyaWRnZV9jYWxsKGFycmF5ICRwYW5lbCwgc3RyaW5nICRhY3Rpb24sIGFycmF5ICRhcmdzID0gW10pOiA/YXJyYXkgewogICAgJHJlcyA9IHBhbmVsX2h0dHBfY2FsbCgkcGFuZWwsICRhY3Rpb24sICRhcmdzKTsKICAgIGlmICgkcmVzICYmICFlbXB0eSgkcmVzWyJvayJdKSkgcmV0dXJuICRyZXM7CgogICAgJGJyaWRnZVNjcmlwdCA9IEJBU0VfRElSIC4gJy9saWIvcGFuZWxfYnJpZGdlLnB5JzsKICAgIC8vIHBvcnRhYmxlIHB5dGhvbiBsb29rdXA6IGVudiBQWSDihpIga25vd24gdmVudnMg4oaSIHN5c3RlbSBweXRob24zCiAgICAkcHkgPSAkX0VOVlsnUEFORUxfUFknXSA/PyBnZXRlbnYoJ1BBTkVMX1BZJykgPzogJyc7CiAgICBpZiAoISRweSB8fCAhZmlsZV9leGlzdHMoJHB5KSkgewogICAgICAgIGZvcmVhY2ggKFsnL3Jvb3QvbWFyemJhbi1ib3QvdmVudi9iaW4vcHl0aG9uJywgQkFTRV9ESVIgLiAnL3ZlbnYvYmluL3B5dGhvbiddIGFzICRjYW5kKSB7CiAgICAgICAgICAgIGlmIChAZmlsZV9leGlzdHMoJGNhbmQpKSB7ICRweSA9ICRjYW5kOyBicmVhazsgfQogICAgICAgIH0KICAgIH0KICAgIGlmICghJHB5IHx8ICFmaWxlX2V4aXN0cygkcHkpKSAkcHkgPSAncHl0aG9uMyc7CgogICAgLy8g2YXYs9uM2LEg2YfYp9iz2KogKHByb2Nfb3BlbiBkaXNhYmxlZCk6IHJlbGF5INix2YjbjCDYs9ix2YjYsSDYp9i12YTbjCAoY3VybF9jZmZpIENGIGJ5cGFzcykKICAgICRyZWxheVVybCA9ICRfRU5WWydQQU5FTF9SRUxBWV9VUkwnXSA/PyBnZXRlbnYoJ1BBTkVMX1JFTEFZX1VSTCcpID86ICcnOwogICAgJHJlbGF5S2V5ID0gJF9FTlZbJ1BBTkVMX1JFTEFZX0tFWSddID8/IGdldGVudignUEFORUxfUkVMQVlfS0VZJykgPzogJyc7CiAgICBpZiAoJHJlbGF5VXJsICE9PSAnJyAmJiAkcmVsYXlLZXkgIT09ICcnKSB7CiAgICAgICAgJGNoMiA9IGN1cmxfaW5pdChydHJpbSgkcmVsYXlVcmwsICcvJykgLiAnL3JlbGF5Jyk7CiAgICAgICAgY3VybF9zZXRvcHRfYXJyYXkoJGNoMiwgWwogICAgICAgICAgICBDVVJMT1BUX1JFVFVSTlRSQU5TRkVSID0+IHRydWUsCiAgICAgICAgICAgIENVUkxPUFRfUE9TVCA9PiB0cnVlLAogICAgICAgICAgICBDVVJMT1BUX1RJTUVPVVQgPT4gNDUsCiAgICAgICAgICAgIENVUkxPUFRfU1NMX1ZFUklGWVBFRVIgPT4gZmFsc2UsCiAgICAgICAgICAgIENVUkxPUFRfU1NMX1ZFUklGWUhPU1QgPT4gMCwKICAgICAgICAgICAgQ1VSTE9QVF9IVFRQSEVBREVSID0+IFsnQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uJ10sCiAgICAgICAgICAgIENVUkxPUFRfUE9TVEZJRUxEUyA9PiBqc29uX2VuY29kZShbCiAgICAgICAgICAgICAgICAna2V5JyA9PiAkcmVsYXlLZXksCiAgICAgICAgICAgICAgICAnYmFzZV91cmwnID0+ICRwYW5lbFsnYmFzZV91cmwnXSA/PyAnJywKICAgICAgICAgICAgICAgICd1c2VybmFtZScgPT4gJHBhbmVsWyd1c2VybmFtZSddID8/ICcnLAogICAgICAgICAgICAgICAgJ3Bhc3N3b3JkJyA9PiBwYW5lbF9kZWNyeXB0X3B3KCRwYW5lbFsncGFzc3dvcmQnXSA/PyAnJyksCiAgICAgICAgICAgICAgICAncHR5cGUnID0+ICRwYW5lbFsncHR5cGUnXSA/PyAncGFzYXJndWFyZCcsCiAgICAgICAgICAgICAgICAnYWN0aW9uJyA9PiAkYWN0aW9uLAogICAgICAgICAgICAgICAgJ2FyZ3MnID0+IGFycmF5X21lcmdlKCRhcmdzLCBbJ3JvbGVfaWQnID0+ICRhcmdzWydyb2xlX2lkJ10gPz8gKCRwYW5lbFsncm9sZV9pZCddID8/IDMpXSksCiAgICAgICAgICAgIF0sIEpTT05fVU5FU0NBUEVEX1VOSUNPREUpLAogICAgICAgIF0pOwogICAgICAgICRyYXcgPSBjdXJsX2V4ZWMoJGNoMik7CiAgICAgICAgJGNlcnIgPSBjdXJsX2Vycm9yKCRjaDIpOwogICAgICAgIGN1cmxfY2xvc2UoJGNoMik7CiAgICAgICAgaWYgKCRyYXcgIT09IGZhbHNlKSB7CiAgICAgICAgICAgICRqciA9IGpzb25fZGVjb2RlKChzdHJpbmcpJHJhdywgdHJ1ZSk7CiAgICAgICAgICAgIGlmIChpc19hcnJheSgkanIpKSByZXR1cm4gJGpyOwogICAgICAgIH0KICAgICAgICBib3RfbG9nKCJwYW5lbCByZWxheSBlcnJvciBhY3Rpb249JGFjdGlvbjogJGNlcnIgIiAuIHN1YnN0cigoc3RyaW5nKSRyYXcsIDAsIDEyMCkpOwogICAgICAgIC8vIGZhbGwgdGhyb3VnaCB0byBicmlkZ2UgYXR0ZW1wdAogICAgfQogICAgaWYgKCFmdW5jdGlvbl9leGlzdHMoJ3Byb2Nfb3BlbicpKSB7CiAgICAgICAgYm90X2xvZygncGFuZWwgYnJpZGdlIHVuYXZhaWxhYmxlIChwcm9jX29wZW4gZGlzYWJsZWQpIGFjdGlvbj0nIC4gJGFjdGlvbik7CiAgICAgICAgcmV0dXJuIFsnb2snID0+IGZhbHNlLCAnZXJyb3InID0+ICdicmlkZ2UgdW5hdmFpbGFibGUnLCAnbXNnJyA9PiAn2b7ZhCDZvtmG2YQg2K/YsSDYr9iz2KrYsdizINmG24zYs9iqJ107CiAgICB9CiAgICAkcGF5bG9hZCA9IGpzb25fZW5jb2RlKFsKICAgICAgICAnYmFzZV91cmwnID0+ICRwYW5lbFsnYmFzZV91cmwnXSA/PyAnJywKICAgICAgICAndXNlcm5hbWUnID0+ICRwYW5lbFsndXNlcm5hbWUnXSA/PyAnJywKICAgICAgICAncGFzc3dvcmQnID0+ICRwYW5lbFsncGFzc3dvcmQnXSA/PyAnJywKICAgICAgICAncHR5cGUnID0+ICRwYW5lbFsncHR5cGUnXSA/PyAnbWFyemJhbicsCiAgICAgICAgJ2FjdGlvbicgPT4gJGFjdGlvbiwKICAgICAgICAnYXJncycgPT4gJGFyZ3MKICAgIF0sIEpTT05fVU5FU0NBUEVEX1VOSUNPREUgfCBKU09OX0lOVkFMSURfVVRGOF9TVUJTVElUVVRFKTsKCiAgICAkZGVzY3JpcHRvcnMgPSBbCiAgICAgICAgMCA9PiBbJ3BpcGUnLCAnciddLAogICAgICAgIDEgPT4gWydwaXBlJywgJ3cnXSwKICAgICAgICAyID0+IFsncGlwZScsICd3J10KICAgIF07CiAgICAkcHJvY2VzcyA9IHByb2Nfb3BlbigiJHB5ICRicmlkZ2VTY3JpcHQiLCAkZGVzY3JpcHRvcnMsICRwaXBlcyk7CiAgICBpZiAoIWlzX3Jlc291cmNlKCRwcm9jZXNzKSkgcmV0dXJuIG51bGw7CgogICAgZndyaXRlKCRwaXBlc1swXSwgJHBheWxvYWQpOwogICAgZmNsb3NlKCRwaXBlc1swXSk7CgogICAgJHN0ZG91dCA9IHN0cmVhbV9nZXRfY29udGVudHMoJHBpcGVzWzFdKTsKICAgIGZjbG9zZSgkcGlwZXNbMV0pOwogICAgJHN0ZGVyciA9IHN0cmVhbV9nZXRfY29udGVudHMoJHBpcGVzWzJdKTsKICAgIGZjbG9zZSgkcGlwZXNbMl0pOwogICAgcHJvY19jbG9zZSgkcHJvY2Vzcyk7CgogICAgaWYgKCF0cmltKCRzdGRvdXQpKSB7CiAgICAgICAgYm90X2xvZygicGFuZWxfYnJpZGdlX2NhbGwgZW1wdHkgc3Rkb3V0IGZvciBhY3Rpb249JGFjdGlvbiwgc3RkZXJyPSRzdGRlcnIiKTsKICAgICAgICByZXR1cm4gbnVsbDsKICAgIH0KICAgICRyZXMgPSBqc29uX2RlY29kZSh0cmltKCRzdGRvdXQpLCB0cnVlKTsKICAgIGlmICghJHJlcykgewogICAgICAgIGJvdF9sb2coInBhbmVsX2JyaWRnZV9jYWxsIGpzb24gZGVjb2RlIGVycm9yOiAkc3Rkb3V0Iik7CiAgICAgICAgcmV0dXJuIG51bGw7CiAgICB9CiAgICByZXR1cm4gJHJlczsKfQp9CgppZiAoIWZ1bmN0aW9uX2V4aXN0cygicGFuZWxfcGluZyIpKSB7CmZ1bmN0aW9uIHBhbmVsX3BpbmcoYXJyYXkgJHBhbmVsKTogYXJyYXkgewogICAgJHJlcyA9IHBhbmVsX2JyaWRnZV9jYWxsKCRwYW5lbCwgJ3BpbmcnLCBbXSk7CiAgICBpZiAoISRyZXMpIHJldHVybiBbJ29rJyA9PiBmYWxzZSwgJ21zZycgPT4gJ0JyaWRnZSBlcnJvciddOwogICAgcmV0dXJuICRyZXM7Cn0KfQovKiogcGFuZWxfY3JlYXRlX2FkbWluIOKAlCBicmlkZ2UgY3JlYXRlX2FkbWluIChtYWluLnB5IDM5OTE6IGNyZWF0ZV9hZG1pbih1bmFtZSwgcHdkLCB2b2x1bWVfZ2IsIHRlbGVncmFtX2lkKSkuICovCmZ1bmN0aW9uIHBhbmVsX2NyZWF0ZV9hZG1pbihhcnJheSAkcCwgc3RyaW5nICR1bmFtZSwgc3RyaW5nICRwd2QsIGZsb2F0ICR2b2xHYiwgaW50ICR0Z0lkKTogYXJyYXkgewogICAgJHJlcyA9IHBhbmVsX2JyaWRnZV9jYWxsKCRwLCAnY3JlYXRlX2FkbWluJywgWwogICAgICAgICd1c2VybmFtZScgICAgPT4gJHVuYW1lLAogICAgICAgICdwYXNzd29yZCcgICAgPT4gJHB3ZCwKICAgICAgICAndm9sdW1lX2diJyAgID0+ICR2b2xHYiwKICAgICAgICAndGVsZWdyYW1faWQnID0+ICR0Z0lkLAogICAgXSk7CiAgICBpZiAoIWlzX2FycmF5KCRyZXMpKSByZXR1cm4gWydvaycgPT4gZmFsc2UsICdlcnJvcicgPT4gJ2JyaWRnZSBubyByZXNwb25zZSddOwogICAgcmV0dXJuICRyZXM7Cn0='));
+/**
+ * panel_api.php — Panel bridge + encryption + API clients.
+ * Upgraded to AES-256-GCM authenticated encryption (phpenc2:) while preserving phpenc: (CBC) decryption.
+ */
+
+if (!function_exists("panel_clean_base_url")) {
+function panel_clean_base_url(string $url): string {
+    foreach (['/dashboard', '/dashboard/'] as $frag) {
+        if (str_ends_with($url, $frag)) $url = substr($url, 0, -strlen($frag));
+    }
+    $url = rtrim($url, '/');
+    if (!preg_match('#^https?://#', $url)) $url = 'https://' . $url;
+    return $url;
+}
+}
+
+if (!function_exists("panel_login_url")) {
+function panel_login_url(string $storedBase): string {
+    // parity with python (main.py 901/1033/3050): web login = base_url + /dashboard
+    return rtrim($storedBase, '/') . '/dashboard'; // نمایش = عین مقدار ذخیره‌شده (قانون رضا)
+}
+}
+
+if (!function_exists("panel_client")) {
+function panel_client(?string $baseUrl = null, ?string $ptype = null): ?array {
+    $panels = get_setting('panels', []) ?: [];
+    if (!is_array($panels) || empty($panels)) return null;
+    if ($baseUrl !== null) {
+        $data = null;
+        foreach ($panels as $pn => $d) {
+            if (($d['base_url'] ?? '') === $baseUrl || $pn === $baseUrl) { $data = $d; break; }
+        }
+        if ($data === null) {
+            // requested id/base_url not found: اولین پنل فعال (فرمان رضا: پنل پنله) — بدون لاگ اضافه
+            foreach ($panels as $pd) {
+                if (!empty($pd['active'])) { $data = $pd; break; }
+            }
+            if ($data === null) $data = reset($panels);
+        }
+        if ($ptype) $data['ptype'] = $ptype;
+    } else {
+        $sel = (string)get_setting('selected_panel', '');
+        if ($sel !== '' && isset($panels[$sel])) {
+            $data = $panels[$sel];
+        } else {
+            // پنل «پیش‌فرض» مفهومی ندارد (فرمان رضا) — اولین پنل «فعال» ملاک است
+            $data = null;
+            foreach ($panels as $pd) {
+                if (!empty($pd['active'])) { $data = $pd; break; }
+            }
+            if ($data === null) $data = reset($panels);
+        }
+    }
+    $data['password'] = panel_decrypt_pw($data['password'] ?? '');
+    $data['base_url'] = rtrim((string)$data['base_url'], '/');
+    return $data;
+}
+}
+
+if (!function_exists("panel_crypto_key")) {
+function panel_crypto_key(): string {
+    $envKey = $_ENV['PANEL_CRYPTO_KEY'] ?? '';
+    if ($envKey) return $envKey;
+    $kf = BASE_DIR . '/data/crypto.key';
+    if (file_exists($kf)) return trim(file_get_contents($kf));
+    $key = base64_encode(random_bytes(32));
+    @file_put_contents($kf, $key);
+    return $key;
+}
+}
+
+if (!function_exists("panel_decrypt_pw")) {
+function panel_decrypt_pw(string $enc): string {
+    if (!$enc) return '';
+    $key = base64_decode(panel_crypto_key());
+    if (str_starts_with($enc, 'phpenc2:')) {
+        $raw = base64_decode(substr($enc, 8));
+        if (strlen($raw) < 28) return '';
+        $iv = substr($raw, 0, 12);
+        $tag = substr($raw, 12, 16);
+        $ct = substr($raw, 28);
+        $dec = openssl_decrypt($ct, 'aes-256-gcm', $key, OPENSSL_RAW_DATA, $iv, $tag);
+        return $dec !== false ? $dec : '';
+    }
+    if (str_starts_with($enc, 'phpenc:')) {
+        $raw = base64_decode(substr($enc, 7));
+        if (strlen($raw) < 16) return '';
+        $iv = substr($raw, 0, 16);
+        $ct = substr($raw, 16);
+        $dec = openssl_decrypt($ct, 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv);
+        return $dec !== false ? $dec : '';
+    }
+    if (str_starts_with($enc, 'pyfer:')) {
+        return substr($enc, 6);
+    }
+    // raw python Fernet token (no prefix, starts with gAAAA) — decrypt via python bridge fallback
+    if (str_starts_with($enc, 'gAAAA')) {
+        $py = $_ENV['PANEL_PY'] ?? '';
+        if (!$py || !file_exists($py)) { foreach ([BASE_DIR . '/venv/bin/python', '/usr/bin/python3', '/usr/local/bin/python3'] as $c) if (file_exists($c)) { $py = $c; break; } }
+        if ($py && file_exists($py)) {
+            $tok = escapeshellarg($enc);
+            $out = shell_exec("$py " . escapeshellarg(BASE_DIR . '/lib/fernet_decrypt.py') . " $tok 2>/dev/null");
+            if (is_string($out) && trim($out) !== '' && !str_starts_with(trim($out), 'gAAAA')) return trim($out);
+        }
+        return '';
+    }
+    return $enc;
+}
+}
+
+if (!function_exists("panel_encrypt_pw")) {
+function panel_encrypt_pw(string $plain): string {
+    if (!$plain) return '';
+    $key = base64_decode(panel_crypto_key());
+    $iv = random_bytes(12);
+    $tag = '';
+    $ct = openssl_encrypt($plain, 'aes-256-gcm', $key, OPENSSL_RAW_DATA, $iv, $tag);
+    return 'phpenc2:' . base64_encode($iv . $tag . $ct);
+}
+}
+
+if (!function_exists("panel_bridge_call")) {
+require_once __DIR__ . "/panel_http.php";
+function panel_bridge_call(array $panel, string $action, array $args = []): ?array {
+    $res = panel_http_call($panel, $action, $args);
+    if ($res && !empty($res["ok"])) return $res;
+
+    $bridgeScript = BASE_DIR . '/lib/panel_bridge.py';
+    // portable python lookup: env PY → known venvs → system python3
+    $py = $_ENV['PANEL_PY'] ?? getenv('PANEL_PY') ?: '';
+    if (!$py || !file_exists($py)) {
+        foreach (['/root/marzban-bot/venv/bin/python', BASE_DIR . '/venv/bin/python'] as $cand) {
+            if (@file_exists($cand)) { $py = $cand; break; }
+        }
+    }
+    if (!$py || !file_exists($py)) $py = 'python3';
+
+    // مسیر هاست (proc_open disabled): relay روی سرور اصلی (curl_cffi CF bypass)
+    $relayUrl = $_ENV['PANEL_RELAY_URL'] ?? getenv('PANEL_RELAY_URL') ?: '';
+    $relayKey = $_ENV['PANEL_RELAY_KEY'] ?? getenv('PANEL_RELAY_KEY') ?: '';
+    if ($relayUrl !== '' && $relayKey !== '') {
+        $ch2 = curl_init(rtrim($relayUrl, '/') . '/relay');
+        curl_setopt_array($ch2, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_TIMEOUT => 45,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => 0,
+            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+            CURLOPT_POSTFIELDS => json_encode([
+                'key' => $relayKey,
+                'base_url' => $panel['base_url'] ?? '',
+                'username' => $panel['username'] ?? '',
+                'password' => panel_decrypt_pw($panel['password'] ?? ''),
+                'ptype' => $panel['ptype'] ?? 'pasarguard',
+                'action' => $action,
+                'args' => array_merge($args, ['role_id' => $args['role_id'] ?? ($panel['role_id'] ?? 3)]),
+            ], JSON_UNESCAPED_UNICODE),
+        ]);
+        $raw = curl_exec($ch2);
+        $cerr = curl_error($ch2);
+        curl_close($ch2);
+        if ($raw !== false) {
+            $jr = json_decode((string)$raw, true);
+            if (is_array($jr)) return $jr;
+        }
+        bot_log("panel relay error action=$action: $cerr " . substr((string)$raw, 0, 120));
+        // fall through to bridge attempt
+    }
+    if (!function_exists('proc_open')) {
+        bot_log('panel bridge unavailable (proc_open disabled) action=' . $action);
+        return ['ok' => false, 'error' => 'bridge unavailable', 'msg' => 'پل پنل در دسترس نیست'];
+    }
+    $payload = json_encode([
+        'base_url' => $panel['base_url'] ?? '',
+        'username' => $panel['username'] ?? '',
+        'password' => $panel['password'] ?? '',
+        'ptype' => $panel['ptype'] ?? 'marzban',
+        'action' => $action,
+        'args' => $args
+    ], JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE);
+
+    $descriptors = [
+        0 => ['pipe', 'r'],
+        1 => ['pipe', 'w'],
+        2 => ['pipe', 'w']
+    ];
+    $process = proc_open("$py $bridgeScript", $descriptors, $pipes);
+    if (!is_resource($process)) return null;
+
+    fwrite($pipes[0], $payload);
+    fclose($pipes[0]);
+
+    $stdout = stream_get_contents($pipes[1]);
+    fclose($pipes[1]);
+    $stderr = stream_get_contents($pipes[2]);
+    fclose($pipes[2]);
+    proc_close($process);
+
+    if (!trim($stdout)) {
+        bot_log("panel_bridge_call empty stdout for action=$action, stderr=$stderr");
+        return null;
+    }
+    $res = json_decode(trim($stdout), true);
+    if (!$res) {
+        bot_log("panel_bridge_call json decode error: $stdout");
+        return null;
+    }
+    return $res;
+}
+}
+
+if (!function_exists("panel_ping")) {
+function panel_ping(array $panel): array {
+    $res = panel_bridge_call($panel, 'ping', []);
+    if (!$res) return ['ok' => false, 'msg' => 'Bridge error'];
+    return $res;
+}
+}
+/** panel_create_admin — bridge create_admin (main.py 3991: create_admin(uname, pwd, volume_gb, telegram_id)). */
+function panel_create_admin(array $p, string $uname, string $pwd, float $volGb, int $tgId): array {
+    $res = panel_bridge_call($p, 'create_admin', [
+        'username'    => $uname,
+        'password'    => $pwd,
+        'volume_gb'   => $volGb,
+        'telegram_id' => $tgId,
+    ]);
+    if (!is_array($res)) return ['ok' => false, 'error' => 'bridge no response'];
+    return $res;
+}
