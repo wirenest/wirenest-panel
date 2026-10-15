@@ -1,3 +1,418 @@
 <?php
-// Encrypted & Protected by WireNest Shield
-@eval(base64_decode('PD9waHAKLyoqCiAqIGFkbWluL3BhbmVscy5waHAg4oCUIHBhbmVsIG1hbmFnZW1lbnQ6IGxpc3QsIHBpbmcsIGFkZCB3aXphcmQsIGVkaXQsIHJvbGVzCiAqLwoKcmVxdWlyZV9vbmNlIEJBU0VfRElSIC4gJy9jb3JlL2JvdC5waHAnOwpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2NvcmUvbWVudXMucGhwJzsKcmVxdWlyZV9vbmNlIEJBU0VfRElSIC4gJy9saWIvcGFuZWxfYXBpLnBocCc7CgpmdW5jdGlvbiBhZG1pbl9wYW5lbHNfaG9tZShpbnQgJGNoYXRJZCk6IHZvaWQgewogICAgJHBhbmVscyA9IGdldF9zZXR0aW5nKCdwYW5lbHMnLCBbXSkgPzogW107CiAgICAka2IgPSBbJ2lubGluZV9rZXlib2FyZCcgPT4gW11dOwogICAgZm9yZWFjaCAoJHBhbmVscyBhcyAkbmFtZSA9PiAkZCkgewogICAgICAgICRrYlsnaW5saW5lX2tleWJvYXJkJ11bXSA9IFsKICAgICAgICAgICAgWyd0ZXh0JyA9PiAi8J+MkCAkbmFtZSIsICdjYWxsYmFja19kYXRhJyA9PiAicG5sOnZpZXc6IiAuICRuYW1lXSwKICAgICAgICAgICAgWyd0ZXh0JyA9PiAn8J+UjSDYqtiz2KonLCAnY2FsbGJhY2tfZGF0YScgPT4gInBubDpwaW5nOiIgLiAkbmFtZV0sCiAgICAgICAgXTsKICAgIH0KICAgICRrYlsnaW5saW5lX2tleWJvYXJkJ11bXSA9IFtbJ3RleHQnID0+ICfinpUg2KfZgdiy2YjYr9mGINm+2YbZhCcsICdjYWxsYmFja19kYXRhJyA9PiAncG5sOmFkZCddXTsKICAgICRrYlsnaW5saW5lX2tleWJvYXJkJ11bXSA9IFtbJ3RleHQnID0+ICfil4DvuI8g2KjYp9iy2q/YtNiqJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdhZG06YmFjayddXTsKICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn8J+MkCDZvtmG2YTigIzZh9in24wg2YXYqti12YQ6JywgJGtiKTsKfQoKZnVuY3Rpb24gYWRtaW5fcGFuZWxfdmlldyhpbnQgJGNoYXRJZCwgc3RyaW5nICRuYW1lKTogdm9pZCB7CiAgICAkcGFuZWxzID0gZ2V0X3NldHRpbmcoJ3BhbmVscycsIFtdKSA/OiBbXTsKICAgIGlmICghaXNzZXQoJHBhbmVsc1skbmFtZV0pKSB7IHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn2b7ZhtmEINuM2KfZgdiqINmG2LTYry4nKTsgcmV0dXJuOyB9CiAgICAkZCA9ICRwYW5lbHNbJG5hbWVdOwogICAgJHNlbCA9IChzdHJpbmcpZ2V0X3NldHRpbmcoJ3NlbGVjdGVkX3BhbmVsJywgJycpOwogICAgJGFjdGl2ZSA9ICRkWydhY3RpdmUnXSA/PyAoJG5hbWUgPT09ICRzZWwpOwoKICAgIC8vIHBsYW5zIG9mIHRoaXMgcGFuZWwKICAgICRzdCA9IGRiKCktPnByZXBhcmUoJ1NFTEVDVCAqIEZST00gcGFuZWxfcGxhbnMgV0hFUkUgcGFuZWxfbmFtZT0/IE9SREVSIEJZIHZvbHVtZV9nYicpOwogICAgJHN0LT5leGVjdXRlKFskbmFtZV0pOwogICAgJHBsYW5zID0gJHN0LT5mZXRjaEFsbCgpOwoKICAgICRrYiA9IFsnaW5saW5lX2tleWJvYXJkJyA9PiBbXV07CiAgICBmb3JlYWNoICgkcGxhbnMgYXMgJHBsKSB7CiAgICAgICAgJG1hcmsgPSAhZW1wdHkoJHBsWydhY3RpdmUnXSkgPyAnJyA6ICfinYwgJzsKICAgICAgICAka2JbJ2lubGluZV9rZXlib2FyZCddW10gPSBbWwogICAgICAgICAgICAndGV4dCcgPT4gJG1hcmsgLiBzcHJpbnRmKCclZyDar9uM2q8g4oCUICVzINiqJywgKGZsb2F0KSRwbFsndm9sdW1lX2diJ10sIG51bWJlcl9mb3JtYXQoKGludCkkcGxbJ3ByaWNlJ10pKSwKICAgICAgICAgICAgJ2NhbGxiYWNrX2RhdGEnID0+ICJwbDokbmFtZTp7JHBsWydpZCddfSIsCiAgICAgICAgXV07CiAgICB9CiAgICAka2JbJ2lubGluZV9rZXlib2FyZCddW10gPSBbWyd0ZXh0JyA9PiAn4p6VINin2YHYstmI2K/ZhiDZvtmE2YYg2K3YrNmF24wgKycsICdjYWxsYmFja19kYXRhJyA9PiAicGxhZGQ6JG5hbWUiXV07CgogICAgJHhwcmljZSA9IChpbnQpKCRkWydleHRyYV9nYl9wcmljZSddID8/IDApOwogICAgJHhtaW4gPSAoaW50KSgkZFsnZXh0cmFfZ2JfbWluJ10gPz8gMCk7CiAgICAkcm9sZUlkID0gKGludCkoJGRbJ3JvbGVfaWQnXSA/PyAzKTsKICAgICRyb2xlTGJsID0gWzIgPT4gJ/CfkZEg2YXYr9uM2LEg2qnZhCcsIDMgPT4gJ/CfkaQg2KfZvtix2KfYqtmI2LEnLCA1ID0+ICfwn4yQIENETiddWyRyb2xlSWRdID8/ICfwn5GkINin2b7Ysdin2KrZiNixJzsKICAgICR4cExibCA9ICR4cHJpY2UgPyBudW1iZXJfZm9ybWF0KCR4cHJpY2UpIC4gJyDYqicgOiAn4oCUINiq2YbYuNuM2YUg2YbYtNiv2YcnOwogICAgJHhtTGJsID0gJHhtaW4gPyAkeG1pbiAuICcg2q/bjNqvJyA6ICfigJQg2KrZhti424zZhSDZhti02K/Zhyc7CiAgICAkdGVzdE9uID0gIWVtcHR5KCRkWydpc190ZXN0X3BhbmVsJ10pOwoKICAgICRrYlsnaW5saW5lX2tleWJvYXJkJ11bXSA9IFtbJ3RleHQnID0+ICLwn5uhINmG2YLYtCDZhdiv24zYsdin2YY6ICRyb2xlTGJsIiwgJ2NhbGxiYWNrX2RhdGEnID0+ICJwbmxyb2xlcGljazokbmFtZSJdXTsKICAgICRrYlsnaW5saW5lX2tleWJvYXJkJ11bXSA9IFsKICAgICAgICBbJ3RleHQnID0+ICLwn5KwINmC24zZhdiqINit2KzZhTogJHhwTGJsIiwgJ2NhbGxiYWNrX2RhdGEnID0+ICJwbmxlZGl0OmV4dHJhX3ByaWNlOiRuYW1lIl0sCiAgICAgICAgWyd0ZXh0JyA9PiAi4pqW77iPINit2K/Yp9mC2YQg2K3YrNmFOiAkeG1MYmwiLCAnY2FsbGJhY2tfZGF0YScgPT4gInBubGVkaXQ6ZXh0cmFfbWluOiRuYW1lIl0sCiAgICBdOwogICAgJGtiWydpbmxpbmVfa2V5Ym9hcmQnXVtdID0gW1sndGV4dCcgPT4gJ/Cfk4og2KLZhdin2LEg2b7ZhtmEJywgJ2NhbGxiYWNrX2RhdGEnID0+ICJwbmw6c3RhdHM6JG5hbWUiXV07CiAgICAka2JbJ2lubGluZV9rZXlib2FyZCddW10gPSBbWyd0ZXh0JyA9PiAn4pyP77iPINmI24zYsdin24zYtCDZhtin2YUg2b7ZhtmEJywgJ2NhbGxiYWNrX2RhdGEnID0+ICJwbmxlZGl0Om5hbWU6JG5hbWUiXV07CiAgICAka2JbJ2lubGluZV9rZXlib2FyZCddW10gPSBbWyd0ZXh0JyA9PiAn4pyP77iPINmI24zYsdin24zYtCDYotiv2LHYsyDZvtmG2YQnLCAnY2FsbGJhY2tfZGF0YScgPT4gInBubGVkaXQ6dXJsOiRuYW1lIl1dOwogICAgJGtiWydpbmxpbmVfa2V5Ym9hcmQnXVtdID0gWwogICAgICAgIFsndGV4dCcgPT4gJ+Kcj++4jyDZiNuM2LHYp9uM2LQg24zZiNiy2LEg2KfYr9mF24zZhicsICdjYWxsYmFja19kYXRhJyA9PiAicG5sZWRpdDp1c2VyOiRuYW1lIl0sCiAgICAgICAgWyd0ZXh0JyA9PiAn4pyP77iPINmI24zYsdin24zYtCDZvtiz2YjYsdivINin2K/ZhduM2YYnLCAnY2FsbGJhY2tfZGF0YScgPT4gInBubGVkaXQ6cGFzczokbmFtZSJdLAogICAgXTsKICAgICRrYlsnaW5saW5lX2tleWJvYXJkJ11bXSA9IFsKICAgICAgICBbJ3RleHQnID0+ICR0ZXN0T24gPyAn8J+nqiDYs9ix2YjbjNizINiq2LPYqjog4pyFINix2YjYtNmGJyA6ICfwn6eqINiz2LHZiNuM2LMg2KrYs9iqOiDim5TvuI8g2K7Yp9mF2YjYtCcsICdjYWxsYmFja19kYXRhJyA9PiAicG5sOnRlc3R0b2dnbGU6JG5hbWUiXSwKICAgICAgICBbJ3RleHQnID0+ICfimpnvuI8g2K3YrNmFL9mF2K/YqiDYqtiz2KonLCAnY2FsbGJhY2tfZGF0YScgPT4gInBubDp0ZXN0OiRuYW1lIl0sCiAgICBdOwogICAgJGtiWydpbmxpbmVfa2V5Ym9hcmQnXVtdID0gW1sndGV4dCcgPT4gJGFjdGl2ZSA/ICfwn5S0INi624zYsdmB2LnYp9mEINqp2YYnIDogJ/Cfn6Ig2YHYudin2YQg2qnZhicsICdjYWxsYmFja19kYXRhJyA9PiAicG5sOnRvZ2dsZTokbmFtZSJdXTsKICAgICRrYlsnaW5saW5lX2tleWJvYXJkJ11bXSA9IFtbJ3RleHQnID0+ICfwn5eRINit2LDZgSDYp9uM2YYg2b7ZhtmEJywgJ2NhbGxiYWNrX2RhdGEnID0+ICJhc2tkZWw6cG5sOiRuYW1lIl1dOwogICAgJGtiWydpbmxpbmVfa2V5Ym9hcmQnXVtdID0gW1sndGV4dCcgPT4gJ+KXgO+4jyDZvtmG2YTigIzZh9inJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdhZG06cGFuZWxzJ11dOwoKICAgICRzdGF0dXNUeHQgPSAkYWN0aXZlID8gJ/Cfn6Ig2YHYudin2YQgKNmC2KfYqNmEINiu2LHbjNivKScgOiAn8J+UtCDYutuM2LHZgdi52KfZhCc7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwKICAgICAgICAi8J+boCDZhdiv24zYsduM2Kog2b7ZhtmEIMKreyRuYW1lfcK7ICgiIC4gKCRkWydwdHlwZSddID8/ICdwYXNhcmd1YXJkJykgLiAiKQoiCiAgICAgICAgLiAiJHN0YXR1c1R4dAoiCiAgICAgICAgLiAi8J+UlyAiIC4gJGRbJ2Jhc2VfdXJsJ10gLiAiCgoiCiAgICAgICAgLiAi8J+TpiDZvtmE2YbigIzZh9in24wg2K3YrNmF24wg2KfbjNmGINm+2YbZhDoiLAogICAgICAgICRrYik7Cn0KCmZ1bmN0aW9uIGFkbWluX3BhbmVsX3BpbmcoaW50ICRjaGF0SWQsIHN0cmluZyAkbmFtZSk6IHZvaWQgewogICAgJHBhbmVscyA9IGdldF9zZXR0aW5nKCdwYW5lbHMnLCBbXSkgPzogW107CiAgICBpZiAoIWlzc2V0KCRwYW5lbHNbJG5hbWVdKSkgeyBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ9m+2YbZhCDbjNin2YHYqiDZhti02K8uJyk7IHJldHVybjsgfQogICAgJGQgPSAkcGFuZWxzWyRuYW1lXTsKICAgICRkWydwYXNzd29yZCddID0gcGFuZWxfZGVjcnlwdF9wdygkZFsncGFzc3dvcmQnXSA/PyAnJyk7CiAgICB0Z19zZW5kKCRjaGF0SWQsICLwn5SNINiv2LEg2K3Yp9mEINiq2LPYqiAkbmFtZSAuLi4iKTsKICAgICRyID0gcGFuZWxfcGluZygkZCk7CiAgICAvLyDZgdmC2Lcg2YjYtti524zYqiDZgdin2LHYs9uMIOKAlCDZhdiq2YYg2YHZhtuMINin2Ybar9mE24zYs9uMIChhdXRoLW9rINmILi4uKSDZhtmF2KfbjNi0INiv2KfYr9mHINmG2YXbjOKAjNi02YcgKNmC2KfZhtmI2YYg2LHYttinOiDZhdiq2YjZhiDaqdin2LHYqNix24wg2KrZhduM2LIpCiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJHJbJ29rJ10gPyAi8J+foiDZiNi12YTZhyDigJQgJG5hbWUiIDogIvCflLQg2YLYt9i52Ycg4oCUICRuYW1lIik7Cn0KCmZ1bmN0aW9uIGFkbWluX3BhbmVsX2FkZF9zdGFydChpbnQgJGNoYXRJZCk6IHZvaWQgewogICAgLy8g2KrYsdiq24zYqCDYrNiv24zYryAo2YHYsdmF2KfZhiDYsdi22KcpOiDYp9mI2YQg2KfYs9mFINm+2YbZhCAo2YfZhdmI2YbbjCDaqdmHINio2Ycg2qnYp9ix2KjYsSDZhti02YjZhiDYr9in2K/ZhyDZhduM4oCM2LTZhykg4oaSINii2K/YsdizIOKGkiDbjNmI2LLYsSDihpIg2b7Ys9mI2LHYrwogICAgc3Rfc2V0KCRjaGF0SWQsIFsnYXdhaXQnID0+ICdwbmxhZGRfbmFtZSddKTsKICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAi8J+PtyDYp9iz2YUg2b7ZhtmEINix2Ygg2KjZgdix2LPYqiAo2YfZhduM2YYg2KfYs9mFINio2Ycg2qnYp9ix2KjYsSDZhti02YjZhiDYr9in2K/ZhyDZhduM4oCM2LTZh9iMINmF2KvZhNin2Ys6INiz2LHZiNixMSk6Iik7Cn0KCmZ1bmN0aW9uIGFkbWluX3BhbmVsX2RlbGV0ZV9jb25maXJtKGludCAkY2hhdElkLCBzdHJpbmcgJG5hbWUpOiB2b2lkIHsKICAgIHN0X3NldCgkY2hhdElkLCBbJ2F3YWl0JyA9PiAnb2tkZWw6cG5sOicgLiAkbmFtZV0pOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICLimqDvuI8gwqt7JG5hbWV9wrsg2KjYsdin24wg2YfZhduM2LTZhyDYrdiw2YEg2KjYtNmH2J8g2KfbjNmGINi52YXZhNuM2KfYqiDYutuM2LHZgtin2KjZhOKAjNio2KfYstqv2LTYqtmHISIsCiAgICAgICAgWydpbmxpbmVfa2V5Ym9hcmQnID0+IFsKICAgICAgICAgICAgW1sndGV4dCcgPT4gJ/CflKUg2KjZhNmH2Iwg2K3YsNmBINqp2YYnLCAnY2FsbGJhY2tfZGF0YScgPT4gIm9rZGVsOnBubDoiIC4gJG5hbWVdXSwKICAgICAgICAgICAgW1sndGV4dCcgPT4gJ/Cfmqsg2YbZhycsICdjYWxsYmFja19kYXRhJyA9PiAnYWRtOnBhbmVscyddXSwKICAgICAgICBdXSk7Cn0KCmZ1bmN0aW9uIGFkbWluX3BhbmVsX2RlbGV0ZV9hcHBseShpbnQgJGNoYXRJZCwgc3RyaW5nICRuYW1lKTogdm9pZCB7CiAgICBzdF9wb3AoJGNoYXRJZCk7CiAgICAkcGFuZWxzID0gZ2V0X3NldHRpbmcoJ3BhbmVscycsIFtdKSA/OiBbXTsKICAgIHVuc2V0KCRwYW5lbHNbJG5hbWVdKTsKICAgIHNldF9zZXR0aW5nKCdwYW5lbHMnLCAkcGFuZWxzKTsKICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAi8J+XkSDZvtmG2YQgwqt7JG5hbWV9wrsg2K3YsNmBINi02K8uIiwgYWRtaW5fbWVudV9rYigpKTsKfQoKLyoqIFdpemFyZCBzdGVwczogbmFtZSDihpIgdXJsIOKGkiB1c2VyIOKGkiBwYXNzIChlbmNyeXB0ZWQgYXQgd3JpdGUsIFJlemEgYXVkaXQgcnVsZSkuICovCmZ1bmN0aW9uIGFkbWluX3BhbmVsX2FkZF9zdGVwKGludCAkY2hhdElkLCBzdHJpbmcgJGF3YWl0LCBzdHJpbmcgJHRleHQpOiB2b2lkIHsKICAgIHN3aXRjaCAoJGF3YWl0KSB7CiAgICAgICAgY2FzZSAncG5sYWRkX25hbWUnOgogICAgICAgICAgICAkbmFtZSA9IHRyaW0oJHRleHQpOwogICAgICAgICAgICBpZiAoJG5hbWUgPT09ICcnKSB7IHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn4p2MINin2LPZhSDZvtmG2YQg2YbZhduM4oCM2KrZiNmG2Ycg2K7Yp9mE24wg2KjYp9i02YfYjCDYr9mI2KjYp9ix2Ycg2KjZgdix2LPYqjonKTsgcmV0dXJuOyB9CiAgICAgICAgICAgICRwYW5lbHMgPSBnZXRfc2V0dGluZygncGFuZWxzJywgW10pID86IFtdOwogICAgICAgICAgICBpZiAoaXNzZXQoJHBhbmVsc1skbmFtZV0pKSB7IHNlbmRfb3JfZWRpdCgkY2hhdElkLCAi4p2MINm+2YbZhNuMINio2Kcg2KfYs9mFIMKreyRuYW1lfcK7INin2LIg2YLYqNmEINir2KjYqiDYtNiv2YcuINin2LPZhSDYr9uM2q/Zh+KAjNin24wg2KjZgdix2LPYqjoiKTsgcmV0dXJuOyB9CiAgICAgICAgICAgIHN0X3NldCgkY2hhdElkLCBbJ2F3YWl0JyA9PiAncG5sYWRkX3VybCcsICdwbmxfbmFtZScgPT4gJG5hbWVdKTsKICAgICAgICAgICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICLwn5SXINii2K/YsdizINm+2YbZhCDYsdmIINio2YHYsdiz2KogKNmF2KvZhNin2YsgaHR0cHM6Ly9leGFtcGxlLmlyKToiKTsKICAgICAgICAgICAgcmV0dXJuOwogICAgICAgIGNhc2UgJ3BubGFkZF91cmwnOgogICAgICAgICAgICBpZiAoIXByZWdfbWF0Y2goJyNeaHR0cHM/Oi8vIycsICR0ZXh0KSkgeyBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ+KdjCDYotiv2LHYsyDYqNin24zYryDYqNinIGh0dHAocykg2LTYsdmI2Lkg2LTZhzonKTsgcmV0dXJuOyB9CiAgICAgICAgICAgIHN0X3NldCgkY2hhdElkLCBbJ2F3YWl0JyA9PiAncG5sYWRkX3VzZXInLCAncG5sX3VybCcgPT4gcGFuZWxfY2xlYW5fYmFzZV91cmwoJHRleHQpXSk7CiAgICAgICAgICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn8J+RpCDbjNmI2LLYsdmG24zZhSDYp9iv2YXbjNmGINm+2YbZhDonKTsKICAgICAgICAgICAgcmV0dXJuOwogICAgICAgIGNhc2UgJ3BubGFkZF91c2VyJzoKICAgICAgICAgICAgc3Rfc2V0KCRjaGF0SWQsIFsnYXdhaXQnID0+ICdwbmxhZGRfcGFzcycsICdwbmxfdXNlcicgPT4gdHJpbSgkdGV4dCldKTsKICAgICAgICAgICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfwn5SRINm+2LPZiNix2K8g2KfYr9mF24zZhiDZvtmG2YQ6Jyk7CiAgICAgICAgICAgIHJldHVybjsKICAgICAgICBjYXNlICdwbmxhZGRfcGFzcyc6CiAgICAgICAgICAgICRuYW1lID0gKHN0cmluZylzdF9nZXQoJGNoYXRJZCwgJ3BubF9uYW1lJywgJycpOwogICAgICAgICAgICAkdXJsID0gKHN0cmluZylzdF9nZXQoJGNoYXRJZCwgJ3BubF91cmwnLCAnJyk7CiAgICAgICAgICAgICR1c2VyID0gKHN0cmluZylzdF9nZXQoJGNoYXRJZCwgJ3BubF91c2VyJywgJycpOwogICAgICAgICAgICAkcGFzcyA9IHRyaW0oJHRleHQpOwogICAgICAgICAgICBzdF9wb3AoJGNoYXRJZCk7CiAgICAgICAgICAgIC8vIHRlc3QgcGluZyBmaXJzdAogICAgICAgICAgICAkcHJvYmUgPSBbJ2Jhc2VfdXJsJyA9PiAkdXJsLCAndXNlcm5hbWUnID0+ICR1c2VyLCAncGFzc3dvcmQnID0+ICRwYXNzLCAncHR5cGUnID0+ICdwYXNhcmd1YXJkJ107CiAgICAgICAgICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn8J+UjSDYr9ixINit2KfZhCDYqtiz2Kog2KfYqti12KfZhC4uLicpOwogICAgICAgICAgICAkciA9IHBhbmVsX3BpbmcoJHByb2JlKTsKICAgICAgICAgICAgaWYgKGVtcHR5KCRyWydvayddKSkgewogICAgICAgICAgICAgICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICLinYwg2YTYp9qv24zZhiDZhtin2YXZiNmB2YJcbtiv2YjYqNin2LHZhyDYp9iyIMKr4p6VINin2YHYstmI2K/ZhiDZvtmG2YTCuyDYtNix2YjYuSDaqdmGLiIpOwogICAgICAgICAgICAgICAgcmV0dXJuOwogICAgICAgICAgICB9CiAgICAgICAgICAgICRwYW5lbHMgPSBnZXRfc2V0dGluZygncGFuZWxzJywgW10pID86IFtdOwogICAgICAgICAgICAvLyDYp9iz2YUg2KfZhtiq2K7Yp9io24wg2KfYr9mF24zZhiAo2YHYsdmF2KfZhiDYsdi22Kcp2Jsg2Kfar9ixINmI2LPYtyDaqdin2LEg2KfYs9mFINiq2qnYsdin2LHbjCDYtNiv2Iwg2b7Ys9mI2YbYryDYudiv2K/bjCDZhduM4oCM2q/bjNix2YcKICAgICAgICAgICAgJGZpbmFsTmFtZSA9ICRuYW1lICE9PSAnJyA/ICRuYW1lIDogJ9m+2YbZhCAnIC4gKGNvdW50KCRwYW5lbHMpICsgMSk7CiAgICAgICAgICAgICRpID0gMjsKICAgICAgICAgICAgd2hpbGUgKGlzc2V0KCRwYW5lbHNbJGZpbmFsTmFtZV0pKSB7ICRmaW5hbE5hbWUgPSAkbmFtZSAuICcgJyAuICRpOyAkaSsrOyB9CiAgICAgICAgICAgICRwYW5lbHNbJGZpbmFsTmFtZV0gPSBbCiAgICAgICAgICAgICAgICAnYmFzZV91cmwnID0+ICR1cmwsICd1c2VybmFtZScgPT4gJHVzZXIsCiAgICAgICAgICAgICAgICAncGFzc3dvcmQnID0+IHBhbmVsX2VuY3J5cHRfcHcoJHBhc3MpLCAvLyBlbmNyeXB0IGF0IHdyaXRlIChhdWRpdCBydWxlKQogICAgICAgICAgICAgICAgJ3B0eXBlJyA9PiAncGFzYXJndWFyZCcsICdhY3RpdmUnID0+IHRydWUsCiAgICAgICAgICAgIF07CiAgICAgICAgICAgIHNldF9zZXR0aW5nKCdwYW5lbHMnLCAkcGFuZWxzKTsKICAgICAgICAgICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICLinIUg2b7ZhtmEIMKreyRmaW5hbE5hbWV9wrsg2KfYttin2YHZhyDZiCDZiNi12YQg2LTYry4iLCBhZG1pbl9tZW51X2tiKCkpOwogICAgICAgICAgICByZXR1cm47CiAgICB9Cn0KCgovKiog2b7Yp9ix24zYqtuMIG1haW4ucHkgMjMyNC0yMzQwOiB0b2dnbGUg2LPYsdmI24zYsyDYqtiz2Kog2b7ZhtmEICovCmZ1bmN0aW9uIGFkbWluX3BhbmVsX3Rlc3RfdG9nZ2xlKGludCAkY2hhdElkLCBzdHJpbmcgJG5hbWUpOiB2b2lkIHsKICAgICRwYW5lbHMgPSBnZXRfc2V0dGluZygncGFuZWxzJywgW10pID86IFtdOwogICAgaWYgKCFpc3NldCgkcGFuZWxzWyRuYW1lXSkpIHsgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfZvtmG2YQg24zYp9mB2Kog2YbYtNivLicpOyByZXR1cm47IH0KICAgICRwYW5lbHNbJG5hbWVdWydpc190ZXN0X3BhbmVsJ10gPSBlbXB0eSgkcGFuZWxzWyRuYW1lXVsnaXNfdGVzdF9wYW5lbCddKTsKICAgIC8vIFJlemEgVVggZml4OiDYsdmI2LTZhuKAjNqp2LHYr9mGIHRvZ2dsZSDYqNiv2YjZhiDYrdis2YUv2YXYr9iqIOKGkiDYrtmI2K/aqdin2LEg2K/bjNmB2KfZhNiqIDEg2q/bjNqvIC8gMSDYsdmI2LIg2LPYqiDYtNmI2K8gKNmI2q/YsdmG2Ycg2qnYp9ix2KjYsSDCq9mB2LnZhNin2Ysg2LPYsdmI24zYsyDYqtiz2Kog2YHYudin2YQg2YbbjNiz2KrCuyDZhduM4oCM2K/bjNivKQogICAgJG5vdGUgPSAnJzsKICAgIGlmICghZW1wdHkoJHBhbmVsc1skbmFtZV1bJ2lzX3Rlc3RfcGFuZWwnXSkKICAgICAgICAmJiAoZW1wdHkoJHBhbmVsc1skbmFtZV1bJ3Rlc3RfZ2InXSkgfHwgZW1wdHkoJHBhbmVsc1skbmFtZV1bJ3Rlc3RfZGF5cyddKSkpIHsKICAgICAgICAkcGFuZWxzWyRuYW1lXVsndGVzdF9nYiddID0gJHBhbmVsc1skbmFtZV1bJ3Rlc3RfZ2InXSA/OiAxOwogICAgICAgICRwYW5lbHNbJG5hbWVdWyd0ZXN0X2RheXMnXSA9ICRwYW5lbHNbJG5hbWVdWyd0ZXN0X2RheXMnXSA/OiAxOwogICAgICAgICRub3RlID0gJ1xu4pqZ77iPINit2KzZhS/Zhdiv2Kog2LPYqiDZhtio2YjYryDigJQg2K/bjNmB2KfZhNiqIDEg2q/bjNqvIC8gMSDYsdmI2LIg2KfYudmF2KfZhCDYtNivICjYp9iyIMKr4pqZ77iPINit2KzZhS/Zhdiv2Kog2KrYs9iqwrsg2YLYp9io2YQg2KrYutuM24zYsSDYp9iz2KopLic7CiAgICB9CiAgICBzZXRfc2V0dGluZygncGFuZWxzJywgJHBhbmVscyk7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgKCFlbXB0eSgkcGFuZWxzWyRuYW1lXVsnaXNfdGVzdF9wYW5lbCddKSA/ICfwn6eqINiz2LHZiNuM2LMg2KrYs9iqINix2YjYtNmGINi02K8nIDogJ/Cfp6og2LPYsdmI24zYsyDYqtiz2Kog2K7Yp9mF2YjYtCDYtNivJykgLiAkbm90ZSk7CiAgICBhZG1pbl9wYW5lbF92aWV3KCRjaGF0SWQsICRuYW1lKTsKfQoKLyoqINm+2KfYsduM2KrbjCBtYWluLnB5IDIzNDItMjM1Mjog2b7Ysdin2YXZvtiqINit2KzZhS/Zhdiv2Kog2KrYs9iqICjYr9mIINiu2LcpICovCmZ1bmN0aW9uIGFkbWluX3BhbmVsX3Rlc3RfcHJvbXB0KGludCAkY2hhdElkLCBzdHJpbmcgJG5hbWUpOiB2b2lkIHsKICAgIHN0X3NldCgkY2hhdElkLCBbJ2F3YWl0JyA9PiAncG5sdGVzdCcsICdwbmx0ZXN0X25hbWUnID0+ICRuYW1lXSk7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwKICAgICAgICAi8J+WiiDZhdi02K7Ytdin2Kog2LPYsdmI24zYsyDYqtiz2Kog2LHYpyDYqNmB2LHYs9iqICjYr9mIINiu2LcpOlxuXG7Yrdis2YUg2KjZhyDar9uM2q86INmF2KvZhNinIDFcbtmF2K/YqiDYqNmHINix2YjYsjog2YXYq9mE2KcgMVxuXG4o2KfbjNmGINm+2YbZhCDYqNix2KfbjCDYs9ix2YjbjNiz4oCM2YfYp9uMINiq2LPYqiDaqdin2LHYqNix2KfZhiDYp9iz2KrZgdin2K/ZhyDYrtmI2KfZh9ivINi02K8pIiwKICAgICAgICBbJ2lubGluZV9rZXlib2FyZCcgPT4gW1tbJ3RleHQnID0+ICfinYwg2YTYutmIJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdzZXRjYW5jZWwnXV1dXSk7Cn0KCi8qKiBzdGF0ZSBwbmx0ZXN0IOKAlCDYp9i52YXYp9mEINit2KzZhS/Zhdiv2Kog2KrYs9iqICovCmZ1bmN0aW9uIGFkbWluX3BhbmVsX3Rlc3RfYXBwbHkoaW50ICRjaGF0SWQsIHN0cmluZyAkdGV4dCk6IHZvaWQgewogICAgJG5hbWUgPSAoc3RyaW5nKXN0X2dldCgkY2hhdElkLCAncG5sdGVzdF9uYW1lJywgJycpOwogICAgJGxpbmVzID0gYXJyYXlfdmFsdWVzKGFycmF5X2ZpbHRlcihhcnJheV9tYXAoJ3RyaW0nLCBleHBsb2RlKCJcbiIsICR0ZXh0KSkpKTsKICAgIGlmIChjb3VudCgkbGluZXMpIDwgMiB8fCAhaXNfbnVtZXJpYygkbGluZXNbMF0pIHx8ICFpc19udW1lcmljKCRsaW5lc1sxXSkpIHsKICAgICAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgIuKdjCDZgdix2YXYqiDYr9ix2LPYqiDZhtuM2LPYqi4g2K/ZiCDYrti3INio2YHYsdiz2Ko6XG7Yrdis2YUgKNqv24zarylcbtmF2K/YqiAo2LHZiNiyKSDigJQg2YXYq9mE2Kc6XG4xXG4xIik7CiAgICAgICAgcmV0dXJuOwogICAgfQogICAgJHBhbmVscyA9IGdldF9zZXR0aW5nKCdwYW5lbHMnLCBbXSkgPzogW107CiAgICBpZiAoaXNzZXQoJHBhbmVsc1skbmFtZV0pKSB7CiAgICAgICAgJHBhbmVsc1skbmFtZV1bJ3Rlc3RfZ2InXSA9IChmbG9hdCkkbGluZXNbMF07CiAgICAgICAgJHBhbmVsc1skbmFtZV1bJ3Rlc3RfZGF5cyddID0gKGludCkkbGluZXNbMV07CiAgICAgICAgc2V0X3NldHRpbmcoJ3BhbmVscycsICRwYW5lbHMpOwogICAgfQogICAgc3RfcG9wKCRjaGF0SWQpOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICLinIUg2LPYsdmI24zYsyDYqtiz2Kog2KvYqNiqINi02K86IHskbGluZXNbMF19INqv24zaryAvIHskbGluZXNbMV19INix2YjYsiIpOwogICAgYWRtaW5fcGFuZWxfdmlldygkY2hhdElkLCAkbmFtZSk7Cn0KCi8qKiDZvtin2LHbjNiq24wgbWFpbi5weSAxNjkwLTE3MzA6INin2YbYqtiu2KfYqCDZhtmC2LQg2YXYr9uM2LHYp9mGINis2K/bjNivINm+2YbZhCAqLwpmdW5jdGlvbiBhZG1pbl9wYW5lbF9yb2xlcGljayhpbnQgJGNoYXRJZCwgc3RyaW5nICRuYW1lKTogdm9pZCB7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgIvCfm6Eg2YbZgti0INmF2K/bjNix2KfZhiDYs9in2K7YqtmH4oCM2LTYr9mHINiq2YjYs9i3INix2KjYp9iqINiv2LEgwqt7JG5hbWV9wrs6IiwKICAgICAgICBbJ2lubGluZV9rZXlib2FyZCcgPT4gWwogICAgICAgICAgICBbWyd0ZXh0JyA9PiAn8J+RkSDZhdiv24zYsSDaqdmEICjZh9mF2YfigIzahtuM2LIpJywgJ2NhbGxiYWNrX2RhdGEnID0+ICJwbmxyb2xlOjI6JG5hbWUiXV0sCiAgICAgICAgICAgIFtbJ3RleHQnID0+ICfwn5GkINin2b7Ysdin2KrZiNixICjYs9in2K7YqiDYs9ix2YjbjNizKScsICdjYWxsYmFja19kYXRhJyA9PiAicG5scm9sZTozOiRuYW1lIl1dLAogICAgICAgICAgICBbWyd0ZXh0JyA9PiAn8J+MkCBDRE4gKNmB2YLYtyDYs9ix2YjbjNizKScsICdjYWxsYmFja19kYXRhJyA9PiAicG5scm9sZTo1OiRuYW1lIl1dLAogICAgICAgICAgICBbWyd0ZXh0JyA9PiAn4peA77iPINio2KfYstqv2LTYqicsICdjYWxsYmFja19kYXRhJyA9PiAicG5sOnZpZXc6JG5hbWUiXV0sCiAgICAgICAgXV0pOwp9CgpmdW5jdGlvbiBhZG1pbl9wYW5lbF9yb2xlX3NldChpbnQgJGNoYXRJZCwgaW50ICRyaWQsIHN0cmluZyAkbmFtZSk6IHZvaWQgewogICAgJHBhbmVscyA9IGdldF9zZXR0aW5nKCdwYW5lbHMnLCBbXSkgPzogW107CiAgICBpZiAoaXNzZXQoJHBhbmVsc1skbmFtZV0pKSB7CiAgICAgICAgJHBhbmVsc1skbmFtZV1bJ3JvbGVfaWQnXSA9ICRyaWQ7CiAgICAgICAgc2V0X3NldHRpbmcoJ3BhbmVscycsICRwYW5lbHMpOwogICAgfQogICAgJGxibCA9IFsyID0+ICfwn5GRINmF2K/bjNixINqp2YQnLCAzID0+ICfwn5GkINin2b7Ysdin2KrZiNixJywgNSA9PiAn8J+MkCBDRE4nXVskcmlkXSA/PyAn8J+RpCDYp9m+2LHYp9iq2YjYsSc7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgIuKchSDZhtmC2LQg2YXYr9uM2LHYp9mGOiAkbGJsIik7CiAgICBhZG1pbl9wYW5lbF92aWV3KCRjaGF0SWQsICRuYW1lKTsKfQoKLyoqINm+2KfYsduM2KrbjCBtYWluLnB5IDIzOTUtMjQyNTog2KLZhdin2LEg2b7ZhtmEIChzeXN0ZW0gc3RhdHMgKyDZgdix2YjYtCkgKi8KZnVuY3Rpb24gYWRtaW5fcGFuZWxfc3RhdHMoaW50ICRjaGF0SWQsIHN0cmluZyAkbmFtZSk6IHZvaWQgewogICAgJHBhbmVscyA9IGdldF9zZXR0aW5nKCdwYW5lbHMnLCBbXSkgPzogW107CiAgICBpZiAoIWlzc2V0KCRwYW5lbHNbJG5hbWVdKSkgeyBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ9m+2YbZhCDbjNin2YHYqiDZhti02K8uJyk7IHJldHVybjsgfQogICAgJGQgPSAkcGFuZWxzWyRuYW1lXTsKICAgICRkWydwYXNzd29yZCddID0gcGFuZWxfZGVjcnlwdF9wdygkZFsncGFzc3dvcmQnXSA/PyAnJyk7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ/Cfk4og2K/YsSDYrdin2YQg2K/YsduM2KfZgdiqINii2YXYp9ixLi4uJyk7CiAgICAkciA9IHBhbmVsX2JyaWRnZV9jYWxsKCRkLCAnc3RhdHMnLCBbXSk7CiAgICAkbmFkbWlucyA9IDA7CiAgICBpZiAoIWVtcHR5KCRyWydvayddKSkgewogICAgICAgICRuYWRtaW5zID0gKGludCkoJHJbJ2FkbWluc19jb3VudCddID8/IDApOwogICAgICAgICR2ZXIgPSAoc3RyaW5nKSgkclsndmVyc2lvbiddID8/ICfigJQnKTsKICAgICAgICAkcmFtVG90YWwgPSAoc3RyaW5nKSgkclsncmFtX3RvdGFsX2diJ10gPz8gJ+KAlCcpOwogICAgICAgICRyYW1Vc2VkID0gKHN0cmluZykoJHJbJ3JhbV91c2VkX2diJ10gPz8gJ+KAlCcpOwogICAgICAgICR0cmFmZmljID0gKHN0cmluZykoJHJbJ3RyYWZmaWNfdGInXSA/PyAn4oCUJyk7CiAgICAgICAgJHN0YXR1cyA9ICfinIUg2b7ZhtmEINmF2KrYtdmEINin2LPYqic7CiAgICB9IGVsc2UgewogICAgICAgICR2ZXIgPSAkcmFtVG90YWwgPSAkcmFtVXNlZCA9ICR0cmFmZmljID0gJ+KAlCc7CiAgICAgICAgJHN0YXR1cyA9ICfwn5S0INmC2LfYuSc7CiAgICB9CiAgICAkc3QgPSBkYigpLT5xdWVyeSgiU0VMRUNUIENPVU5UKCopIGMsIENPQUxFU0NFKFNVTShwcmljZSksMCkgcyBGUk9NIHB1cmNoYXNlcyBXSEVSRSBzdGF0dXM9J2FjdGl2ZSciKS0+ZmV0Y2goKTsKICAgICR0eHQgPSAi8J+TiiDYotmF2KfYsSDZvtmG2YQg2LTZhdinIPCfkYdcblxuIgogICAgICAgIC4gIvCflqUg2YjYtti524zYqiDYp9iq2LXYp9mEOiAkc3RhdHVzXG4iCiAgICAgICAgLiAi8J+RpSDYqti52K/Yp9ivINmF2K/bjNix2KfZhiDYs9in2K7YqtmHINi02K/ZhyDYr9ixINm+2YbZhDogJG5hZG1pbnNcbiIKICAgICAgICAuICLwn5OhINmG2LPYrtmHINm+2YbZhDogJHZlclxuIgogICAgICAgIC4gIvCfkrsg2LHZhSDaqdmEINiz2LHZiNixOiAkcmFtVG90YWwg2q/bjNqv2KfYqNin24zYqlxuIgogICAgICAgIC4gIvCfkrsg2YXYtdix2YEg2LHZhSDZvtmG2YQ6ICRyYW1Vc2VkINqv24zar9in2KjYp9uM2KpcbiIKICAgICAgICAuICLwn4yQINiq2LHYp9mB24zaqSDaqdmEINmF2LXYsdmBINi02K/ZhzogJHRyYWZmaWMg2KrYsdin2KjYp9uM2KpcbiIKICAgICAgICAuICLwn5uNINiq2LnYr9in2K8g2YHYsdmI2LQg2qnZhCDYr9ixINin24zZhiDZvtmG2YQ6IHskc3RbJ2MnXX1cbiIKICAgICAgICAuICLwn5uNINis2YXYuSDZgdix2YjYtCDaqdmEOiAiIC4gbnVtYmVyX2Zvcm1hdCgoaW50KSRzdFsncyddKSAuICIg2KrZiNmF2KfZhiI7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJHR4dCk7Cn0KCi8qKiDZvtin2LHbjNiq24wgbWFpbi5weSAyMzg1LTIzOTE6INm+2LHYp9mF2b7YqiDYp9mB2LLZiNiv2YYg2b7ZhNmGINit2KzZhduMICjar9uM2q8g4oaSINmC24zZhdiqKSAqLwpmdW5jdGlvbiBhZG1pbl9wbGFuX2FkZF9wcm9tcHQoaW50ICRjaGF0SWQsIHN0cmluZyAkbmFtZSk6IHZvaWQgewogICAgc3Rfc2V0KCRjaGF0SWQsIFsnYXdhaXQnID0+ICdwbGFkZF9nYicsICdwbGFuX3BhbmVsJyA9PiAkbmFtZV0pOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfinpUg2K3YrNmFINm+2YTZhiDYsdinINio2YHYsdiz2KogKNqv24zaryk6INmF2KvZhNinIDEwMCcsCiAgICAgICAgWydpbmxpbmVfa2V5Ym9hcmQnID0+IFtbWyd0ZXh0JyA9PiAn4p2MINmE2LrZiCcsICdjYWxsYmFja19kYXRhJyA9PiAnc2V0Y2FuY2VsJ11dXV0pOwp9CgpmdW5jdGlvbiBhZG1pbl9wbGFuX2diX2FwcGx5KGludCAkY2hhdElkLCBzdHJpbmcgJHRleHQpOiB2b2lkIHsKICAgICRnYiA9IHRyaW0oJHRleHQpOwogICAgaWYgKCFpc19udW1lcmljKCRnYikgfHwgKGZsb2F0KSRnYiA8PSAwKSB7IHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn4p2MINi52K/YryDar9uM2q8g2YbYp9mF2LnYqtio2LEuINiv2YjYqNin2LHZhyDYqNmB2LHYs9iqICjZhdir2YTYpyAxMDApOicpOyByZXR1cm47IH0KICAgIHN0X3NldCgkY2hhdElkLCBbJ2F3YWl0JyA9PiAncGxhZGRfcHJpY2UnLCAncGxhbl9nYicgPT4gKGZsb2F0KSRnYl0pOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfwn5KwINmC24zZhdiqINin24zZhiDZvtmE2YYg2LHYpyDYqNmB2LHYs9iqICjYqtmI2YXYp9mGKTog2YXYq9mE2KcgMzAwMDAwJyk7Cn0KCmZ1bmN0aW9uIGFkbWluX3BsYW5fcHJpY2VfYXBwbHkoaW50ICRjaGF0SWQsIHN0cmluZyAkdGV4dCk6IHZvaWQgewogICAgJHByaWNlID0gc3RyX3JlcGxhY2UoWycsJywgJyAnXSwgJycsIHRyaW0oJHRleHQpKTsKICAgIGlmICghaXNfbnVtZXJpYygkcHJpY2UpIHx8IChpbnQpJHByaWNlIDw9IDApIHsgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfinYwg2YLbjNmF2Kog2YbYp9mF2LnYqtio2LEuINiv2YjYqNin2LHZhyDYqNmB2LHYs9iqICjYqtmI2YXYp9mGKTonKTsgcmV0dXJuOyB9CiAgICAkbmFtZSA9IChzdHJpbmcpc3RfZ2V0KCRjaGF0SWQsICdwbGFuX3BhbmVsJywgJycpOwogICAgJGdiID0gKGZsb2F0KXN0X2dldCgkY2hhdElkLCAncGxhbl9nYicsIDApOwogICAgc3RfcG9wKCRjaGF0SWQpOwogICAgZGIoKS0+cHJlcGFyZSgnSU5TRVJUIElOVE8gcGFuZWxfcGxhbnMocGFuZWxfbmFtZSwgdm9sdW1lX2diLCBwcmljZSwgYWN0aXZlKSBWQUxVRVMoPyw/LD8sMSknKQogICAgICAgIC0+ZXhlY3V0ZShbJG5hbWUsICRnYiwgKGludCkkcHJpY2VdKTsKICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn4pyFINm+2YTZhiDYp9mB2LLZiNiv2Ycg2LTYrzogJyAuIHNwcmludGYoJyVnINqv24zaryDigJQgJXMg2KonLCAkZ2IsIG51bWJlcl9mb3JtYXQoKGludCkkcHJpY2UpKSk7CiAgICBhZG1pbl9wYW5lbF92aWV3KCRjaGF0SWQsICRuYW1lKTsKfQoKLyoqINm+2KfYsduM2KrbjCBtYWluLnB5IDIyNDktMjI2Mjog2YbZhdin24wg2b7ZhNmGICjZiNuM2LHYp9uM2LQg2YLbjNmF2Kov2K3YrNmFL9mB2LnYp9mE4oCM2LPYp9iy24wv2K3YsNmBKSAqLwpmdW5jdGlvbiBhZG1pbl9wbGFuX3ZpZXcoaW50ICRjaGF0SWQsIHN0cmluZyAkbmFtZSwgaW50ICRwaWQpOiB2b2lkIHsKICAgICRzdCA9IGRiKCktPnByZXBhcmUoJ1NFTEVDVCAqIEZST00gcGFuZWxfcGxhbnMgV0hFUkUgaWQ9PycpOwogICAgJHN0LT5leGVjdXRlKFskcGlkXSk7CiAgICAkcGwgPSAkc3QtPmZldGNoKCk7CiAgICBpZiAoISRwbCkgeyBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ9m+2YTZhiDbjNin2YHYqiDZhti02K8uJyk7IHJldHVybjsgfQogICAgJG1hcmsgPSAhZW1wdHkoJHBsWydhY3RpdmUnXSkgPyAn8J+foiDZgdi52KfZhCcgOiAn8J+UtCDYutuM2LHZgdi52KfZhCc7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwKICAgICAgICBzcHJpbnRmKCLwn5OmINm+2YTZhiAlZyDar9uM2q9cbvCfkrAg2YLbjNmF2Ko6ICVzINiq2YjZhdin2YZcbiVzIiwgKGZsb2F0KSRwbFsndm9sdW1lX2diJ10sIG51bWJlcl9mb3JtYXQoKGludCkkcGxbJ3ByaWNlJ10pLCAkbWFyayksCiAgICAgICAgWydpbmxpbmVfa2V5Ym9hcmQnID0+IFsKICAgICAgICAgICAgW1sndGV4dCcgPT4gJ+Kcj++4jyDZiNuM2LHYp9uM2LQg2YLbjNmF2KonLCAnY2FsbGJhY2tfZGF0YScgPT4gInBsZWQ6JHBpZDpwcmljZTokbmFtZSJdLCBbJ3RleHQnID0+ICfinI/vuI8g2YjbjNix2KfbjNi0INit2KzZhScsICdjYWxsYmFja19kYXRhJyA9PiAicGxlZDokcGlkOmdiOiRuYW1lIl1dLAogICAgICAgICAgICBbWyd0ZXh0JyA9PiAhZW1wdHkoJHBsWydhY3RpdmUnXSkgPyAn8J+UtCDYutuM2LHZgdi52KfZhCDaqdmGJyA6ICfwn5+iINmB2LnYp9mEINqp2YYnLCAnY2FsbGJhY2tfZGF0YScgPT4gInBsdG9nOiRwaWQ6JG5hbWUiXV0sCiAgICAgICAgICAgIFtbJ3RleHQnID0+ICfwn5eRINit2LDZgSDZvtmE2YYnLCAnY2FsbGJhY2tfZGF0YScgPT4gIm9rZGVsOnBsYW46JHBpZDokbmFtZSJdXSwKICAgICAgICAgICAgW1sndGV4dCcgPT4gJ+KXgO+4jyDYqNin2LLar9i02KonLCAnY2FsbGJhY2tfZGF0YScgPT4gInBubDp2aWV3OiRuYW1lIl1dLAogICAgICAgIF1dKTsKfQoKZnVuY3Rpb24gYWRtaW5fcGxhbl9lZGl0X3Byb21wdChpbnQgJGNoYXRJZCwgaW50ICRwaWQsIHN0cmluZyAkZmllbGQsIHN0cmluZyAkbmFtZSk6IHZvaWQgewogICAgc3Rfc2V0KCRjaGF0SWQsIFsnYXdhaXQnID0+ICJwbGVkOiRmaWVsZCIsICdwbGVkX3BpZCcgPT4gJHBpZCwgJ3BsZWRfcGFuZWwnID0+ICRuYW1lXSk7CiAgICAkc3QgPSBkYigpLT5wcmVwYXJlKCdTRUxFQ1QgKiBGUk9NIHBhbmVsX3BsYW5zIFdIRVJFIGlkPT8nKTsKICAgICRzdC0+ZXhlY3V0ZShbJHBpZF0pOwogICAgJHBsID0gJHN0LT5mZXRjaCgpOwogICAgJGN1ciA9ICRwbCA/ICgkZmllbGQgPT09ICdwcmljZScgPyBudW1iZXJfZm9ybWF0KChpbnQpJHBsWydwcmljZSddKSAuICcg2KrZiNmF2KfZhicgOiBzcHJpbnRmKCclZyDar9uM2q8nLCAoZmxvYXQpJHBsWyd2b2x1bWVfZ2InXSkpIDogJ+KAlCc7CiAgICAkd2hhdCA9ICRmaWVsZCA9PT0gJ3ByaWNlJyA/ICfZgtuM2YXYqiAo2KrZiNmF2KfZhiknIDogJ9it2KzZhSAo2q/bjNqvKSc7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgIuKcj++4jyDZhdmC2K/Yp9ixINmB2LnZhNuMOiAkY3VyXG5cbtmF2YLYr9in2LEg2KzYr9uM2K8gJHdoYXQg2LHYpyDYqNmB2LHYs9iqOiIsCiAgICAgICAgWydpbmxpbmVfa2V5Ym9hcmQnID0+IFtbWyd0ZXh0JyA9PiAn4p2MINmE2LrZiCcsICdjYWxsYmFja19kYXRhJyA9PiAnc2V0Y2FuY2VsJ11dXV0pOwp9CgpmdW5jdGlvbiBhZG1pbl9wbGFuX2VkaXRfYXBwbHkoaW50ICRjaGF0SWQsIHN0cmluZyAkZmllbGQsIHN0cmluZyAkdGV4dCk6IHZvaWQgewogICAgJHBpZCA9IChpbnQpc3RfZ2V0KCRjaGF0SWQsICdwbGVkX3BpZCcsIDApOwogICAgJG5hbWUgPSAoc3RyaW5nKXN0X2dldCgkY2hhdElkLCAncGxlZF9wYW5lbCcsICcnKTsKICAgICR2ID0gc3RyX3JlcGxhY2UoWycsJywgJyAnXSwgJycsIHRyaW0oJHRleHQpKTsKICAgIGlmICghaXNfbnVtZXJpYygkdikgfHwgKGZsb2F0KSR2IDw9IDApIHsgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfinYwg2YXZgtiv2KfYsSDZhtin2YXYudiq2KjYsS4g2K/ZiNio2KfYsdmHINio2YHYsdiz2Ko6Jyk7IHJldHVybjsgfQogICAgaWYgKCRmaWVsZCA9PT0gJ3ByaWNlJykgZGIoKS0+cHJlcGFyZSgnVVBEQVRFIHBhbmVsX3BsYW5zIFNFVCBwcmljZT0/IFdIRVJFIGlkPT8nKS0+ZXhlY3V0ZShbKGludCkkdiwgJHBpZF0pOwogICAgZWxzZSBkYigpLT5wcmVwYXJlKCdVUERBVEUgcGFuZWxfcGxhbnMgU0VUIHZvbHVtZV9nYj0/IFdIRVJFIGlkPT8nKS0+ZXhlY3V0ZShbKGZsb2F0KSR2LCAkcGlkXSk7CiAgICBzdF9wb3AoJGNoYXRJZCk7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ+KchSDZvtmE2YYg2YjbjNix2KfbjNi0INi02K8uJyk7CiAgICBhZG1pbl9wbGFuX3ZpZXcoJGNoYXRJZCwgJG5hbWUsICRwaWQpOwp9CgpmdW5jdGlvbiBhZG1pbl9wbGFuX3RvZ2dsZShpbnQgJGNoYXRJZCwgaW50ICRwaWQsIHN0cmluZyAkbmFtZSk6IHZvaWQgewogICAgZGIoKS0+cHJlcGFyZSgnVVBEQVRFIHBhbmVsX3BsYW5zIFNFVCBhY3RpdmUgPSAxIC0gYWN0aXZlIFdIRVJFIGlkPT8nKS0+ZXhlY3V0ZShbJHBpZF0pOwogICAgYWRtaW5fcGxhbl92aWV3KCRjaGF0SWQsICRuYW1lLCAkcGlkKTsKfQoKZnVuY3Rpb24gYWRtaW5fcGxhbl9kZWxldGUoaW50ICRjaGF0SWQsIGludCAkcGlkLCBzdHJpbmcgJG5hbWUpOiB2b2lkIHsKICAgIGRiKCktPnByZXBhcmUoJ0RFTEVURSBGUk9NIHBhbmVsX3BsYW5zIFdIRVJFIGlkPT8nKS0+ZXhlY3V0ZShbJHBpZF0pOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfwn5eRINm+2YTZhiDYrdiw2YEg2LTYry4nKTsKICAgIGFkbWluX3BhbmVsX3ZpZXcoJGNoYXRJZCwgJG5hbWUpOwp9CgovKiog2b7Yp9ix24zYqtuMIG1haW4ucHkgcG5sZWRpdDogcHJvbXB0cyBmb3IgcGFuZWwgc2NhbGFyIGZpZWxkcyAqLwpmdW5jdGlvbiBhZG1pbl9wYW5lbF9maWVsZF9lZGl0KGludCAkY2hhdElkLCBzdHJpbmcgJGZpZWxkLCBzdHJpbmcgJG5hbWUpOiB2b2lkIHsKICAgICRwYW5lbHMgPSBnZXRfc2V0dGluZygncGFuZWxzJywgW10pID86IFtdOwogICAgJGN1ciA9ICRwYW5lbHNbJG5hbWVdID8/IFtdOwogICAgJGN1cnZhbCA9IFsndXNlcicgPT4gJGN1clsndXNlcm5hbWUnXSA/PyAnJywgJ3Bhc3MnID0+ICfigKLigKLigKLigKLigKLigKInLAogICAgICAgICAgICAgICAndXJsJyA9PiAkY3VyWydiYXNlX3VybCddID8/ICcnLCAnbmFtZScgPT4gJG5hbWUsCiAgICAgICAgICAgICAgICdleHRyYV9wcmljZScgPT4gJGN1clsnZXh0cmFfZ2JfcHJpY2UnXSA/PyAnJywKICAgICAgICAgICAgICAgJ2V4dHJhX21pbicgPT4gJGN1clsnZXh0cmFfZ2JfbWluJ10gPz8gJyddWyRmaWVsZF0gPz8gJyc7CiAgICBzdF9zZXQoJGNoYXRJZCwgWydhd2FpdCcgPT4gInBubGVkaXRfJGZpZWxkIiwgJ2VkaXRfcG5sJyA9PiAkbmFtZV0pOwogICAgJGhpbnRzID0gWwogICAgICAgICdleHRyYV9wcmljZScgPT4gJ9mC24zZhdiqINit2KzZhSDYp9i22KfZgdmHINio2Ycg2KrZiNmF2KfZhiDYqNix2KfbjCDZh9ixINqv24zaryAo2YXYq9mE2KfZiyA2MDAwKTonLAogICAgICAgICdleHRyYV9taW4nID0+ICfYrdiv2KfZgtmEINqv24zaryDZgtin2KjZhCDYrtix24zYryDYrdis2YUg2KfYttin2YHZhyAo2YXYq9mE2KfZiyAxMCk6JywKICAgICAgICAnbmFtZScgPT4gJ9mG2KfZhSDYrNiv24zYryDZvtmG2YQg2LHYpyDYqNmB2LHYs9iqOicsCiAgICAgICAgJ3VybCcgPT4gJ9ii2K/YsdizINis2K/bjNivINm+2YbZhCDYsdinINio2YHYsdiz2Ko6JywKICAgICAgICAndXNlcicgPT4gJ9uM2YjYstixINin2K/ZhduM2YYg2KzYr9uM2K8g2LHYpyDYqNmB2LHYs9iqOicsCiAgICAgICAgJ3Bhc3MnID0+ICfZvtiz2YjYsdivINin2K/ZhduM2YYg2KzYr9uM2K8g2LHYpyDYqNmB2LHYs9iqOicsCiAgICBdOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsCiAgICAgICAgJ+Kcj++4jyDZhdmC2K/Yp9ixINmB2LnZhNuMOiAnIC4gKCgkY3VydmFsICE9PSAnJyAmJiAkY3VydmFsICE9PSBudWxsKSA/IChzdHJpbmcpJGN1cnZhbCA6ICfigJQg2KrZhti424zZhSDZhti02K/ZhycpIC4gIlxuXG4iIC4gKCRoaW50c1skZmllbGRdID8/ICfZhdmC2K/Yp9ixINis2K/bjNivINix2Kcg2KjZgdix2LPYqjonKSwKICAgICAgICBbJ2lubGluZV9rZXlib2FyZCcgPT4gW1tbJ3RleHQnID0+ICfinYwg2YTYutmIJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdzZXRjYW5jZWwnXV1dXSk7Cn0KCi8qKiBzdGF0ZSBwbmxlZGl0XzxmaWVsZD4g4oCUIGFwcGx5IHNjYWxhciBmaWVsZCBlZGl0cyAobmFtZS91cmwvdXNlci9wYXNzL2V4dHJhX3ByaWNlL2V4dHJhX21pbikgKi8KZnVuY3Rpb24gYWRtaW5fcGFuZWxfZmllbGRfYXBwbHkoaW50ICRjaGF0SWQsIHN0cmluZyAkZmllbGQsIHN0cmluZyAkdGV4dCk6IHZvaWQgewogICAgJG5hbWUgPSAoc3RyaW5nKXN0X2dldCgkY2hhdElkLCAnZWRpdF9wbmwnLCAnJyk7CiAgICAkdGV4dCA9IHRyaW0oJHRleHQpOwogICAgJHBhbmVscyA9IGdldF9zZXR0aW5nKCdwYW5lbHMnLCBbXSkgPzogW107CiAgICBpZiAoIWlzc2V0KCRwYW5lbHNbJG5hbWVdKSkgeyBzdF9wb3AoJGNoYXRJZCk7IHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn2b7ZhtmEINuM2KfZgdiqINmG2LTYry4nKTsgcmV0dXJuOyB9CiAgICBzd2l0Y2ggKCRmaWVsZCkgewogICAgICAgIGNhc2UgJ25hbWUnOgogICAgICAgICAgICAkbmV3TmFtZSA9ICR0ZXh0OwogICAgICAgICAgICBpZiAoJG5ld05hbWUgPT09ICcnIHx8IChpc3NldCgkcGFuZWxzWyRuZXdOYW1lXSkgJiYgJG5ld05hbWUgIT09ICRuYW1lKSkgewogICAgICAgICAgICAgICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfinYwg2YbYp9mFINmG2KfZhdi52KrYqNixINuM2Kcg2Kraqdix2KfYsduMOicpOyByZXR1cm47CiAgICAgICAgICAgIH0KICAgICAgICAgICAgJHBhbmVsc1skbmV3TmFtZV0gPSAkcGFuZWxzWyRuYW1lXTsKICAgICAgICAgICAgdW5zZXQoJHBhbmVsc1skbmFtZV0pOwogICAgICAgICAgICAvLyByZW5hbWUgcGxhbnMKICAgICAgICAgICAgZGIoKS0+cHJlcGFyZSgnVVBEQVRFIHBhbmVsX3BsYW5zIFNFVCBwYW5lbF9uYW1lPT8gV0hFUkUgcGFuZWxfbmFtZT0/JyktPmV4ZWN1dGUoWyRuZXdOYW1lLCAkbmFtZV0pOwogICAgICAgICAgICBzZXRfc2V0dGluZygncGFuZWxzJywgJHBhbmVscyk7CiAgICAgICAgICAgIHN0X3BvcCgkY2hhdElkKTsKICAgICAgICAgICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfinIUg2YbYp9mFINm+2YbZhCDYtNivOiAnIC4gJG5ld05hbWUpOwogICAgICAgICAgICBhZG1pbl9wYW5lbF92aWV3KCRjaGF0SWQsICRuZXdOYW1lKTsKICAgICAgICAgICAgcmV0dXJuOwogICAgICAgIGNhc2UgJ3VybCc6CiAgICAgICAgICAgIGlmICghcHJlZ19tYXRjaCgnI15odHRwcz86Ly8jJywgJHRleHQpKSB7IHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn4p2MINii2K/YsdizINio2KfbjNivINio2KcgaHR0cChzKSDYtNix2YjYuSDYtNmHOicpOyByZXR1cm47IH0KICAgICAgICAgICAgJHBhbmVsc1skbmFtZV1bJ2Jhc2VfdXJsJ10gPSBwYW5lbF9jbGVhbl9iYXNlX3VybCgkdGV4dCk7CiAgICAgICAgICAgIGJyZWFrOwogICAgICAgIGNhc2UgJ3VzZXInOgogICAgICAgICAgICAkcGFuZWxzWyRuYW1lXVsndXNlcm5hbWUnXSA9ICR0ZXh0OwogICAgICAgICAgICBicmVhazsKICAgICAgICBjYXNlICdwYXNzJzoKICAgICAgICAgICAgJHBhbmVsc1skbmFtZV1bJ3Bhc3N3b3JkJ10gPSBwYW5lbF9lbmNyeXB0X3B3KCR0ZXh0KTsKICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgY2FzZSAnZXh0cmFfcHJpY2UnOgogICAgICAgICAgICBpZiAoIWlzX251bWVyaWMoJHRleHQpIHx8IChpbnQpJHRleHQgPCAwKSB7IHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn4p2MINmC24zZhdiqINmG2KfZhdi52KrYqNixICjYudiv2K8g2KrZiNmF2KfZhiDYqNmB2LHYs9iq2IwgMCA9INit2LDZgSk6Jyk7IHJldHVybjsgfQogICAgICAgICAgICAkcGFuZWxzWyRuYW1lXVsnZXh0cmFfZ2JfcHJpY2UnXSA9IChpbnQpJHRleHQ7CiAgICAgICAgICAgIGJyZWFrOwogICAgICAgIGNhc2UgJ2V4dHJhX21pbic6CiAgICAgICAgICAgIGlmICghaXNfbnVtZXJpYygkdGV4dCkgfHwgKGludCkkdGV4dCA8IDEpIHsgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfinYwg2K3Yr9in2YLZhCDZhtin2YXYudiq2KjYsSAo2LnYr9ivINqv24zaryDYqNmB2LHYs9iqKTonKTsgcmV0dXJuOyB9CiAgICAgICAgICAgICRwYW5lbHNbJG5hbWVdWydleHRyYV9nYl9taW4nXSA9IChpbnQpJHRleHQ7CiAgICAgICAgICAgIGJyZWFrOwogICAgICAgIGRlZmF1bHQ6CiAgICAgICAgICAgIHN0X3BvcCgkY2hhdElkKTsKICAgICAgICAgICAgcmV0dXJuOwogICAgfQogICAgc2V0X3NldHRpbmcoJ3BhbmVscycsICRwYW5lbHMpOwogICAgc3RfcG9wKCRjaGF0SWQpOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfinIUg2LDYrtuM2LHZhyDYtNivLicpOwogICAgYWRtaW5fcGFuZWxfdmlldygkY2hhdElkLCAkbmFtZSk7Cn0K'));
+/**
+ * admin/panels.php — panel management: list, ping, add wizard, edit, roles
+ */
+
+require_once BASE_DIR . '/core/bot.php';
+require_once BASE_DIR . '/core/menus.php';
+require_once BASE_DIR . '/lib/panel_api.php';
+
+function admin_panels_home(int $chatId): void {
+    $panels = get_setting('panels', []) ?: [];
+    $kb = ['inline_keyboard' => []];
+    foreach ($panels as $name => $d) {
+        $kb['inline_keyboard'][] = [
+            ['text' => "🌐 $name", 'callback_data' => "pnl:view:" . $name],
+            ['text' => '🔍 تست', 'callback_data' => "pnl:ping:" . $name],
+        ];
+    }
+    $kb['inline_keyboard'][] = [['text' => '➕ افزودن پنل', 'callback_data' => 'pnl:add']];
+    $kb['inline_keyboard'][] = [['text' => '◀️ بازگشت', 'callback_data' => 'adm:back']];
+    send_or_edit($chatId, '🌐 پنل‌های متصل:', $kb);
+}
+
+function admin_panel_view(int $chatId, string $name): void {
+    $panels = get_setting('panels', []) ?: [];
+    if (!isset($panels[$name])) { send_or_edit($chatId, 'پنل یافت نشد.'); return; }
+    $d = $panels[$name];
+    $sel = (string)get_setting('selected_panel', '');
+    $active = $d['active'] ?? ($name === $sel);
+
+    // plans of this panel
+    $st = db()->prepare('SELECT * FROM panel_plans WHERE panel_name=? ORDER BY volume_gb');
+    $st->execute([$name]);
+    $plans = $st->fetchAll();
+
+    $kb = ['inline_keyboard' => []];
+    foreach ($plans as $pl) {
+        $mark = !empty($pl['active']) ? '' : '❌ ';
+        $kb['inline_keyboard'][] = [[
+            'text' => $mark . sprintf('%g گیگ — %s ت', (float)$pl['volume_gb'], number_format((int)$pl['price'])),
+            'callback_data' => "pl:$name:{$pl['id']}",
+        ]];
+    }
+    $kb['inline_keyboard'][] = [['text' => '➕ افزودن پلن حجمی +', 'callback_data' => "pladd:$name"]];
+
+    $xprice = (int)($d['extra_gb_price'] ?? 0);
+    $xmin = (int)($d['extra_gb_min'] ?? 0);
+    $roleId = (int)($d['role_id'] ?? 3);
+    $roleLbl = [2 => '👑 مدیر کل', 3 => '👤 اپراتور', 5 => '🌐 CDN'][$roleId] ?? '👤 اپراتور';
+    $xpLbl = $xprice ? number_format($xprice) . ' ت' : '— تنظیم نشده';
+    $xmLbl = $xmin ? $xmin . ' گیگ' : '— تنظیم نشده';
+    $testOn = !empty($d['is_test_panel']);
+
+    $kb['inline_keyboard'][] = [['text' => "🛡 نقش مدیران: $roleLbl", 'callback_data' => "pnlrolepick:$name"]];
+    $kb['inline_keyboard'][] = [
+        ['text' => "💰 قیمت حجم: $xpLbl", 'callback_data' => "pnledit:extra_price:$name"],
+        ['text' => "⚖️ حداقل حجم: $xmLbl", 'callback_data' => "pnledit:extra_min:$name"],
+    ];
+    $kb['inline_keyboard'][] = [['text' => '📊 آمار پنل', 'callback_data' => "pnl:stats:$name"]];
+    $kb['inline_keyboard'][] = [['text' => '✏️ ویرایش نام پنل', 'callback_data' => "pnledit:name:$name"]];
+    $kb['inline_keyboard'][] = [['text' => '✏️ ویرایش آدرس پنل', 'callback_data' => "pnledit:url:$name"]];
+    $kb['inline_keyboard'][] = [
+        ['text' => '✏️ ویرایش یوزر ادمین', 'callback_data' => "pnledit:user:$name"],
+        ['text' => '✏️ ویرایش پسورد ادمین', 'callback_data' => "pnledit:pass:$name"],
+    ];
+    $kb['inline_keyboard'][] = [
+        ['text' => $testOn ? '🧪 سرویس تست: ✅ روشن' : '🧪 سرویس تست: ⛔️ خاموش', 'callback_data' => "pnl:testtoggle:$name"],
+        ['text' => '⚙️ حجم/مدت تست', 'callback_data' => "pnl:test:$name"],
+    ];
+    $kb['inline_keyboard'][] = [['text' => $active ? '🔴 غیرفعال کن' : '🟢 فعال کن', 'callback_data' => "pnl:toggle:$name"]];
+    $kb['inline_keyboard'][] = [['text' => '🗑 حذف این پنل', 'callback_data' => "askdel:pnl:$name"]];
+    $kb['inline_keyboard'][] = [['text' => '◀️ پنل‌ها', 'callback_data' => 'adm:panels']];
+
+    $statusTxt = $active ? '🟢 فعال (قابل خرید)' : '🔴 غیرفعال';
+    send_or_edit($chatId,
+        "🛠 مدیریت پنل «{$name}» (" . ($d['ptype'] ?? 'pasarguard') . ")
+"
+        . "$statusTxt
+"
+        . "🔗 " . $d['base_url'] . "
+
+"
+        . "📦 پلن‌های حجمی این پنل:",
+        $kb);
+}
+
+function admin_panel_ping(int $chatId, string $name): void {
+    $panels = get_setting('panels', []) ?: [];
+    if (!isset($panels[$name])) { send_or_edit($chatId, 'پنل یافت نشد.'); return; }
+    $d = $panels[$name];
+    $d['password'] = panel_decrypt_pw($d['password'] ?? '');
+    tg_send($chatId, "🔍 در حال تست $name ...");
+    $r = panel_ping($d);
+    // فقط وضعیت فارسی — متن فنی انگلیسی (auth-ok و...) نمایش داده نمی‌شه (قانون رضا: متون کاربری تمیز)
+    send_or_edit($chatId, $r['ok'] ? "🟢 وصله — $name" : "🔴 قطعه — $name");
+}
+
+function admin_panel_add_start(int $chatId): void {
+    // ترتیب جدید (فرمان رضا): اول اسم پنل (همونی که به کاربر نشون داده می‌شه) → آدرس → یوزر → پسورد
+    st_set($chatId, ['await' => 'pnladd_name']);
+    send_or_edit($chatId, "🏷 اسم پنل رو بفرست (همین اسم به کاربر نشون داده می‌شه، مثلاً: سرور1):");
+}
+
+function admin_panel_delete_confirm(int $chatId, string $name): void {
+    st_set($chatId, ['await' => 'okdel:pnl:' . $name]);
+    send_or_edit($chatId, "⚠️ «{$name}» برای همیشه حذف بشه؟ این عملیات غیرقابل‌بازگشته!",
+        ['inline_keyboard' => [
+            [['text' => '🔥 بله، حذف کن', 'callback_data' => "okdel:pnl:" . $name]],
+            [['text' => '🚫 نه', 'callback_data' => 'adm:panels']],
+        ]]);
+}
+
+function admin_panel_delete_apply(int $chatId, string $name): void {
+    st_pop($chatId);
+    $panels = get_setting('panels', []) ?: [];
+    unset($panels[$name]);
+    set_setting('panels', $panels);
+    send_or_edit($chatId, "🗑 پنل «{$name}» حذف شد.", admin_menu_kb());
+}
+
+/** Wizard steps: name → url → user → pass (encrypted at write, Reza audit rule). */
+function admin_panel_add_step(int $chatId, string $await, string $text): void {
+    switch ($await) {
+        case 'pnladd_name':
+            $name = trim($text);
+            if ($name === '') { send_or_edit($chatId, '❌ اسم پنل نمی‌تونه خالی باشه، دوباره بفرست:'); return; }
+            $panels = get_setting('panels', []) ?: [];
+            if (isset($panels[$name])) { send_or_edit($chatId, "❌ پنلی با اسم «{$name}» از قبل ثبت شده. اسم دیگه‌ای بفرست:"); return; }
+            st_set($chatId, ['await' => 'pnladd_url', 'pnl_name' => $name]);
+            send_or_edit($chatId, "🔗 آدرس پنل رو بفرست (مثلاً https://example.ir):");
+            return;
+        case 'pnladd_url':
+            if (!preg_match('#^https?://#', $text)) { send_or_edit($chatId, '❌ آدرس باید با http(s) شروع شه:'); return; }
+            st_set($chatId, ['await' => 'pnladd_user', 'pnl_url' => panel_clean_base_url($text)]);
+            send_or_edit($chatId, '👤 یوزرنیم ادمین پنل:');
+            return;
+        case 'pnladd_user':
+            st_set($chatId, ['await' => 'pnladd_pass', 'pnl_user' => trim($text)]);
+            send_or_edit($chatId, '🔑 پسورد ادمین پنل:');
+            return;
+        case 'pnladd_pass':
+            $name = (string)st_get($chatId, 'pnl_name', '');
+            $url = (string)st_get($chatId, 'pnl_url', '');
+            $user = (string)st_get($chatId, 'pnl_user', '');
+            $pass = trim($text);
+            st_pop($chatId);
+            // test ping first
+            $probe = ['base_url' => $url, 'username' => $user, 'password' => $pass, 'ptype' => 'pasarguard'];
+            send_or_edit($chatId, '🔍 در حال تست اتصال...');
+            $r = panel_ping($probe);
+            if (empty($r['ok'])) {
+                send_or_edit($chatId, "❌ لاگین ناموفق\nدوباره از «➕ افزودن پنل» شروع کن.");
+                return;
+            }
+            $panels = get_setting('panels', []) ?: [];
+            // اسم انتخابی ادمین (فرمان رضا)؛ اگر وسط کار اسم تکراری شد، پسوند عددی می‌گیره
+            $finalName = $name !== '' ? $name : 'پنل ' . (count($panels) + 1);
+            $i = 2;
+            while (isset($panels[$finalName])) { $finalName = $name . ' ' . $i; $i++; }
+            $panels[$finalName] = [
+                'base_url' => $url, 'username' => $user,
+                'password' => panel_encrypt_pw($pass), // encrypt at write (audit rule)
+                'ptype' => 'pasarguard', 'active' => true,
+            ];
+            set_setting('panels', $panels);
+            send_or_edit($chatId, "✅ پنل «{$finalName}» اضافه و وصل شد.", admin_menu_kb());
+            return;
+    }
+}
+
+
+/** پاریتی main.py 2324-2340: toggle سرویس تست پنل */
+function admin_panel_test_toggle(int $chatId, string $name): void {
+    $panels = get_setting('panels', []) ?: [];
+    if (!isset($panels[$name])) { send_or_edit($chatId, 'پنل یافت نشد.'); return; }
+    $panels[$name]['is_test_panel'] = empty($panels[$name]['is_test_panel']);
+    // Reza UX fix: روشن‌کردن toggle بدون حجم/مدت → خودکار دیفالت 1 گیگ / 1 روز ست شود (وگرنه کاربر «فعلاً سرویس تست فعال نیست» می‌دید)
+    $note = '';
+    if (!empty($panels[$name]['is_test_panel'])
+        && (empty($panels[$name]['test_gb']) || empty($panels[$name]['test_days']))) {
+        $panels[$name]['test_gb'] = $panels[$name]['test_gb'] ?: 1;
+        $panels[$name]['test_days'] = $panels[$name]['test_days'] ?: 1;
+        $note = '\n⚙️ حجم/مدت ست نبود — دیفالت 1 گیگ / 1 روز اعمال شد (از «⚙️ حجم/مدت تست» قابل تغییر است).';
+    }
+    set_setting('panels', $panels);
+    send_or_edit($chatId, (!empty($panels[$name]['is_test_panel']) ? '🧪 سرویس تست روشن شد' : '🧪 سرویس تست خاموش شد') . $note);
+    admin_panel_view($chatId, $name);
+}
+
+/** پاریتی main.py 2342-2352: پرامپت حجم/مدت تست (دو خط) */
+function admin_panel_test_prompt(int $chatId, string $name): void {
+    st_set($chatId, ['await' => 'pnltest', 'pnltest_name' => $name]);
+    send_or_edit($chatId,
+        "🖊 مشخصات سرویس تست را بفرست (دو خط):\n\nحجم به گیگ: مثلا 1\nمدت به روز: مثلا 1\n\n(این پنل برای سرویس‌های تست کاربران استفاده خواهد شد)",
+        ['inline_keyboard' => [[['text' => '❌ لغو', 'callback_data' => 'setcancel']]]]);
+}
+
+/** state pnltest — اعمال حجم/مدت تست */
+function admin_panel_test_apply(int $chatId, string $text): void {
+    $name = (string)st_get($chatId, 'pnltest_name', '');
+    $lines = array_values(array_filter(array_map('trim', explode("\n", $text))));
+    if (count($lines) < 2 || !is_numeric($lines[0]) || !is_numeric($lines[1])) {
+        send_or_edit($chatId, "❌ فرمت درست نیست. دو خط بفرست:\nحجم (گیگ)\nمدت (روز) — مثلا:\n1\n1");
+        return;
+    }
+    $panels = get_setting('panels', []) ?: [];
+    if (isset($panels[$name])) {
+        $panels[$name]['test_gb'] = (float)$lines[0];
+        $panels[$name]['test_days'] = (int)$lines[1];
+        set_setting('panels', $panels);
+    }
+    st_pop($chatId);
+    send_or_edit($chatId, "✅ سرویس تست ثبت شد: {$lines[0]} گیگ / {$lines[1]} روز");
+    admin_panel_view($chatId, $name);
+}
+
+/** پاریتی main.py 1690-1730: انتخاب نقش مدیران جدید پنل */
+function admin_panel_rolepick(int $chatId, string $name): void {
+    send_or_edit($chatId, "🛡 نقش مدیران ساخته‌شده توسط ربات در «{$name}»:",
+        ['inline_keyboard' => [
+            [['text' => '👑 مدیر کل (همه‌چیز)', 'callback_data' => "pnlrole:2:$name"]],
+            [['text' => '👤 اپراتور (ساخت سرویس)', 'callback_data' => "pnlrole:3:$name"]],
+            [['text' => '🌐 CDN (فقط سرویس)', 'callback_data' => "pnlrole:5:$name"]],
+            [['text' => '◀️ بازگشت', 'callback_data' => "pnl:view:$name"]],
+        ]]);
+}
+
+function admin_panel_role_set(int $chatId, int $rid, string $name): void {
+    $panels = get_setting('panels', []) ?: [];
+    if (isset($panels[$name])) {
+        $panels[$name]['role_id'] = $rid;
+        set_setting('panels', $panels);
+    }
+    $lbl = [2 => '👑 مدیر کل', 3 => '👤 اپراتور', 5 => '🌐 CDN'][$rid] ?? '👤 اپراتور';
+    send_or_edit($chatId, "✅ نقش مدیران: $lbl");
+    admin_panel_view($chatId, $name);
+}
+
+/** پاریتی main.py 2395-2425: آمار پنل (system stats + فروش) */
+function admin_panel_stats(int $chatId, string $name): void {
+    $panels = get_setting('panels', []) ?: [];
+    if (!isset($panels[$name])) { send_or_edit($chatId, 'پنل یافت نشد.'); return; }
+    $d = $panels[$name];
+    $d['password'] = panel_decrypt_pw($d['password'] ?? '');
+    send_or_edit($chatId, '📊 در حال دریافت آمار...');
+    $r = panel_bridge_call($d, 'stats', []);
+    $nadmins = 0;
+    if (!empty($r['ok'])) {
+        $nadmins = (int)($r['admins_count'] ?? 0);
+        $ver = (string)($r['version'] ?? '—');
+        $ramTotal = (string)($r['ram_total_gb'] ?? '—');
+        $ramUsed = (string)($r['ram_used_gb'] ?? '—');
+        $traffic = (string)($r['traffic_tb'] ?? '—');
+        $status = '✅ پنل متصل است';
+    } else {
+        $ver = $ramTotal = $ramUsed = $traffic = '—';
+        $status = '🔴 قطع';
+    }
+    $st = db()->query("SELECT COUNT(*) c, COALESCE(SUM(price),0) s FROM purchases WHERE status='active'")->fetch();
+    $txt = "📊 آمار پنل شما 👇\n\n"
+        . "🖥 وضعیت اتصال: $status\n"
+        . "👥 تعداد مدیران ساخته شده در پنل: $nadmins\n"
+        . "📡 نسخه پنل: $ver\n"
+        . "💻 رم کل سرور: $ramTotal گیگابایت\n"
+        . "💻 مصرف رم پنل: $ramUsed گیگابایت\n"
+        . "🌐 ترافیک کل مصرف شده: $traffic ترابایت\n"
+        . "🛍 تعداد فروش کل در این پنل: {$st['c']}\n"
+        . "🛍 جمع فروش کل: " . number_format((int)$st['s']) . " تومان";
+    send_or_edit($chatId, $txt);
+}
+
+/** پاریتی main.py 2385-2391: پرامپت افزودن پلن حجمی (گیگ → قیمت) */
+function admin_plan_add_prompt(int $chatId, string $name): void {
+    st_set($chatId, ['await' => 'pladd_gb', 'plan_panel' => $name]);
+    send_or_edit($chatId, '➕ حجم پلن را بفرست (گیگ): مثلا 100',
+        ['inline_keyboard' => [[['text' => '❌ لغو', 'callback_data' => 'setcancel']]]]);
+}
+
+function admin_plan_gb_apply(int $chatId, string $text): void {
+    $gb = trim($text);
+    if (!is_numeric($gb) || (float)$gb <= 0) { send_or_edit($chatId, '❌ عدد گیگ نامعتبر. دوباره بفرست (مثلا 100):'); return; }
+    st_set($chatId, ['await' => 'pladd_price', 'plan_gb' => (float)$gb]);
+    send_or_edit($chatId, '💰 قیمت این پلن را بفرست (تومان): مثلا 300000');
+}
+
+function admin_plan_price_apply(int $chatId, string $text): void {
+    $price = str_replace([',', ' '], '', trim($text));
+    if (!is_numeric($price) || (int)$price <= 0) { send_or_edit($chatId, '❌ قیمت نامعتبر. دوباره بفرست (تومان):'); return; }
+    $name = (string)st_get($chatId, 'plan_panel', '');
+    $gb = (float)st_get($chatId, 'plan_gb', 0);
+    st_pop($chatId);
+    db()->prepare('INSERT INTO panel_plans(panel_name, volume_gb, price, active) VALUES(?,?,?,1)')
+        ->execute([$name, $gb, (int)$price]);
+    send_or_edit($chatId, '✅ پلن افزوده شد: ' . sprintf('%g گیگ — %s ت', $gb, number_format((int)$price)));
+    admin_panel_view($chatId, $name);
+}
+
+/** پاریتی main.py 2249-2262: نمای پلن (ویرایش قیمت/حجم/فعال‌سازی/حذف) */
+function admin_plan_view(int $chatId, string $name, int $pid): void {
+    $st = db()->prepare('SELECT * FROM panel_plans WHERE id=?');
+    $st->execute([$pid]);
+    $pl = $st->fetch();
+    if (!$pl) { send_or_edit($chatId, 'پلن یافت نشد.'); return; }
+    $mark = !empty($pl['active']) ? '🟢 فعال' : '🔴 غیرفعال';
+    send_or_edit($chatId,
+        sprintf("📦 پلن %g گیگ\n💰 قیمت: %s تومان\n%s", (float)$pl['volume_gb'], number_format((int)$pl['price']), $mark),
+        ['inline_keyboard' => [
+            [['text' => '✏️ ویرایش قیمت', 'callback_data' => "pled:$pid:price:$name"], ['text' => '✏️ ویرایش حجم', 'callback_data' => "pled:$pid:gb:$name"]],
+            [['text' => !empty($pl['active']) ? '🔴 غیرفعال کن' : '🟢 فعال کن', 'callback_data' => "pltog:$pid:$name"]],
+            [['text' => '🗑 حذف پلن', 'callback_data' => "okdel:plan:$pid:$name"]],
+            [['text' => '◀️ بازگشت', 'callback_data' => "pnl:view:$name"]],
+        ]]);
+}
+
+function admin_plan_edit_prompt(int $chatId, int $pid, string $field, string $name): void {
+    st_set($chatId, ['await' => "pled:$field", 'pled_pid' => $pid, 'pled_panel' => $name]);
+    $st = db()->prepare('SELECT * FROM panel_plans WHERE id=?');
+    $st->execute([$pid]);
+    $pl = $st->fetch();
+    $cur = $pl ? ($field === 'price' ? number_format((int)$pl['price']) . ' تومان' : sprintf('%g گیگ', (float)$pl['volume_gb'])) : '—';
+    $what = $field === 'price' ? 'قیمت (تومان)' : 'حجم (گیگ)';
+    send_or_edit($chatId, "✏️ مقدار فعلی: $cur\n\nمقدار جدید $what را بفرست:",
+        ['inline_keyboard' => [[['text' => '❌ لغو', 'callback_data' => 'setcancel']]]]);
+}
+
+function admin_plan_edit_apply(int $chatId, string $field, string $text): void {
+    $pid = (int)st_get($chatId, 'pled_pid', 0);
+    $name = (string)st_get($chatId, 'pled_panel', '');
+    $v = str_replace([',', ' '], '', trim($text));
+    if (!is_numeric($v) || (float)$v <= 0) { send_or_edit($chatId, '❌ مقدار نامعتبر. دوباره بفرست:'); return; }
+    if ($field === 'price') db()->prepare('UPDATE panel_plans SET price=? WHERE id=?')->execute([(int)$v, $pid]);
+    else db()->prepare('UPDATE panel_plans SET volume_gb=? WHERE id=?')->execute([(float)$v, $pid]);
+    st_pop($chatId);
+    send_or_edit($chatId, '✅ پلن ویرایش شد.');
+    admin_plan_view($chatId, $name, $pid);
+}
+
+function admin_plan_toggle(int $chatId, int $pid, string $name): void {
+    db()->prepare('UPDATE panel_plans SET active = 1 - active WHERE id=?')->execute([$pid]);
+    admin_plan_view($chatId, $name, $pid);
+}
+
+function admin_plan_delete(int $chatId, int $pid, string $name): void {
+    db()->prepare('DELETE FROM panel_plans WHERE id=?')->execute([$pid]);
+    send_or_edit($chatId, '🗑 پلن حذف شد.');
+    admin_panel_view($chatId, $name);
+}
+
+/** پاریتی main.py pnledit: prompts for panel scalar fields */
+function admin_panel_field_edit(int $chatId, string $field, string $name): void {
+    $panels = get_setting('panels', []) ?: [];
+    $cur = $panels[$name] ?? [];
+    $curval = ['user' => $cur['username'] ?? '', 'pass' => '••••••',
+               'url' => $cur['base_url'] ?? '', 'name' => $name,
+               'extra_price' => $cur['extra_gb_price'] ?? '',
+               'extra_min' => $cur['extra_gb_min'] ?? ''][$field] ?? '';
+    st_set($chatId, ['await' => "pnledit_$field", 'edit_pnl' => $name]);
+    $hints = [
+        'extra_price' => 'قیمت حجم اضافه به تومان برای هر گیگ (مثلاً 6000):',
+        'extra_min' => 'حداقل گیگ قابل خرید حجم اضافه (مثلاً 10):',
+        'name' => 'نام جدید پنل را بفرست:',
+        'url' => 'آدرس جدید پنل را بفرست:',
+        'user' => 'یوزر ادمین جدید را بفرست:',
+        'pass' => 'پسورد ادمین جدید را بفرست:',
+    ];
+    send_or_edit($chatId,
+        '✏️ مقدار فعلی: ' . (($curval !== '' && $curval !== null) ? (string)$curval : '— تنظیم نشده') . "\n\n" . ($hints[$field] ?? 'مقدار جدید را بفرست:'),
+        ['inline_keyboard' => [[['text' => '❌ لغو', 'callback_data' => 'setcancel']]]]);
+}
+
+/** state pnledit_<field> — apply scalar field edits (name/url/user/pass/extra_price/extra_min) */
+function admin_panel_field_apply(int $chatId, string $field, string $text): void {
+    $name = (string)st_get($chatId, 'edit_pnl', '');
+    $text = trim($text);
+    $panels = get_setting('panels', []) ?: [];
+    if (!isset($panels[$name])) { st_pop($chatId); send_or_edit($chatId, 'پنل یافت نشد.'); return; }
+    switch ($field) {
+        case 'name':
+            $newName = $text;
+            if ($newName === '' || (isset($panels[$newName]) && $newName !== $name)) {
+                send_or_edit($chatId, '❌ نام نامعتبر یا تکراری:'); return;
+            }
+            $panels[$newName] = $panels[$name];
+            unset($panels[$name]);
+            // rename plans
+            db()->prepare('UPDATE panel_plans SET panel_name=? WHERE panel_name=?')->execute([$newName, $name]);
+            set_setting('panels', $panels);
+            st_pop($chatId);
+            send_or_edit($chatId, '✅ نام پنل شد: ' . $newName);
+            admin_panel_view($chatId, $newName);
+            return;
+        case 'url':
+            if (!preg_match('#^https?://#', $text)) { send_or_edit($chatId, '❌ آدرس باید با http(s) شروع شه:'); return; }
+            $panels[$name]['base_url'] = panel_clean_base_url($text);
+            break;
+        case 'user':
+            $panels[$name]['username'] = $text;
+            break;
+        case 'pass':
+            $panels[$name]['password'] = panel_encrypt_pw($text);
+            break;
+        case 'extra_price':
+            if (!is_numeric($text) || (int)$text < 0) { send_or_edit($chatId, '❌ قیمت نامعتبر (عدد تومان بفرست، 0 = حذف):'); return; }
+            $panels[$name]['extra_gb_price'] = (int)$text;
+            break;
+        case 'extra_min':
+            if (!is_numeric($text) || (int)$text < 1) { send_or_edit($chatId, '❌ حداقل نامعتبر (عدد گیگ بفرست):'); return; }
+            $panels[$name]['extra_gb_min'] = (int)$text;
+            break;
+        default:
+            st_pop($chatId);
+            return;
+    }
+    set_setting('panels', $panels);
+    st_pop($chatId);
+    send_or_edit($chatId, '✅ ذخیره شد.');
+    admin_panel_view($chatId, $name);
+}
