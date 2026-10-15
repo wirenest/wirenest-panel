@@ -1,3 +1,102 @@
 <?php
-// Encrypted & Protected by WireNest Shield
-@eval(base64_decode('PD9waHAKLyoqCiAqIGFkbWluL21pc2MucGhwIOKAlCBzdGF0cywgdGlja2V0cywgZGlzY291bnRzLCBndWlkZSB0b3BpY3MsIGZhcQogKi8KCnJlcXVpcmVfb25jZSBCQVNFX0RJUiAuICcvY29yZS9ib3QucGhwJzsKcmVxdWlyZV9vbmNlIEJBU0VfRElSIC4gJy9jb3JlL21lbnVzLnBocCc7CgpmdW5jdGlvbiBhZG1pbl90aWNrZXRzKGludCAkY2hhdElkKTogdm9pZCB7CiAgICAvLyDaqdm+24wgbWFpbi5weSAyNzkyLTI4MDI6INmE24zYs9iqINiq24zaqdiq4oCM2YfYp9uMINio2KfYsiArINiv2qnZhdmHINio2LPYqtmGCiAgICAkcm93cyA9IGRiKCktPnF1ZXJ5KCJTRUxFQ1QgKiBGUk9NIHRpY2tldHMgV0hFUkUgc3RhdHVzPSdvcGVuJyBPUkRFUiBCWSBpZCBERVNDIExJTUlUIDEwIiktPmZldGNoQWxsKCk7CiAgICAka2IgPSBbJ2lubGluZV9rZXlib2FyZCcgPT4gW11dOwogICAgZm9yZWFjaCAoJHJvd3MgYXMgJHQpIHsKICAgICAgICAkcHJldmlldyA9IG1iX3N1YnN0cigoc3RyaW5nKSR0WydtZXNzYWdlJ10sIDAsIDI4KTsKICAgICAgICAka2JbJ2lubGluZV9rZXlib2FyZCddW10gPSBbWyd0ZXh0JyA9PiAiI3skdFsnaWQnXX0g4oCUIHskcHJldmlld33igKYiLCAnY2FsbGJhY2tfZGF0YScgPT4gInVtOnskdFsndGdfaWQnXX0iXV07CiAgICAgICAgJGtiWydpbmxpbmVfa2V5Ym9hcmQnXVtdID0gW1sndGV4dCcgPT4gIuKchSDYqNiz2KrZhiDYqtuM2qnYqiAjeyR0WydpZCddfSIsICdjYWxsYmFja19kYXRhJyA9PiAidGtjbG9zZTp7JHRbJ2lkJ119Il1dOwogICAgfQogICAgJGtiWydpbmxpbmVfa2V5Ym9hcmQnXVtdID0gW1sndGV4dCcgPT4gJ+KXgO+4jyDYqNin2LLar9i02KonLCAnY2FsbGJhY2tfZGF0YScgPT4gJ2FkbTp1c2VycyddXTsKICAgICR0eHQgPSAkcm93cwogICAgICAgID8gIvCfjqsgPGI+2KrbjNqp2KrigIzZh9in24wg2KjYp9iyOjwvYj4gIiAuIGNvdW50KCRyb3dzKSAuICJcbtix2YjbjCDYqtuM2qnYqiDYqNiy2YYg2KrYpyDZvtix2YjZgdin24zZhCDaqdin2LHYqNixINio2KfYsiDYtNmI2K86IgogICAgICAgIDogJ/CfjqsgPGI+2KrbjNqp2KrigIzZh9in24wg2KjYp9iyOjwvYj4g2YfbjNqGJzsKICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAkdHh0LCAka2IpOwp9CgpmdW5jdGlvbiBhZG1pbl90aWNrZXRfY2xvc2UoaW50ICRjaGF0SWQsIGludCAkdGlkKTogdm9pZCB7CiAgICAvLyDaqdm+24wgbWFpbi5weSAyODA1LTI4MTA6INio2LPYqtmGICsg2YbYqtuM2KzZhwogICAgJHN0ID0gZGIoKS0+cHJlcGFyZSgnU0VMRUNUICogRlJPTSB0aWNrZXRzIFdIRVJFIGlkPT8nKTsKICAgICRzdC0+ZXhlY3V0ZShbJHRpZF0pOwogICAgJHQgPSAkc3QtPmZldGNoKCk7CiAgICBpZiAoJHQpIHsKICAgICAgICBkYigpLT5wcmVwYXJlKCJVUERBVEUgdGlja2V0cyBTRVQgc3RhdHVzPSdjbG9zZWQnIFdIRVJFIGlkPT8iKS0+ZXhlY3V0ZShbJHRpZF0pOwogICAgICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn2KrbjNqp2Kog2KjYs9iq2Ycg2LTYryDinIUnKTsKICAgIH0KfQoKCmZ1bmN0aW9uIGFkbWluX2d1aWRlX2hvbWUoaW50ICRjaGF0SWQpOiB2b2lkIHsKICAgIC8vINm+2KfYsduM2KrbjCBtYWluLnB5IDI1MjEtMjUyNzog2YXYr9uM2LHbjNiqINix2KfZh9mG2YXYpyDYsdmI24wgZ3VpZGVfdG9waWNzCiAgICAkdG9waWNzID0gZGIoKS0+cXVlcnkoJ1NFTEVDVCAqIEZST00gZ3VpZGVfdG9waWNzIE9SREVSIEJZIGlkJyktPmZldGNoQWxsKCk7CiAgICAka2IgPSBbJ2lubGluZV9rZXlib2FyZCcgPT4gW11dOwogICAgZm9yZWFjaCAoJHRvcGljcyBhcyAkdCkgewogICAgICAgICRrYlsnaW5saW5lX2tleWJvYXJkJ11bXSA9IFsKICAgICAgICAgICAgWyd0ZXh0JyA9PiAi4pyP77iPIHskdFsndGl0bGUnXX0iLCAnY2FsbGJhY2tfZGF0YScgPT4gImhlbHBlZGl0OnskdFsnaWQnXX0iXSwKICAgICAgICAgICAgWyd0ZXh0JyA9PiAi8J+XkSB7JHRbJ3RpdGxlJ119IiwgJ2NhbGxiYWNrX2RhdGEnID0+ICJoZWxwZGVsOnskdFsnaWQnXX0iXSwKICAgICAgICBdOwogICAgfQogICAgJGtiWydpbmxpbmVfa2V5Ym9hcmQnXVtdID0gW1sndGV4dCcgPT4gJ+KelSDYp9mB2LLZiNiv2YYg2LHYp9mH2YbZhdinJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdoZWxwYWRkJ11dOwogICAgJGtiWydpbmxpbmVfa2V5Ym9hcmQnXVtdID0gW1sndGV4dCcgPT4gJ+KXgO+4jyDYqNin2LLar9i02KonLCAnY2FsbGJhY2tfZGF0YScgPT4gJ2FkbTpiYWNrJ11dOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICLwn5OaINmF2K/bjNix24zYqiDYsdin2YfZhtmF2Kc6XG7inI/vuI8gPSDZiNuM2LHYp9uM2LQg2YXYqtmGIHwg8J+XkSA9INit2LDZgSIsICRrYik7Cn0KCgovKiogaGVscGFkZCDigJQg2KfZgdiy2YjYr9mGINii2YXZiNiy2LQgKNqp2b7bjCBtYWluLnB5IDE5MDYtMTkxMCkuICovCmZ1bmN0aW9uIGFkbWluX2hlbHBfYWRkKGludCAkY2hhdElkKTogdm9pZCB7CiAgICBzdF9zZXQoJGNoYXRJZCwgWydhd2FpdCcgPT4gJ2hlbHBhZGRfdGl0bGUnXSk7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ/Cfk5og2LnZhtmI2KfZhiDYotmF2YjYsti0INix2Kcg2KjZgdix2LPYqjonKTsKfQoKLyoqIGhlbHBlZGl0OjxpZD4g4oCUINmI24zYsdin24zYtCDZhdiq2YYg2KLZhdmI2LLYtCAo2qnZvtuMIG1haW4ucHkgMTg3Ny0xODkyKS4gKi8KZnVuY3Rpb24gYWRtaW5faGVscF9lZGl0KGludCAkY2hhdElkLCBpbnQgJHRpZCk6IHZvaWQgewogICAgJHN0ID0gZGIoKS0+cHJlcGFyZSgnU0VMRUNUICogRlJPTSBndWlkZV90b3BpY3MgV0hFUkUgaWQ9PycpOwogICAgJHN0LT5leGVjdXRlKFskdGlkXSk7CiAgICAkdCA9ICRzdC0+ZmV0Y2goKTsKICAgIGlmICghJHQpIHsgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfYotmF2YjYsti0INuM2KfZgdiqINmG2LTYrycpOyByZXR1cm47IH0KICAgIHN0X3NldCgkY2hhdElkLCBbJ2F3YWl0JyA9PiAnaGVscGVkaXRfYm9keTonIC4gJHRpZF0pOwogICAgJGN1ciA9IChzdHJpbmcpJHRbJ2NvbnRlbnQnXTsKICAgIGlmIChtYl9zdHJsZW4oJGN1cikgPiAyNTAwKSB7ICRjdXIgPSBtYl9zdWJzdHIoJGN1ciwgMCwgMjUwMCk7IH0KICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLAogICAgICAgICLinI/vuI8g2YjbjNix2KfbjNi0INii2YXZiNiy2LQgwqt7JHRbJ3RpdGxlJ119wrtcblxu8J+ThCDZhdiq2YYg2YHYudmE24w6XG57JGN1cn1cblxu4pyN77iPINmF2KrZhiDYrNiv24zYryDYsdinINio2YHYsdiz2Ko6IiwKICAgICAgICBbJ2lubGluZV9rZXlib2FyZCcgPT4gW1tbJ3RleHQnID0+ICfinYwg2YTYutmIJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdzZXRjYW5jZWwnXV1dXSk7Cn0KCi8qKiBoZWxwZGVsOjxpZD4g4oCUINit2LDZgSDYotmF2YjYsti0ICjaqdm+24wgbWFpbi5weSAxOTEyLTE5MjcpLiAqLwpmdW5jdGlvbiBhZG1pbl9oZWxwX2RlbGV0ZShpbnQgJGNoYXRJZCwgaW50ICR0aWQpOiB2b2lkIHsKICAgIGRiKCktPnByZXBhcmUoJ0RFTEVURSBGUk9NIGd1aWRlX3RvcGljcyBXSEVSRSBpZD0/JyktPmV4ZWN1dGUoWyR0aWRdKTsKICAgIGFkbWluX2d1aWRlX2hvbWUoJGNoYXRJZCk7Cn0KCi8qKiBoZWxwYWRkX3RpdGxlIHN0YXRlICjaqdm+24wgbWFpbi5weSAzODExLTM4MTMpLiAqLwpmdW5jdGlvbiBhZG1pbl9oZWxwX3RpdGxlX2FwcGx5KGludCAkY2hhdElkLCBzdHJpbmcgJHRleHQpOiB2b2lkIHsKICAgIHN0X3NldCgkY2hhdElkLCBbJ2F3YWl0JyA9PiAnaGVscGFkZF9ib2R5JywgJ2h0aXRsZScgPT4gdHJpbSgkdGV4dCldKTsKICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn8J+TmiDYqtmI2LbbjNit2KfYqiDYotmF2YjYsti0INix2Kcg2KjZgdix2LPYqiAo2YXYqtmGL9mE24zZhtqpL9mB24zZhNmFKTonKTsKfQoKLyoqIGhlbHBhZGRfYm9keSBzdGF0ZSAo2qnZvtuMIG1haW4ucHkgMzgxNS0zODI1KS4gKi8KZnVuY3Rpb24gYWRtaW5faGVscF9ib2R5X2FwcGx5KGludCAkY2hhdElkLCBzdHJpbmcgJHRleHQpOiB2b2lkIHsKICAgICR0aXRsZSA9IChzdHJpbmcpc3RfZ2V0KCRjaGF0SWQsICdodGl0bGUnLCAn2KLZhdmI2LLYtCcpOwogICAgc3RfcG9wKCRjaGF0SWQpOwogICAgZGIoKS0+cHJlcGFyZSgnSU5TRVJUIElOVE8gZ3VpZGVfdG9waWNzKHRpdGxlLCBjb250ZW50KSBWQUxVRVMoPyw/KScpLT5leGVjdXRlKFskdGl0bGUsICR0ZXh0XSk7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgIuKchSDYotmF2YjYsti0IMKreyR0aXRsZX3CuyDYp9i22KfZgdmHINi02K8uIik7Cn0KCi8qKiBoZWxwZWRpdF9ib2R5OjxpZD4gc3RhdGUgKNqp2b7bjCBtYWluLnB5IDM4MDItMzgxMCkuICovCmZ1bmN0aW9uIGFkbWluX2hlbHBfYm9keV9lZGl0KGludCAkY2hhdElkLCBzdHJpbmcgJGF3YWl0LCBzdHJpbmcgJHRleHQpOiB2b2lkIHsKICAgICR0aWQgPSAoaW50KXN1YnN0cigkYXdhaXQsIHN0cmxlbignaGVscGVkaXRfYm9keTonKSk7CiAgICBzdF9wb3AoJGNoYXRJZCk7CiAgICBkYigpLT5wcmVwYXJlKCdVUERBVEUgZ3VpZGVfdG9waWNzIFNFVCBjb250ZW50PT8gV0hFUkUgaWQ9PycpLT5leGVjdXRlKFskdGV4dCwgJHRpZF0pOwogICAgJHN0ID0gZGIoKS0+cHJlcGFyZSgnU0VMRUNUIHRpdGxlIEZST00gZ3VpZGVfdG9waWNzIFdIRVJFIGlkPT8nKTsKICAgICRzdC0+ZXhlY3V0ZShbJHRpZF0pOwogICAgJHQgPSAkc3QtPmZldGNoKCk7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ+KchSDYotmF2YjYsti0IMKrJyAuICgkdFsndGl0bGUnXSA/PyAnPycpIC4gJ8K7INio2YfigIzYsdmI2LLYsdiz2KfZhtuMINi02K8uJyk7Cn0K'));
+/**
+ * admin/misc.php — stats, tickets, discounts, guide topics, faq
+ */
+
+require_once BASE_DIR . '/core/bot.php';
+require_once BASE_DIR . '/core/menus.php';
+
+function admin_tickets(int $chatId): void {
+    // کپی main.py 2792-2802: لیست تیکت‌های باز + دکمه بستن
+    $rows = db()->query("SELECT * FROM tickets WHERE status='open' ORDER BY id DESC LIMIT 10")->fetchAll();
+    $kb = ['inline_keyboard' => []];
+    foreach ($rows as $t) {
+        $preview = mb_substr((string)$t['message'], 0, 28);
+        $kb['inline_keyboard'][] = [['text' => "#{$t['id']} — {$preview}…", 'callback_data' => "um:{$t['tg_id']}"]];
+        $kb['inline_keyboard'][] = [['text' => "✅ بستن تیکت #{$t['id']}", 'callback_data' => "tkclose:{$t['id']}"]];
+    }
+    $kb['inline_keyboard'][] = [['text' => '◀️ بازگشت', 'callback_data' => 'adm:users']];
+    $txt = $rows
+        ? "🎫 <b>تیکت‌های باز:</b> " . count($rows) . "\nروی تیکت بزن تا پروفایل کاربر باز شود:"
+        : '🎫 <b>تیکت‌های باز:</b> هیچ';
+    send_or_edit($chatId, $txt, $kb);
+}
+
+function admin_ticket_close(int $chatId, int $tid): void {
+    // کپی main.py 2805-2810: بستن + نتیجه
+    $st = db()->prepare('SELECT * FROM tickets WHERE id=?');
+    $st->execute([$tid]);
+    $t = $st->fetch();
+    if ($t) {
+        db()->prepare("UPDATE tickets SET status='closed' WHERE id=?")->execute([$tid]);
+        send_or_edit($chatId, 'تیکت بسته شد ✅');
+    }
+}
+
+
+function admin_guide_home(int $chatId): void {
+    // پاریتی main.py 2521-2527: مدیریت راهنما روی guide_topics
+    $topics = db()->query('SELECT * FROM guide_topics ORDER BY id')->fetchAll();
+    $kb = ['inline_keyboard' => []];
+    foreach ($topics as $t) {
+        $kb['inline_keyboard'][] = [
+            ['text' => "✏️ {$t['title']}", 'callback_data' => "helpedit:{$t['id']}"],
+            ['text' => "🗑 {$t['title']}", 'callback_data' => "helpdel:{$t['id']}"],
+        ];
+    }
+    $kb['inline_keyboard'][] = [['text' => '➕ افزودن راهنما', 'callback_data' => 'helpadd']];
+    $kb['inline_keyboard'][] = [['text' => '◀️ بازگشت', 'callback_data' => 'adm:back']];
+    send_or_edit($chatId, "📚 مدیریت راهنما:\n✏️ = ویرایش متن | 🗑 = حذف", $kb);
+}
+
+
+/** helpadd — افزودن آموزش (کپی main.py 1906-1910). */
+function admin_help_add(int $chatId): void {
+    st_set($chatId, ['await' => 'helpadd_title']);
+    send_or_edit($chatId, '📚 عنوان آموزش را بفرست:');
+}
+
+/** helpedit:<id> — ویرایش متن آموزش (کپی main.py 1877-1892). */
+function admin_help_edit(int $chatId, int $tid): void {
+    $st = db()->prepare('SELECT * FROM guide_topics WHERE id=?');
+    $st->execute([$tid]);
+    $t = $st->fetch();
+    if (!$t) { send_or_edit($chatId, 'آموزش یافت نشد'); return; }
+    st_set($chatId, ['await' => 'helpedit_body:' . $tid]);
+    $cur = (string)$t['content'];
+    if (mb_strlen($cur) > 2500) { $cur = mb_substr($cur, 0, 2500); }
+    send_or_edit($chatId,
+        "✏️ ویرایش آموزش «{$t['title']}»\n\n📄 متن فعلی:\n{$cur}\n\n✍️ متن جدید را بفرست:",
+        ['inline_keyboard' => [[['text' => '❌ لغو', 'callback_data' => 'setcancel']]]]);
+}
+
+/** helpdel:<id> — حذف آموزش (کپی main.py 1912-1927). */
+function admin_help_delete(int $chatId, int $tid): void {
+    db()->prepare('DELETE FROM guide_topics WHERE id=?')->execute([$tid]);
+    admin_guide_home($chatId);
+}
+
+/** helpadd_title state (کپی main.py 3811-3813). */
+function admin_help_title_apply(int $chatId, string $text): void {
+    st_set($chatId, ['await' => 'helpadd_body', 'htitle' => trim($text)]);
+    send_or_edit($chatId, '📚 توضیحات آموزش را بفرست (متن/لینک/فیلم):');
+}
+
+/** helpadd_body state (کپی main.py 3815-3825). */
+function admin_help_body_apply(int $chatId, string $text): void {
+    $title = (string)st_get($chatId, 'htitle', 'آموزش');
+    st_pop($chatId);
+    db()->prepare('INSERT INTO guide_topics(title, content) VALUES(?,?)')->execute([$title, $text]);
+    send_or_edit($chatId, "✅ آموزش «{$title}» اضافه شد.");
+}
+
+/** helpedit_body:<id> state (کپی main.py 3802-3810). */
+function admin_help_body_edit(int $chatId, string $await, string $text): void {
+    $tid = (int)substr($await, strlen('helpedit_body:'));
+    st_pop($chatId);
+    db()->prepare('UPDATE guide_topics SET content=? WHERE id=?')->execute([$text, $tid]);
+    $st = db()->prepare('SELECT title FROM guide_topics WHERE id=?');
+    $st->execute([$tid]);
+    $t = $st->fetch();
+    send_or_edit($chatId, '✅ آموزش «' . ($t['title'] ?? '?') . '» به‌روزرسانی شد.');
+}
