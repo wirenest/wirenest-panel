@@ -96,6 +96,43 @@ WEBHOOK_URL="https://$DOMAIN/core/webhook.php?key=$WEBHOOK_KEY"
 print_color blue "[+] Registering Webhook: $WEBHOOK_URL"
 curl -s "https://api.telegram.org/bot$BOT_TOKEN/setWebhook?url=$WEBHOOK_URL&ip_address=$PUBLIC_IP"
 
+
+# 7. Create wirenest-panel CLI alias
+cat <<'CLI' > /usr/local/bin/wirenest-panel
+#!/usr/bin/env bash
+INSTALL_DIR="/opt/wirenest-panel"
+
+case "$1" in
+    update)
+        echo "[+] Updating WireNest Panel from GitHub..."
+        cd "$INSTALL_DIR"
+        git fetch --all
+        git reset --hard origin/master
+        chown -R www-data:www-data data logs .env
+        chmod -R 775 data logs
+        chmod 640 .env
+        systemctl restart apache2
+        echo "[+] Update complete."
+        ;;
+    uninstall)
+        read -p "Are you sure you want to uninstall WireNest Panel? (y/n): " confirm
+        if [[ "$confirm" == "y" ]]; then
+            echo "[+] Removing files and configuration..."
+            rm -rf "$INSTALL_DIR"
+            rm -f /etc/apache2/sites-available/wirenest.conf
+            rm -f /etc/apache2/sites-enabled/wirenest.conf
+            systemctl restart apache2
+            rm -f /usr/local/bin/wirenest-panel
+            echo "[+] Uninstalled successfully."
+        fi
+        ;;
+    *)
+        echo "Usage: wirenest-panel {update|uninstall}"
+        ;;
+esac
+CLI
+chmod +x /usr/local/bin/wirenest-panel
+
 print_color green "[+]"
 print_color green "[+] WireNest Panel installed and fully configured successfully!"
 print_color green "[+] Access your panel at https://$DOMAIN"
