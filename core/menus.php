@@ -1,3 +1,152 @@
 <?php
-// Encrypted & Protected by WireNest Shield
-@eval(base64_decode('PD9waHAKLyoqCiAqIG1lbnVzLnBocCDigJQga2V5Ym9hcmRzICYgc2NyZWVucyAoMToxINio2KcgdWkucHkg2b7Yp9uM2KrZiNmGKQogKiDahtuM2K/Zhdin2YYg2YXZhtmI24wg2KfYtdmE24wgKNiv2LPYqtmI2LEg2LHYttinKToKICogICDwn6eqINiz2LHZiNuM2LMg2KrYs9iqICAgICAg8J+UkCDYrtix24zYryDYp9i02KrYsdin2qkKICogICDwn5uNINiz2LHZiNuM2LMg2YfYp9uMINmF2YYgICDwn4+mINqp24zZgSDZvtmI2YQgKyDYtNin2LHamAogKiAgIPCfk6Eg2LHYp9mH2YbZhdin24wg2KfYqti12KfZhCAg8J+TiyDYtNix2KfbjNi3INmIINiq2YjYttuM2K3Yp9iqCiAqICAg4piO77iPINm+2LTYqtuM2KjYp9mG24wgICAgICAg4p2TINiz2YjYp9mE2KfYqiDZhdiq2K/Yp9mI2YQKICogICDwn5Go4oCN8J+SvCDZvtmG2YQg2YXYr9uM2LHbjNiqICAgICAo2YHZgti3INin2K/ZhduM2YYpCiAqLwoKZnVuY3Rpb24gTEJMKCk6IGFycmF5IHsKICAgIHJldHVybiBbCiAgICAgICAgJ3Rlc3QnICAgICAgID0+ICfwn6eqINiz2LHZiNuM2LMg2KrYs9iqJywKICAgICAgICAnYnV5JyAgICAgICAgPT4gJ/CflJAg2K7YsduM2K8g2KfYtNiq2LHYp9qpJywKICAgICAgICAnc2VydmljZXMnICAgPT4gJ/Cfm40g2LPYsdmI24zYsyDZh9in24wg2YXZhicsCiAgICAgICAgJ3dhbGxldCcgICAgID0+ICfwn4+mINqp24zZgSDZvtmI2YQgKyDYtNin2LHamCcsCiAgICAgICAgJ2d1aWRlJyAgICAgID0+ICfwn5OhINix2KfZh9mG2YXYp9uMINin2KrYtdin2YQnLAogICAgICAgICdjb25kaXRpb25zJyA9PiAn8J+TiyDYtNix2KfbjNi3INmIINiq2YjYttuM2K3Yp9iqJywKICAgICAgICAnc3VwcG9ydCcgICAgPT4gJ+KYju+4jyDZvti02KrbjNio2KfZhtuMJywKICAgICAgICAnZmFxJyAgICAgICAgPT4gJ+KdkyDYs9mI2KfZhNin2Kog2YXYqtiv2KfZiNmEJywKICAgICAgICAnYWRtaW4nICAgICAgPT4gJ/CfkajigI3wn5K8INm+2YbZhCDZhdiv24zYsduM2KonLAogICAgXTsKfQoKZnVuY3Rpb24gZmVhdHVyZXMoKTogYXJyYXkgewogICAgcmV0dXJuIGdldF9zZXR0aW5nKCdmZWF0dXJlcycsIFtdKSA/OiBbXTsKfQpmdW5jdGlvbiBmZWF0X29uKHN0cmluZyAka2V5LCBib29sICRkZWYgPSBmYWxzZSk6IGJvb2wgewogICAgJGYgPSBmZWF0dXJlcygpOwogICAgcmV0dXJuIGFycmF5X2tleV9leGlzdHMoJGtleSwgJGYpID8gKGJvb2wpJGZbJGtleV0gOiAkZGVmOwp9CgpmdW5jdGlvbiByZXBseV9idG4oc3RyaW5nICR0ZXh0LCBhcnJheSAkb3B0cyA9IFtdKTogYXJyYXkgewogICAgcmV0dXJuIGFycmF5X21lcmdlKFsndGV4dCcgPT4gJHRleHRdLCAkb3B0cyk7Cn0KCi8qKiBSZXBseSBtYWluIG1lbnUg4oCUINqG24zYr9mF2KfZhiDYq9in2KjYqiArINqv24zYqiDZgtin2KjZhNuM2KrigIzZh9inICjZhdir2YQgbWFpbl9tZW51INiv2LEgdWkucHkpICovCmZ1bmN0aW9uIG1haW5fbWVudV9rYihib29sICRpc0FkbWluID0gZmFsc2UpOiBhcnJheSB7CiAgICAkTCA9IExCTCgpOwogICAgJHJvd3MgPSBbCiAgICAgICAgWyRMWyd0ZXN0J10sICRMWydidXknXV0sCiAgICAgICAgWyRMWydzZXJ2aWNlcyddLCAkTFsnd2FsbGV0J11dLAogICAgICAgIFskTFsnZ3VpZGUnXSwgJExbJ2NvbmRpdGlvbnMnXV0sCiAgICAgICAgWyRMWydzdXBwb3J0J10sICRMWydmYXEnXV0sCiAgICBdOwogICAgaWYgKCRpc0FkbWluKSAkcm93c1tdID0gWyRMWydhZG1pbiddXTsKICAgIHJldHVybiBbJ2tleWJvYXJkJyA9PiAkcm93cywgJ3Jlc2l6ZV9rZXlib2FyZCcgPT4gdHJ1ZV07Cn0KCi8qKiBSZW1vdmUga2V5Ym9hcmQgKHNjcmVlbiB0cmFuc2l0aW9ucyBpbiBweXRob24gdXNlZCBlZGl0K25ldyBrYjsgcmVwbHkgbW9kZSBrZWVwcyBtZW51KSAqLwpmdW5jdGlvbiBtYWluX21lbnVfZm9yY2UoaW50ICRjaGF0SWQpOiBhcnJheSB7CiAgICByZXR1cm4gdGdfc2VuZCgkY2hhdElkLCAn8J+PoCcsIG1haW5fbWVudV9rYihpc19hZG1pbigkY2hhdElkKSkpOwp9CgovKiogQWRtaW4gcGFuZWwga2V5Ym9hcmQgKNm+2YbZhCDZhdiv24zYsduM2KopIOKAlCBtYWluIGVudHJpZXMgKi8KZnVuY3Rpb24gYWRtaW5fbWVudV9rYigpOiBhcnJheSB7CiAgICAvLyDaqdm+24wg2K/ZgtuM2YIgdWkuYWRtaW5fbWFpbl9rYigpICh1aS5weSAxNjktMTgwKQogICAgcmV0dXJuIFsnaW5saW5lX2tleWJvYXJkJyA9PiBbCiAgICAgICAgW1sndGV4dCcgPT4gJ/Cfk4og2KLZhdin2LEnLCAnY2FsbGJhY2tfZGF0YScgPT4gJ2FkbTpzdGF0cyddLCBbJ3RleHQnID0+ICfwn5OmINmF2K/bjNix24zYqiDZvtmG2YTigIzZh9inJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdhZG06cGFuZWxzJ11dLAogICAgICAgIFtbJ3RleHQnID0+ICfwn5GlINmF2K/bjNix24zYqiDaqdin2LHYqNix2KfZhicsICdjYWxsYmFja19kYXRhJyA9PiAnYWRtOnVzZXJzJ10sIFsndGV4dCcgPT4gJ/Cfp74g2LXZgSDYsdiz24zYr9mH2KcnLCAnY2FsbGJhY2tfZGF0YScgPT4gJ2FkbTpyZWNlaXB0cyddXSwKICAgICAgICBbWyd0ZXh0JyA9PiAn8J+boCDZgtin2KjZhNuM2KrigIzZh9in24wg2b7ZhtmEJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdhZG06ZmVhdHVyZXMnXV0sCiAgICAgICAgW1sndGV4dCcgPT4gJ/Cfj7cg2qnYryDYqtiu2YHbjNmBJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdhZG06ZGlzY291bnRzJ10sIFsndGV4dCcgPT4gJ/CfjoEg2qnYryDZh9iv24zZhycsICdjYWxsYmFja19kYXRhJyA9PiAnYWRtOmdpZnRzJ11dLAogICAgICAgIFtbJ3RleHQnID0+ICfwn5OaINmF2K/bjNix24zYqiDYotmF2YjYsti0JywgJ2NhbGxiYWNrX2RhdGEnID0+ICdhZG06aGVscHMnXSwgWyd0ZXh0JyA9PiAn4pqZ77iPINiq2YbYuNuM2YXYp9iqJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdhZG06c2V0dGluZ3MnXV0sCiAgICAgICAgW1sndGV4dCcgPT4gJ/CflIwg2K7Yp9mF2YjYtC/YsdmI2LTZhicsICdjYWxsYmFja19kYXRhJyA9PiAnYWRtOnBvd2VyJ11dLAogICAgXV07Cn0KCi8qKiBTdXBwb3J0IHNjcmVlbiBrYiDigJQg2qnZvtuMIHVpLnN1cHBvcnRfa2IoKSAo4pyJ77iPINin2LHYs9in2YQg2b7bjNin2YUg2KjZhyDZvti02KrbjNio2KfZhtuMICsg2KjYp9iy2q/YtNiqKSAqLwpmdW5jdGlvbiBzdXBwb3J0X2tiKCk6IGFycmF5IHsKICAgIHJldHVybiBbJ2lubGluZV9rZXlib2FyZCcgPT4gWwogICAgICAgIFtbJ3RleHQnID0+ICfinInvuI8g2KfYsdiz2KfZhCDZvtuM2KfZhSDYqNmHINm+2LTYqtuM2KjYp9mG24wnLCAnY2FsbGJhY2tfZGF0YScgPT4gJ206dGt0J11dLAogICAgICAgIFtbJ3RleHQnID0+ICfwn4+gINio2KfYstqv2LTYqiDYqNmHINmF2YbZiNuMINin2LXZhNuMJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdtOmhvbWUnXV0sCiAgICBdXTsKfQoKLyoqIFBhbmVsIG1hbmFnZSBlbnRyeTogbGlzdCBwYW5lbHMgKyBwZXItcGFuZWwgdGVzdCBidXR0b24gKPCflI0g2KrYs9iqINin2KrYtdin2YQpICovCmZ1bmN0aW9uIHBhbmVsc19saXN0X2tiKGFycmF5ICRwYW5lbHMpOiBhcnJheSB7CiAgICAkcm93cyA9IFtdOwogICAgZm9yZWFjaCAoJHBhbmVscyBhcyAkbmFtZSA9PiAkZCkgewogICAgICAgICRyb3dzW10gPSBbWyd0ZXh0JyA9PiAi8J+MkCAkbmFtZSIsICdjYWxsYmFja19kYXRhJyA9PiAicG5sOnZpZXc6IiAuICRuYW1lXSwKICAgICAgICAgICAgICAgICAgIFsndGV4dCcgPT4gJ/CflI0g2KrYs9iqINin2KrYtdin2YQnLCAnY2FsbGJhY2tfZGF0YScgPT4gInBubDpwaW5nOiIgLiAkbmFtZV1dOwogICAgfQogICAgJHJvd3NbXSA9IFtbJ3RleHQnID0+ICfinpUg2KfZgdiy2YjYr9mGINm+2YbZhCDYrNiv24zYrycsICdjYWxsYmFja19kYXRhJyA9PiAncG5sOmFkZCddXTsKICAgICRyb3dzW10gPSBbWyd0ZXh0JyA9PiAn4peA77iPINio2KfYstqv2LTYqicsICdjYWxsYmFja19kYXRhJyA9PiAnYWRtOmJhY2snXV07CiAgICByZXR1cm4gWydpbmxpbmVfa2V5Ym9hcmQnID0+ICRyb3dzXTsKfQoKLyoqIFNlcnZpY2VzIGxpc3Qgc2NyZWVuICjwn5uNINiz2LHZiNuM2LMg2YfYp9uMINmF2YYpICovCmZ1bmN0aW9uIHNlcnZpY2VzX2tiKGFycmF5ICRzZXJ2aWNlcyk6IGFycmF5IHsKICAgICRyb3dzID0gW107CiAgICBmb3JlYWNoICgkc2VydmljZXMgYXMgJHMpIHsKICAgICAgICAkcm93c1tdID0gW1sndGV4dCcgPT4gJ/Cfm6EgJyAuICRzWydwYW5lbF91c2VybmFtZSddLCAnY2FsbGJhY2tfZGF0YScgPT4gJ3N2YzonIC4gJHNbJ2lkJ11dXTsKICAgIH0KICAgICRyb3dzW10gPSBbWyd0ZXh0JyA9PiAn4p6h77iPINmF2YbZiNuMINin2LXZhNuMJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdtOmhvbWUnXV07CiAgICByZXR1cm4gWydpbmxpbmVfa2V5Ym9hcmQnID0+ICRyb3dzXTsKfQoKLyoqIFJlY2VpcHRzIHF1ZXVlIGJ1dHRvbnMgKi8KCmZ1bmN0aW9uIHRpY2tldHNfa2IoYXJyYXkgJHRpY2tldHMpOiBhcnJheSB7CiAgICAkcm93cyA9IFtdOwogICAgZm9yZWFjaCAoJHRpY2tldHMgYXMgJHQpIHsKICAgICAgICAkcHJldmlldyA9IG1iX3N1YnN0cigoc3RyaW5nKSR0Wyd0ZXh0J10sIDAsIDMwKTsKICAgICAgICAkcm93c1tdID0gW1sndGV4dCcgPT4gIvCfjqsgI3skdFsnaWQnXX0gJHByZXZpZXciLCAnY2FsbGJhY2tfZGF0YScgPT4gInVtOnskdFsndGdfaWQnXX0iXSwKICAgICAgICAgICAgICAgICAgIFsndGV4dCcgPT4gJ+KchScsICdjYWxsYmFja19kYXRhJyA9PiAidGtjbG9zZTp7JHRbJ2lkJ119Il1dOwogICAgfQogICAgJHJvd3NbXSA9IFtbJ3RleHQnID0+ICfil4DvuI8g2KjYp9iy2q/YtNiqJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdhZG06YmFjayddXTsKICAgIHJldHVybiBbJ2lubGluZV9rZXlib2FyZCcgPT4gJHJvd3NdOwp9CgovKiogQnJvYWRjYXN0IHYyIHN0ZXAga2V5Ym9hcmRzICovCmZ1bmN0aW9uIGJjYXN0X3RhcmdldF9rYigpOiBhcnJheSB7CiAgICByZXR1cm4gWydpbmxpbmVfa2V5Ym9hcmQnID0+IFsKICAgICAgICBbWyd0ZXh0JyA9PiAn8J+RpSDZh9mF2Ycg2qnYp9ix2KjYsdin2YYnLCAnY2FsbGJhY2tfZGF0YScgPT4gJ2JjYXN0MjphbGwnXV0sCiAgICAgICAgW1sndGV4dCcgPT4gJ/Cfm5Ig2K7YsduM2K/Yp9ix2YfYpycsICdjYWxsYmFja19kYXRhJyA9PiAnYmNhc3QyOmJ1eWVycyddXSwKICAgICAgICBbWyd0ZXh0JyA9PiAn8J+aqyDYrtix24zYryDZhtiv2KfYtNiq2YfigIzZh9inJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdiY2FzdDI6bm9uYnV5ZXJzJ11dLAogICAgICAgIFtbJ3RleHQnID0+ICfinYwg2YTYutmIJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdhZG06YmFjayddXSwKICAgIF1dOwp9CmZ1bmN0aW9uIGJjYXN0X2J0bl9rYigpOiBhcnJheSB7CiAgICByZXR1cm4gWydpbmxpbmVfa2V5Ym9hcmQnID0+IFsKICAgICAgICBbWyd0ZXh0JyA9PiAn8J+UkCDYrtix24zYryDYp9i02KrYsdin2qknLCAnY2FsbGJhY2tfZGF0YScgPT4gJ2JjYXN0YnRuOmJ1eSddXSwKICAgICAgICBbWyd0ZXh0JyA9PiAn8J+nqiDYr9ix24zYp9mB2Kog2KrYs9iqJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdiY2FzdGJ0bjp0ZXN0J11dLAogICAgICAgIFtbJ3RleHQnID0+ICfimI7vuI8g2b7bjNin2YUg2KjZhyDZvti02KrbjNio2KfZhtuMJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdiY2FzdGJ0bjpzdXBwb3J0J11dLAogICAgICAgIFtbJ3RleHQnID0+ICfwn5OaINii2YXZiNiy2LQnLCAnY2FsbGJhY2tfZGF0YScgPT4gJ2JjYXN0YnRuOmhlbHAnXV0sCiAgICAgICAgW1sndGV4dCcgPT4gJ/Cfk6Qg2KfYsdiz2KfZhCDYqNiv2YjZhiDYr9qp2YXZhycsICdjYWxsYmFja19kYXRhJyA9PiAnYmNhc3RidG46bm9uZSddXSwKICAgIF1dOwp9CmZ1bmN0aW9uIGJjYXN0X3Bpbl9rYigpOiBhcnJheSB7CiAgICByZXR1cm4gWydpbmxpbmVfa2V5Ym9hcmQnID0+IFsKICAgICAgICBbWyd0ZXh0JyA9PiAn8J+TjCDYqNmE2YfYjCDZvtuM2YYg2LTZiNivJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdiY2FzdGdvOnllcyddLAogICAgICAgICBbJ3RleHQnID0+ICfwn5qrINiu24zYsScsICdjYWxsYmFja19kYXRhJyA9PiAnYmNhc3RnbzpubyddXSwKICAgIF1dOwp9CgovKiogU2hvcCBidXkgc2NyZWVuIHJvd3MgKHBsYW5zICsgdGFyaWZmcykgKi8KZnVuY3Rpb24gYnV5X2tiKGFycmF5ICRwbGFucywgYXJyYXkgJHRhcmlmZnMpOiBhcnJheSB7CiAgICAkcm93cyA9IFtdOwogICAgZm9yZWFjaCAoJHBsYW5zIGFzICRwKSB7CiAgICAgICAgLy8gQmlkaSBmaXg6INin2LPZhSDZvtmG2YQg2YXZhdqp2YYg2KfYs9iqINmE2KfYqtuM2YYg2KjYp9i02K8gKNmF2KvZhNinINm+2YbZhDEpIOKAlCDZgti32LnZh9mUINmB2KfYsdiz24wgwqtYINqv24zaryDigJQgWSDYqtmI2YXYp9mGwrsg2KjYpyBMUknigKZQREkgaXNvbGF0ZQogICAgICAgIC8vINmF24zigIzYtNmI2K8g2KrYpyDYr9ixIFJUTC9MVFIg2KrYsdqp24zYqNuM2Iwg2KrYsdiq24zYqCDaqdmE2YXYp9iqINmG2b7YsdivICjZgdix2YXYp9mGINix2LbYpzog2YbZiNi5INmG2YjYtNiq2KfYsduMINiv2qnZhdmH4oCM2YfYpyDYr9ix2LPYqiDYtNmI2K8pLgogICAgICAgICRyb3dzW10gPSBbWyAndGV4dCcgPT4gIvCfk6YgeyRwWydwYW5lbF9uYW1lJ119IOKAlCBcdXsyMDY2fSIgLiBmbXRfZ2IoJHBbJ3ZvbHVtZV9nYiddKSAuICIg2q/bjNqvXHV7MjA2OX0g4oCUIFx1ezIwNjZ9IiAuIGZtdF9wcmljZSgoaW50KSRwWydwcmljZSddKSAuICJcdXsyMDY5fSIsCiAgICAgICAgICAgICAgICAgICAgICdjYWxsYmFja19kYXRhJyA9PiAiYnV5cGxhbjp7JHBbJ2lkJ119IiBdXTsKICAgIH0KICAgIGZvcmVhY2ggKCR0YXJpZmZzIGFzICR0KSB7CiAgICAgICAgJHJvd3NbXSA9IFtbICd0ZXh0JyA9PiAi8J+PtyB7JHRbJ3RpdGxlJ119IOKAlCBcdXsyMDY2fSIgLiBmbXRfZ2IoJHRbJ3ZvbHVtZV9nYiddKSAuICIg2q/bjNqvXHV7MjA2OX0g4oCUIFx1ezIwNjZ9IiAuIGZtdF9wcmljZSgoaW50KSR0WydwcmljZSddKSAuICJcdXsyMDY5fSIsCiAgICAgICAgICAgICAgICAgICAgICdjYWxsYmFja19kYXRhJyA9PiAiYnV5OnskdFsnaWQnXX0iIF1dOwogICAgfQogICAgJHJvd3NbXSA9IFtbJ3RleHQnID0+ICfinqHvuI8g2YXZhtmI24wg2KfYtdmE24wnLCAnY2FsbGJhY2tfZGF0YScgPT4gJ206aG9tZSddXTsKICAgIHJldHVybiBbJ2lubGluZV9rZXlib2FyZCcgPT4gJHJvd3NdOwp9Cg=='));
+/**
+ * menus.php — keyboards & screens (1:1 با ui.py پایتون)
+ * چیدمان منوی اصلی (دستور رضا):
+ *   🧪 سرویس تست      🔐 خرید اشتراک
+ *   🛍 سرویس های من   🏦 کیف پول + شارژ
+ *   📡 راهنمای اتصال  📋 شرایط و توضیحات
+ *   ☎️ پشتیبانی       ❓ سوالات متداول
+ *   👨‍💼 پنل مدیریت     (فقط ادمین)
+ */
+
+function LBL(): array {
+    return [
+        'test'       => '🧪 سرویس تست',
+        'buy'        => '🔐 خرید اشتراک',
+        'services'   => '🛍 سرویس های من',
+        'wallet'     => '🏦 کیف پول + شارژ',
+        'guide'      => '📡 راهنمای اتصال',
+        'conditions' => '📋 شرایط و توضیحات',
+        'support'    => '☎️ پشتیبانی',
+        'faq'        => '❓ سوالات متداول',
+        'admin'      => '👨‍💼 پنل مدیریت',
+    ];
+}
+
+function features(): array {
+    return get_setting('features', []) ?: [];
+}
+function feat_on(string $key, bool $def = false): bool {
+    $f = features();
+    return array_key_exists($key, $f) ? (bool)$f[$key] : $def;
+}
+
+function reply_btn(string $text, array $opts = []): array {
+    return array_merge(['text' => $text], $opts);
+}
+
+/** Reply main menu — چیدمان ثابت + گیت قابلیت‌ها (مثل main_menu در ui.py) */
+function main_menu_kb(bool $isAdmin = false): array {
+    $L = LBL();
+    $rows = [
+        [$L['test'], $L['buy']],
+        [$L['services'], $L['wallet']],
+        [$L['guide'], $L['conditions']],
+        [$L['support'], $L['faq']],
+    ];
+    if ($isAdmin) $rows[] = [$L['admin']];
+    return ['keyboard' => $rows, 'resize_keyboard' => true];
+}
+
+/** Remove keyboard (screen transitions in python used edit+new kb; reply mode keeps menu) */
+function main_menu_force(int $chatId): array {
+    return tg_send($chatId, '🏠', main_menu_kb(is_admin($chatId)));
+}
+
+/** Admin panel keyboard (پنل مدیریت) — main entries */
+function admin_menu_kb(): array {
+    // کپی دقیق ui.admin_main_kb() (ui.py 169-180)
+    return ['inline_keyboard' => [
+        [['text' => '📊 آمار', 'callback_data' => 'adm:stats'], ['text' => '📦 مدیریت پنل‌ها', 'callback_data' => 'adm:panels']],
+        [['text' => '👥 مدیریت کاربران', 'callback_data' => 'adm:users'], ['text' => '🧾 صف رسیدها', 'callback_data' => 'adm:receipts']],
+        [['text' => '🛠 قابلیت‌های پنل', 'callback_data' => 'adm:features']],
+        [['text' => '🏷 کد تخفیف', 'callback_data' => 'adm:discounts'], ['text' => '🎁 کد هدیه', 'callback_data' => 'adm:gifts']],
+        [['text' => '📚 مدیریت آموزش', 'callback_data' => 'adm:helps'], ['text' => '⚙️ تنظیمات', 'callback_data' => 'adm:settings']],
+        [['text' => '🔌 خاموش/روشن', 'callback_data' => 'adm:power']],
+    ]];
+}
+
+/** Support screen kb — کپی ui.support_kb() (✉️ ارسال پیام به پشتیبانی + بازگشت) */
+function support_kb(): array {
+    return ['inline_keyboard' => [
+        [['text' => '✉️ ارسال پیام به پشتیبانی', 'callback_data' => 'm:tkt']],
+        [['text' => '🏠 بازگشت به منوی اصلی', 'callback_data' => 'm:home']],
+    ]];
+}
+
+/** Panel manage entry: list panels + per-panel test button (🔍 تست اتصال) */
+function panels_list_kb(array $panels): array {
+    $rows = [];
+    foreach ($panels as $name => $d) {
+        $rows[] = [['text' => "🌐 $name", 'callback_data' => "pnl:view:" . $name],
+                   ['text' => '🔍 تست اتصال', 'callback_data' => "pnl:ping:" . $name]];
+    }
+    $rows[] = [['text' => '➕ افزودن پنل جدید', 'callback_data' => 'pnl:add']];
+    $rows[] = [['text' => '◀️ بازگشت', 'callback_data' => 'adm:back']];
+    return ['inline_keyboard' => $rows];
+}
+
+/** Services list screen (🛍 سرویس های من) */
+function services_kb(array $services): array {
+    $rows = [];
+    foreach ($services as $s) {
+        $rows[] = [['text' => '🛡 ' . $s['panel_username'], 'callback_data' => 'svc:' . $s['id']]];
+    }
+    $rows[] = [['text' => '➡️ منوی اصلی', 'callback_data' => 'm:home']];
+    return ['inline_keyboard' => $rows];
+}
+
+/** Receipts queue buttons */
+
+function tickets_kb(array $tickets): array {
+    $rows = [];
+    foreach ($tickets as $t) {
+        $preview = mb_substr((string)$t['text'], 0, 30);
+        $rows[] = [['text' => "🎫 #{$t['id']} $preview", 'callback_data' => "um:{$t['tg_id']}"],
+                   ['text' => '✅', 'callback_data' => "tkclose:{$t['id']}"]];
+    }
+    $rows[] = [['text' => '◀️ بازگشت', 'callback_data' => 'adm:back']];
+    return ['inline_keyboard' => $rows];
+}
+
+/** Broadcast v2 step keyboards */
+function bcast_target_kb(): array {
+    return ['inline_keyboard' => [
+        [['text' => '👥 همه کاربران', 'callback_data' => 'bcast2:all']],
+        [['text' => '🛒 خریدارها', 'callback_data' => 'bcast2:buyers']],
+        [['text' => '🚫 خرید نداشته‌ها', 'callback_data' => 'bcast2:nonbuyers']],
+        [['text' => '❌ لغو', 'callback_data' => 'adm:back']],
+    ]];
+}
+function bcast_btn_kb(): array {
+    return ['inline_keyboard' => [
+        [['text' => '🔐 خرید اشتراک', 'callback_data' => 'bcastbtn:buy']],
+        [['text' => '🧪 دریافت تست', 'callback_data' => 'bcastbtn:test']],
+        [['text' => '☎️ پیام به پشتیبانی', 'callback_data' => 'bcastbtn:support']],
+        [['text' => '📚 آموزش', 'callback_data' => 'bcastbtn:help']],
+        [['text' => '📤 ارسال بدون دکمه', 'callback_data' => 'bcastbtn:none']],
+    ]];
+}
+function bcast_pin_kb(): array {
+    return ['inline_keyboard' => [
+        [['text' => '📌 بله، پین شود', 'callback_data' => 'bcastgo:yes'],
+         ['text' => '🚫 خیر', 'callback_data' => 'bcastgo:no']],
+    ]];
+}
+
+/** Shop buy screen rows (plans + tariffs) */
+function buy_kb(array $plans, array $tariffs): array {
+    $rows = [];
+    foreach ($plans as $p) {
+        // Bidi fix: اسم پنل ممکن است لاتین باشد (مثلا پنل1) — قطعهٔ فارسی «X گیگ — Y تومان» با LRI…PDI isolate
+        // می‌شود تا در RTL/LTR ترکیبی، ترتیب کلمات نپرد (فرمان رضا: نوع نوشتاری دکمه‌ها درست شود).
+        $rows[] = [[ 'text' => "📦 {$p['panel_name']} — \u{2066}" . fmt_gb($p['volume_gb']) . " گیگ\u{2069} — \u{2066}" . fmt_price((int)$p['price']) . "\u{2069}",
+                     'callback_data' => "buyplan:{$p['id']}" ]];
+    }
+    foreach ($tariffs as $t) {
+        $rows[] = [[ 'text' => "🏷 {$t['title']} — \u{2066}" . fmt_gb($t['volume_gb']) . " گیگ\u{2069} — \u{2066}" . fmt_price((int)$t['price']) . "\u{2069}",
+                     'callback_data' => "buy:{$t['id']}" ]];
+    }
+    $rows[] = [['text' => '➡️ منوی اصلی', 'callback_data' => 'm:home']];
+    return ['inline_keyboard' => $rows];
+}
