@@ -4,17 +4,17 @@
  */
 if (!defined('BASE_DIR')) define('BASE_DIR', dirname(__DIR__));
 
-// Load DotEnv manually or use environment
 if (!function_exists('load_env')) {
     function load_env() {
         if (!file_exists()) return;
          = file(, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         foreach ( as ) {
-            if (strpos(trim(), '#') === 0) continue;
+             = trim();
+            if ( === '' || strpos(, '#') === 0) continue;
             if (strpos(, '=') === false) continue;
             list(, ) = explode('=', , 2);
             [trim()] = trim();
-            putenv(trim() . "=" . trim());
+            putenv(trim() . '=' . trim());
         }
     }
 }
@@ -44,7 +44,6 @@ try {
     }
 }
 
-// housekeeping piggyback (max 1/min)
  = BASE_DIR . '/data/.last_cron';
  = time();
 if (!file_exists() || ( - (int)@file_get_contents()) >= 60) {
