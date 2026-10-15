@@ -73,7 +73,7 @@ This project is licensed under the **MIT License**.
 
 This project is open-source under MIT License.
 
-> ⚠️ **Notice:** This is an initial/base version of the project. To complete, develop, and write the final fully-debugged version, a $100 donation is required to start developing the advanced release.
+> ⚠️ **Notice:** This is an initial version of the project. To continue development, add new features, and maintain the project, we need your support!
 > 
 > **🪙 USDT (BEP20) Donation Address:**
 > ```text
