@@ -1,3 +1,35 @@
 <?php
-// Encrypted & Protected by WireNest Shield
-@eval(base64_decode('PD9waHAKLyoqCiAqIGFkbWluL3BhbmVscy5waHAg4oCUIGFkZGl0aW9uczogdG9nZ2xlICsgZWRpdCAob3BlbmNvZGUgYXVkaXQgZmluZGluZ3MgMy00KQogKiB0b2dnbGU6INmB2LnYp9mEL9i624zYsdmB2LnYp9mEINqp2LHYr9mGINm+2YbZhNibIGVkaXQ6INmI24zYstin2LHYryDZiNuM2LHYp9uM2LQg2KLYr9ix2LMv24zZiNiy2LEv2b7Ys9mI2LHYrwogKi8KCi8qKiBwbmw6dG9nZ2xlOjxuYW1lPiDigJQg2YHYudin2YQv2LrbjNix2YHYudin2YQgKNm+2KfbjNiq2YjZhjogdG9nZ2xlX2xibCDYr9ixIHVpLnB5IDM2NykuICovCmZ1bmN0aW9uIGFkbWluX3BhbmVsX3RvZ2dsZShpbnQgJGNoYXRJZCwgc3RyaW5nICRuYW1lKTogdm9pZCB7CiAgICAkcGFuZWxzID0gZ2V0X3NldHRpbmcoJ3BhbmVscycsIFtdKSA/OiBbXTsKICAgIGlmICghaXNzZXQoJHBhbmVsc1skbmFtZV0pKSB7IHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn2b7ZhtmEINuM2KfZgdiqINmG2LTYry4nKTsgcmV0dXJuOyB9CiAgICAkcGFuZWxzWyRuYW1lXVsnYWN0aXZlJ10gPSBlbXB0eSgkcGFuZWxzWyRuYW1lXVsnYWN0aXZlJ10pOwogICAgc2V0X3NldHRpbmcoJ3BhbmVscycsICRwYW5lbHMpOwogICAgJG5ldyA9ICFlbXB0eSgkcGFuZWxzWyRuYW1lXVsnYWN0aXZlJ10pOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICRuZXcgPyAi8J+foiDZvtmG2YQgwqt7JG5hbWV9wrsg2YHYudin2YQg2LTYry4iIDogIvCflLQg2b7ZhtmEIMKreyRuYW1lfcK7INi624zYsdmB2LnYp9mEINi02K8uIik7CiAgICBhZG1pbl9wYW5lbF92aWV3KCRjaGF0SWQsICRuYW1lKTsKfQoKLyoqIHBubDplZGl0OjxuYW1lPiDigJQg2YXZhtmI24wg2YjbjNix2KfbjNi0INmB24zZhNiv2YfYpyAo2YbYp9mFL9ii2K/YsdizL9uM2YjYstixL9m+2LPZiNix2K8pLiAqLwpmdW5jdGlvbiBhZG1pbl9wYW5lbF9lZGl0X3N0YXJ0KGludCAkY2hhdElkLCBzdHJpbmcgJG5hbWUpOiB2b2lkIHsKICAgICRwYW5lbHMgPSBnZXRfc2V0dGluZygncGFuZWxzJywgW10pID86IFtdOwogICAgaWYgKCFpc3NldCgkcGFuZWxzWyRuYW1lXSkpIHsgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfZvtmG2YQg24zYp9mB2Kog2YbYtNivLicpOyByZXR1cm47IH0KICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAi4pyP77iPINqG2Ycg2obbjNiy24wg2KfYsiDZvtmG2YQgwqt7JG5hbWV9wrsg2YjbjNix2KfbjNi0INio2LTZh9ifIiwKICAgICAgICBbJ2lubGluZV9rZXlib2FyZCcgPT4gWwogICAgICAgICAgICBbWyd0ZXh0JyA9PiAn8J+TmyDZhtin2YUg2b7ZhtmEJywgJ2NhbGxiYWNrX2RhdGEnID0+ICJwbmxlZGl0Om5hbWU6JG5hbWUiXV0sCiAgICAgICAgICAgIFtbJ3RleHQnID0+ICfwn5SXINii2K/YsdizINm+2YbZhCcsICdjYWxsYmFja19kYXRhJyA9PiAicG5sZWRpdDp1cmw6JG5hbWUiXV0sCiAgICAgICAgICAgIFtbJ3RleHQnID0+ICfwn5GkINuM2YjYstixINin2K/ZhduM2YYnLCAnY2FsbGJhY2tfZGF0YScgPT4gInBubGVkaXQ6dXNlcjokbmFtZSJdLCBbJ3RleHQnID0+ICfwn5SRINm+2LPZiNix2K8g2KfYr9mF24zZhicsICdjYWxsYmFja19kYXRhJyA9PiAicG5sZWRpdDpwYXNzOiRuYW1lIl1dLAogICAgICAgICAgICBbWyd0ZXh0JyA9PiAn4peA77iPINio2KfYstqv2LTYqicsICdjYWxsYmFja19kYXRhJyA9PiAicG5sOnZpZXc6JG5hbWUiXV0sCiAgICAgICAgXV0pOwp9CgovKiogd2FsOmdpZnQg4oCUINmI2LHZiNivINqp2K8g2YfYr9uM2Ycg2KrZiNiz2Lcg2qnYp9ix2KjYsSAo2qnZvtuMIG1haW4ucHkgMTM2MS0xMzY2KS4gKi8KZnVuY3Rpb24gc3RhcnRfZ2lmdF9yZWRlZW0oaW50ICRjaGF0SWQpOiB2b2lkIHsKICAgIHN0X3NldCgkY2hhdElkLCBbJ2F3YWl0JyA9PiAnZ2lmdF9yZWRlZW0nXSk7CiAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ/CfjoEg2qnYryDZh9iv24zZhyDYsdinINio2YHYsdiz2KogKNuM2KcgL2NhbmNlbCDYqNix2KfbjCDYp9mG2LXYsdin2YEpOicpOwp9Cg=='));
+/**
+ * admin/panels.php — additions: toggle + edit (opencode audit findings 3-4)
+ * toggle: فعال/غیرفعال کردن پنل؛ edit: ویزارد ویرایش آدرس/یوزر/پسورد
+ */
+
+/** pnl:toggle:<name> — فعال/غیرفعال (پایتون: toggle_lbl در ui.py 367). */
+function admin_panel_toggle(int $chatId, string $name): void {
+    $panels = get_setting('panels', []) ?: [];
+    if (!isset($panels[$name])) { send_or_edit($chatId, 'پنل یافت نشد.'); return; }
+    $panels[$name]['active'] = empty($panels[$name]['active']);
+    set_setting('panels', $panels);
+    $new = !empty($panels[$name]['active']);
+    send_or_edit($chatId, $new ? "🟢 پنل «{$name}» فعال شد." : "🔴 پنل «{$name}» غیرفعال شد.");
+    admin_panel_view($chatId, $name);
+}
+
+/** pnl:edit:<name> — منوی ویرایش فیلدها (نام/آدرس/یوزر/پسورد). */
+function admin_panel_edit_start(int $chatId, string $name): void {
+    $panels = get_setting('panels', []) ?: [];
+    if (!isset($panels[$name])) { send_or_edit($chatId, 'پنل یافت نشد.'); return; }
+    send_or_edit($chatId, "✏️ چه چیزی از پنل «{$name}» ویرایش بشه؟",
+        ['inline_keyboard' => [
+            [['text' => '📛 نام پنل', 'callback_data' => "pnledit:name:$name"]],
+            [['text' => '🔗 آدرس پنل', 'callback_data' => "pnledit:url:$name"]],
+            [['text' => '👤 یوزر ادمین', 'callback_data' => "pnledit:user:$name"], ['text' => '🔑 پسورد ادمین', 'callback_data' => "pnledit:pass:$name"]],
+            [['text' => '◀️ بازگشت', 'callback_data' => "pnl:view:$name"]],
+        ]]);
+}
+
+/** wal:gift — ورود کد هدیه توسط کاربر (کپی main.py 1361-1366). */
+function start_gift_redeem(int $chatId): void {
+    st_set($chatId, ['await' => 'gift_redeem']);
+    send_or_edit($chatId, '🎁 کد هدیه را بفرست (یا /cancel برای انصراف):');
+}
