@@ -87,7 +87,7 @@ INITIAL_ADMIN_ID=$ADMIN_ID
 WEBHOOK_KEY=$WEBHOOK_KEY
 DB_PATH=$INSTALL_DIR/data/bot.sqlite
 EOF
-chmod 600 .env
+chmod 640 .env
 chown root:www-data .env
 
 # 6. Set Telegram Webhook
