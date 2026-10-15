@@ -1,3 +1,125 @@
 <?php
-// Encrypted & Protected by WireNest Shield
-@eval(base64_decode('PD9waHAKLyoqCiAqIGFkbWluL3JlY2VpcHRzLnBocCDigJQg2qnZvtuMINmF2YjigIzYqNmH4oCM2YXZiNuMINm+2KfbjNiq2YjZhjoKICog2LXZgSDYsdiz24zYr9mH2KcgKG1haW4ucHkgMTk0OS0xOTY1KdiMINiv2qnZhdmH4oCM2YfYp9uMINio2LHYsdiz24wgKHVpLnB5IDQ3MS00NzYp2IwKICogcmNvay9yY25vIChtYWluLnB5IDI4NzgtMjg5MSnYjCByY2ZpeCAoMTkyOC0xOTMxKdiMIG15IHJlY2VpcHRzLgogKi8KCnJlcXVpcmVfb25jZSBCQVNFX0RJUiAuICcvY29yZS9ib3QucGhwJzsKcmVxdWlyZV9vbmNlIEJBU0VfRElSIC4gJy9mbG93cy93YWxsZXQucGhwJzsKCi8qKiBFeGFjdCBjb3B5IG9mIHVpLnJlY2VpcHRzX2tiKCkg4oCUIHRoZSBub3RpZmljYXRpb24ga2Igc2VudCB0byBhZG1pbnMgb24gbmV3IHJlY2VpcHQuICovCmZ1bmN0aW9uIHJlY2VpcHRzX2tiKGludCAkcmlkKTogYXJyYXkgewogICAgcmV0dXJuIFsnaW5saW5lX2tleWJvYXJkJyA9PiBbWwogICAgICAgIFsndGV4dCcgPT4gJ+KchSDYqtin24zbjNivJywgJ2NhbGxiYWNrX2RhdGEnID0+ICJyY29rOiRyaWQiXSwKICAgICAgICBbJ3RleHQnID0+ICfinYwg2LHYrycsICdjYWxsYmFja19kYXRhJyA9PiAicmNubzokcmlkIl0sCiAgICBdXV07Cn0KCi8qKiBFeGFjdCBjb3B5IG9mIHVpLnJlY2VpcHRfcmV2aWV3X2tiKCkg4oCUIHRoZSBxdWV1ZSByZXZpZXcga2IgKDQgYnV0dG9ucyBpbmNsLiBlZGl0LWFtb3VudCkuICovCmZ1bmN0aW9uIHJlY2VpcHRfcmV2aWV3X2tiKGludCAkcmlkKTogYXJyYXkgewogICAgcmV0dXJuIFsnaW5saW5lX2tleWJvYXJkJyA9PiBbCiAgICAgICAgW1sndGV4dCcgPT4gJ+KaoSDYqtin24zbjNivINio2Kcg2YfZhdin2YYg2YXYqNmE2LonLCAnY2FsbGJhY2tfZGF0YScgPT4gInJjb2s6JHJpZCJdLAogICAgICAgICBbJ3RleHQnID0+ICfinI/vuI8g2YjbjNix2KfbjNi0INmF2KjZhNi6INmIINiq2KfbjNuM2K8nLCAnY2FsbGJhY2tfZGF0YScgPT4gInJjZml4OiRyaWQiXV0sCiAgICAgICAgW1sndGV4dCcgPT4gJ+KdjCDYsdivINiv2LHYrtmI2KfYs9iqJywgJ2NhbGxiYWNrX2RhdGEnID0+ICJyY25vOiRyaWQiXV0sCiAgICBdXTsKfQoKLyoqIEV4YWN0IGNvcHkgb2YgYWRtOnJlY2VpcHRzIHF1ZXVlIChtYWluLnB5IDE5NDktMTk2NSkuICovCmZ1bmN0aW9uIGFkbWluX3JlY2VpcHRzX3F1ZXVlKGludCAkY2hhdElkKTogdm9pZCB7CiAgICAkcmVjcyA9IGRiKCktPnF1ZXJ5KCJTRUxFQ1QgaWQsIHRnX2lkLCBhbW91bnQsIHJlZl90ZXh0IEZST00gcmVjZWlwdHMgV0hFUkUgc3RhdHVzPSdwZW5kaW5nJyBPUkRFUiBCWSBpZCIpLT5mZXRjaEFsbCgpOwogICAgaWYgKCEkcmVjcykgewogICAgICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn8J+nviDYr9ixINin2YbYqti42KfYsSDYqtin24zbjNiv24wg2YbbjNiz2KouJyk7CiAgICAgICAgcmV0dXJuOwogICAgfQogICAgZm9yZWFjaCAoJHJlY3MgYXMgJHIpIHsKICAgICAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwKICAgICAgICAgICAgIiN7JHJbJ2lkJ119INin2LIgeyRyWyd0Z19pZCddfSDigJQgIiAuIGZtdF9wcmljZSgoaW50KSRyWydhbW91bnQnXSkgLiAiXG4iCiAgICAgICAgICAgIC4gJzxjb2RlPicgLiBodG1sc3BlY2lhbGNoYXJzKChzdHJpbmcpJHJbJ3JlZl90ZXh0J10pIC4gJzwvY29kZT4nLAogICAgICAgICAgICByZWNlaXB0X3Jldmlld19rYigoaW50KSRyWydpZCddKSk7CiAgICB9Cn0KCi8qKiBFeGFjdCBjb3B5IG9mIHJjb2svcmNubyAobWFpbi5weSAyODc4LTI4OTEpOiBjbGFpbSDihpIgYmFsYW5jZSDihpIgbm90aWZ5IOKGkiByZXN1bWUgcGVuZGluZyBidXkuICovCmZ1bmN0aW9uIGhhbmRsZV9yZWNlaXB0X3JldmlldyhpbnQgJGNoYXRJZCwgc3RyaW5nICRkYXRhKTogdm9pZCB7CiAgICAkcmlkID0gKGludClleHBsb2RlKCc6JywgJGRhdGEpWzFdOwogICAgJGFwcHJvdmUgPSBzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdyY29rJyk7CiAgICAkc3QgPSBkYigpLT5wcmVwYXJlKCdTRUxFQ1QgKiBGUk9NIHJlY2VpcHRzIFdIRVJFIGlkPT8nKTsKICAgICRzdC0+ZXhlY3V0ZShbJHJpZF0pOwogICAgJHJlYyA9ICRzdC0+ZmV0Y2goKTsKICAgIGlmICghJHJlYyB8fCAkcmVjWydzdGF0dXMnXSAhPT0gJ3BlbmRpbmcnKSB7IHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn2YLYqNmE2Kcg2b7Ysdiv2KfYsti0INi02K/ZhycpOyByZXR1cm47IH0KICAgIC8vIGNsYWltIChzaW5nbGUtZmxpZ2h0KTogb25seSBmaXJzdCBhZG1pbiB3aW5zCiAgICAkdSA9IGRiKCktPnByZXBhcmUoIlVQREFURSByZWNlaXB0cyBTRVQgc3RhdHVzPT8gV0hFUkUgaWQ9PyBBTkQgc3RhdHVzPSdwZW5kaW5nJyIpOwogICAgJHUtPmV4ZWN1dGUoWyRhcHByb3ZlID8gJ2FwcHJvdmVkJyA6ICdyZWplY3RlZCcsICRyaWRdKTsKICAgIGlmICgkdS0+cm93Q291bnQoKSA9PT0gMCkgeyBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ9mC2KjZhNinINm+2LHYr9in2LLYtCDYtNiv2YcnKTsgcmV0dXJuOyB9CgogICAgaWYgKCRhcHByb3ZlKSB7CiAgICAgICAgYWRkX2JhbGFuY2UoKGludCkkcmVjWyd0Z19pZCddLCAoaW50KSRyZWNbJ2Ftb3VudCddKTsKICAgICAgICB0Z19zZW5kKChpbnQpJHJlY1sndGdfaWQnXSwgJ+KchSDZvtix2K/Yp9iu2KogJyAuIGZtdF9wcmljZSgoaW50KSRyZWNbJ2Ftb3VudCddKSAuICcg2KrYp9uM24zYryDZiCDYqNmHINmF2YjYrNmI2K/bjOKAjNin2Kog2KfYttin2YHZhyDYtNivLicpOwogICAgICAgIC8vIFJlemEgcnVsZTog2Kfar9ixINqp2KfYsdio2LEg2K/YsSDZgdmE2Ygg2K7YsduM2K8g2K3YrNmFINin2LbYp9mB2Ycg2KjZiNivIOKAlCDYqtqp2YXbjNmEINiu2YjYr9qp2KfYsSDYrdis2YUg2KfYttin2YHZhyDYqNinINmF2YjYrNmI2K/bjCDYtNin2LHamNi02K/ZhwogICAgICAgICR4c3QgPSBzdF9hbGwoKGludCkkcmVjWyd0Z19pZCddKTsKICAgICAgICBpZiAoKCR4c3RbJ3hwX2tpbmQnXSA/PyAnJykgPT09ICdleHRyYWdiJyAmJiAhZW1wdHkoJHhzdFsneHBfZ2InXSkpIHsKICAgICAgICAgICAgc3RfcG9wKChpbnQpJHJlY1sndGdfaWQnXSk7CiAgICAgICAgICAgIC8vINmF2KjZhNi6INqp2YQg2K7YsduM2K8g2KfYsiDaqduM2YEg2b7ZiNmEICjYsdiz24zYryDZgdmC2Lcg2qnYs9ix24wg2LHYpyDYtNin2LHamCDaqdix2K/Zhykg4oCUIHNwZW5kINmC2KjZhCDYp9iyINin2LnZhdin2YQg2LHZiNuMINm+2YbZhAogICAgICAgICAgICAkeHByaWNlID0gKGludCkoJHhzdFsneHBfcHJpY2UnXSA/PyAwKTsKICAgICAgICAgICAgaWYgKCR4cHJpY2UgPiAwICYmICFzcGVuZF9iYWxhbmNlKChpbnQpJHJlY1sndGdfaWQnXSwgJHhwcmljZSkpIHsKICAgICAgICAgICAgICAgIHRnX3NlbmQoKGludCkkcmVjWyd0Z19pZCddLCAn4pqg77iPINmF2YjYrNmI2K/bjCDYqNix2KfbjCDYqtqp2YXbjNmEINiu2LHbjNivINit2KzZhSDYp9i22KfZgdmHINqp2KfZgduMINmG2LTYryDigJQg2YXYqNmE2Log2K/YsSDaqduM2YEg2b7ZiNmE2Kog2KjYp9mC24wg2YXYp9mG2K8uINiv2YjYqNin2LHZhyDYqtmE2KfYtCDaqdmGLicpOwogICAgICAgICAgICAgICAgcmV0dXJuOwogICAgICAgICAgICB9CiAgICAgICAgICAgIGNvbXBsZXRlX2V4dHJhX2diKChpbnQpJHJlY1sndGdfaWQnXSwgKGludCkkeHN0Wyd4cF9nYiddLCAoaW50KSR4c3RbJ3BpZCddLCAoaW50KSgkeHN0Wyd4cCddID8/IDApLCAkeHByaWNlKTsKICAgICAgICAgICAgcmV0dXJuOwogICAgICAgIH0KICAgICAgICAvLyByZXN1bWUgcGVuZGluZyBwdXJjaGFzZSBpbnZvaWNlICh0b3B1cCB3YXMgZm9yIGEgYnV5KSDigJQgbWFpbi5weSAyODkyLTI4OTcKICAgICAgICBpZiAoc3RyX3N0YXJ0c193aXRoKChzdHJpbmcpKCRyZWNbJ3JlZl90ZXh0J10gPz8gJycpLCAndG9wdXAnKSkgewogICAgICAgICAgICAkcGIgPSBkYigpLT5wcmVwYXJlKCJTRUxFQ1QgKiBGUk9NIHBlbmRpbmdfYnV5cyBXSEVSRSB0Z19pZD0/IE9SREVSIEJZIGlkIERFU0MgTElNSVQgMSIpOwogICAgICAgICAgICAkcGItPmV4ZWN1dGUoWyhpbnQpJHJlY1sndGdfaWQnXV0pOwogICAgICAgICAgICAkYiA9ICRwYi0+ZmV0Y2goKTsKICAgICAgICAgICAgaWYgKCRiKSB7CiAgICAgICAgICAgICAgICAkYmFsMiA9IGdldF9iYWxhbmNlKChpbnQpJHJlY1sndGdfaWQnXSk7CiAgICAgICAgICAgICAgICAkcGwgPSAkYlsncGlkJ10gPyBkYigpLT5wcmVwYXJlKCdTRUxFQ1QgKiBGUk9NIHBhbmVsX3BsYW5zIFdIRVJFIGlkPT8nKSA6IG51bGw7CiAgICAgICAgICAgICAgICBpZiAoJHBsKSB7ICRwbC0+ZXhlY3V0ZShbKGludCkkYlsncGlkJ11dKTsgJHByb3cgPSAkcGwtPmZldGNoKCk7IH0KICAgICAgICAgICAgICAgIGlmICghZW1wdHkoJHByb3cpICYmICRiYWwyID49IChmbG9hdCkkcHJvd1sncHJpY2UnXSkgewogICAgICAgICAgICAgICAgICAgIHN0X3NldCgoaW50KSRyZWNbJ3RnX2lkJ10sIFsnYnV5X3BsYW4nID0+IFsncGlkJyA9PiAoaW50KSRwcm93WydpZCddLCAnZ2InID0+IChmbG9hdCkkcHJvd1sndm9sdW1lX2diJ10sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ3ByaWNlJyA9PiAoaW50KSRwcm93WydwcmljZSddLCAnb3JpZ19wcmljZScgPT4gKGludCkkcHJvd1sncHJpY2UnXV1dKTsKICAgICAgICAgICAgICAgICAgICB0Z19zZW5kKChpbnQpJHJlY1sndGdfaWQnXSwKICAgICAgICAgICAgICAgICAgICAgICAgIuKchSDZhdmI2KzZiNiv24wg2qnYp9mB24wg2LTYry4g2KjYsdin24wg2b7Ysdiv2KfYrtiqINmIINiz2KfYrtiqINii2YbbjCDZvtmG2YQg2KjYstmGOiIsCiAgICAgICAgICAgICAgICAgICAgICAgIFsnaW5saW5lX2tleWJvYXJkJyA9PiBbW1sndGV4dCcgPT4gIuKchSDZvtix2K/Yp9iu2Kog2KfYsiDZhdmI2KzZiNiv24wg2qnbjNmBINm+2YjZhCAoIiAuIG51bWJlcl9mb3JtYXQoKGZsb2F0KSRwcm93WydwcmljZSddKSAuICIg2KrZiNmF2KfZhikiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ2NhbGxiYWNrX2RhdGEnID0+ICdwYXliYWxwbGFuOicgLiAkcHJvd1snaWQnXV1dXV0pOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfSBlbHNlIHsKICAgICAgICB0Z19zZW5kKChpbnQpJHJlY1sndGdfaWQnXSwgJ+KdjCDYsdiz24zYryDYtNmF2Kcg2LHYryDYtNivLiDYqNix2KfbjCDYqNix2LHYs9uMINio2Kcg2b7YtNiq24zYqNin2YbbjCDYr9ixINiq2YXYp9izINio2KfYtC4nKTsKICAgIH0KfQoKLyoqIEV4YWN0IGNvcHkgb2YgcmNmaXggKG1haW4ucHkgMTkyOC0xOTMxKTogYWRtaW4gZWRpdHMgYW1vdW50IHRoZW4gYXBwcm92ZXMuICovCmZ1bmN0aW9uIHJlY2VpcHRfZml4X3N0YXJ0KGludCAkY2hhdElkLCBpbnQgJHJpZCk6IHZvaWQgewogICAgc3Rfc2V0KCRjaGF0SWQsIFsnYXdhaXQnID0+ICJyY2ZpeDokcmlkIl0pOwogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfinI/vuI8g2YXYqNmE2Log2LXYrduM2K0g2LHYs9uM2K8g2LHYpyDYqNmHINiq2YjZhdin2YYg2KjZgdix2LPYqiAo2KrYp9uM24zYryDYqNinINin24zZhiDZhdio2YTYuiDYp9mG2KzYp9mFINmF24zigIzYtNmI2K8pOicpOwp9CgovKiogQXBwbHkgcmNmaXggYW1vdW50OiBzZXQgYW1vdW50ICsgYXBwcm92ZSAobWFpbi5weSAzMjM3IGhhbmRsZXMgdGhlIGF3YWl0KS4gKi8KZnVuY3Rpb24gcmVjZWlwdF9maXhfYXBwbHkoaW50ICRjaGF0SWQsIHN0cmluZyAkdGV4dCk6IHZvaWQgewogICAgJHJpZCA9IChpbnQpc3Vic3RyKChzdHJpbmcpc3RfZ2V0KCRjaGF0SWQsICdhd2FpdCcsICcnKSwgNik7CiAgICBzdF9wb3AoJGNoYXRJZCk7CiAgICAkY2xlYW4gPSAoaW50KXByZWdfcmVwbGFjZSgnL1teXGRdLycsICcnLCBzdHJfcmVwbGFjZSgnLCcsICcnLCAkdGV4dCkpOwogICAgaWYgKCEkY2xlYW4pIHsgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICfinYwg2YHZgti3INi52K/YryDYqNmB2LHYs9iqOicpOyBzdF9zZXQoJGNoYXRJZCwgWydhd2FpdCcgPT4gInJjZml4OiRyaWQiXSk7IHJldHVybjsgfQogICAgZGIoKS0+cHJlcGFyZSgnVVBEQVRFIHJlY2VpcHRzIFNFVCBhbW91bnQ9PyBXSEVSRSBpZD0/JyktPmV4ZWN1dGUoWyRjbGVhbiwgJHJpZF0pOwogICAgaGFuZGxlX3JlY2VpcHRfcmV2aWV3KCRjaGF0SWQsICJyY29rOiRyaWQiKTsKfQoKLyoqIE15IHJlY2VpcHRzIHNjcmVlbiDigJQgcHl0aG9uIHBhcml0eSAo2obaqSB3b3JrZWQtYmVmb3JlIHN0YXRlKS4gKi8KZnVuY3Rpb24gbXlfcmVjZWlwdHMoaW50ICRjaGF0SWQpOiB2b2lkIHsKICAgICRzdCA9IGRiKCktPnByZXBhcmUoJ1NFTEVDVCBpZCwgYW1vdW50LCBzdGF0dXMsIGNyZWF0ZWRfYXQgRlJPTSByZWNlaXB0cyBXSEVSRSB0Z19pZD0/IE9SREVSIEJZIGlkIERFU0MgTElNSVQgMTAnKTsKICAgICRzdC0+ZXhlY3V0ZShbJGNoYXRJZF0pOwogICAgJHJvd3MgPSAkc3QtPmZldGNoQWxsKCk7CiAgICBpZiAoISRyb3dzKSB7IHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn2YfZhtmI2LIg2LHYs9uM2K/bjCDYq9io2Kog2Ybaqdix2K/bjC4nKTsgcmV0dXJuOyB9CiAgICAkc3RhdHVzTWFwID0gWydwZW5kaW5nJyA9PiAn4o+zINiv2LEg2KfZhtiq2LjYp9ixJywgJ2FwcHJvdmVkJyA9PiAn4pyFINiq2KfbjNuM2K8g2LTYr9mHJywgJ3JlamVjdGVkJyA9PiAn4p2MINix2K8g2LTYr9mHJywgJ2RlbGV0ZWQnID0+ICfwn5eRINit2LDZgSddOwogICAgJHR4dCA9ICLwn5OEINii2K7YsduM2YYg2LHYs9uM2K/Zh9inOlxuXG4iOwogICAgZm9yZWFjaCAoJHJvd3MgYXMgJHIpIHsKICAgICAgICAkdHh0IC49ICIjeyRyWydpZCddfSDigJQgIiAuIGZtdF9wcmljZSgoaW50KSRyWydhbW91bnQnXSkgLiAnIOKAlCAnIC4gKCRzdGF0dXNNYXBbJHJbJ3N0YXR1cyddXSA/PyAkclsnc3RhdHVzJ10pCiAgICAgICAgICAgICAgLiAnIOKAlCAnIC4gamRhdGUoJHJbJ2NyZWF0ZWRfYXQnXSkgLiAiXG4iOwogICAgfQogICAgc2VuZF9vcl9lZGl0KCRjaGF0SWQsICR0eHQpOwp9Cg=='));
+/**
+ * admin/receipts.php — کپی مو‌به‌موی پایتون:
+ * صف رسیدها (main.py 1949-1965)، دکمه‌های بررسی (ui.py 471-476)،
+ * rcok/rcno (main.py 2878-2891)، rcfix (1928-1931)، my receipts.
+ */
+
+require_once BASE_DIR . '/core/bot.php';
+require_once BASE_DIR . '/flows/wallet.php';
+
+/** Exact copy of ui.receipts_kb() — the notification kb sent to admins on new receipt. */
+function receipts_kb(int $rid): array {
+    return ['inline_keyboard' => [[
+        ['text' => '✅ تایید', 'callback_data' => "rcok:$rid"],
+        ['text' => '❌ رد', 'callback_data' => "rcno:$rid"],
+    ]]];
+}
+
+/** Exact copy of ui.receipt_review_kb() — the queue review kb (4 buttons incl. edit-amount). */
+function receipt_review_kb(int $rid): array {
+    return ['inline_keyboard' => [
+        [['text' => '⚡ تایید با همان مبلغ', 'callback_data' => "rcok:$rid"],
+         ['text' => '✏️ ویرایش مبلغ و تایید', 'callback_data' => "rcfix:$rid"]],
+        [['text' => '❌ رد درخواست', 'callback_data' => "rcno:$rid"]],
+    ]];
+}
+
+/** Exact copy of adm:receipts queue (main.py 1949-1965). */
+function admin_receipts_queue(int $chatId): void {
+    $recs = db()->query("SELECT id, tg_id, amount, ref_text FROM receipts WHERE status='pending' ORDER BY id")->fetchAll();
+    if (!$recs) {
+        send_or_edit($chatId, '🧾 در انتظار تاییدی نیست.');
+        return;
+    }
+    foreach ($recs as $r) {
+        send_or_edit($chatId,
+            "#{$r['id']} از {$r['tg_id']} — " . fmt_price((int)$r['amount']) . "\n"
+            . '<code>' . htmlspecialchars((string)$r['ref_text']) . '</code>',
+            receipt_review_kb((int)$r['id']));
+    }
+}
+
+/** Exact copy of rcok/rcno (main.py 2878-2891): claim → balance → notify → resume pending buy. */
+function handle_receipt_review(int $chatId, string $data): void {
+    $rid = (int)explode(':', $data)[1];
+    $approve = str_starts_with($data, 'rcok');
+    $st = db()->prepare('SELECT * FROM receipts WHERE id=?');
+    $st->execute([$rid]);
+    $rec = $st->fetch();
+    if (!$rec || $rec['status'] !== 'pending') { send_or_edit($chatId, 'قبلا پردازش شده'); return; }
+    // claim (single-flight): only first admin wins
+    $u = db()->prepare("UPDATE receipts SET status=? WHERE id=? AND status='pending'");
+    $u->execute([$approve ? 'approved' : 'rejected', $rid]);
+    if ($u->rowCount() === 0) { send_or_edit($chatId, 'قبلا پردازش شده'); return; }
+
+    if ($approve) {
+        add_balance((int)$rec['tg_id'], (int)$rec['amount']);
+        tg_send((int)$rec['tg_id'], '✅ پرداخت ' . fmt_price((int)$rec['amount']) . ' تایید و به موجودی‌ات اضافه شد.');
+        // Reza rule: اگر کاربر در فلو خرید حجم اضافه بود — تکمیل خودکار حجم اضافه با موجودی شارژشده
+        $xst = st_all((int)$rec['tg_id']);
+        if (($xst['xp_kind'] ?? '') === 'extragb' && !empty($xst['xp_gb'])) {
+            st_pop((int)$rec['tg_id']);
+            // مبلغ کل خرید از کیف پول (رسید فقط کسری را شارژ کرده) — spend قبل از اعمال روی پنل
+            $xprice = (int)($xst['xp_price'] ?? 0);
+            if ($xprice > 0 && !spend_balance((int)$rec['tg_id'], $xprice)) {
+                tg_send((int)$rec['tg_id'], '⚠️ موجودی برای تکمیل خرید حجم اضافه کافی نشد — مبلغ در کیف پولت باقی ماند. دوباره تلاش کن.');
+                return;
+            }
+            complete_extra_gb((int)$rec['tg_id'], (int)$xst['xp_gb'], (int)$xst['pid'], (int)($xst['xp'] ?? 0), $xprice);
+            return;
+        }
+        // resume pending purchase invoice (topup was for a buy) — main.py 2892-2897
+        if (str_starts_with((string)($rec['ref_text'] ?? ''), 'topup')) {
+            $pb = db()->prepare("SELECT * FROM pending_buys WHERE tg_id=? ORDER BY id DESC LIMIT 1");
+            $pb->execute([(int)$rec['tg_id']]);
+            $b = $pb->fetch();
+            if ($b) {
+                $bal2 = get_balance((int)$rec['tg_id']);
+                $pl = $b['pid'] ? db()->prepare('SELECT * FROM panel_plans WHERE id=?') : null;
+                if ($pl) { $pl->execute([(int)$b['pid']]); $prow = $pl->fetch(); }
+                if (!empty($prow) && $bal2 >= (float)$prow['price']) {
+                    st_set((int)$rec['tg_id'], ['buy_plan' => ['pid' => (int)$prow['id'], 'gb' => (float)$prow['volume_gb'],
+                                                              'price' => (int)$prow['price'], 'orig_price' => (int)$prow['price']]]);
+                    tg_send((int)$rec['tg_id'],
+                        "✅ موجودی کافی شد. برای پرداخت و ساخت آنی پنل بزن:",
+                        ['inline_keyboard' => [[['text' => "✅ پرداخت از موجودی کیف پول (" . number_format((float)$prow['price']) . " تومان)",
+                                                 'callback_data' => 'paybalplan:' . $prow['id']]]]]);
+                }
+            }
+        }
+    } else {
+        tg_send((int)$rec['tg_id'], '❌ رسید شما رد شد. برای بررسی با پشتیبانی در تماس باش.');
+    }
+}
+
+/** Exact copy of rcfix (main.py 1928-1931): admin edits amount then approves. */
+function receipt_fix_start(int $chatId, int $rid): void {
+    st_set($chatId, ['await' => "rcfix:$rid"]);
+    send_or_edit($chatId, '✏️ مبلغ صحیح رسید را به تومان بفرست (تایید با این مبلغ انجام می‌شود):');
+}
+
+/** Apply rcfix amount: set amount + approve (main.py 3237 handles the await). */
+function receipt_fix_apply(int $chatId, string $text): void {
+    $rid = (int)substr((string)st_get($chatId, 'await', ''), 6);
+    st_pop($chatId);
+    $clean = (int)preg_replace('/[^\d]/', '', str_replace(',', '', $text));
+    if (!$clean) { send_or_edit($chatId, '❌ فقط عدد بفرست:'); st_set($chatId, ['await' => "rcfix:$rid"]); return; }
+    db()->prepare('UPDATE receipts SET amount=? WHERE id=?')->execute([$clean, $rid]);
+    handle_receipt_review($chatId, "rcok:$rid");
+}
+
+/** My receipts screen — python parity (چک worked-before state). */
+function my_receipts(int $chatId): void {
+    $st = db()->prepare('SELECT id, amount, status, created_at FROM receipts WHERE tg_id=? ORDER BY id DESC LIMIT 10');
+    $st->execute([$chatId]);
+    $rows = $st->fetchAll();
+    if (!$rows) { send_or_edit($chatId, 'هنوز رسیدی ثبت نکردی.'); return; }
+    $statusMap = ['pending' => '⏳ در انتظار', 'approved' => '✅ تایید شده', 'rejected' => '❌ رد شده', 'deleted' => '🗑 حذف'];
+    $txt = "📄 آخرین رسیدها:\n\n";
+    foreach ($rows as $r) {
+        $txt .= "#{$r['id']} — " . fmt_price((int)$r['amount']) . ' — ' . ($statusMap[$r['status']] ?? $r['status'])
+              . ' — ' . jdate($r['created_at']) . "\n";
+    }
+    send_or_edit($chatId, $txt);
+}
