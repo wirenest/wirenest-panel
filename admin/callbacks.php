@@ -1,3 +1,247 @@
 <?php
-// Encrypted & Protected by WireNest Shield
-@eval(base64_decode('PD9waHAKLyoqCiAqIGFkbWluL2NhbGxiYWNrcy5waHAg4oCUIHRoZSBjYWxsYmFjayByb3V0ZXI6IGRpc3BhdGNoZXMgZXZlcnkgaW5saW5lIGJ1dHRvbiAocGFyaXR5INio2Kcgb25fYWRtaW5fY2Ivb25fc2VydmljZV9jYi8uLi4g2b7Yp9uM2KrZiNmGKQogKi8KCnJlcXVpcmVfb25jZSBCQVNFX0RJUiAuICcvY29yZS9ib3QucGhwJzsKcmVxdWlyZV9vbmNlIEJBU0VfRElSIC4gJy9jb3JlL21lbnVzLnBocCc7CnJlcXVpcmVfb25jZSBCQVNFX0RJUiAuICcvbGliL3BhbmVsX2FwaS5waHAnOwpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2Zsb3dzL2J1eS5waHAnOwpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2Zsb3dzL3dhbGxldC5waHAnOwpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2Zsb3dzL3NlcnZpY2VzLnBocCc7CnJlcXVpcmVfb25jZSBCQVNFX0RJUiAuICcvYWRtaW4vcmVjZWlwdHMucGhwJzsKcmVxdWlyZV9vbmNlIEJBU0VfRElSIC4gJy9hZG1pbi91c2Vycy5waHAnOwpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2FkbWluL2JjYXN0LnBocCc7CnJlcXVpcmVfb25jZSBCQVNFX0RJUiAuICcvYWRtaW4vc2V0dGluZ3MucGhwJzsKcmVxdWlyZV9vbmNlIEJBU0VfRElSIC4gJy9hZG1pbi9wYXltZW50cy5waHAnOwpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2FkbWluL3BhbmVscy5waHAnOwpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2FkbWluL3BhbmVsX2V4dHJhLnBocCc7CnJlcXVpcmVfb25jZSBCQVNFX0RJUiAuICcvYWRtaW4vbWlzYy5waHAnOwpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2FkbWluL3N0YXRzLnBocCc7CnJlcXVpcmVfb25jZSBCQVNFX0RJUiAuICcvYWRtaW4vZGlzY291bnRzLnBocCc7CnJlcXVpcmVfb25jZSBCQVNFX0RJUiAuICcvYWRtaW4vZmVhdHVyZXMucGhwJzsKCmZ1bmN0aW9uIGhhbmRsZV9jYWxsYmFjayhhcnJheSAkY3EpOiB2b2lkIHsKICAgICRjaGF0SWQgPSAoaW50KSRjcVsnZnJvbSddWydpZCddOwogICAgJGRhdGEgPSAoc3RyaW5nKSgkY3FbJ2RhdGEnXSA/PyAnJyk7CiAgICAkbXNnSWQgPSAoaW50KSgkY3FbJ21lc3NhZ2UnXVsnbWVzc2FnZV9pZCddID8/IDApOwogICAgY3R4X21zZ19pZF9zZXQoJG1zZ0lkKTsKICAgIHRnKCdhbnN3ZXJDYWxsYmFja1F1ZXJ5JywgWydjYWxsYmFja19xdWVyeV9pZCcgPT4gJGNxWydpZCddXSk7CgogICAgJGFkbWluID0gaXNfYWRtaW4oJGNoYXRJZCk7CgogICAgLy8gLS0tIHB1YmxpYyBmbG93cyAtLS0KICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdidXlwbGFuOicpIHx8IHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ2NvbmZpcm1wbGFuOicpCiAgICAgICAgfHwgc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAncGF5YmFscGxhbjonKSB8fCBzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdhcGRjOicpCiAgICAgICAgfHwgc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAnY29uZmlybTonKSB8fCBzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdwYXliYWw6JykKICAgICAgICB8fCAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAnYnV5OicpICYmICFzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdidXlwbGFuOicpKQogICAgICAgIHx8ICRkYXRhID09PSAnY2FuY2VsYnV5JykgeyBoYW5kbGVfYnV5X2NhbGxiYWNrKCRjaGF0SWQsICRkYXRhKTsgcmV0dXJuOyB9CgogICAgaWYgKCRkYXRhID09PSAnbTpob21lJykgeyBzdF9wb3AoJGNoYXRJZCk7IHNlbmRfb3JfZWRpdCgkY2hhdElkLCAn8J+PoCDZhdmG2YjbjCDYp9i12YTbjDonLCBtYWluX21lbnVfa2IoJGFkbWluKSk7IHJldHVybjsgfQogICAgaWYgKCRkYXRhID09PSAnbTpidXknKSAgeyBzaG93X2J1eV9zY3JlZW4oJGNoYXRJZCk7IHJldHVybjsgfQogICAgaWYgKCRkYXRhID09PSAnbTpzZXJ2aWNlcycpIHsgc2VydmljZXNfaG9tZSgkY2hhdElkKTsgcmV0dXJuOyB9CiAgICBpZiAoJGRhdGEgPT09ICd0b3B1cCcpICB7IHN0YXJ0X3RvcHVwKCRjaGF0SWQpOyByZXR1cm47IH0KICAgIGlmICgkZGF0YSA9PT0gJ215cmVjZWlwdHMnKSB7IG15X3JlY2VpcHRzKCRjaGF0SWQpOyByZXR1cm47IH0KICAgIGlmICgkZGF0YSA9PT0gJ206dGt0JykgeyAvLyDinInvuI8g2KfYsdiz2KfZhCDZvtuM2KfZhSDigJQg2b7Yp9uM2KrZiNmGIG1haW4ucHkgNDI3MC00MjcyOiDZhdiz2KrZgtuM2YUg2b7Ysdin2YXZvtiqINio2K/ZhyAo2LXZgdit2YfZlCDZvti02KrbjNio2KfZhtuMINiv2YjYqNin2LHZhyDYqNin2LIg2YbYtNmI2K8pCiAgICAgICAgc3Rfc2V0KCRjaGF0SWQsIFsnYXdhaXQnID0+ICdzdXBwb3J0X21zZyddKTsKICAgICAgICB0Z19zZW5kKCRjaGF0SWQsICfinI3vuI8g2b7bjNin2YXYqiDYsdinINio2YbZiNuM2LMgKNin2LHYs9in2YQg2KjZhyDZvti02KrbjNio2KfZhtuMKTonKTsKICAgICAgICByZXR1cm47CiAgICB9CiAgICBpZiAoJGRhdGEgPT09ICd3YWw6YWRkY3JlZGl0JykgeyB3YWxsZXRfYWRkX2NyZWRpdCgkY2hhdElkKTsgcmV0dXJuOyB9CiAgICBpZiAoJGRhdGEgPT09ICd3YWw6cmVjZWlwdHMnKSB7IG15X3JlY2VpcHRzKCRjaGF0SWQpOyByZXR1cm47IH0KICAgIGlmICgkZGF0YSA9PT0gJ3dhbDpyZWNlaXB0JykgewogICAgICAgIC8vIHB5dGhvbiBwYXJpdHk6IMKr2KfYsdiz2KfZhCDaqdix2K/ZhcK7IOKGkiDZhdmG2KrYuNixINqp2K8g2b7bjNqv24zYsduML9i52qnYsyDYsdiz24zYryAobWFpbi5weSAxMjM4LTEyNDkpCiAgICAgICAgLy8g2YHYsdmF2KfZhiDYsdi22Kc6INm+24zYp9mFINin2LfZhNin2LnYp9iqINqp2KfYsdiqL9mF2KjZhNi6INio2KfbjNivINm+2KfaqS/YrNin24zar9iy24zZhiDYqNi02Ycg4oCUINmB2YLYtyDZvtix2KfZhdm+2Kog2KfYsdiz2KfZhCDYsdiz24zYryDYqNmF2YjZhtmHCiAgICAgICAgc3Rfc2V0KCRjaGF0SWQsIFsnYXdhaXQnID0+ICd3YWxsZXRfcmVjZWlwdCddKTsKICAgICAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ+Kcie+4jyDaqdivINm+24zar9uM2LHbjCDZiNin2LHbjNiyINix2Kcg2KjZgdix2LPYqiAo24zYpyDYudqp2LMg2LHYs9uM2K8pOicpOwogICAgICAgIHJldHVybjsKICAgIH0KICAgIGlmICgkZGF0YSA9PT0gJ2NhbmNlbGJ1eScpIHsgc3RfcG9wKCRjaGF0SWQpOyB0Z19zZW5kKCRjaGF0SWQsICfinYwg2K7YsduM2K8g2YTYutmIINi02K8uJyk7IHJldHVybjsgfQoKICAgIC8vIFJlemEgcnVsZTog2YHYp9qp2KrZiNixINit2KzZhSDYp9i22KfZgdmHIOKAlCDYqtin24zbjNivL9mE2LrZiCAo2YXYs9uM2LEg2LnZhdmI2YXbjCDaqdin2LHYqNixKQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ3hncGF5OicpKSB7CiAgICAgICAgcmVxdWlyZV9vbmNlIEJBU0VfRElSIC4gJy9mbG93cy9leHRyYV9nYi5waHAnOwogICAgICAgIFssICR4cGlkLCAkeGdiLCAkeHByaWNlXSA9IGFycmF5X3BhZChleHBsb2RlKCc6JywgJGRhdGEpLCA0LCAwKTsKICAgICAgICBleHRyYV9nYl9pbnZvaWNlX2NvbmZpcm0oJGNoYXRJZCwgKGludCkkeHBpZCwgKGludCkkeGdiLCAoaW50KSR4cHJpY2UpOwogICAgICAgIHJldHVybjsKICAgIH0KICAgIGlmICgkZGF0YSA9PT0gJ3hnY2FuY2VsJykgewogICAgICAgIHJlcXVpcmVfb25jZSBCQVNFX0RJUiAuICcvZmxvd3MvZXh0cmFfZ2IucGhwJzsKICAgICAgICBleHRyYV9nYl9pbnZvaWNlX2NhbmNlbCgkY2hhdElkKTsKICAgICAgICByZXR1cm47CiAgICB9CgogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ2d1aWRlOicpKSB7CiAgICAgICAgLy8g2b7Yp9ix24zYqtuMIG1haW4ucHkgMTI3NS0xMjg1ICsgdWkuZ3VpZGVfYmFja19rYjogZ3VpZGU6PGlkPiDihpIgZ3VpZGVfdG9waWNzLmNvbnRlbnQgKyDYr9qp2YXZh+KAjNmH2KfbjCDYqNin2LLar9i02KoKICAgICAgICAkZ2lkID0gKGludClzdWJzdHIoJGRhdGEsIDYpOwogICAgICAgICR0b3BpYyA9IGRiKCktPnByZXBhcmUoJ1NFTEVDVCBjb250ZW50IEZST00gZ3VpZGVfdG9waWNzIFdIRVJFIGlkPT8gTElNSVQgMScpOwogICAgICAgICR0b3BpYy0+ZXhlY3V0ZShbJGdpZF0pOwogICAgICAgICR0ID0gJHRvcGljLT5mZXRjaCgpOwogICAgICAgIHNlbmRfb3JfZWRpdCgkY2hhdElkLCAkdCA/IChzdHJpbmcpJHRbJ2NvbnRlbnQnXSA6ICfYsdin2YfZhtmF2KfbjNuMINir2KjYqiDZhti02K/Zhy4nLAogICAgICAgICAgICBbJ2lubGluZV9rZXlib2FyZCcgPT4gWwogICAgICAgICAgICAgICAgW1sndGV4dCcgPT4gJ+KXgO+4jyDYqNin2LLar9i02Kog2KjZhyDZhNuM2LPYqiDZvtmE2KrZgdix2YXigIzZh9inJywgJ2NhbGxiYWNrX2RhdGEnID0+ICdtOmhlbHAnXV0sCiAgICAgICAgICAgICAgICBbWyd0ZXh0JyA9PiAn8J+PoCDZhdmG2YjbjCDYp9i12YTbjCcsICdjYWxsYmFja19kYXRhJyA9PiAnbTpob21lJ11dLAogICAgICAgICAgICBdXSk7CiAgICAgICAgcmV0dXJuOwogICAgfQoKICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdhcGNocHc6JykpIHsgc2VydmljZV9jaGFuZ2VfcGFzc3dvcmRfc3RhcnQoJGNoYXRJZCwgKGludClzdWJzdHIoJGRhdGEsIDcpKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAnc3ZjOicpKSB7CiAgICAgICAgJHBhcnRzID0gZXhwbG9kZSgnOicsICRkYXRhKTsgLy8gc3ZjOjxpZD4gfCBzdmM6PGlkPjo8YWN0aW9uPgogICAgICAgICRzdmNJZCA9IChpbnQpJHBhcnRzWzFdOwogICAgICAgIGlmIChjb3VudCgkcGFydHMpID09PSAyKSB7IHNlcnZpY2Vfc2NyZWVuKCRjaGF0SWQsICRzdmNJZCk7IHJldHVybjsgfQogICAgICAgICRhY3QgPSAkcGFydHNbMl07CiAgICAgICAgaWYgKCRhY3QgPT09ICdpbmZvJykgeyBzZXJ2aWNlX2xvZ2luX2luZm8oJGNoYXRJZCwgJHN2Y0lkKTsgcmV0dXJuOyB9CiAgICAgICAgaWYgKCRhY3QgPT09ICdwYXNzJykgeyBzZXJ2aWNlX2NoYW5nZV9wYXNzd29yZF9zdGFydCgkY2hhdElkLCAkc3ZjSWQpOyByZXR1cm47IH0KICAgICAgICBpZiAoJGFjdCA9PT0gJ2V4dCcpICB7IHRnX3NlbmQoJGNoYXRJZCwgJ9io2LHYp9uMINit2KzZhSDYp9i22KfZgdmHINio2Kcg2b7YtNiq24zYqNin2YbbjCDYr9ixINiq2YXYp9izINio2KfYtCDbjNinINin2LIg8J+UkCDYrtix24zYryDYp9i02KrYsdin2qkg2KfYs9iq2YHYp9iv2Ycg2qnZhi4nKTsgcmV0dXJuOyB9CiAgICAgICAgcmV0dXJuOwogICAgfQoKICAgIC8vIHRlc3RwaWNrIOKAlCDaqdin2LHYqNixINi52KfYr9uMINm+2YbZhCDYqtiz2Kog2LHYpyDYp9mG2KrYrtin2Kgg2YXbjOKAjNqp2YbYryAobWFpbi5weTogaGFuZGxlciDYudmF2YjZhduM2Iwg2YLYqNmEINin2LIgYWRtaW4gZ2F0ZSkKICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICd0ZXN0cGljazonKSkgeyBoYW5kbGVfdGVzdF9waWNrKCRjaGF0SWQsIHVybGRlY29kZShzdWJzdHIoJGRhdGEsIDkpKSk7IHJldHVybjsgfQoKICAgIC8vIFJlemEgcnVsZTog2qnYp9ix2KjYsSDYsdmI24wgwqvinInvuI8g2b7Yp9iz2K7CuyDZvtuM2KfZhSDZvti02KrbjNio2KfZhtuMINmF24zigIzYqtmI2KfZhtivINis2YjYp9ioINio2K/Zh9ivIOKGkiDYqtuM2qnYqiDYrNiv24zYryDYqNmHINin2K/ZhduM2YbigIzZh9inIChtYWluLnB5IGdhdGUg2YbYr9in2LTYqtibIFVYINi12K3bjNitKQogICAgaWYgKCEkYWRtaW4gJiYgc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAndW06bXNnOicpKSB7CiAgICAgICAgJHRndCA9IChpbnQpc3Vic3RyKCRkYXRhLCA3KTsKICAgICAgICBpZiAoJHRndCA9PT0gJGNoYXRJZCkgewogICAgICAgICAgICBzdF9zZXQoJGNoYXRJZCwgWydhd2FpdCcgPT4gJ3N1cHBvcnRfbXNnJ10pOwogICAgICAgICAgICBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ+Kcje+4jyDZvtin2LPYrtiqINix2Kcg2KjZhtmI24zYsyAo2KfYsdiz2KfZhCDYqNmHINm+2LTYqtuM2KjYp9mG24wpOicpOwogICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgIHRnX3NlbmQoJGNoYXRJZCwgJ+KblO+4jyDZgdmC2Lcg2KfYr9mF24zZhi4nKTsKICAgICAgICB9CiAgICAgICAgcmV0dXJuOwogICAgfQoKICAgIC8vIC0tLSBhZG1pbiBnYXRlIC0tLQogICAgaWYgKCEkYWRtaW4pIHsgdGdfc2VuZCgkY2hhdElkLCAn4puU77iPINmB2YLYtyDYp9iv2YXbjNmGLicpOyByZXR1cm47IH0KCiAgICBpZiAoJGRhdGEgPT09ICd3YWw6Z2lmdCcpICB7IHN0YXJ0X2dpZnRfcmVkZWVtKCRjaGF0SWQpOyByZXR1cm47IH0KICAgIGlmICgkZGF0YSA9PT0gJ2FkbTpnZW5lcmFsJykgeyBhZG1pbl9nZW5lcmFsX2hvbWUoJGNoYXRJZCk7IHJldHVybjsgfQogICAgaWYgKCRkYXRhID09PSAnYWRtOnNob3BnZW5lcmFsJykgeyBhZG1pbl9zaG9wZ2VuZXJhbF9ob21lKCRjaGF0SWQpOyByZXR1cm47IH0KICAgIGlmICgkZGF0YSA9PT0gJ2FkbTpwb3dlcicpIHsgYWRtaW5fcG93ZXJfaG9tZSgkY2hhdElkKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAncG5sOmVkaXQ6JykpICAgeyBhZG1pbl9wYW5lbF9lZGl0X3N0YXJ0KCRjaGF0SWQsIHVybGRlY29kZShzdWJzdHIoJGRhdGEsIDkpKSk7IHJldHVybjsgfQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ3BubDp0b2dnbGU6JykpIHsgYWRtaW5fcGFuZWxfdG9nZ2xlKCRjaGF0SWQsIHVybGRlY29kZShzdWJzdHIoJGRhdGEsIDExKSkpOyByZXR1cm47IH0KICAgIGlmICgkZGF0YSA9PT0gJ2FkbTpiYWNrJykgIHsgc3RfcG9wKCRjaGF0SWQpOyBzZW5kX29yX2VkaXQoJGNoYXRJZCwgJ/CfkajigI3wn5K8INm+2YbZhCDZhdiv24zYsduM2Ko6JywgYWRtaW5fbWVudV9rYigpKTsgcmV0dXJuOyB9CiAgICBpZiAoJGRhdGEgPT09ICdhZG06c3RhdHMnKSAgIHsgYWRtaW5fc3RhdHMoJGNoYXRJZCk7IHJldHVybjsgfQogICAgaWYgKCRkYXRhID09PSAnYWRtOnJlY2VpcHRzJyl7IGFkbWluX3JlY2VpcHRzX3F1ZXVlKCRjaGF0SWQpOyByZXR1cm47IH0gLy8g2b7Yp9uM2KrZiNmGINmB2YLYtyDYtdmBINix2LPbjNiv2YfYpyAobWFpbi5weSAxOTQ5LTE5NjUpCiAgICBpZiAoJGRhdGEgPT09ICdhZG06dXNlcnMnKSAgIHsgYWRtaW5fdXNlcnNfaG9tZSgkY2hhdElkKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAnc3ZjdmlldzonKSkgeyBhZG1pbl9zdmNfdmlldygkY2hhdElkLCAoaW50KXN1YnN0cigkZGF0YSwgOCkpOyByZXR1cm47IH0KICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdzdmNvcmRlbDonKSkgeyBhZG1pbl9zdmNfb3JkZXJkZWwoJGNoYXRJZCwgKGludClzdWJzdHIoJGRhdGEsIDkpKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAnc3ZjcmVmdW5kOicpKSB7IGFkbWluX3N2Y19yZWZ1bmQoJGNoYXRJZCwgKGludClzdWJzdHIoJGRhdGEsIDEwKSk7IHJldHVybjsgfQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ3N2Y2Z1bGxkZWw6JykpIHsgYWRtaW5fc3ZjX2Z1bGxkZWwoJGNoYXRJZCwgKGludClzdWJzdHIoJGRhdGEsIDExKSk7IHJldHVybjsgfQogICAgaWYgKCRkYXRhID09PSAnc3Zjbm9vcCcpIHsgcmV0dXJuOyB9CiAgICBpZiAoJGRhdGEgPT09ICdhZG06ZmluZHVzZXInKXsgYWRtaW5fZmluZHVzZXJfc3RhcnQoJGNoYXRJZCk7IHJldHVybjsgfQogICAgaWYgKCRkYXRhID09PSAnYWRtOnNlYXJjaCcpeyBhZG1pbl9maW5kb3JkZXJfc3RhcnQoJGNoYXRJZCk7IHJldHVybjsgfQogICAgaWYgKCRkYXRhID09PSAnYWRtOm1hc3NiYWwnKSB7IGFkbWluX21hc3NiYWxfc3RhcnQoJGNoYXRJZCwgJ2FkZCcpOyByZXR1cm47IH0KICAgIGlmICgkZGF0YSA9PT0gJ2FkbTptYXNzc3ViJykgeyBhZG1pbl9tYXNzYmFsX3N0YXJ0KCRjaGF0SWQsICdzdWInKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAndW1yZXBsOicpKSB7IGFkbWluX3VtcmVwbCgkY2hhdElkLCAkZGF0YSk7IHJldHVybjsgfQogICAgaWYgKCRkYXRhID09PSAnYWRtOnRpY2tldHMnKSB7IGFkbWluX3RpY2tldHMoJGNoYXRJZCk7IHJldHVybjsgfQogICAgaWYgKCRkYXRhID09PSAnYWRtOmRpc2NvdW50cycpeyBhZG1pbl9kaXNjb3VudHNfaG9tZSgkY2hhdElkKTsgcmV0dXJuOyB9CiAgICBpZiAoJGRhdGEgPT09ICdhZG06c2V0dGluZ3MnKXsgYWRtaW5fc2V0dGluZ3NfaG9tZSgkY2hhdElkKTsgcmV0dXJuOyB9CiAgICBpZiAoJGRhdGEgPT09ICdhZG06cGF5bWVudHMnKXsgYWRtaW5fcGF5bWVudHNfaG9tZSgkY2hhdElkKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAncGF5dG9nZ2xlOicpKSB7CiAgICAgICAgJHBwID0gZXhwbG9kZSgnOicsICRkYXRhKTsgLy8gcGF5dG9nZ2xlOmtleVs6Y2ZnXQogICAgICAgIGFkbWluX3BheV90b2dnbGUoJGNoYXRJZCwgJHBwWzFdLCAoJHBwWzJdID8/ICcnKSA9PT0gJ2NmZycpOwogICAgICAgIHJldHVybjsKICAgIH0KICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdwYXljZmc6JykpICAgIHsgYWRtaW5fcGF5X2NmZygkY2hhdElkLCBzdWJzdHIoJGRhdGEsIDcpKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAncGF5YXBpOicpKSAgICB7IGFkbWluX3BheV9hcGlfc3RhcnQoJGNoYXRJZCwgc3Vic3RyKCRkYXRhLCA3KSk7IHJldHVybjsgfQogICAgaWYgKCRkYXRhID09PSAnYWRtOmdpZnRzJyl7IGFkbWluX2dpZnRzX2hvbWUoJGNoYXRJZCk7IHJldHVybjsgfSAvLyDaqdm+24wgbWFpbi5weSAyMTE4LTIxMjcKICAgIGlmICgkZGF0YSA9PT0gJ2FkbTpoZWxwcycpeyBhZG1pbl9ndWlkZV9ob21lKCRjaGF0SWQpOyByZXR1cm47IH0KICAgIGlmICgkZGF0YSA9PT0gJ2FkbTpndWlkZXMnKXsgYWRtaW5fZ3VpZGVfaG9tZSgkY2hhdElkKTsgcmV0dXJuOyB9CiAgICBpZiAoJGRhdGEgPT09ICdhZG06ZmVhdHVyZXMnKXsgYWRtaW5fZmVhdHVyZXNfaG9tZSgkY2hhdElkKTsgcmV0dXJuOyB9CiAgICBpZiAoJGRhdGEgPT09ICdhZG06cGFuZWxzJykgIHsgYWRtaW5fcGFuZWxzX2hvbWUoJGNoYXRJZCk7IHJldHVybjsgfQogICAgaWYgKCRkYXRhID09PSAnYWRtOmJjYXN0JykgICB7IGJjYXN0X2hvbWUoJGNoYXRJZCk7IHJldHVybjsgfQoKICAgIC8vIC0tLSByZWNlaXB0cyAtLS0KICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdyY29rOicpIHx8IHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ3Jjbm86JykpIHsgaGFuZGxlX3JlY2VpcHRfcmV2aWV3KCRjaGF0SWQsICRkYXRhKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAncmNmaXg6JykpIHsgcmVjZWlwdF9maXhfc3RhcnQoJGNoYXRJZCwgKGludClzdWJzdHIoJGRhdGEsIDYpKTsgcmV0dXJuOyB9CgogICAgLy8gLS0tIHRpY2tldHMgLS0tCiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAndGtjbG9zZTonKSkgeyBhZG1pbl90aWNrZXRfY2xvc2UoJGNoYXRJZCwgKGludClzdWJzdHIoJGRhdGEsIDgpKTsgcmV0dXJuOyB9CgogICAgLy8gLS0tIHVzZXIgcHJvZmlsZSAmIGFjdGlvbnMgKNqp2b7bjCBtYWluLnB5IDI2MzEtMjY3OSkgLS0tCiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAndW06JykpIHsgYWRtaW5fdXNlcl9hY3Rpb24oJGNoYXRJZCwgJGRhdGEpOyByZXR1cm47IH0KCiAgICAvLyAtLS0gYnJvYWRjYXN0IHYyIC0tLQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ2JjYXN0MjonKSkgeyBiY2FzdF9hdWRpZW5jZV9waWNrKCRjaGF0SWQsIHN1YnN0cigkZGF0YSwgNykpOyByZXR1cm47IH0KICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdiY2FzdGJ0bjonKSkgeyBiY2FzdF9idG5fcGljaygkY2hhdElkLCBzdWJzdHIoJGRhdGEsIDkpKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAnYmNhc3RnbzonKSkgeyBiY2FzdF9ydW4oJGNoYXRJZCwgc3Vic3RyKCRkYXRhLCA4KSA9PT0gJ3llcycpOyByZXR1cm47IH0KCiAgICAvLyAtLS0gZmVhdHVyZXMgdG9nZ2xlIC0tLQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ2ZlYXQ6JykpIHsgYWRtaW5fZmVhdHVyZV90b2dnbGUoJGNoYXRJZCwgc3Vic3RyKCRkYXRhLCA1KSk7IHJldHVybjsgfQoKICAgIC8vIC0tLSBzZXQ6PGtleT4gc2V0dGluZ3MgcHJvbXB0ICjaqdm+24wgbWFpbi5weSBvbl9zZXR0aW5nc19jYikgLS0tCiAgICBpZiAoJGRhdGEgPT09ICdzZXQ6Y2hhbm5lbHMnKSB7IGFkbWluX2NoYW5uZWxzX2hvbWUoJGNoYXRJZCk7IHJldHVybjsgfQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ2RlbGNoYW46JykpIHsgYWRtaW5fY2hhbm5lbF9kZWxldGUoJGNoYXRJZCwgdXJsZGVjb2RlKHN1YnN0cigkZGF0YSwgOCkpKTsgcmV0dXJuOyB9CiAgICBpZiAoJGRhdGEgPT09ICdhZGRjaGFuJykgeyBhZG1pbl9jaGFubmVsX2FkZF9zdGFydCgkY2hhdElkKTsgcmV0dXJuOyB9CiAgICBpZiAoJGRhdGEgPT09ICdzZXQ6Zm9yY2Vfam9pbicpIHsKICAgICAgICAvLyDYqtin2q/ZhCDZgdmI2LHbjCAo2qnZvtuMIG1haW4ucHkgMzEwNi0zMTE1KQogICAgICAgICRjdXIgPSAhZW1wdHkoZ2V0X3NldHRpbmcoJ2ZvcmNlX2pvaW4nLCBmYWxzZSkpOwogICAgICAgIHNldF9zZXR0aW5nKCdmb3JjZV9qb2luJywgISRjdXIpOwogICAgICAgIGFkbWluX3Nob3BnZW5lcmFsX2hvbWUoJGNoYXRJZCk7CiAgICAgICAgcmV0dXJuOwogICAgfQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ3NldDonKSkgeyBhZG1pbl9zZXRfcHJvbXB0KCRjaGF0SWQsIHN1YnN0cigkZGF0YSwgNCkpOyByZXR1cm47IH0KICAgIGlmICgkZGF0YSA9PT0gJ3NldGNhbmNlbCcpIHsgYWRtaW5fc2V0X2NhbmNlbCgkY2hhdElkKTsgcmV0dXJuOyB9CgogICAgLy8gLS0tIGRzYy9naWZ0IGNvZGVzIGFkZCArIGRlbGV0ZSAtLS0KICAgIGlmICgkZGF0YSA9PT0gJ2RzYzphZGQnIHx8ICRkYXRhID09PSAnZ2lmdDphZGQnKSB7IGFkbWluX2NvZGVfYWRkX3N0YXJ0KCRjaGF0SWQsIHN1YnN0cigkZGF0YSwgMCwgMykpOyByZXR1cm47IH0KICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdva2RlbDpkaXNjb3VudDonKSB8fCBzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdva2RlbDpnaWZ0OicpKSB7IGFkbWluX2NvZGVfZGVsZXRlKCRjaGF0SWQsICRkYXRhKTsgcmV0dXJuOyB9CgogICAgLy8gLS0tIG06aGVscCDigJQg2YXYr9uM2LHbjNiqINii2YXZiNiy2LQgZW50cnkgKNqp2b7bjCBtYWluLnB5KSAtLS0KICAgIGlmICgkZGF0YSA9PT0gJ206aGVscCcpIHsgc2hvd19ndWlkZSgkY2hhdElkKTsgcmV0dXJuOyB9CgogICAgLy8gLS0tIHNlcnZpY2UgZXh0cmFzOiBhcGNyZWRzIC8gYXB0b2dnbGUgLyBhcGdiICjaqdm+24wgbWFpbi5weSA5NzMtMTA4NSkgLS0tCiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAnYXBjcmVkczonKSkgeyBzZXJ2aWNlX2xvZ2luX2luZm8oJGNoYXRJZCwgKGludClzdWJzdHIoJGRhdGEsIDgpKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAnYXB0b2dnbGU6JykpIHsgc2VydmljZV90b2dnbGUoJGNoYXRJZCwgKGludClzdWJzdHIoJGRhdGEsIDkpKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAnYXBnYjonKSkgICAgeyBzZXJ2aWNlX2V4dHJhX2diX3N0YXJ0KCRjaGF0SWQsIChpbnQpc3Vic3RyKCRkYXRhLCA1KSk7IHJldHVybjsgfQoKICAgIC8vIC0tLSBwYW5lbHMgLS0tCiAgICBpZiAoJGRhdGEgPT09ICdwbmw6YWRkJykgeyBhZG1pbl9wYW5lbF9hZGRfc3RhcnQoJGNoYXRJZCk7IHJldHVybjsgfQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ3BubDp2aWV3OicpKSB7IGFkbWluX3BhbmVsX3ZpZXcoJGNoYXRJZCwgdXJsZGVjb2RlKHN1YnN0cigkZGF0YSwgOSkpKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAncG5sOnBpbmc6JykpIHsgYWRtaW5fcGFuZWxfcGluZygkY2hhdElkLCB1cmxkZWNvZGUoc3Vic3RyKCRkYXRhLCA5KSkpOyByZXR1cm47IH0KICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdwbmw6dGVzdHRvZ2dsZTonKSkgeyBhZG1pbl9wYW5lbF90ZXN0X3RvZ2dsZSgkY2hhdElkLCB1cmxkZWNvZGUoc3Vic3RyKCRkYXRhLCAxNSkpKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAncG5sOnRlc3Q6JykpICAgICB7IGFkbWluX3BhbmVsX3Rlc3RfcHJvbXB0KCRjaGF0SWQsIHVybGRlY29kZShzdWJzdHIoJGRhdGEsIDkpKSk7IHJldHVybjsgfQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ3BubHJvbGVwaWNrOicpKSAgeyBhZG1pbl9wYW5lbF9yb2xlcGljaygkY2hhdElkLCB1cmxkZWNvZGUoc3Vic3RyKCRkYXRhLCAxMikpKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAncG5scm9sZTonKSkgewogICAgICAgICRwYXJ0cyA9IGV4cGxvZGUoJzonLCAkZGF0YSk7IC8vIHBubHJvbGU6PHJpZD46PG5hbWU+CiAgICAgICAgYWRtaW5fcGFuZWxfcm9sZV9zZXQoJGNoYXRJZCwgKGludCkkcGFydHNbMV0sIHVybGRlY29kZSgkcGFydHNbMl0pKTsgcmV0dXJuOwogICAgfQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ3BubDpzdGF0czonKSkgICAgeyBhZG1pbl9wYW5lbF9zdGF0cygkY2hhdElkLCB1cmxkZWNvZGUoc3Vic3RyKCRkYXRhLCAxMCkpKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAncGxhZGQ6JykpICAgICAgICB7IGFkbWluX3BsYW5fYWRkX3Byb21wdCgkY2hhdElkLCB1cmxkZWNvZGUoc3Vic3RyKCRkYXRhLCA2KSkpOyByZXR1cm47IH0KICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdwbDonKSkgewogICAgICAgICRwYXJ0cyA9IGV4cGxvZGUoJzonLCAkZGF0YSk7IC8vIHBsOjxuYW1lPjo8cGlkPgogICAgICAgIGFkbWluX3BsYW5fdmlldygkY2hhdElkLCB1cmxkZWNvZGUoJHBhcnRzWzFdKSwgKGludCkkcGFydHNbMl0pOyByZXR1cm47CiAgICB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAncGxlZDonKSkgewogICAgICAgICRwYXJ0cyA9IGV4cGxvZGUoJzonLCAkZGF0YSk7IC8vIHBsZWQ6PHBpZD46PGZpZWxkPjo8bmFtZT4KICAgICAgICBhZG1pbl9wbGFuX2VkaXRfcHJvbXB0KCRjaGF0SWQsIChpbnQpJHBhcnRzWzFdLCAkcGFydHNbMl0sIHVybGRlY29kZSgkcGFydHNbM10pKTsgcmV0dXJuOwogICAgfQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ3BsdG9nOicpKSB7CiAgICAgICAgJHBhcnRzID0gZXhwbG9kZSgnOicsICRkYXRhKTsgLy8gcGx0b2c6PHBpZD46PG5hbWU+CiAgICAgICAgYWRtaW5fcGxhbl90b2dnbGUoJGNoYXRJZCwgKGludCkkcGFydHNbMV0sIHVybGRlY29kZSgkcGFydHNbMl0pKTsgcmV0dXJuOwogICAgfQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ29rZGVsOnBsYW46JykpIHsKICAgICAgICAkcGFydHMgPSBleHBsb2RlKCc6JywgJGRhdGEpOyAvLyBva2RlbDpwbGFuOjxwaWQ+OjxuYW1lPgogICAgICAgIGFkbWluX3BsYW5fZGVsZXRlKCRjaGF0SWQsIChpbnQpJHBhcnRzWzJdLCB1cmxkZWNvZGUoJHBhcnRzWzNdKSk7IHJldHVybjsKICAgIH0KICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdwbmxlZGl0OicpKSB7CiAgICAgICAgJHBhcnRzID0gZXhwbG9kZSgnOicsICRkYXRhKTsgLy8gcG5sZWRpdDo8ZmllbGQ+OjxuYW1lPgogICAgICAgIGFkbWluX3BhbmVsX2ZpZWxkX2VkaXQoJGNoYXRJZCwgJHBhcnRzWzFdLCB1cmxkZWNvZGUoJHBhcnRzWzJdKSk7IHJldHVybjsKICAgIH0KICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdhc2tkZWw6cG5sOicpKSB7IGFkbWluX3BhbmVsX2RlbGV0ZV9jb25maXJtKCRjaGF0SWQsIHVybGRlY29kZShzdWJzdHIoJGRhdGEsIDExKSkpOyByZXR1cm47IH0KICAgIGlmIChzdHJfc3RhcnRzX3dpdGgoJGRhdGEsICdva2RlbDpwbmw6JykpIHsgYWRtaW5fcGFuZWxfZGVsZXRlX2FwcGx5KCRjaGF0SWQsIHVybGRlY29kZShzdWJzdHIoJGRhdGEsIDEwKSkpOyByZXR1cm47IH0KCiAgICAvLyAtLS0gZGlzY291bnQgbmV3IC0tLQogICAgaWYgKCRkYXRhID09PSAnZGlzYzpuZXcnKSB7IGFkbWluX2NvZGVfYWRkX3N0YXJ0KCRjaGF0SWQsICdkc2MnKTsgcmV0dXJuOyB9CiAgICBpZiAoJGRhdGEgPT09ICdoZWxwYWRkJykgeyBhZG1pbl9oZWxwX2FkZCgkY2hhdElkKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAnaGVscGVkaXQ6JykpIHsgYWRtaW5faGVscF9lZGl0KCRjaGF0SWQsIChpbnQpc3Vic3RyKCRkYXRhLCA5KSk7IHJldHVybjsgfQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ2hlbHBkZWw6JykpIHsgYWRtaW5faGVscF9kZWxldGUoJGNoYXRJZCwgKGludClzdWJzdHIoJGRhdGEsIDgpKTsgcmV0dXJuOyB9CiAgICBpZiAoc3RyX3N0YXJ0c193aXRoKCRkYXRhLCAnZ3VpZGVhZG06JykpIHsgYWRtaW5fZ3VpZGVfaG9tZSgkY2hhdElkKTsgcmV0dXJuOyB9CgogICAgLy8gLS0tIHBvd2VyIHRvZ2dsZSAo2qnZvtuMIG1haW4ucHkgMjA4NC0yMDk0KTogYWRtaW5fcG93ZXJfdG9nZ2xlICsg2LHZgdix2LQg2YXZhtmIIC0tLQogICAgaWYgKHN0cl9zdGFydHNfd2l0aCgkZGF0YSwgJ3B3OicpKSB7IGFkbWluX3Bvd2VyX3RvZ2dsZSgkY2hhdElkLCBzdWJzdHIoJGRhdGEsIDMpKTsgcmV0dXJuOyB9IC8vIGFkbWluX3Bvd2VyX3RvZ2dsZSDYrtmI2K/YtCDZhdmG2Ygg2LHYpyDYsdmB2LHYtCDZhduM4oCM2qnZhtivCgogICAgdGdfc2VuZCgkY2hhdElkLCAn2K/Ys9iq2YjYsSDZhtin2LTZhtin2K7YqtmHOiAnIC4gaHRtbHNwZWNpYWxjaGFycygkZGF0YSkpOwp9Cg=='));
+/**
+ * admin/callbacks.php — the callback router: dispatches every inline button (parity با on_admin_cb/on_service_cb/... پایتون)
+ */
+
+require_once BASE_DIR . '/core/bot.php';
+require_once BASE_DIR . '/core/menus.php';
+require_once BASE_DIR . '/lib/panel_api.php';
+require_once BASE_DIR . '/flows/buy.php';
+require_once BASE_DIR . '/flows/wallet.php';
+require_once BASE_DIR . '/flows/services.php';
+require_once BASE_DIR . '/admin/receipts.php';
+require_once BASE_DIR . '/admin/users.php';
+require_once BASE_DIR . '/admin/bcast.php';
+require_once BASE_DIR . '/admin/settings.php';
+require_once BASE_DIR . '/admin/payments.php';
+require_once BASE_DIR . '/admin/panels.php';
+require_once BASE_DIR . '/admin/panel_extra.php';
+require_once BASE_DIR . '/admin/misc.php';
+require_once BASE_DIR . '/admin/stats.php';
+require_once BASE_DIR . '/admin/discounts.php';
+require_once BASE_DIR . '/admin/features.php';
+
+function handle_callback(array $cq): void {
+    $chatId = (int)$cq['from']['id'];
+    $data = (string)($cq['data'] ?? '');
+    $msgId = (int)($cq['message']['message_id'] ?? 0);
+    ctx_msg_id_set($msgId);
+    tg('answerCallbackQuery', ['callback_query_id' => $cq['id']]);
+
+    $admin = is_admin($chatId);
+
+    // --- public flows ---
+    if (str_starts_with($data, 'buyplan:') || str_starts_with($data, 'confirmplan:')
+        || str_starts_with($data, 'paybalplan:') || str_starts_with($data, 'apdc:')
+        || str_starts_with($data, 'confirm:') || str_starts_with($data, 'paybal:')
+        || (str_starts_with($data, 'buy:') && !str_starts_with($data, 'buyplan:'))
+        || $data === 'cancelbuy') { handle_buy_callback($chatId, $data); return; }
+
+    if ($data === 'm:home') { st_pop($chatId); send_or_edit($chatId, '🏠 منوی اصلی:', main_menu_kb($admin)); return; }
+    if ($data === 'm:buy')  { show_buy_screen($chatId); return; }
+    if ($data === 'm:services') { services_home($chatId); return; }
+    if ($data === 'topup')  { start_topup($chatId); return; }
+    if ($data === 'myreceipts') { my_receipts($chatId); return; }
+    if ($data === 'm:tkt') { // ✉️ ارسال پیام — پایتون main.py 4270-4272: مستقیم پرامپت بده (صفحهٔ پشتیبانی دوباره باز نشود)
+        st_set($chatId, ['await' => 'support_msg']);
+        tg_send($chatId, '✍️ پیامت را بنویس (ارسال به پشتیبانی):');
+        return;
+    }
+    if ($data === 'wal:addcredit') { wallet_add_credit($chatId); return; }
+    if ($data === 'wal:receipts') { my_receipts($chatId); return; }
+    if ($data === 'wal:receipt') {
+        // python parity: «ارسال کردم» → منتظر کد پیگیری/عکس رسید (main.py 1238-1249)
+        // فرمان رضا: پیام اطلاعات کارت/مبلغ باید پاک/جایگزین بشه — فقط پرامپت ارسال رسید بمونه
+        st_set($chatId, ['await' => 'wallet_receipt']);
+        send_or_edit($chatId, '✉️ کد پیگیری واریز را بفرست (یا عکس رسید):');
+        return;
+    }
+    if ($data === 'cancelbuy') { st_pop($chatId); tg_send($chatId, '❌ خرید لغو شد.'); return; }
+
+    // Reza rule: فاکتور حجم اضافه — تایید/لغو (مسیر عمومی کاربر)
+    if (str_starts_with($data, 'xgpay:')) {
+        require_once BASE_DIR . '/flows/extra_gb.php';
+        [, $xpid, $xgb, $xprice] = array_pad(explode(':', $data), 4, 0);
+        extra_gb_invoice_confirm($chatId, (int)$xpid, (int)$xgb, (int)$xprice);
+        return;
+    }
+    if ($data === 'xgcancel') {
+        require_once BASE_DIR . '/flows/extra_gb.php';
+        extra_gb_invoice_cancel($chatId);
+        return;
+    }
+
+    if (str_starts_with($data, 'guide:')) {
+        // پاریتی main.py 1275-1285 + ui.guide_back_kb: guide:<id> → guide_topics.content + دکمه‌های بازگشت
+        $gid = (int)substr($data, 6);
+        $topic = db()->prepare('SELECT content FROM guide_topics WHERE id=? LIMIT 1');
+        $topic->execute([$gid]);
+        $t = $topic->fetch();
+        send_or_edit($chatId, $t ? (string)$t['content'] : 'راهنمایی ثبت نشده.',
+            ['inline_keyboard' => [
+                [['text' => '◀️ بازگشت به لیست پلتفرم‌ها', 'callback_data' => 'm:help']],
+                [['text' => '🏠 منوی اصلی', 'callback_data' => 'm:home']],
+            ]]);
+        return;
+    }
+
+    if (str_starts_with($data, 'apchpw:')) { service_change_password_start($chatId, (int)substr($data, 7)); return; }
+    if (str_starts_with($data, 'svc:')) {
+        $parts = explode(':', $data); // svc:<id> | svc:<id>:<action>
+        $svcId = (int)$parts[1];
+        if (count($parts) === 2) { service_screen($chatId, $svcId); return; }
+        $act = $parts[2];
+        if ($act === 'info') { service_login_info($chatId, $svcId); return; }
+        if ($act === 'pass') { service_change_password_start($chatId, $svcId); return; }
+        if ($act === 'ext')  { tg_send($chatId, 'برای حجم اضافه با پشتیبانی در تماس باش یا از 🔐 خرید اشتراک استفاده کن.'); return; }
+        return;
+    }
+
+    // testpick — کاربر عادی پنل تست را انتخاب می‌کند (main.py: handler عمومی، قبل از admin gate)
+    if (str_starts_with($data, 'testpick:')) { handle_test_pick($chatId, urldecode(substr($data, 9))); return; }
+
+    // Reza rule: کاربر روی «✉️ پاسخ» پیام پشتیبانی می‌تواند جواب بدهد → تیکت جدید به ادمین‌ها (main.py gate نداشت؛ UX صحیح)
+    if (!$admin && str_starts_with($data, 'um:msg:')) {
+        $tgt = (int)substr($data, 7);
+        if ($tgt === $chatId) {
+            st_set($chatId, ['await' => 'support_msg']);
+            send_or_edit($chatId, '✍️ پاسخت را بنویس (ارسال به پشتیبانی):');
+        } else {
+            tg_send($chatId, '⛔️ فقط ادمین.');
+        }
+        return;
+    }
+
+    // --- admin gate ---
+    if (!$admin) { tg_send($chatId, '⛔️ فقط ادمین.'); return; }
+
+    if ($data === 'wal:gift')  { start_gift_redeem($chatId); return; }
+    if ($data === 'adm:general') { admin_general_home($chatId); return; }
+    if ($data === 'adm:shopgeneral') { admin_shopgeneral_home($chatId); return; }
+    if ($data === 'adm:power') { admin_power_home($chatId); return; }
+    if (str_starts_with($data, 'pnl:edit:'))   { admin_panel_edit_start($chatId, urldecode(substr($data, 9))); return; }
+    if (str_starts_with($data, 'pnl:toggle:')) { admin_panel_toggle($chatId, urldecode(substr($data, 11))); return; }
+    if ($data === 'adm:back')  { st_pop($chatId); send_or_edit($chatId, '👨‍💼 پنل مدیریت:', admin_menu_kb()); return; }
+    if ($data === 'adm:stats')   { admin_stats($chatId); return; }
+    if ($data === 'adm:receipts'){ admin_receipts_queue($chatId); return; } // پایتون فقط صف رسیدها (main.py 1949-1965)
+    if ($data === 'adm:users')   { admin_users_home($chatId); return; }
+    if (str_starts_with($data, 'svcview:')) { admin_svc_view($chatId, (int)substr($data, 8)); return; }
+    if (str_starts_with($data, 'svcordel:')) { admin_svc_orderdel($chatId, (int)substr($data, 9)); return; }
+    if (str_starts_with($data, 'svcrefund:')) { admin_svc_refund($chatId, (int)substr($data, 10)); return; }
+    if (str_starts_with($data, 'svcfulldel:')) { admin_svc_fulldel($chatId, (int)substr($data, 11)); return; }
+    if ($data === 'svcnoop') { return; }
+    if ($data === 'adm:finduser'){ admin_finduser_start($chatId); return; }
+    if ($data === 'adm:search'){ admin_findorder_start($chatId); return; }
+    if ($data === 'adm:massbal') { admin_massbal_start($chatId, 'add'); return; }
+    if ($data === 'adm:masssub') { admin_massbal_start($chatId, 'sub'); return; }
+    if (str_starts_with($data, 'umrepl:')) { admin_umrepl($chatId, $data); return; }
+    if ($data === 'adm:tickets') { admin_tickets($chatId); return; }
+    if ($data === 'adm:discounts'){ admin_discounts_home($chatId); return; }
+    if ($data === 'adm:settings'){ admin_settings_home($chatId); return; }
+    if ($data === 'adm:payments'){ admin_payments_home($chatId); return; }
+    if (str_starts_with($data, 'paytoggle:')) {
+        $pp = explode(':', $data); // paytoggle:key[:cfg]
+        admin_pay_toggle($chatId, $pp[1], ($pp[2] ?? '') === 'cfg');
+        return;
+    }
+    if (str_starts_with($data, 'paycfg:'))    { admin_pay_cfg($chatId, substr($data, 7)); return; }
+    if (str_starts_with($data, 'payapi:'))    { admin_pay_api_start($chatId, substr($data, 7)); return; }
+    if ($data === 'adm:gifts'){ admin_gifts_home($chatId); return; } // کپی main.py 2118-2127
+    if ($data === 'adm:helps'){ admin_guide_home($chatId); return; }
+    if ($data === 'adm:guides'){ admin_guide_home($chatId); return; }
+    if ($data === 'adm:features'){ admin_features_home($chatId); return; }
+    if ($data === 'adm:panels')  { admin_panels_home($chatId); return; }
+    if ($data === 'adm:bcast')   { bcast_home($chatId); return; }
+
+    // --- receipts ---
+    if (str_starts_with($data, 'rcok:') || str_starts_with($data, 'rcno:')) { handle_receipt_review($chatId, $data); return; }
+    if (str_starts_with($data, 'rcfix:')) { receipt_fix_start($chatId, (int)substr($data, 6)); return; }
+
+    // --- tickets ---
+    if (str_starts_with($data, 'tkclose:')) { admin_ticket_close($chatId, (int)substr($data, 8)); return; }
+
+    // --- user profile & actions (کپی main.py 2631-2679) ---
+    if (str_starts_with($data, 'um:')) { admin_user_action($chatId, $data); return; }
+
+    // --- broadcast v2 ---
+    if (str_starts_with($data, 'bcast2:')) { bcast_audience_pick($chatId, substr($data, 7)); return; }
+    if (str_starts_with($data, 'bcastbtn:')) { bcast_btn_pick($chatId, substr($data, 9)); return; }
+    if (str_starts_with($data, 'bcastgo:')) { bcast_run($chatId, substr($data, 8) === 'yes'); return; }
+
+    // --- features toggle ---
+    if (str_starts_with($data, 'feat:')) { admin_feature_toggle($chatId, substr($data, 5)); return; }
+
+    // --- set:<key> settings prompt (کپی main.py on_settings_cb) ---
+    if ($data === 'set:channels') { admin_channels_home($chatId); return; }
+    if (str_starts_with($data, 'delchan:')) { admin_channel_delete($chatId, urldecode(substr($data, 8))); return; }
+    if ($data === 'addchan') { admin_channel_add_start($chatId); return; }
+    if ($data === 'set:force_join') {
+        // تاگل فوری (کپی main.py 3106-3115)
+        $cur = !empty(get_setting('force_join', false));
+        set_setting('force_join', !$cur);
+        admin_shopgeneral_home($chatId);
+        return;
+    }
+    if (str_starts_with($data, 'set:')) { admin_set_prompt($chatId, substr($data, 4)); return; }
+    if ($data === 'setcancel') { admin_set_cancel($chatId); return; }
+
+    // --- dsc/gift codes add + delete ---
+    if ($data === 'dsc:add' || $data === 'gift:add') { admin_code_add_start($chatId, substr($data, 0, 3)); return; }
+    if (str_starts_with($data, 'okdel:discount:') || str_starts_with($data, 'okdel:gift:')) { admin_code_delete($chatId, $data); return; }
+
+    // --- m:help — مدیریت آموزش entry (کپی main.py) ---
+    if ($data === 'm:help') { show_guide($chatId); return; }
+
+    // --- service extras: apcreds / aptoggle / apgb (کپی main.py 973-1085) ---
+    if (str_starts_with($data, 'apcreds:')) { service_login_info($chatId, (int)substr($data, 8)); return; }
+    if (str_starts_with($data, 'aptoggle:')) { service_toggle($chatId, (int)substr($data, 9)); return; }
+    if (str_starts_with($data, 'apgb:'))    { service_extra_gb_start($chatId, (int)substr($data, 5)); return; }
+
+    // --- panels ---
+    if ($data === 'pnl:add') { admin_panel_add_start($chatId); return; }
+    if (str_starts_with($data, 'pnl:view:')) { admin_panel_view($chatId, urldecode(substr($data, 9))); return; }
+    if (str_starts_with($data, 'pnl:ping:')) { admin_panel_ping($chatId, urldecode(substr($data, 9))); return; }
+    if (str_starts_with($data, 'pnl:testtoggle:')) { admin_panel_test_toggle($chatId, urldecode(substr($data, 15))); return; }
+    if (str_starts_with($data, 'pnl:test:'))     { admin_panel_test_prompt($chatId, urldecode(substr($data, 9))); return; }
+    if (str_starts_with($data, 'pnlrolepick:'))  { admin_panel_rolepick($chatId, urldecode(substr($data, 12))); return; }
+    if (str_starts_with($data, 'pnlrole:')) {
+        $parts = explode(':', $data); // pnlrole:<rid>:<name>
+        admin_panel_role_set($chatId, (int)$parts[1], urldecode($parts[2])); return;
+    }
+    if (str_starts_with($data, 'pnl:stats:'))    { admin_panel_stats($chatId, urldecode(substr($data, 10))); return; }
+    if (str_starts_with($data, 'pladd:'))        { admin_plan_add_prompt($chatId, urldecode(substr($data, 6))); return; }
+    if (str_starts_with($data, 'pl:')) {
+        $parts = explode(':', $data); // pl:<name>:<pid>
+        admin_plan_view($chatId, urldecode($parts[1]), (int)$parts[2]); return;
+    }
+    if (str_starts_with($data, 'pled:')) {
+        $parts = explode(':', $data); // pled:<pid>:<field>:<name>
+        admin_plan_edit_prompt($chatId, (int)$parts[1], $parts[2], urldecode($parts[3])); return;
+    }
+    if (str_starts_with($data, 'pltog:')) {
+        $parts = explode(':', $data); // pltog:<pid>:<name>
+        admin_plan_toggle($chatId, (int)$parts[1], urldecode($parts[2])); return;
+    }
+    if (str_starts_with($data, 'okdel:plan:')) {
+        $parts = explode(':', $data); // okdel:plan:<pid>:<name>
+        admin_plan_delete($chatId, (int)$parts[2], urldecode($parts[3])); return;
+    }
+    if (str_starts_with($data, 'pnledit:')) {
+        $parts = explode(':', $data); // pnledit:<field>:<name>
+        admin_panel_field_edit($chatId, $parts[1], urldecode($parts[2])); return;
+    }
+    if (str_starts_with($data, 'askdel:pnl:')) { admin_panel_delete_confirm($chatId, urldecode(substr($data, 11))); return; }
+    if (str_starts_with($data, 'okdel:pnl:')) { admin_panel_delete_apply($chatId, urldecode(substr($data, 10))); return; }
+
+    // --- discount new ---
+    if ($data === 'disc:new') { admin_code_add_start($chatId, 'dsc'); return; }
+    if ($data === 'helpadd') { admin_help_add($chatId); return; }
+    if (str_starts_with($data, 'helpedit:')) { admin_help_edit($chatId, (int)substr($data, 9)); return; }
+    if (str_starts_with($data, 'helpdel:')) { admin_help_delete($chatId, (int)substr($data, 8)); return; }
+    if (str_starts_with($data, 'guideadm:')) { admin_guide_home($chatId); return; }
+
+    // --- power toggle (کپی main.py 2084-2094): admin_power_toggle + رفرش منو ---
+    if (str_starts_with($data, 'pw:')) { admin_power_toggle($chatId, substr($data, 3)); return; } // admin_power_toggle خودش منو را رفرش می‌کند
+
+    tg_send($chatId, 'دستور ناشناخته: ' . htmlspecialchars($data));
+}
