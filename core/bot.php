@@ -1,3 +1,304 @@
 <?php
-// Encrypted & Protected by WireNest Shield
-@eval(base64_decode('PD9waHAKLyoqCiAqIFdpcmVOZXN0IFBIUCDigJQgVGVsZWdyYW0gU2FsZXMgQm90IChtaWdyYXRpb24gZnJvbSBQeXRob24gUFRCIDIxLjEwKQogKiBTYW1lIHN0cnVjdHVyZSAmIGZlYXR1cmVzIGFzIHRoZSBQeXRob24gb3JpZ2luYWwuCiAqIEFyY2hpdGVjdHVyZTogbG9uZy1wb2xsaW5nIGRhZW1vbiAoUEhQIENMSSkgKyBTUUxpdGUgKyBQYXNhckd1YXJkIEFQSSB2aWEgY1VSTC4KICoKICogRmlsZXM6CiAqICAgYm90LnBocCAgICAgICAgICDigJQgYm9vdHN0cmFwLCAuZW52LCBQRE8gaW5pdCwgaGVscGVyIGZ1bmN0aW9ucyAodGhpcyBmaWxlKQogKiAgIGhhbmRsZXJzLnBocCAgICAg4oCUIHVwZGF0ZSByb3V0ZXI6IG1lc3NhZ2VzLCBjYWxsYmFja3MsIHN0YXRlcwogKiAgIG1lbnVzLnBocCAgICAgICAg4oCUIG1haW4gbWVudSwgYWRtaW4ga2IsIHNlcnZpY2Ugc2NyZWVucyAoc2FtZSBsYXlvdXQgYXMgdWkucHkpCiAqICAgZmxvd3MucGhwICAgICAgICDigJQgYnV5IC8gd2FsbGV0IC8gcmVjZWlwdHMgLyB0aWNrZXRzIC8gYnJvYWRjYXN0IGZsb3dzCiAqICAgcGFuZWxfYXBpLnBocCAgICDigJQgUGFzYXJHdWFyZCBwYW5lbCBBUEkgY2xpZW50IChsb2dpbiwgcm9sZXMsIGNyZWF0ZSBhZG1pbiwgcGluZykKICogICBjcm9uLnBocCAgICAgICAgIOKAlCB0ZXN0LWV4cGlyeSArIHF1b3RhIHdhcm5pbmcgc3dlZXAgKGNhbGxlZCBldmVyeSBtaW51dGUpCiAqLwoKZGVjbGFyZShzdHJpY3RfdHlwZXM9MSk7CmRhdGVfZGVmYXVsdF90aW1lem9uZV9zZXQoJ0FzaWEvVGVocmFuJyk7IC8vINiz2KfYudiqINix2LPZhduMINix2KjYp9iqOiDYqtmH2LHYp9mGICjZgdix2YXYp9mGINix2LbYpykKCm1iX2ludGVybmFsX2VuY29kaW5nKCdVVEYtOCcpOwoKLy8gLS0tLS0tLS0tLSAuZW52IC0tLS0tLS0tLS0KJF9FTlYgPSBbXTsKJGVudkZpbGUgPSBCQVNFX0RJUiAuICcvLmVudic7CmlmIChmaWxlX2V4aXN0cygkZW52RmlsZSkpIHsKICAgIGZvcmVhY2ggKGZpbGUoJGVudkZpbGUsIEZJTEVfSUdOT1JFX05FV19MSU5FUyB8IEZJTEVfU0tJUF9FTVBUWV9MSU5FUykgYXMgJGxpbmUpIHsKICAgICAgICAkbGluZSA9IHRyaW0oJGxpbmUpOwogICAgICAgIGlmICgkbGluZSA9PT0gJycgfHwgJGxpbmVbMF0gPT09ICcjJykgY29udGludWU7CiAgICAgICAgWyRrLCAkdl0gPSBhcnJheV9wYWQoZXhwbG9kZSgnPScsICRsaW5lLCAyKSwgMiwgJycpOwogICAgICAgICRfRU5WW3RyaW0oJGspXSA9IHRyaW0odHJpbSgkdiksICJcIiciKTsgLy8gc3RyaXAgcXVvdGVzCiAgICB9Cn0KCmlmICghZGVmaW5lZCgnQkFTRV9ESVInKSkgZGVmaW5lKCdCQVNFX0RJUicsIGRpcm5hbWUoX19ESVJfXykpOyAvLyBwcm9qZWN0IHJvb3QgKHdpcmVuZXN0LXBocC8pCmRlZmluZSgnQk9UX1RPS0VOJywgJF9FTlZbJ0JPVF9UT0tFTiddID8/ICcnKTsKZGVmaW5lKCdEQl9QQVRIJywgJF9FTlZbJ0RCX1BBVEgnXSA/PyAoQkFTRV9ESVIgLiAnL2RhdGEvYm90LnNxbGl0ZScpKTsKZGVmaW5lKCdMT0dfRklMRScsIEJBU0VfRElSIC4gJy9sb2dzL2JvdC5sb2cnKTsKCmlmICghQk9UX1RPS0VOKSB7IGZ3cml0ZShTVERFUlIsICJCT1RfVE9LRU4gbWlzc2luZ1xuIik7IGV4aXQoMSk7IH0KCi8vIC0tLS0tLS0tLS0gREIgKFNRTGl0ZSwgc2FtZSBzY2hlbWEgYXMgUHl0aG9uIGJvdCkgLS0tLS0tLS0tLQokZGIgPSBuZXcgUERPKCdzcWxpdGU6JyAuIERCX1BBVEgpOwokZGItPnNldEF0dHJpYnV0ZShQRE86OkFUVFJfRVJSTU9ERSwgUERPOjpFUlJNT0RFX0VYQ0VQVElPTik7CiRkYi0+c2V0QXR0cmlidXRlKFBETzo6QVRUUl9ERUZBVUxUX0ZFVENIX01PREUsIFBETzo6RkVUQ0hfQVNTT0MpOwokZGItPmV4ZWMoJ1BSQUdNQSBqb3VybmFsX21vZGU9V0FMJyk7CiRkYi0+ZXhlYygnUFJBR01BIGJ1c3lfdGltZW91dD0zMDAwMCcpOwoKZnVuY3Rpb24gZGIoKTogUERPIHsgZ2xvYmFsICRkYjsgcmV0dXJuICRkYjsgfQoKLyoqIEluaXQgc2NoZW1hIChpZGVtcG90ZW50KSAtIFJFQUwgc2NoZW1hLCBtaXJyb3JzIHRoZSBtaWdyYXRlZCBweXRob24gREIgZXhhY3RseS4KICogIEZyZXNoIGluc3RhbGxzIGdldCBldmVyeSB0YWJsZSB0aGUgY29kZSBuZWVkczsgZXhpc3RpbmcgREJzIHVudG91Y2hlZCAoSUYgTk9UIEVYSVNUUykuICovCmZ1bmN0aW9uIGRiX2luaXQoKTogdm9pZCB7CiAgICBkYigpLT5leGVjKCJDUkVBVEUgVEFCTEUgSUYgTk9UIEVYSVNUUyBzZXR0aW5ncyAoa2V5IFRFWFQgUFJJTUFSWSBLRVksIHZhbHVlIFRFWFQgTk9UIE5VTEwpIik7CiAgICBkYigpLT5leGVjKCJDUkVBVEUgVEFCTEUgSUYgTk9UIEVYSVNUUyB1c2VycyAoCiAgICAgICAgdGdfaWQgSU5URUdFUiBQUklNQVJZIEtFWSwKICAgICAgICB1c2VybmFtZSBURVhULAogICAgICAgIGJhbGFuY2UgSU5URUdFUiBOT1QgTlVMTCBERUZBVUxUIDAsCiAgICAgICAgaXNfYmFubmVkIElOVEVHRVIgTk9UIE5VTEwgREVGQVVMVCAwLAogICAgICAgIGNyZWF0ZWRfYXQgVEVYVCBERUZBVUxUIChkYXRldGltZSgnbm93JywnbG9jYWx0aW1lJykpKSIpOwogICAgZGIoKS0+ZXhlYygiQ1JFQVRFIFRBQkxFIElGIE5PVCBFWElTVFMgcmVjZWlwdHMgKAogICAgICAgIGlkIElOVEVHRVIgUFJJTUFSWSBLRVkgQVVUT0lOQ1JFTUVOVCwKICAgICAgICB0Z19pZCBJTlRFR0VSIE5PVCBOVUxMLAogICAgICAgIGFtb3VudCBJTlRFR0VSIE5PVCBOVUxMLAogICAgICAgIHJlZl90ZXh0IFRFWFQgTk9UIE5VTEwsCiAgICAgICAgc3RhdHVzIFRFWFQgTk9UIE5VTEwgREVGQVVMVCAncGVuZGluZycsCiAgICAgICAgY3JlYXRlZF9hdCBURVhUIERFRkFVTFQgKGRhdGV0aW1lKCdub3cnLCdsb2NhbHRpbWUnKSkpIik7CiAgICBkYigpLT5leGVjKCJDUkVBVEUgVEFCTEUgSUYgTk9UIEVYSVNUUyBwdXJjaGFzZXMgKAogICAgICAgIGlkIElOVEVHRVIgUFJJTUFSWSBLRVkgQVVUT0lOQ1JFTUVOVCwKICAgICAgICB0Z19pZCBJTlRFR0VSIE5PVCBOVUxMLAogICAgICAgIHRhcmlmZl9pZCBJTlRFR0VSLAogICAgICAgIHBhbmVsX3VzZXJuYW1lIFRFWFQsCiAgICAgICAgbW9udGhzIElOVEVHRVIsCiAgICAgICAgdm9sdW1lX2diIFJFQUwsCiAgICAgICAgcHJpY2UgSU5URUdFUiwKICAgICAgICBzdGF0dXMgVEVYVCBOT1QgTlVMTCBERUZBVUxUICdwZW5kaW5nJywKICAgICAgICBjcmVhdGVkX2F0IFRFWFQgREVGQVVMVCAoZGF0ZXRpbWUoJ25vdycsJ2xvY2FsdGltZScpKSkiKTsKICAgIGRiKCktPmV4ZWMoIkNSRUFURSBUQUJMRSBJRiBOT1QgRVhJU1RTIHRpY2tldHMgKAogICAgICAgIGlkIElOVEVHRVIgUFJJTUFSWSBLRVkgQVVUT0lOQ1JFTUVOVCwKICAgICAgICB0Z19pZCBJTlRFR0VSIE5PVCBOVUxMLAogICAgICAgIG1lc3NhZ2UgVEVYVCBOT1QgTlVMTCwKICAgICAgICBzdGF0dXMgVEVYVCBOT1QgTlVMTCBERUZBVUxUICdvcGVuJywKICAgICAgICBjcmVhdGVkX2F0IFRFWFQgREVGQVVMVCAoZGF0ZXRpbWUoJ25vdycsJ2xvY2FsdGltZScpKSkiKTsKICAgIGRiKCktPmV4ZWMoIkNSRUFURSBUQUJMRSBJRiBOT1QgRVhJU1RTIGFnZW50X3BhbmVscyAoCiAgICAgICAgaWQgSU5URUdFUiBQUklNQVJZIEtFWSBBVVRPSU5DUkVNRU5ULAogICAgICAgIHRnX2lkIElOVEVHRVIgTk9UIE5VTEwsCiAgICAgICAgcGFuZWxfdXNlcm5hbWUgVEVYVCBOT1QgTlVMTCwKICAgICAgICBwYW5lbF9wYXNzd29yZCBURVhUIE5PVCBOVUxMLAogICAgICAgIHBhbmVsX25hbWUgVEVYVCwKICAgICAgICBwYW5lbF90eXBlIFRFWFQsCiAgICAgICAgcXVvdGFfZ2IgUkVBTCBOT1QgTlVMTCwKICAgICAgICBleHBpcmVzX2F0IFRFWFQsCiAgICAgICAgc3RhdHVzIFRFWFQgTk9UIE5VTEwgREVGQVVMVCAnYWN0aXZlJywKICAgICAgICBjcmVhdGVkX2F0IFRFWFQgREVGQVVMVCAoZGF0ZXRpbWUoJ25vdycsJ2xvY2FsdGltZScpKSwKICAgICAgICBpc190ZXN0IElOVEVHRVIgTk9UIE5VTEwgREVGQVVMVCAwKSIpOwogICAgZGIoKS0+ZXhlYygiQ1JFQVRFIFRBQkxFIElGIE5PVCBFWElTVFMgdGFyaWZmcyAoCiAgICAgICAgaWQgSU5URUdFUiBQUklNQVJZIEtFWSBBVVRPSU5DUkVNRU5ULAogICAgICAgIHRpdGxlIFRFWFQgTk9UIE5VTEwsCiAgICAgICAgbW9udGhzIElOVEVHRVIgTk9UIE5VTEwsCiAgICAgICAgdm9sdW1lX2diIFJFQUwgTk9UIE5VTEwsCiAgICAgICAgcHJpY2UgSU5URUdFUiBOT1QgTlVMTCwKICAgICAgICB1c2VyX2xpbWl0IElOVEVHRVIgTk9UIE5VTEwgREVGQVVMVCAxLAogICAgICAgIGlzX2FjdGl2ZSBJTlRFR0VSIE5PVCBOVUxMIERFRkFVTFQgMSwKICAgICAgICBzb3J0IElOVEVHRVIgTk9UIE5VTEwgREVGQVVMVCAwKSIpOwogICAgZGIoKS0+ZXhlYygiQ1JFQVRFIFRBQkxFIElGIE5PVCBFWElTVFMgcGFuZWxfcGxhbnMgKAogICAgICAgIGlkIElOVEVHRVIgUFJJTUFSWSBLRVkgQVVUT0lOQ1JFTUVOVCwKICAgICAgICBwYW5lbF9uYW1lIFRFWFQgTk9UIE5VTEwsCiAgICAgICAgdm9sdW1lX2diIFJFQUwgTk9UIE5VTEwsCiAgICAgICAgcHJpY2UgSU5URUdFUiBOT1QgTlVMTCwKICAgICAgICBhY3RpdmUgSU5URUdFUiBERUZBVUxUIDEpIik7CiAgICBkYigpLT5leGVjKCJDUkVBVEUgVEFCTEUgSUYgTk9UIEVYSVNUUyBnaWZ0X2NvZGVzICgKICAgICAgICBpZCBJTlRFR0VSIFBSSU1BUlkgS0VZIEFVVE9JTkNSRU1FTlQsCiAgICAgICAgY29kZSBURVhUIFVOSVFVRSBOT1QgTlVMTCwKICAgICAgICBhbW91bnQgSU5URUdFUiBOT1QgTlVMTCwKICAgICAgICBtYXhfdXNlcyBJTlRFR0VSIERFRkFVTFQgMCwKICAgICAgICB1c2VkIElOVEVHRVIgREVGQVVMVCAwLAogICAgICAgIGFjdGl2ZSBJTlRFR0VSIERFRkFVTFQgMSkiKTsKICAgIGRiKCktPmV4ZWMoIkNSRUFURSBUQUJMRSBJRiBOT1QgRVhJU1RTIGdpZnRfcmVkZW1wdGlvbnMgKAogICAgICAgIGdpZnRfaWQgSU5URUdFUiBOT1QgTlVMTCwKICAgICAgICB0Z19pZCBJTlRFR0VSIE5PVCBOVUxMLAogICAgICAgIHJlZGVlbWVkX2F0IFRFWFQgREVGQVVMVCAoZGF0ZXRpbWUoJ25vdycsJ2xvY2FsdGltZScpKSwKICAgICAgICBQUklNQVJZIEtFWSAoZ2lmdF9pZCwgdGdfaWQpKSIpOwogICAgZGIoKS0+ZXhlYygiQ1JFQVRFIFRBQkxFIElGIE5PVCBFWElTVFMgZGlzY291bnRfY29kZXMgKAogICAgICAgIGlkIElOVEVHRVIgUFJJTUFSWSBLRVkgQVVUT0lOQ1JFTUVOVCwKICAgICAgICBjb2RlIFRFWFQgVU5JUVVFIE5PVCBOVUxMLAogICAgICAgIGtpbmQgVEVYVCBOT1QgTlVMTCBERUZBVUxUICdwZXJjZW50JywKICAgICAgICB2YWx1ZSBJTlRFR0VSIE5PVCBOVUxMLAogICAgICAgIG1heF91c2VzIElOVEVHRVIgREVGQVVMVCAwLAogICAgICAgIHVzZWQgSU5URUdFUiBERUZBVUxUIDAsCiAgICAgICAgYWN0aXZlIElOVEVHRVIgREVGQVVMVCAxLAogICAgICAgIGV4cGlyZXNfYXQgVEVYVCkiKTsKICAgIGRiKCktPmV4ZWMoIkNSRUFURSBUQUJMRSBJRiBOT1QgRVhJU1RTIGNoYW5uZWxzICgKICAgICAgICBpZCBJTlRFR0VSIFBSSU1BUlkgS0VZIEFVVE9JTkNSRU1FTlQsCiAgICAgICAgY2hhbm5lbF9pZCBURVhUIE5PVCBOVUxMLAogICAgICAgIHRpdGxlIFRFWFQpIik7CiAgICBkYigpLT5leGVjKCJDUkVBVEUgVEFCTEUgSUYgTk9UIEVYSVNUUyBhZ2VudF9yZXF1ZXN0cyAoCiAgICAgICAgaWQgSU5URUdFUiBQUklNQVJZIEtFWSBBVVRPSU5DUkVNRU5ULAogICAgICAgIHRnX2lkIElOVEVHRVIgTk9UIE5VTEwsCiAgICAgICAgbWVzc2FnZSBURVhULAogICAgICAgIHN0YXR1cyBURVhUIE5PVCBOVUxMIERFRkFVTFQgJ3BlbmRpbmcnLAogICAgICAgIGNyZWF0ZWRfYXQgVEVYVCBERUZBVUxUIChkYXRldGltZSgnbm93JywnbG9jYWx0aW1lJykpKSIpOwogICAgZGIoKS0+ZXhlYygiQ1JFQVRFIFRBQkxFIElGIE5PVCBFWElTVFMgaGVscF90b3BpY3MgKAogICAgICAgIGlkIElOVEVHRVIgUFJJTUFSWSBLRVkgQVVUT0lOQ1JFTUVOVCwKICAgICAgICB0aXRsZSBURVhUIE5PVCBOVUxMLAogICAgICAgIGNvbnRlbnQgVEVYVCBOT1QgTlVMTCwKICAgICAgICBjcmVhdGVkX2F0IFRFWFQgREVGQVVMVCAoZGF0ZXRpbWUoJ25vdycsJ2xvY2FsdGltZScpKSkiKTsKICAgIGRiKCktPmV4ZWMoIkNSRUFURSBUQUJMRSBJRiBOT1QgRVhJU1RTIGd1aWRlX3RvcGljcyAoCiAgICAgICAgaWQgSU5URUdFUiBQUklNQVJZIEtFWSBBVVRPSU5DUkVNRU5ULAogICAgICAgIHRpdGxlIFRFWFQgTk9UIE5VTEwsCiAgICAgICAgY29udGVudCBURVhUIE5PVCBOVUxMIERFRkFVTFQgJycsCiAgICAgICAgc29ydCBJTlRFR0VSIERFRkFVTFQgMCkiKTsKICAgIGRiKCktPmV4ZWMoIkNSRUFURSBUQUJMRSBJRiBOT1QgRVhJU1RTIG1hbnVhbF9wYW5lbHMgKAogICAgICAgIGlkIElOVEVHRVIgUFJJTUFSWSBLRVkgQVVUT0lOQ1JFTUVOVCwKICAgICAgICBuYW1lIFRFWFQgTk9UIE5VTEwsCiAgICAgICAgdXJsIFRFWFQgREVGQVVMVCAnJywKICAgICAgICB1c2VybmFtZSBURVhUIERFRkFVTFQgJycsCiAgICAgICAgcGFzc3dvcmQgVEVYVCBERUZBVUxUICcnLAogICAgICAgIHN0YXR1cyBURVhUIERFRkFVTFQgJ2F2YWlsYWJsZScsCiAgICAgICAgYnV5ZXJfaWQgSU5URUdFUikiKTsKCiAgICAvLyBTZWVkIGRlZmF1bHQgdGV4dHMgaWYgZW1wdHkgKFJlemE6INmF2KrZiNmGINm+24zYtOKAjNmB2LHYtikKICAgIHJlcXVpcmVfb25jZSBfX0RJUl9fIC4gJy8uLi9saWIvZGVmYXVsdHMucGhwJzsKICAgICRjbnQgPSBkYigpLT5xdWVyeSgiU0VMRUNUIENPVU5UKCopIEZST00gZ3VpZGVfdG9waWNzIiktPmZldGNoQ29sdW1uKCk7CiAgICBpZiAoJGNudCA9PSAwICYmIGZ1bmN0aW9uX2V4aXN0cygnZGVmYXVsdF9ndWlkZV90b3BpY3MnKSkgewogICAgICAgIGZvcmVhY2ggKGRlZmF1bHRfZ3VpZGVfdG9waWNzKCkgYXMgJGd0KSB7CiAgICAgICAgICAgIGRiKCktPnByZXBhcmUoIklOU0VSVCBJTlRPIGd1aWRlX3RvcGljcyh0aXRsZSwgY29udGVudCkgVkFMVUVTKD8sPykiKS0+ZXhlY3V0ZShbJGd0Wyd0aXRsZSddLCAkZ3RbJ2NvbnRlbnQnXV0pOwogICAgICAgIH0KICAgIH0KICAgIGlmIChnZXRfc2V0dGluZygnZmFxX3RleHQnLCAnJykgPT09ICcnICYmIGZ1bmN0aW9uX2V4aXN0cygnZGVmYXVsdF9mYXFfdGV4dCcpKSB7CiAgICAgICAgc2V0X3NldHRpbmcoJ2ZhcV90ZXh0JywgZGVmYXVsdF9mYXFfdGV4dCgpKTsKICAgIH0KCiAgICAgICAgZGIoKS0+ZXhlYygiQ1JFQVRFIFRBQkxFIElGIE5PVCBFWElTVFMgcGVuZGluZ19idXlzICgKICAgICAgICBpZCBJTlRFR0VSIFBSSU1BUlkgS0VZIEFVVE9JTkNSRU1FTlQsCiAgICAgICAgdGdfaWQgSU5URUdFUiBOT1QgTlVMTCwKICAgICAgICBraW5kIFRFWFQgTk9UIE5VTEwgREVGQVVMVCAncGxhbicsCiAgICAgICAgcGlkIElOVEVHRVIsCiAgICAgICAgcG5hbWUgVEVYVCwKICAgICAgICBnYiBSRUFMLAogICAgICAgIHByaWNlIElOVEVHRVIgTk9UIE5VTEwsCiAgICAgICAgZGlzY291bnRfanNvbiBURVhULAogICAgICAgIGNyZWF0ZWRfYXQgVEVYVCBERUZBVUxUIChkYXRldGltZSgnbm93JywnbG9jYWx0aW1lJykpKSIpOwp9CgovLyAtLS0tLS0tLS0tIHNldHRpbmdzIGhlbHBlcnMgKG1pcnJvciBkYi5weSkgLS0tLS0tLS0tLQovKiog2YfZhdmHINiq2YbYuNuM2YXYp9iqICovCmZ1bmN0aW9uIGFsbF9zZXR0aW5ncygpOiBhcnJheSB7CiAgICAkcm93cyA9IGRiKCktPnF1ZXJ5KCdTRUxFQ1Qga2V5LCB2YWx1ZSBGUk9NIHNldHRpbmdzJyktPmZldGNoQWxsKCk7CiAgICAkb3V0ID0gW107CiAgICBmb3JlYWNoICgkcm93cyBhcyAkcikgewogICAgICAgICR2ID0ganNvbl9kZWNvZGUoKHN0cmluZykkclsndmFsdWUnXSwgdHJ1ZSk7CiAgICAgICAgJG91dFskclsna2V5J11dID0gKCR2ID09PSBudWxsICYmIChzdHJpbmcpJHJbJ3ZhbHVlJ10gIT09ICdudWxsJyAmJiAoc3RyaW5nKSRyWyd2YWx1ZSddICE9PSAnJykgPyAkclsndmFsdWUnXSA6ICR2OwogICAgfQogICAgcmV0dXJuICRvdXQ7Cn0KCmZ1bmN0aW9uIGJvdF9lbmFibGVkKCk6IGJvb2wgewogICAgcmV0dXJuIChib29sKWdldF9zZXR0aW5nKCdib3RfZW5hYmxlZCcsIDEpOwp9CgpmdW5jdGlvbiBnZXRfc2V0dGluZyhzdHJpbmcgJGtleSwgJGRlZmF1bHQgPSBudWxsKSB7CiAgICAkc3QgPSBkYigpLT5wcmVwYXJlKCdTRUxFQ1QgdmFsdWUgRlJPTSBzZXR0aW5ncyBXSEVSRSBrZXk9PycpOwogICAgJHN0LT5leGVjdXRlKFska2V5XSk7CiAgICAkcm93ID0gJHN0LT5mZXRjaCgpOwogICAgaWYgKCRyb3cgPT09IGZhbHNlKSByZXR1cm4gJGRlZmF1bHQ7CiAgICAkdiA9IGpzb25fZGVjb2RlKCRyb3dbJ3ZhbHVlJ10sIHRydWUpOwogICAgcmV0dXJuICR2ID09PSBudWxsICYmICRyb3dbJ3ZhbHVlJ10gIT09ICdudWxsJyA/ICRyb3dbJ3ZhbHVlJ10gOiAkdjsKfQoKZnVuY3Rpb24gc2V0X3NldHRpbmcoc3RyaW5nICRrZXksICR2YWx1ZSk6IHZvaWQgewogICAgJHN0ID0gZGIoKS0+cHJlcGFyZSgiSU5TRVJUIElOVE8gc2V0dGluZ3Moa2V5LHZhbHVlKSBWQUxVRVMoPyw/KQogICAgICAgICAgICAgICAgICAgICAgICAgIE9OIENPTkZMSUNUKGtleSkgRE8gVVBEQVRFIFNFVCB2YWx1ZT1leGNsdWRlZC52YWx1ZSIpOwogICAgJHN0LT5leGVjdXRlKFska2V5LCBqc29uX2VuY29kZSgkdmFsdWUsIEpTT05fVU5FU0NBUEVEX1VOSUNPREUpXSk7Cn0KCi8qKiBTeW5jIGFkbWluIGlkcyArIElOSVRJQUxfQURNSU4gYm9vdHN0cmFwIChwYXJpdMOkdGlzY2ggbWl0IG1haW4ucHkgYWRtaW5faWRzKCkpLiAqLwpmdW5jdGlvbiBhZG1pbl9pZHMoKTogYXJyYXkgewogICAgJGlkcyA9IGdldF9zZXR0aW5nKCdhZG1pbl9pZHMnLCBbXSkgPzogW107CiAgICAvLyAuZW52IGxvYWRlciBmaWxscyAkX0VOViAoaG9zdCBDR0kgaGFzIG5vIHJlYWwgZW52KTsgZ2V0ZW52IGtlcHQgZm9yIHN5c3RlbWQgZGVwbG95cwogICAgJGVudiA9IChpc3NldCgkX0VOVlsnSU5JVElBTF9BRE1JTl9JRCddKSAmJiAkX0VOVlsnSU5JVElBTF9BRE1JTl9JRCddICE9PSAnJykgPyAkX0VOVlsnSU5JVElBTF9BRE1JTl9JRCddIDogKGdldGVudignSU5JVElBTF9BRE1JTl9JRCcpID86ICcnKTsKICAgIGlmICgkZW52ICE9PSAnJyAmJiAhJGlkcykgewogICAgICAgICRpZHMgPSBbKGludCkkZW52XTsKICAgICAgICBzZXRfc2V0dGluZygnYWRtaW5faWRzJywgJGlkcyk7CiAgICB9CiAgICByZXR1cm4gJGlkczsKfQpmdW5jdGlvbiBpc19hZG1pbihpbnQgJHRnKTogYm9vbCB7IHJldHVybiBpbl9hcnJheSgkdGcsIGFkbWluX2lkcygpLCB0cnVlKTsgfQoKLy8gLS0tLS0tLS0tLSBUZWxlZ3JhbSBBUEkgLS0tLS0tLS0tLQpmdW5jdGlvbiB0ZyhzdHJpbmcgJG1ldGhvZCwgYXJyYXkgJGRhdGEgPSBbXSk6IGFycmF5IHsKICAgICRjaCA9IGN1cmxfaW5pdCgiaHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdCIgLiBCT1RfVE9LRU4gLiAiLyRtZXRob2QiKTsKICAgIGN1cmxfc2V0b3B0X2FycmF5KCRjaCwgWwogICAgICAgIENVUkxPUFRfUkVUVVJOVFJBTlNGRVIgPT4gdHJ1ZSwKICAgICAgICBDVVJMT1BUX1BPU1QgPT4gdHJ1ZSwKICAgICAgICBDVVJMT1BUX1BPU1RGSUVMRFMgPT4ganNvbl9lbmNvZGUoJGRhdGEsIEpTT05fVU5FU0NBUEVEX1VOSUNPREUpLAogICAgICAgIENVUkxPUFRfSFRUUEhFQURFUiA9PiBbJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbiddLAogICAgICAgIENVUkxPUFRfVElNRU9VVCA9PiAzNSwKICAgIF0pOwogICAgJHJlcyA9IGN1cmxfZXhlYygkY2gpOwogICAgJGVyciA9IGN1cmxfZXJyb3IoJGNoKTsKICAgIGN1cmxfY2xvc2UoJGNoKTsKICAgIGlmICgkcmVzID09PSBmYWxzZSkgeyBib3RfbG9nKCJURyBjdXJsIGVycm9yOiAkZXJyIik7IHJldHVybiBbJ29rJyA9PiBmYWxzZV07IH0KICAgICRqc29uID0ganNvbl9kZWNvZGUoJHJlcywgdHJ1ZSkgPzogWydvaycgPT4gZmFsc2VdOwogICAgLy8gYW50aS1mbG9vZDogaG9ub3IgUmV0cnlBZnRlciAocGFyaXR5IHdpdGggcHl0aG9uIGFudGktZmxvb2QgYmF0Y2ggbG9naWMpCiAgICBpZiAoZW1wdHkoJGpzb25bJ29rJ10pICYmIGlzc2V0KCRqc29uWydwYXJhbWV0ZXJzJ11bJ3JldHJ5X2FmdGVyJ10pKSB7CiAgICAgICAgc2xlZXAoKGludCkkanNvblsncGFyYW1ldGVycyddWydyZXRyeV9hZnRlciddICsgMSk7CiAgICAgICAgcmV0dXJuIHRnKCRtZXRob2QsICRkYXRhKTsgLy8gcmV0cnkgb25jZSBhZnRlciB3YWl0aW5nCiAgICB9CiAgICByZXR1cm4gJGpzb247Cn0KCmZ1bmN0aW9uIHRnX3NlbmQoaW50fHN0cmluZyAkY2hhdCwgc3RyaW5nICR0ZXh0LCA/YXJyYXkgJGtiID0gbnVsbCwgYXJyYXkgJGV4dHJhID0gW10pOiBhcnJheSB7CiAgICByZXR1cm4gdGcoJ3NlbmRNZXNzYWdlJywgYXJyYXlfbWVyZ2UoWwogICAgICAgICdjaGF0X2lkJyA9PiAkY2hhdCwKICAgICAgICAndGV4dCcgPT4gJHRleHQsCiAgICAgICAgJ3BhcnNlX21vZGUnID0+ICdIVE1MJywKICAgIF0sICRrYiA/IFsncmVwbHlfbWFya3VwJyA9PiBqc29uX2VuY29kZSgka2IsIEpTT05fVU5FU0NBUEVEX1VOSUNPREUpXSA6IFtdLCAkZXh0cmEpKTsKfQoKLy8gLS0tLS0tLS0tLSBoZWxwZXJzIC0tLS0tLS0tLS0KZnVuY3Rpb24gZm10X3ByaWNlKGludHxmbG9hdCAkcCk6IHN0cmluZyB7IHJldHVybiBudW1iZXJfZm9ybWF0KChmbG9hdCkkcCkgLiAnINiq2YjZhdin2YYnOyB9CgpmdW5jdGlvbiBib3RfbG9nKHN0cmluZyAkbXNnKTogdm9pZCB7CiAgICBAZmlsZV9wdXRfY29udGVudHMoTE9HX0ZJTEUsICdbJyAuIGRhdGUoJ1ktbS1kIEg6aTpzJykgLiAiXSAkbXNnXG4iLCBGSUxFX0FQUEVORCk7Cn0KCi8qKiBQZXJzaWFuIChKYWxhbGkpIGRhdGUg4oCUIGpkYXRldGltZSBwYXJpdHkuIFVzZXMgamRhdGUgYWxnb3JpdGhtIHdpdGhvdXQgZXh0LiAqLwpmdW5jdGlvbiBqZGF0ZSg/c3RyaW5nICR0cyA9IG51bGwpOiBzdHJpbmcgewogICAgJHRzID0gJHRzID86IGRhdGUoJ1ktbS1kIEg6aTpzJyk7CiAgICAkdCA9IHN0cnRvdGltZSgkdHMpOwogICAgaWYgKCR0ID09PSBmYWxzZSkgcmV0dXJuICR0czsKICAgIC8vIEdyZWdvcmlhbiAtPiBKYWxhbGkgKHN0YW5kYXJkIGFsZ29yaXRobSkKICAgICRneSA9IChpbnQpZGF0ZSgnWScsICR0KTsgJGdtID0gKGludClkYXRlKCduJywgJHQpOyAkZ2QgPSAoaW50KWRhdGUoJ2onLCAkdCk7CiAgICAkZ19kX20gPSBbMCwgMzEsIDU5LCA5MCwgMTIwLCAxNTEsIDE4MSwgMjEyLCAyNDMsIDI3MywgMzA0LCAzMzRdOwogICAgJGp5ID0gKCRneSA8PSAxNjAwKSA/IDAgOiA5Nzk7CiAgICAkZ3kgLT0gKCRneSA8PSAxNjAwKSA/IDYyMSA6IDE2MDA7CiAgICAkZ3kyID0gKCRnbSA+IDIpID8gJGd5ICsgMSA6ICRneTsKICAgICRkYXlzID0gKDM2NSAqICRneSkgKyAoKGludCkoKCRneTIgKyAzKSAvIDQpKSAtICgoaW50KSgoJGd5MiArIDk5KSAvIDEwMCkpCiAgICAgICAgICArICgoaW50KSgoJGd5MiArIDM5OSkgLyA0MDApKSAtIDgwICsgJGdkICsgJGdfZF9tWyRnbSAtIDFdOwogICAgJGp5ICs9IDMzICogKChpbnQpKCRkYXlzIC8gMTIwNTMpKTsKICAgICRkYXlzICU9IDEyMDUzOwogICAgJGp5ICs9IDQgKiAoKGludCkoJGRheXMgLyAxNDYxKSk7CiAgICAkZGF5cyAlPSAxNDYxOwogICAgaWYgKCRkYXlzID4gMzY1KSB7ICRqeSArPSAoaW50KSgoJGRheXMgLSAxKSAvIDM2NSk7ICRkYXlzID0gKCRkYXlzIC0gMSkgJSAzNjU7IH0KICAgICRqbSA9ICgkZGF5cyA8IDE4NikgPyAxICsgKGludCkoJGRheXMgLyAzMSkgOiA3ICsgKGludCkoKCRkYXlzIC0gMTg2KSAvIDMwKTsKICAgICRqZCA9IDEgKyAoKCRkYXlzIDwgMTg2KSA/ICgkZGF5cyAlIDMxKSA6ICgoJGRheXMgLSAxODYpICUgMzApKTsKICAgIHJldHVybiBzcHJpbnRmKCclMDRkLyUwMmQvJTAyZCAlMDJkOiUwMmQnLCAkanksICRqbSwgJGpkLCAoaW50KWRhdGUoJ0gnLCAkdCksIChpbnQpZGF0ZSgnaScsICR0KSk7Cn0KCi8qKiBNYXNrIG1pZGRsZSBvZiBhIHN0cmluZyB3aXRoICoqKiogKHJlcG9ydCBjaGFubmVsIHBhcml0eTogZmlyc3Q0KyoqKiorbGFzdDIpLiAqLwpmdW5jdGlvbiBtYXNrX21pZChzdHJpbmcgJHMpOiBzdHJpbmcgewogICAgJGwgPSBtYl9zdHJsZW4oJHMpOwogICAgaWYgKCRsIDw9IDYpIHJldHVybiAkczsKICAgIHJldHVybiBtYl9zdWJzdHIoJHMsIDAsIDQpIC4gJyoqKionIC4gbWJfc3Vic3RyKCRzLCAtMik7Cn0KCmRiX2luaXQoKTsKYm90X2xvZygnPT09IFBIUCBib3QgY29yZSBsb2FkZWQgPT09Jyk7CgpyZXF1aXJlX29uY2UgQkFTRV9ESVIgLiAnL2NvcmUvZWRpdF9tZW51LnBocCc7CgovKiog2K3YrNmFINiu2YjYp9mG2Kc6IDEwMC4wIOKGkiDCqzEwMMK72IwgMC41IOKGkiDCqzAuNcK7ICjYsdi02KrZh9mUIMKrMTAwwrsg2LHYpyDYrtix2KfYqCDZhtmF24zigIzaqdmG2K8pLiAqLwpmdW5jdGlvbiBmbXRfZ2IoJHYpOiBzdHJpbmcgewogICAgJGYgPSAoZmxvYXQpJHY7CiAgICByZXR1cm4gKGZsb29yKCRmKSA9PSAkZikgPyAoc3RyaW5nKShpbnQpJGYgOiBydHJpbShydHJpbShudW1iZXJfZm9ybWF0KCRmLCAyLCAnLicsICcnKSwgJzAnKSwgJy4nKTsKfQo='));
+/**
+ * WireNest PHP — Telegram Sales Bot (migration from Python PTB 21.10)
+ * Same structure & features as the Python original.
+ * Architecture: long-polling daemon (PHP CLI) + SQLite + PasarGuard API via cURL.
+ *
+ * Files:
+ *   bot.php          — bootstrap, .env, PDO init, helper functions (this file)
+ *   handlers.php     — update router: messages, callbacks, states
+ *   menus.php        — main menu, admin kb, service screens (same layout as ui.py)
+ *   flows.php        — buy / wallet / receipts / tickets / broadcast flows
+ *   panel_api.php    — PasarGuard panel API client (login, roles, create admin, ping)
+ *   cron.php         — test-expiry + quota warning sweep (called every minute)
+ */
+
+declare(strict_types=1);
+date_default_timezone_set('Asia/Tehran'); // ساعت رسمی ربات: تهران (فرمان رضا)
+
+mb_internal_encoding('UTF-8');
+
+// ---------- .env ----------
+$_ENV = [];
+$envFile = BASE_DIR . '/.env';
+if (file_exists($envFile)) {
+    foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
+        $line = trim($line);
+        if ($line === '' || $line[0] === '#') continue;
+        [$k, $v] = array_pad(explode('=', $line, 2), 2, '');
+        $_ENV[trim($k)] = trim(trim($v), "\"'"); // strip quotes
+    }
+}
+
+if (!defined('BASE_DIR')) define('BASE_DIR', dirname(__DIR__)); // project root (wirenest-php/)
+define('BOT_TOKEN', $_ENV['BOT_TOKEN'] ?? '');
+define('DB_PATH', $_ENV['DB_PATH'] ?? (BASE_DIR . '/data/bot.sqlite'));
+define('LOG_FILE', BASE_DIR . '/logs/bot.log');
+
+if (!BOT_TOKEN) { fwrite(STDERR, "BOT_TOKEN missing\n"); exit(1); }
+
+// ---------- DB (SQLite, same schema as Python bot) ----------
+$db = new PDO('sqlite:' . DB_PATH);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+$db->exec('PRAGMA journal_mode=WAL');
+$db->exec('PRAGMA busy_timeout=30000');
+
+function db(): PDO { global $db; return $db; }
+
+/** Init schema (idempotent) - REAL schema, mirrors the migrated python DB exactly.
+ *  Fresh installs get every table the code needs; existing DBs untouched (IF NOT EXISTS). */
+function db_init(): void {
+    db()->exec("CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL)");
+    db()->exec("CREATE TABLE IF NOT EXISTS users (
+        tg_id INTEGER PRIMARY KEY,
+        username TEXT,
+        balance INTEGER NOT NULL DEFAULT 0,
+        is_banned INTEGER NOT NULL DEFAULT 0,
+        created_at TEXT DEFAULT (datetime('now','localtime')))");
+    db()->exec("CREATE TABLE IF NOT EXISTS receipts (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tg_id INTEGER NOT NULL,
+        amount INTEGER NOT NULL,
+        ref_text TEXT NOT NULL,
+        status TEXT NOT NULL DEFAULT 'pending',
+        created_at TEXT DEFAULT (datetime('now','localtime')))");
+    db()->exec("CREATE TABLE IF NOT EXISTS purchases (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tg_id INTEGER NOT NULL,
+        tariff_id INTEGER,
+        panel_username TEXT,
+        months INTEGER,
+        volume_gb REAL,
+        price INTEGER,
+        status TEXT NOT NULL DEFAULT 'pending',
+        created_at TEXT DEFAULT (datetime('now','localtime')))");
+    db()->exec("CREATE TABLE IF NOT EXISTS tickets (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tg_id INTEGER NOT NULL,
+        message TEXT NOT NULL,
+        status TEXT NOT NULL DEFAULT 'open',
+        created_at TEXT DEFAULT (datetime('now','localtime')))");
+    db()->exec("CREATE TABLE IF NOT EXISTS agent_panels (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tg_id INTEGER NOT NULL,
+        panel_username TEXT NOT NULL,
+        panel_password TEXT NOT NULL,
+        panel_name TEXT,
+        panel_type TEXT,
+        quota_gb REAL NOT NULL,
+        expires_at TEXT,
+        status TEXT NOT NULL DEFAULT 'active',
+        created_at TEXT DEFAULT (datetime('now','localtime')),
+        is_test INTEGER NOT NULL DEFAULT 0)");
+    db()->exec("CREATE TABLE IF NOT EXISTS tariffs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        months INTEGER NOT NULL,
+        volume_gb REAL NOT NULL,
+        price INTEGER NOT NULL,
+        user_limit INTEGER NOT NULL DEFAULT 1,
+        is_active INTEGER NOT NULL DEFAULT 1,
+        sort INTEGER NOT NULL DEFAULT 0)");
+    db()->exec("CREATE TABLE IF NOT EXISTS panel_plans (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        panel_name TEXT NOT NULL,
+        volume_gb REAL NOT NULL,
+        price INTEGER NOT NULL,
+        active INTEGER DEFAULT 1)");
+    db()->exec("CREATE TABLE IF NOT EXISTS gift_codes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        code TEXT UNIQUE NOT NULL,
+        amount INTEGER NOT NULL,
+        max_uses INTEGER DEFAULT 0,
+        used INTEGER DEFAULT 0,
+        active INTEGER DEFAULT 1)");
+    db()->exec("CREATE TABLE IF NOT EXISTS gift_redemptions (
+        gift_id INTEGER NOT NULL,
+        tg_id INTEGER NOT NULL,
+        redeemed_at TEXT DEFAULT (datetime('now','localtime')),
+        PRIMARY KEY (gift_id, tg_id))");
+    db()->exec("CREATE TABLE IF NOT EXISTS discount_codes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        code TEXT UNIQUE NOT NULL,
+        kind TEXT NOT NULL DEFAULT 'percent',
+        value INTEGER NOT NULL,
+        max_uses INTEGER DEFAULT 0,
+        used INTEGER DEFAULT 0,
+        active INTEGER DEFAULT 1,
+        expires_at TEXT)");
+    db()->exec("CREATE TABLE IF NOT EXISTS channels (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        channel_id TEXT NOT NULL,
+        title TEXT)");
+    db()->exec("CREATE TABLE IF NOT EXISTS agent_requests (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tg_id INTEGER NOT NULL,
+        message TEXT,
+        status TEXT NOT NULL DEFAULT 'pending',
+        created_at TEXT DEFAULT (datetime('now','localtime')))");
+    db()->exec("CREATE TABLE IF NOT EXISTS help_topics (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        content TEXT NOT NULL,
+        created_at TEXT DEFAULT (datetime('now','localtime')))");
+    db()->exec("CREATE TABLE IF NOT EXISTS guide_topics (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        content TEXT NOT NULL DEFAULT '',
+        sort INTEGER DEFAULT 0)");
+    db()->exec("CREATE TABLE IF NOT EXISTS manual_panels (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        url TEXT DEFAULT '',
+        username TEXT DEFAULT '',
+        password TEXT DEFAULT '',
+        status TEXT DEFAULT 'available',
+        buyer_id INTEGER)");
+
+    // Seed default texts if empty (Reza: متون پیش‌فرض)
+    require_once __DIR__ . '/../lib/defaults.php';
+    $cnt = db()->query("SELECT COUNT(*) FROM guide_topics")->fetchColumn();
+    if ($cnt == 0 && function_exists('default_guide_topics')) {
+        foreach (default_guide_topics() as $gt) {
+            db()->prepare("INSERT INTO guide_topics(title, content) VALUES(?,?)")->execute([$gt['title'], $gt['content']]);
+        }
+    }
+    if (get_setting('faq_text', '') === '' && function_exists('default_faq_text')) {
+        set_setting('faq_text', default_faq_text());
+    }
+
+        db()->exec("CREATE TABLE IF NOT EXISTS pending_buys (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tg_id INTEGER NOT NULL,
+        kind TEXT NOT NULL DEFAULT 'plan',
+        pid INTEGER,
+        pname TEXT,
+        gb REAL,
+        price INTEGER NOT NULL,
+        discount_json TEXT,
+        created_at TEXT DEFAULT (datetime('now','localtime')))");
+}
+
+// ---------- settings helpers (mirror db.py) ----------
+/** همه تنظیمات */
+function all_settings(): array {
+    $rows = db()->query('SELECT key, value FROM settings')->fetchAll();
+    $out = [];
+    foreach ($rows as $r) {
+        $v = json_decode((string)$r['value'], true);
+        $out[$r['key']] = ($v === null && (string)$r['value'] !== 'null' && (string)$r['value'] !== '') ? $r['value'] : $v;
+    }
+    return $out;
+}
+
+function bot_enabled(): bool {
+    return (bool)get_setting('bot_enabled', 1);
+}
+
+function get_setting(string $key, $default = null) {
+    $st = db()->prepare('SELECT value FROM settings WHERE key=?');
+    $st->execute([$key]);
+    $row = $st->fetch();
+    if ($row === false) return $default;
+    $v = json_decode($row['value'], true);
+    return $v === null && $row['value'] !== 'null' ? $row['value'] : $v;
+}
+
+function set_setting(string $key, $value): void {
+    $st = db()->prepare("INSERT INTO settings(key,value) VALUES(?,?)
+                          ON CONFLICT(key) DO UPDATE SET value=excluded.value");
+    $st->execute([$key, json_encode($value, JSON_UNESCAPED_UNICODE)]);
+}
+
+/** Sync admin ids + INITIAL_ADMIN bootstrap (paritätisch mit main.py admin_ids()). */
+function admin_ids(): array {
+    $ids = get_setting('admin_ids', []) ?: [];
+    // .env loader fills $_ENV (host CGI has no real env); getenv kept for systemd deploys
+    $env = (isset($_ENV['INITIAL_ADMIN_ID']) && $_ENV['INITIAL_ADMIN_ID'] !== '') ? $_ENV['INITIAL_ADMIN_ID'] : (getenv('INITIAL_ADMIN_ID') ?: '');
+    if ($env !== '' && !$ids) {
+        $ids = [(int)$env];
+        set_setting('admin_ids', $ids);
+    }
+    return $ids;
+}
+function is_admin(int $tg): bool { return in_array($tg, admin_ids(), true); }
+
+// ---------- Telegram API ----------
+function tg(string $method, array $data = []): array {
+    $ch = curl_init("https://api.telegram.org/bot" . BOT_TOKEN . "/$method");
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => json_encode($data, JSON_UNESCAPED_UNICODE),
+        CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+        CURLOPT_TIMEOUT => 35,
+    ]);
+    $res = curl_exec($ch);
+    $err = curl_error($ch);
+    curl_close($ch);
+    if ($res === false) { bot_log("TG curl error: $err"); return ['ok' => false]; }
+    $json = json_decode($res, true) ?: ['ok' => false];
+    // anti-flood: honor RetryAfter (parity with python anti-flood batch logic)
+    if (empty($json['ok']) && isset($json['parameters']['retry_after'])) {
+        sleep((int)$json['parameters']['retry_after'] + 1);
+        return tg($method, $data); // retry once after waiting
+    }
+    return $json;
+}
+
+function tg_send(int|string $chat, string $text, ?array $kb = null, array $extra = []): array {
+    return tg('sendMessage', array_merge([
+        'chat_id' => $chat,
+        'text' => $text,
+        'parse_mode' => 'HTML',
+    ], $kb ? ['reply_markup' => json_encode($kb, JSON_UNESCAPED_UNICODE)] : [], $extra));
+}
+
+// ---------- helpers ----------
+function fmt_price(int|float $p): string { return number_format((float)$p) . ' تومان'; }
+
+function bot_log(string $msg): void {
+    @file_put_contents(LOG_FILE, '[' . date('Y-m-d H:i:s') . "] $msg\n", FILE_APPEND);
+}
+
+/** Persian (Jalali) date — jdatetime parity. Uses jdate algorithm without ext. */
+function jdate(?string $ts = null): string {
+    $ts = $ts ?: date('Y-m-d H:i:s');
+    $t = strtotime($ts);
+    if ($t === false) return $ts;
+    // Gregorian -> Jalali (standard algorithm)
+    $gy = (int)date('Y', $t); $gm = (int)date('n', $t); $gd = (int)date('j', $t);
+    $g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+    $jy = ($gy <= 1600) ? 0 : 979;
+    $gy -= ($gy <= 1600) ? 621 : 1600;
+    $gy2 = ($gm > 2) ? $gy + 1 : $gy;
+    $days = (365 * $gy) + ((int)(($gy2 + 3) / 4)) - ((int)(($gy2 + 99) / 100))
+          + ((int)(($gy2 + 399) / 400)) - 80 + $gd + $g_d_m[$gm - 1];
+    $jy += 33 * ((int)($days / 12053));
+    $days %= 12053;
+    $jy += 4 * ((int)($days / 1461));
+    $days %= 1461;
+    if ($days > 365) { $jy += (int)(($days - 1) / 365); $days = ($days - 1) % 365; }
+    $jm = ($days < 186) ? 1 + (int)($days / 31) : 7 + (int)(($days - 186) / 30);
+    $jd = 1 + (($days < 186) ? ($days % 31) : (($days - 186) % 30));
+    return sprintf('%04d/%02d/%02d %02d:%02d', $jy, $jm, $jd, (int)date('H', $t), (int)date('i', $t));
+}
+
+/** Mask middle of a string with **** (report channel parity: first4+****+last2). */
+function mask_mid(string $s): string {
+    $l = mb_strlen($s);
+    if ($l <= 6) return $s;
+    return mb_substr($s, 0, 4) . '****' . mb_substr($s, -2);
+}
+
+db_init();
+bot_log('=== PHP bot core loaded ===');
+
+require_once BASE_DIR . '/core/edit_menu.php';
+
+/** حجم خوانا: 100.0 → «100»، 0.5 → «0.5» (رشتهٔ «100» را خراب نمی‌کند). */
+function fmt_gb($v): string {
+    $f = (float)$v;
+    return (floor($f) == $f) ? (string)(int)$f : rtrim(rtrim(number_format($f, 2, '.', ''), '0'), '.');
+}
