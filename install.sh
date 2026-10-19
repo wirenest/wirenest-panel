@@ -75,9 +75,9 @@ if [ -f "bot.py" ]; then
     sed -i "s/ADMIN_ID = [0-9]*/ADMIN_ID = $INITIAL_ADMIN_ID/g" bot.py
 fi
 
-if [ -f "pesarguard.py" ]; then
-    sed -i "s/BOT_TOKEN = \".*\"/BOT_TOKEN = \"$BOT_TOKEN\"/g" pesarguard.py
-    sed -i "s/ADMIN_ID = [0-9]*/ADMIN_ID = $INITIAL_ADMIN_ID/g" pesarguard.py
+if [ -f "bot.py" ]; then
+    sed -i "s/BOT_TOKEN = \".*\"/BOT_TOKEN = \"$BOT_TOKEN\"/g" bot.py
+    sed -i "s/ADMIN_ID = [0-9]*/ADMIN_ID = $INITIAL_ADMIN_ID/g" bot.py
 fi
 
 if [ -f "modules/config.py" ]; then
