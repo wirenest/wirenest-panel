@@ -63,15 +63,26 @@ cd "$INSTALL_DIR"
 print_color blue "[+] Setting up Python Virtual Environment..."
 python3 -m venv venv
 venv/bin/pip install --upgrade pip
-venv/bin/pip install -r requirements.txt
+if [ -f "requirements.txt" ]; then
+    venv/bin/pip install -r requirements.txt
+else
+    venv/bin/pip install python-telegram-bot requests
+fi
 
-print_color blue "[+] Configuring Bot Token and Admin ID..."
-sed -i "s/BOT_TOKEN = \".*\"/BOT_TOKEN = \"$BOT_TOKEN\"/g" bot.py
-sed -i "s/ADMIN_ID = [0-9]*/ADMIN_ID = $INITIAL_ADMIN_ID/g" bot.py
+print_color blue "[+] Configuring Bot Settings..."
+if [ -f "bot.py" ]; then
+    sed -i "s/BOT_TOKEN = \".*\"/BOT_TOKEN = \"$BOT_TOKEN\"/g" bot.py
+    sed -i "s/ADMIN_ID = [0-9]*/ADMIN_ID = $INITIAL_ADMIN_ID/g" bot.py
+fi
 
 if [ -f "pesarguard.py" ]; then
     sed -i "s/BOT_TOKEN = \".*\"/BOT_TOKEN = \"$BOT_TOKEN\"/g" pesarguard.py
     sed -i "s/ADMIN_ID = [0-9]*/ADMIN_ID = $INITIAL_ADMIN_ID/g" pesarguard.py
+fi
+
+if [ -f "modules/config.py" ]; then
+    sed -i "s/BOT_TOKEN = \".*\"/BOT_TOKEN = \"$BOT_TOKEN\"/g" modules/config.py
+    sed -i "s/ADMIN_ID = [0-9]*/ADMIN_ID = $INITIAL_ADMIN_ID/g" modules/config.py
 fi
 
 chmod -R 775 "$INSTALL_DIR/data"
