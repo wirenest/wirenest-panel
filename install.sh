@@ -53,7 +53,6 @@ mkdir -p "$INSTALL_DIR"
 mkdir -p "$INSTALL_DIR/data"
 mkdir -p "$INSTALL_DIR/logs"
 
-# Use temp clone to handle non-empty dir
 TMP_CLONE=$(mktemp -d)
 git clone https://github.com/wirenest/wirenest-panel.git "$TMP_CLONE"
 cp -r "$TMP_CLONE"/* "$INSTALL_DIR/"
@@ -64,17 +63,20 @@ cd "$INSTALL_DIR"
 print_color blue "[+] Setting up Python Virtual Environment..."
 python3 -m venv venv
 venv/bin/pip install --upgrade pip
-venv/bin/pip install python-telegram-bot requests
+if [ -f "requirements.txt" ]; then
+    venv/bin/pip install -r requirements.txt
+else
+    venv/bin/pip install python-telegram-bot requests
+fi
 
 print_color blue "[+] Configuring Bot Settings..."
-# Inject values into modules/config.py
-sed -i "s/BOT_TOKEN = \".*\"/BOT_TOKEN = \"$BOT_TOKEN\"/g" modules/config.py
-sed -i "s/ADMIN_ID = [0-9]*/ADMIN_ID = $INITIAL_ADMIN_ID/g" modules/config.py
-
-# Also update standalone if present
 if [ -f "pesarguard.py" ]; then
     sed -i "s/BOT_TOKEN = \".*\"/BOT_TOKEN = \"$BOT_TOKEN\"/g" pesarguard.py
     sed -i "s/ADMIN_ID = [0-9]*/ADMIN_ID = $INITIAL_ADMIN_ID/g" pesarguard.py
+fi
+if [ -f "modules/config.py" ]; then
+    sed -i "s/BOT_TOKEN = \".*\"/BOT_TOKEN = \"$BOT_TOKEN\"/g" modules/config.py
+    sed -i "s/ADMIN_ID = [0-9]*/ADMIN_ID = $INITIAL_ADMIN_ID/g" modules/config.py
 fi
 
 chmod -R 775 "$INSTALL_DIR/data"
@@ -90,7 +92,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=$INSTALL_DIR
-ExecStart=$INSTALL_DIR/venv/bin/python3 $INSTALL_DIR/bot.py
+ExecStart=$INSTALL_DIR/venv/bin/python3 $INSTALL_DIR/pesarguard.py
 Restart=always
 RestartSec=5
 
