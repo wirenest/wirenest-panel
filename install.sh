@@ -66,7 +66,7 @@ fi
 
 # 5. Install Python dependencies
 print_color blue "[+] Installing Python requirements..."
-pip3 install --no-cache-dir -r requirements.txt
+python3 -m venv venv && ./venv/bin/pip install --no-cache-dir -r requirements.txt
 
 # 6. Create SystemD service for background execution
 print_color blue "[+] Creating SystemD service..."
@@ -79,7 +79,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/opt/wirenest-panel
-ExecStart=/usr/bin/python3 /opt/wirenest-panel/run.py
+ExecStart=/opt/wirenest-panel/venv/bin/python /opt/wirenest-panel/run.py
 Restart=always
 RestartSec=5
 
@@ -102,7 +102,7 @@ case "$1" in
         cd "$INSTALL_DIR"
         git fetch --all
         git reset --hard origin/master
-        pip3 install --no-cache-dir -r requirements.txt
+        python3 -m venv venv && ./venv/bin/pip install --no-cache-dir -r requirements.txt
         systemctl restart wirenest.service
         echo "[+] Update complete."
         ;;
