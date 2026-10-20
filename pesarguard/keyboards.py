@@ -1,19 +1,9 @@
+from pesarguard import bootstrap as _bootstrap  # noqa: F401  (keeps original import-time order)
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup
-from modules.database import get_setting, is_admin
-from modules.utils import g2, num, fmt_price, fmt_gb
+from pesarguard.constants import LBL
+from pesarguard.database import get_setting
+from pesarguard.utils import fmt_gb, fmt_price
 
-
-LBL = {
-    "test": "🧪 سرویس تست",
-    "buy": "🔐 خرید اشتراک",
-    "services": "🛍 سرویس های من",
-    "wallet": "🏦 کیف پول + شارژ",
-    "guide": "📡 راهنمای اتصال",
-    "conditions": "📋 شرایط و توضیحات",
-    "support": "☎️ پشتیبانی",
-    "faq": "❓ سوالات متداول",
-    "admin": "👨‍💼 پنل مدیریت",
-}
 
 def features() -> dict:
     f = get_setting("features", {})
@@ -72,8 +62,3 @@ def cancel_kb() -> InlineKeyboardMarkup:
 
 def back_adm_kb() -> InlineKeyboardMarkup:
     return ikb([InlineKeyboardButton("◀️ بازگشت", callback_data="adm:back")])
-
-def welcome_text(frm: dict) -> str:
-    s = str(get_setting("start_text", "") or "")
-    greet = s if s else "سلام {name} 👋\nبه ربات فروش سرویس خوش اومدی!"
-    return greet.replace("{name}", esc(frm.get("first_name", ""))).replace("{username}", "@" + str(frm.get("username", "")))

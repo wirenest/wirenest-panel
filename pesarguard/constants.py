@@ -1,88 +1,6 @@
+from pesarguard import bootstrap as _bootstrap  # noqa: F401  (keeps original import-time order)
 import re
-import os
-import sys
-import json
-import time
-import html
-import sqlite3
-import hashlib
-import base64
-import secrets
-import logging
-import asyncio
-import requests
-import threading
-import urllib.parse
-from telegram.ext import Defaults
-from datetime import datetime, timedelta
-from telegram.constants import ParseMode
-from telegram.error import RetryAfter, TelegramError
-from telegram import (
-    Bot,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    KeyboardButton,
-    ReplyKeyboardMarkup
-)
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-BOT_TOKEN = "8750301426:AAE3H7W3F4ye4MLDdUHCYVUizAq3nt4RDLw"
-ADMIN_ID = 7254045901
-SUPPORT_ID = ""
-CARD_NUMBER = ""
-CARD_OWNER = ""
-PANEL_CRYPTO_KEY = ""
-PANEL_RELAY_URL = ""
-PANEL_RELAY_KEY = ""
-PANEL_VERIFY_SSL = True
-
-DB_PATH = os.path.join(BASE_DIR, "data", "bot.sqlite")
-STATE_FILE = os.path.join(BASE_DIR, "data", "state.json")
-LOG_FILE = os.path.join(BASE_DIR, "logs", "bot.log")
-
-os.environ.setdefault("TZ", "Asia/Tehran")
-try:
-    time.tzset()
-except Exception:
-    pass
-os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
-os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
-os.makedirs(os.path.dirname(STATE_FILE), exist_ok=True)
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="[%(asctime)s] %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S",
-    handlers=[logging.FileHandler(LOG_FILE, encoding="utf-8"), logging.StreamHandler(sys.stdout)],
-)
-
-def bot_log(msg: str) -> None:
-    logging.info(msg)
-
-_DB: sqlite3.Connection | None = None
-
-def db() -> sqlite3.Connection:
-    global _DB
-    if _DB is None:
-        _DB = sqlite3.connect(DB_PATH, check_same_thread=False, isolation_level=None, timeout=30)
-        _DB.row_factory = sqlite3.Row
-        _DB.execute("PRAGMA journal_mode=WAL")
-        _DB.execute("PRAGMA busy_timeout=30000")
-    return _DB
-
-def q_all(sql: str, params=()) -> list[dict]:
-    return [dict(r) for r in db().execute(sql, params).fetchall()]
-
-def q_one(sql: str, params=()) -> dict | None:
-    r = db().execute(sql, params).fetchone()
-    return dict(r) if r else None
-
-def q_val(sql: str, params=(), default=None):
-    r = db().execute(sql, params).fetchone()
-    return r[0] if r else default
-
-def ex(sql: str, params=()) -> sqlite3.Cursor:
-    return db().execute(sql, params)
 
 DEFAULT_GUIDE_TOPICS: list = [
     {
@@ -106,4 +24,56 @@ DEFAULT_GUIDE_TOPICS: list = [
         "content": "📌 راهنمای اتصال — iOS\n\nروی آیفون و آیپد معمولاً از FairVPN یا Hiddify استفاده می‌شود. نصب فقط از App Store یا لینک رسمی انجام شود.\n\n📥 دانلود برنامه‌ها\n🔶 FairVPN — App Store\n🔶 Hiddify — https://hiddify.com\n\n🛠 مراحل اتصال\n۱) برنامه را از لینک بالا نصب کنید.\n۲) اجازهٔ افزودن VPN Configuration را تأیید کنید (رمز یا Face ID لازم است).\n۳) لینک اشتراک یا QR را از پنل بگیرید.\n۴) Import / Add Subscription را بزنید و لینک را وارد کنید (یا QR را اسکن کنید).\n۵) سرور را انتخاب و Connect را فعال کنید.\n\n💡 نکته: اگر اتصال برقرار نشد، در تنظیمات iOS مسیر VPN را چک کنید و اپ را به‌روز نگه دارید.\n\n🏠 برای بازگشت از دکمه‌های زیر استفاده کنید."
     }
 ]
+
 DEFAULT_FAQ_TEXT: str = "📜 سوالات متداول — پنل ربات فروش\n\nکاربران گرامی، در این بخش به پرتکرارترین پرسش‌ها پاسخ داده‌ایم تا استفاده از سرویس‌ها ساده‌تر باشد. پیشنهاد می‌کنیم همهٔ موارد را یک‌بار مرور کنید تا با امکانات ربات فروش آشنا شوید.\n\n\n▪️ چگونه می‌توانم پنل بسازم؟\nپنل را می‌توانید در کمتر از ۱۰ ثانیه ایجاد کنید. به دکمه 🛍 تهیه سرویس بروید و پنل خود را بسازید.\n\n▪️ از چه پنلی استفاده می‌کنید؟\nسرویس‌ها روی مرزبان / PasarGuard ارائه می‌شوند.\n\n\n▪️ آیا برای استفاده از سرویس‌ها نیاز به احراز هویت دارم؟\nخیر. نیازی به احراز هویت فیزیکی یا مجازی نیست و می‌توانید با خیال راحت خرید کنید یا به همکاران بفروشید.\n\n▪️ چگونه می‌توانم ترافیک اضافه خریداری کنم؟\nپس از ساخت پنل، از پنل مدیریت سرویس روی ➕ تهیه حجم بزنید و حجم مورد نظر را خریداری کنید.\n\n▪️ آیا سرویس‌های ربات فروش برای گیمینگ مناسب هستند؟\nبستگی به کیفیت مسیر سرور دارد؛ در صورت نیاز با پشتیبانی مشورت کنید.\n\n\n▪️ آیا نیاز به خرید سرور برای استفاده از پنل‌ها دارم؟\nخیر. نیازی به خرید یا نگهداری سرور ندارید؛ پنل‌ها آماده‌اند.\n\n▪️ آیا سرویس‌ها هزینه پنهانی دارند؟\nخیر. هزینهٔ اضافه‌ای وجود ندارد و تعرفه‌ها شفاف هستند.\n\n▪️ چگونه می‌توانم پنل را به کاربر دیگر منتقل کنم؟\nاز پنل مدیریت، دکمه انتقال سرویس را بزنید و آیدی عددی کاربر مقصد را وارد کنید.\n\n▪️ چگونه از ترافیک استفاده کنم؟\nطبق راهنمای اتصال داخل ربات، اپلیکیشن مناسب را نصب و اشتراک را اضافه کنید. پنل تست اولیه ۱۵ گیگ با اعتبار ۲۴ ساعت است.\n\n▪️ آیا در صورت اتمام حجم سرویس، امکان تمدید وجود دارد؟\nدر صورت اتمام حجم، می‌توانید حجم اضافه تهیه کنید یا سرویس را تمدید کنید.\n\n▪️ آیا پنل‌ها از تمام اپراتورها پشتیبانی می‌کنند؟\nمعمولاً بله؛ در صورت مشکل اتصال با پشتیبانی در ارتباط باشید.\n\n▪️ آیا امکان دریافت بکاپ از پنل وجود دارد؟\nبکاپ‌گیری توسط مالک سرویس/پشتیبان فنی انجام می‌شود؛ در صورت نیاز با پشتیبانی هماهنگ کنید.\n\n▪️ آیا هزینه بازگشت وجه وجود دارد؟\nطبق قوانین مجموعه ربات فروش؛ جزئیات را از پشتیبانی بپرسید.\n\n▪️ آیا پنل‌ها شامل لوکیشن‌های بین‌المللی هستند؟\nبسته به تنظیمات مالک ربات متفاوت است؛ از تعرفه‌ها یا پشتیبانی بپرسید.\n\n▪️ آیا سرویس‌های ربات فروش برای فعالیت‌های تجاری مناسب هستند؟\nبله. هم برای استفاده شخصی و هم تجاری قابل استفاده‌اند، مگر اینکه مالک محدودیت جداگانه اعلام کند.\n\n\n📲 برای اطلاعات بیشتر، از دکمه «☎️ پشتیبانی» استفاده کنید."
+
+CHROME_UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/120.0.0.0 Safari/537.36"
+)
+
+LBL = {
+    "test": "🧪 سرویس تست",
+    "buy": "🔐 خرید اشتراک",
+    "services": "🛍 سرویس های من",
+    "wallet": "🏦 کیف پول + شارژ",
+    "guide": "📡 راهنمای اتصال",
+    "conditions": "📋 شرایط و توضیحات",
+    "support": "☎️ پشتیبانی",
+    "faq": "❓ سوالات متداول",
+    "admin": "👨‍💼 پنل مدیریت",
+}
+
+FEATURE_ITEMS = [("buy", "🛒 خرید"), ("topup", "💰 شارژ موجودی"), ("manage", "👤 مدیریت سرویس"),
+                 ("gift", "🎁 هدیه/کد تخفیف"), ("guide", "📡 راهنمای اتصال"), ("faq", "❓ سوالات متداول")]
+
+SET_PROMPTS = {
+    "start_text": "📝 متن پیام /start را بفرست (متغیرهای {name} و {username} مجازند):",
+    "reject_text": "📝 متن رد رسید را بفرست:", "quota_warn_text": "⚠️ متن هشدار اتمام حجم را بفرست:",
+    "autoremove_text": "🗑 متن اطلاع‌رسانی حذف را بفرست:", "faq_text": "❓ متن سوالات متداول را بفرست:",
+    "nonrefund_text": "📝 متن ضوابط و مقررات خرید را بفرست:", "conditions_text": "✅ متن شرایط و توضیحات را بفرست:",
+    "report_group": "📣 آیدی کانال گزارشات را بفرست (مثل @mychannel یا -100...):",
+    "testlimit": "🧪 تعداد تست هر کاربر را بفرست:", "quota_warn_pct": "⚠️ درصد هشدار حجم را بفرست (مثلاً 90):",
+    "quota_warn_discount_pct": "🎁 درصد تخفیف هشدار را بفرست (مثلاً 10)!", "card_number": "💳 شماره کارت را بفرست:",
+    "card_owner": "👤 نام صاحب کارت را بفرست:", "usd_rate": "💲 نرخ دلار (تومان) را بفرست:",
+    "tron_wallet": "💼 آدرس ولت ترون را بفرست:", "min_charge": "💳 حداقل واریز را بفرست (تومان):",
+    "max_charge": "💳 حداکثر واریز را بفرست (تومان):",
+}
+
+TXT_KEYS = {"start_text", "reject_text", "quota_warn_text", "autoremove_text", "faq_text", "nonrefund_text",
+            "conditions_text", "report_group", "card_number", "card_owner", "tron_wallet"}
+
+NUMERIC_KEYS = {"usd_rate", "min_charge", "max_charge", "quota_warn_pct", "quota_warn_discount_pct", "testlimit"}
+
+PAY_METHODS = {
+    "card": {"label": "💳 کارت به کارت", "api_key": None},
+    "tron": {"label": "💵 ترون (ارزی)", "api_key": "wallet_address", "api_prompt": "💼 آدرس ولت ترون (TRC20) را بفرست:"},
+    "zarinpal": {"label": "🟡 زرین‌پال", "api_key": "zarinpal_api", "api_prompt": "🔑 API مرچنت زرین‌پال را بفرست:"},
+    "aqayepardakht": {"label": "🔵 آقای پرداخت", "api_key": "aqayepardakht_api", "api_prompt": "🔑 کد API آقای پرداخت را بفرست:"},
+}
+
+CODE_RE = re.compile(r"^[A-Za-z0-9_\-]{3,32}$")
+
+AUD_LABELS = {"all": "همه کاربران", "buyers": "خریدارها", "nonbuyers": "خرید نداشته‌ها"}
+
+ROLE_LABELS = {2: "👑 مدیر کل", 3: "👤 اپراتور", 5: "🌐 CDN"}

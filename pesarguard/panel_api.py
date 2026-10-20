@@ -1,77 +1,17 @@
-import os, re, json, time, requests, hashlib, base64, secrets
-from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-from modules.config import PANEL_CRYPTO_KEY, PANEL_RELAY_URL, PANEL_RELAY_KEY, PANEL_VERIFY_SSL, BASE_DIR, bot_log
-from modules.utils import panel_decrypt_pw, panel_encrypt_pw, strong_password
+from pesarguard import bootstrap as _bootstrap  # noqa: F401  (keeps original import-time order)
+import hashlib
+import re
+import requests
+from pesarguard.bootstrap import bot_log
+from pesarguard.config import PANEL_RELAY_KEY, PANEL_RELAY_URL, PANEL_VERIFY_SSL
+from pesarguard.constants import CHROME_UA, ROLE_LABELS
+from pesarguard.crypto import panel_decrypt_pw
+from pesarguard.database import get_panels, get_setting
+from pesarguard.utils import strong_password
 
 
-def panel_crypto_key() -> str:
-    k = PANEL_CRYPTO_KEY
-    if k:
-        return k
-    kf = os.path.join(BASE_DIR, "data", "crypto.key")
-    if os.path.isfile(kf):
-        return open(kf).read().strip()
-    key = base64.b64encode(secrets.token_bytes(32)).decode()
-    with open(kf, "w") as f:
-        f.write(key)
-    try:
-        os.chmod(kf, 0o600)
-    except Exception:
-        pass
-    return key
-
-def panel_encrypt_pw(plain: str) -> str:
-    if not plain:
-        return ""
-    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-
-    key = base64.b64decode(panel_crypto_key())
-    iv = secrets.token_bytes(12)
-    ct_tag = AESGCM(key).encrypt(iv, plain.encode(), None)
-    ct, tag = ct_tag[:-16], ct_tag[-16:]
-    return "phpenc2:" + base64.b64encode(iv + tag + ct).decode()
-
-def panel_decrypt_pw(enc: str) -> str:
-    if not enc:
-        return ""
-    try:
-        if enc.startswith("phpenc2:"):
-            from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-
-            raw = base64.b64decode(enc[8:])
-            if len(raw) < 28:
-                return ""
-            iv, tag, ct = raw[:12], raw[12:28], raw[28:]
-            return AESGCM(base64.b64decode(panel_crypto_key())).decrypt(iv, ct + tag, None).decode()
-        if enc.startswith("phpenc:"):
-            from cryptography.hazmat.primitives import padding
-            from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-
-            raw = base64.b64decode(enc[7:])
-            if len(raw) < 16:
-                return ""
-            c = Cipher(algorithms.AES(base64.b64decode(panel_crypto_key())), modes.CBC(raw[:16])).decryptor()
-            padded = c.update(raw[16:]) + c.finalize()
-            un = padding.PKCS7(128).unpadder()
-            return (un.update(padded) + un.finalize()).decode()
-        if enc.startswith("pyfer:"):
-            return enc[6:]
-        if enc.startswith("gAAAA"):
-            from cryptography.fernet import Fernet
-
-            key = panel_crypto_key()
-            key = key + "=" * (-len(key) % 4)
-            return Fernet(key.encode()).decrypt(enc.encode()).decode()
-    except Exception as e:
-        bot_log(f"decrypt failed: {e}")
-        return ""
-    return enc
-
-CHROME_UA = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/120.0.0.0 Safari/537.36"
-)
 _PSESS = {"s": None}
+
 _TOKENS: dict = {}
 
 def _psession():
@@ -296,7 +236,101 @@ def _panel_call_direct(p: dict, action: str, args: dict) -> dict:
             if len(pw) < 12 or not any(c in "!@#$%^&*" for c in pw):
                 body["password"] = strong_password()
             body["role_id"] = int(args.get("role_id") or p.get("role_id") or 3)
+            # Remove telegram_id from PasarGuard admin creation to avoid 409 conflicts
+            # if user/admin is already present on the panel.
+            paths = ["/api/admin"]
+        else:
             if args.get("telegram_id"):
                 body["telegram_id"] = int(args["telegram_id"])
-            paths = ["/api/admin", "/api/admins/user"]
-        else:
+            paths = ["/api/admin/user", "/api/admins"]
+        last = "create failed"
+        for pth in paths:
+            try:
+                r = _preq_auth(p, "POST", pth, json=body)
+            except Exception as e:
+                last = str(e)[:150]
+                continue
+
+            if r.status_code in (200, 201):
+                res = _json_or(r, {}) or {}
+                if isinstance(res, dict):
+                    res["password_used"] = body["password"]
+                return {"ok": True, "data": res}
+            last = f"{pth}: {r.status_code} {(r.text or '')[:100]}"
+        return {"ok": False, "error": last}
+
+    if action == "stats":
+        sysj = {}
+        try:
+            r = _preq_auth(p, "GET", "/api/admin/system")
+            if r.status_code == 200:
+                sysj = _json_or(r, {}) or {}
+        except Exception:
+            pass
+        gb = 1024 ** 3
+        tb = 1024 ** 4
+        return {
+            "ok": True,
+            "admins_count": len(_list_admins_raw(p)),
+            "version": sysj.get("version", "—"),
+            "ram_total_gb": round(float(sysj.get("mem_total", 0)) / gb, 1) if sysj.get("mem_total") else "—",
+            "ram_used_gb": round(float(sysj.get("mem_used", 0)) / gb, 1) if sysj.get("mem_used") else "—",
+            "traffic_tb": round(
+                (float(sysj.get("incoming_bandwidth", 0)) + float(sysj.get("outgoing_bandwidth", 0))) / tb, 2
+            ) if (sysj.get("incoming_bandwidth") or sysj.get("outgoing_bandwidth")) else "—",
+        }
+
+    return {"ok": False, "error": f"unsupported action: {action}"}
+
+def panel_call(panel: dict, action: str, args: dict | None = None) -> dict | None:
+    args = args or {}
+    res: dict | None = None
+    try:
+        res = _panel_call_direct(panel, action, args)
+        if res and res.get("ok"):
+            return res
+    except Exception as e:
+        bot_log(f"panel direct error {action}: {e}")
+    relay_url, relay_key = PANEL_RELAY_URL, PANEL_RELAY_KEY
+    if relay_url and relay_key:
+        try:
+            r = requests.post(
+                relay_url.rstrip("/") + "/relay",
+                json={
+                    "key": relay_key,
+                    "base_url": panel.get("base_url", ""),
+                    "username": panel.get("username", ""),
+                    "password": panel.get("password", ""),
+                    "ptype": panel.get("ptype", "pasarguard"),
+                    "action": action,
+                    "args": {**args, "role_id": args.get("role_id") or panel.get("role_id") or 3},
+                },
+                timeout=45,
+                verify=PANEL_VERIFY_SSL,
+            )
+            jr = r.json()
+            if isinstance(jr, dict):
+                return jr
+        except Exception as e:
+            bot_log(f"panel relay error {action}: {e}")
+    return res
+
+def panel_ping(panel: dict) -> dict:
+    return panel_call(panel, "ping", {}) or {"ok": False, "msg": "Bridge error"}
+
+def panel_create_admin(p: dict, uname: str, pwd: str, vol_gb: float, tg_id: int) -> dict:
+    res = panel_call(p, "create_admin", {"username": uname, "password": pwd, "volume_gb": vol_gb, "telegram_id": tg_id})
+    return res if isinstance(res, dict) else {"ok": False, "error": "bridge no response"}
+
+def get_panel_role_label(panel: dict, role_id: int) -> str:
+    try:
+        tok = _panel_auth(panel)
+        if tok:
+            r = _preq(panel, 'GET', '/api/admin-roles/simple', token=tok)
+            if r.status_code == 200:
+                for role in r.json().get('roles', []):
+                    if role.get('id') == role_id:
+                        return f"🛡 {role.get('name')}"
+    except Exception:
+        pass
+    return ROLE_LABELS.get(role_id, f"نقش {role_id}")

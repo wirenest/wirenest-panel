@@ -1,13 +1,32 @@
-import sys, time, traceback, secrets
-from telegram import Bot
-from telegram.constants import ParseMode
-from modules.config import *
-from modules.database import *
-from modules.utils import *
-from modules.panel_api import *
-from modules.keyboards import *
-from handlers.user_handlers import *
-from handlers.admin_handlers import *
+from pesarguard import bootstrap as _bootstrap  # noqa: F401  (keeps original import-time order)
+import re
+import urllib.parse
+from telegram import InlineKeyboardButton
+from pesarguard.constants import LBL
+from pesarguard.database import bot_enabled, ex, get_setting, is_admin, q_one, q_val, set_setting, upsert_user
+from pesarguard.handlers.admin.appearance import admin_appearance_home, admin_appearance_setcol, admin_appearance_toggle_emoji
+from pesarguard.handlers.admin.broadcast import bcast_audience_pick, bcast_btn_pick, bcast_home, bcast_run, bcast_text_received
+from pesarguard.handlers.admin.channels import admin_channel_add_apply, admin_channel_add_start, admin_channel_delete, admin_channels_home
+from pesarguard.handlers.admin.discounts_gifts import admin_code_add_start, admin_code_delete, admin_discounts_home, admin_dsc_code_apply, admin_dsc_value_apply, admin_gift_amount_apply, admin_gift_code_apply, admin_gifts_home, handle_gift_redeem, start_gift_redeem
+from pesarguard.handlers.admin.help import admin_guide_home, admin_help_add, admin_help_body_apply, admin_help_body_edit, admin_help_delete, admin_help_edit, admin_help_title_apply
+from pesarguard.handlers.admin.panels import admin_panel_add_start, admin_panel_add_step, admin_panel_delete_apply, admin_panel_delete_confirm, admin_panel_edit_start, admin_panel_field_apply, admin_panel_field_edit, admin_panel_ping, admin_panel_role_set, admin_panel_rolepick, admin_panel_stats, admin_panel_test_apply, admin_panel_test_prompt, admin_panel_test_toggle, admin_panel_toggle, admin_panel_view, admin_panels_home
+from pesarguard.handlers.admin.payments import admin_pay_api_apply, admin_pay_api_start, admin_pay_cfg, admin_pay_toggle, admin_payments_home
+from pesarguard.handlers.admin.plans import admin_plan_add_prompt, admin_plan_delete, admin_plan_edit_apply, admin_plan_edit_prompt, admin_plan_gb_apply, admin_plan_price_apply, admin_plan_toggle, admin_plan_view
+from pesarguard.handlers.admin.receipts import admin_receipts_queue, handle_receipt_review, receipt_fix_apply, receipt_fix_start
+from pesarguard.handlers.admin.settings_features import admin_feature_toggle, admin_features_home, admin_general_home, admin_power_home, admin_power_toggle, admin_set_apply, admin_set_cancel, admin_set_prompt, admin_settings_home, admin_shopgeneral_home
+from pesarguard.handlers.admin.stats import admin_stats
+from pesarguard.handlers.admin.tickets import admin_ticket_close, admin_tickets
+from pesarguard.handlers.admin.users import admin_findorder_start, admin_finduser_apply, admin_finduser_start, admin_massbal_apply, admin_massbal_start, admin_search_order_apply, admin_svc_fulldel, admin_svc_orderdel, admin_svc_refund, admin_svc_view, admin_um_bal_apply, admin_um_msg_apply, admin_umrepl, admin_user_action, admin_users_home
+from pesarguard.handlers.user.buy import handle_buy_callback, handle_buy_custom_username, handle_buy_discount_code, show_buy_screen
+from pesarguard.handlers.user.info import force_join_ok, show_conditions, show_guide, start_support, welcome_text
+from pesarguard.handlers.user.receipts import my_receipts
+from pesarguard.handlers.user.services import extra_gb_invoice_cancel, extra_gb_invoice_confirm, handle_agent_gb, service_change_password_apply, service_change_password_start, service_extra_gb_start, service_login_info, service_screen, service_toggle, services_home
+from pesarguard.handlers.user.test import handle_test_pick, handle_test_start
+from pesarguard.handlers.user.wallet import handle_wallet_receipt_photo, handle_wallet_receipt_text, start_topup, wallet_add_credit, wallet_card_sent, wallet_screen
+from pesarguard.keyboards import admin_menu_kb, feat_on, ikb, main_menu_kb
+from pesarguard.state import st_get, st_pop, st_set
+from pesarguard.telegram_api import _CTX, notify_admins, send_or_edit, tg, tg_send
+from pesarguard.utils import esc, fmt_price, urldec
 
 
 def handle_callback(cq: dict) -> None:
@@ -239,32 +258,6 @@ def handle_callback(cq: dict) -> None:
     else:
         tg_send(chat_id, "دستور ناشناخته: " + esc(data))
 
-def force_join_ok(u: dict) -> bool:
-    frm = (u.get("message") or {}).get("from") or (u.get("callback_query") or {}).get("from") or {}
-    uid = int(frm.get("id") or 0)
-    if uid and is_admin(uid):
-        return True
-    chans = q_all("SELECT channel_id FROM channels ORDER BY id")
-    if not chans:
-        return True
-    rows, missing = [], False
-    for c in chans:
-        cid = str(c["channel_id"])
-        r = tg("getChatMember", {"chat_id": cid, "user_id": uid})
-        if not r.get("ok"):
-            continue
-        if (r.get("result") or {}).get("status", "left") not in ("creator", "administrator", "member"):
-            missing = True
-            if cid.startswith("@"):
-                rows.append([InlineKeyboardButton("📢 عضویت در کانال", url="https://t.me/" + cid[1:], style="success")])
-            elif cid.startswith(("http://", "https://")):
-                rows.append([InlineKeyboardButton("📢 عضویت در کانال", url=cid, style="success")])
-    if not missing:
-        return True
-    rows.append([InlineKeyboardButton("🔄 بررسی عضویت", callback_data="fj:check", style="success")])
-    tg_send(uid, "⛔️ برای استفاده از ربات ابتدا در کانال‌های زیر عضو شو، بعد «🔄 بررسی عضویت» را بزن!", InlineKeyboardMarkup(rows))
-    return False
-
 def handle_message(m: dict) -> None:
     chat_id = int(m["chat"]["id"])
     if (m.get("chat") or {}).get("type") != "private":
@@ -451,153 +444,20 @@ def handle_update(u: dict) -> None:
         if str(cq.get("data") or "") == "fj:check":
             uid = int(cq["from"]["id"])
             mid = int((cq.get("message") or {}).get("message_id") or 0)
-            if mid:
-                tg("editMessageText", {"chat_id": uid, "message_id": mid, "text": "✅ عضویت تأیید شد! خوش آمدی 🎉"})
-            st_pop(uid)
-            tg_send(uid, welcome_text({"first_name": cq["from"].get("first_name", "")}), main_menu_kb(is_admin(uid)))
+            if force_join_ok(u):
+                if mid:
+                    tg("editMessageText", {"chat_id": uid, "message_id": mid, "text": "✅ عضویت تأیید شد! خوش آمدی 🎉"})
+                st_pop(uid)
+                tg_send(uid, welcome_text({"first_name": cq["from"].get("first_name", "")}), main_menu_kb(is_admin(uid)))
+            else:
+                tg("answerCallbackQuery", {"callback_query_id": cq["id"], "text": "⚠️ هنوز عضو کانال نشدی! لطفاً ابتدا عضو شو.", "show_alert": True})
+                if mid:
+                    try:
+                        tg("deleteMessage", {"chat_id": uid, "message_id": mid})
+                    except Exception:
+                        pass
             return
         try:
             handle_callback(cq)
         finally:
             _CTX["mid"] = None
-
-def run_cron() -> None:
-    ex("DELETE FROM pending_buys WHERE created_at <= datetime('now','localtime','-24 hours')")
-
-    expired = q_all("SELECT * FROM agent_panels WHERE is_test=1 AND status='active' AND expires_at IS NOT NULL"
-                    " AND expires_at <= datetime('now','localtime')")
-    panels = get_panels()
-    for rec in expired:
-        if any(pc.get("base_url") == rec.get("panel_name") for pc in panels.values()):
-            p = panel_client(str(rec["panel_name"]), str(rec["panel_type"] or "pasarguard"))
-            if p:
-                res = panel_call(p, "delete_admin", {"username": str(rec["panel_username"])})
-                if not res or not res.get("ok"):
-                    err = (res or {}).get("description") or (res or {}).get("message") or "خطای اتصال یا پاسخ ناموفق پنل"
-                    msg = (f"⚠️ <b>حذف خودکار پنل تست ناموفق است</b>\n\n"
-                           f"یوزرنیم تست: <code>{esc(str(rec['panel_username']))}</code>\n"
-                           f"آدرس پنل: {esc(str(rec['panel_name']))}\n"
-                           f"خطا: {esc(str(err))}\n\n"
-                           f"ربات هر چند دقیقه دوباره تلاش می‌کند. اگر ادامه داشت، ادمین تست و یوزرهایش را دستی پاک کنید.")
-                    notify_admins(msg)
-        ex("UPDATE agent_panels SET status='expired' WHERE id=?", (int(rec["id"]),))
-        tg_send(int(rec["tg_id"]), f"⌛️ سرویس تست «{rec['panel_username']}» منقضی شد ({str(rec['expires_at'])[:10]}).\n"
-                                   "برای ادامه می‌تونی سرویس اصلی رو از «🔐 خرید اشتراک» بگیری.")
-        bot_log(f"test expired -> uid={rec['tg_id']} user={rec['panel_username']}")
-
-    warn_pct = int(get_setting("quota_warn_pct", 80) or 80)
-    warn_disc = int(get_setting("quota_warn_discount_pct", 10) or 10)
-    warn_tpl = str(get_setting("quota_warn_text", "") or (
-        "سلام {name} عزیز 👋\n\n⚠️ شما {pct}٪ از سرویس <code>{user}</code> رو مصرف کردی.\n"
-        "🎁 یه کد تخفیف {disc}٪ اختصاصی برات ساختم — تا ۲۴ ساعت مهلت داری:\n"
-        "برای افزایش حجم با تخفیف، کد تخفیف: <code>{code}</code>"))
-    remove_tpl = str(get_setting("autoremove_text", "") or (
-        "🗑 سهمیه پنل {user} تمام شد و پنل به‌صورت خودکار حذف شد.\nبرای ادامه، حجم اضافه خریداری کن."))
-    warned = get_setting("quota_warned", {}) or {}
-    if not isinstance(warned, dict):
-        warned = {}
-
-    for ap in q_all("SELECT id, tg_id, panel_username, panel_name, panel_type, quota_gb, status FROM agent_panels"
-                    " WHERE status='active' AND is_test=0 LIMIT 300"):
-        if warned.get(str(ap["id"])):
-            continue
-        p = panel_client(ap["panel_name"], ap["panel_type"] or None)
-        if not p:
-            continue
-        res = panel_call(p, "get_admin_info", {"username": ap["panel_username"]})
-        if not res or not res.get("ok") or not res.get("data"):
-            continue
-        u = res["data"]
-        used = float(u.get("used_traffic") or 0)
-        total = float(u.get("usage_limit") or u.get("data_limit") or 0)
-        if total <= 0:
-            continue
-        pct = used / total * 100.0
-        if warn_pct <= pct < 100:
-            code = f"WARN{int(ap['tg_id']) % 100000}{secrets.token_hex(2).upper()}"
-            ex("INSERT INTO discount_codes(code, kind, value, max_uses, used, active, expires_at)"
-               " VALUES(?, 'percent', ?, 1, 0, 1, datetime('now','localtime','+24 hours'))", (code, warn_disc))
-            urow = q_one("SELECT username FROM users WHERE tg_id=?", (int(ap["tg_id"]),)) or {}
-            name = urow.get("username") or "کاربر"
-            msg = (warn_tpl.replace("{name}", name).replace("{user}", str(ap["panel_username"]))
-                   .replace("{pct}", str(int(pct))).replace("{disc}", str(warn_disc)).replace("{code}", code))
-            tg_send(int(ap["tg_id"]), msg, ikb([InlineKeyboardButton("➕ خرید حجم اضافه", callback_data=f"apgb:{ap['id']}", style="success")]))
-            warned[str(ap["id"])] = 1
-            set_setting("quota_warned", warned)
-            bot_log(f"quota warn uid={ap['tg_id']} pct={int(pct)} code={code}")
-        elif pct >= 100:
-            tg_send(int(ap["tg_id"]), remove_tpl.replace("{user}", str(ap["panel_username"])))
-            ex("UPDATE agent_panels SET status='exhausted' WHERE id=?", (int(ap["id"]),))
-            # سرویس‌های اصلی نباید پاک شوند تا قابلیت تمدید داشته باشند
-            # فقط وضعیت غیرفعال در پنل ست می‌شود (اگر پنل پشتیبانی کند)
-            panel_call(p, "modify_admin_status", {"username": ap["panel_username"], "status": "disabled"})
-            bot_log(f"panel exhausted (disabled only) uid={ap['tg_id']} user={ap['panel_username']}")
-
-def main() -> None:
-    if not BOT_TOKEN:
-        print("BOT_TOKEN خالیه؛ بالای فایل پرش کن", file=sys.stderr)
-        sys.exit(1)
-    db_init()
-    for _k, _v in (("support_id", SUPPORT_ID), ("card_number", CARD_NUMBER), ("card_owner", CARD_OWNER)):
-        if _v:
-            set_setting(_k, _v)
-    admin_ids()
-    tg("deleteWebhook", {"drop_pending_updates": False})
-    bot_log("=== WireNest python bot started (long polling) ===")
-    offset, last_cron, ticks = 0, 0.0, 0
-    while True:
-        ticks += 1
-        if time.time() - last_cron >= 60:
-            last_cron = time.time()
-            try:
-                run_cron()
-            except Exception as e:
-                import traceback
-                tb = traceback.format_exc()
-                bot_log(f"cron error: {e}\n{tb}")
-                notify_admins(f"⚠️ <b>خطای سیستم پس‌زمینه (Cron)</b>\n\n❗️ <code>{esc(str(e))}\n{esc(tb[-400:])}</code>")
-        try:
-            updates = _run(
-                bot_obj().get_updates(
-                    offset=offset,
-                    timeout=25,
-                    allowed_updates=["message", "callback_query"],
-                    read_timeout=40,
-                    write_timeout=40,
-                    connect_timeout=40,
-                    pool_timeout=40,
-                ),
-                70,
-            )
-        except Exception as e:
-            bot_log(f"getUpdates error: {e}")
-            time.sleep(3)
-            continue
-        for upd in updates:
-            offset = upd.update_id + 1
-            u = upd.to_dict()
-            try:
-                handle_update(u)
-            except Exception as e:
-                import traceback
-                tb = traceback.format_exc()
-                bot_log(f"update error: {e}\n{tb}")
-                utype = "message" if "message" in u else ("callback_query" if "callback_query" in u else "unknown")
-                uid = 0
-                if utype == "message":
-                    uid = int(((u.get("message") or {}).get("from") or {}).get("id") or 0)
-                elif utype == "callback_query":
-                    uid = int(((u.get("callback_query") or {}).get("from") or {}).get("id") or 0)
-                err_msg = (
-                    f"⚠️ <b>خطای ربات</b>\n"
-                    f"🔧 نوع: {utype}\n"
-                    f"👤 کاربر: {uid}\n"
-                    f"❗️ <code>{esc(str(e))}\n{esc(tb[-500:])}</code>"
-                )
-                notify_admins(err_msg)
-
-if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        pass

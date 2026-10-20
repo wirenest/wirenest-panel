@@ -1,86 +1,22 @@
-import os, re, html, base64, secrets, hashlib, urllib.parse
-from datetime import datetime
-from modules.config import BASE_DIR, PANEL_CRYPTO_KEY
+from pesarguard import bootstrap as _bootstrap  # noqa: F401  (keeps original import-time order)
+import asyncio
+import html
+import re
+import threading
+import time
+from datetime import timedelta
+from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup
+from telegram.constants import ParseMode
+from telegram.error import RetryAfter, TelegramError
+from pesarguard.bootstrap import bot_log
+from pesarguard.config import BOT_TOKEN
+from pesarguard.database import admin_ids, get_setting, set_setting
 
-
-def esc(s) -> str:
-    return html.escape(str(s if s is not None else ""), quote=True)
-
-def num(p) -> str:
-    return f"{int(round(float(p))):,}"
-
-def fmt_price(p) -> str:
-    return num(p) + " تومان"
-
-def fmt_gb(v) -> str:
-    f = float(v)
-    if f == int(f):
-        return str(int(f))
-    return f"{f:.2f}".rstrip("0").rstrip(".")
-
-def g2(v) -> str:
-    return "%g" % float(v)
-
-def mask_mid(s: str) -> str:
-    s = str(s)
-    if len(s) <= 6:
-        return s
-    return s[:4] + "****" + s[-2:]
-
-def jdate(ts: str | None = None) -> str:
-    try:
-        dt = datetime.fromisoformat(ts) if ts else datetime.now()
-    except Exception:
-        return str(ts)
-    gy, gm, gd = dt.year, dt.month, dt.day
-    g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
-    if gy <= 1600:
-        jy = 0
-        gy -= 621
-    else:
-        jy = 979
-        gy -= 1600
-    gy2 = gy + 1 if gm > 2 else gy
-    days = (365 * gy) + ((gy2 + 3) // 4) - ((gy2 + 99) // 100) + ((gy2 + 399) // 400) - 80 + gd + g_d_m[gm - 1]
-    jy += 33 * (days // 12053)
-    days %= 12053
-    jy += 4 * (days // 1461)
-    days %= 1461
-    if days > 365:
-        jy += (days - 1) // 365
-        days = (days - 1) % 365
-    if days < 186:
-        jm = 1 + days // 31
-        jd = 1 + days % 31
-    else:
-        jm = 7 + (days - 186) // 30
-        jd = 1 + (days - 186) % 30
-    return f"{jy:04d}/{jm:02d}/{jd:02d} {dt.hour:02d}:{dt.minute:02d}"
-
-def urldec(s: str) -> str:
-    return urllib.parse.unquote(s)
-
-def gen_username(prefix: str = "srv") -> str:
-    chars = "abcdefghijklmnopqrstuvwxyz0123456789"
-    return prefix + "".join(secrets.choice(chars) for _ in range(8))
-
-def strong_password() -> str:
-    lower, upper, digit, special = "abcdefghjkmnpqrstuvwxyz", "ABCDEFGHJKLMNPQRSTUVWXYZ", "23456789", "!@#$%&*?"
-    chars = (
-        [secrets.choice(lower) for _ in range(6)]
-        + [secrets.choice(upper) for _ in range(3)]
-        + [secrets.choice(digit) for _ in range(3)]
-        + [secrets.choice(special)]
-    )
-    secrets.SystemRandom().shuffle(chars)
-    return "".join(chars)
-
-def parse_int_digits(text: str) -> int:
-    m = re.search(r"\d+", text.replace(",", ""))
-    return int(m.group(0)) if m else 0
 
 _LOOP = asyncio.new_event_loop()
+
 threading.Thread(target=_LOOP.run_forever, daemon=True).start()
+
 _BOT_OBJ: Bot | None = None
 
 def _run(coro, timeout: float = 60):
@@ -130,8 +66,15 @@ async def _tg_call(method: str, d: dict):
         )
         return {}
     if method == "answerCallbackQuery":
-        await b.answer_callback_query(callback_query_id=d["callback_query_id"])
+        await b.answer_callback_query(
+            callback_query_id=d["callback_query_id"],
+            text=d.get("text"),
+            show_alert=bool(d.get("show_alert", False)),
+        )
         return {}
+    if method == "getChat":
+        chat = await b.get_chat(chat_id=d["chat_id"])
+        return {"username": chat.username, "invite_link": chat.invite_link}
     if method == "getChatMember":
         cm = await b.get_chat_member(chat_id=d["chat_id"], user_id=d["user_id"])
         return {"status": cm.status}
@@ -145,7 +88,6 @@ async def _tg_call(method: str, d: dict):
 
 def _plain_html(text: str) -> str:
     return html.escape(html.unescape(re.sub(r"<[^>]+>", "", str(text))), quote=False)
-
 
 def tg(method: str, data: dict | None = None, timeout: int = 35) -> dict:
     data = dict(data or {})
@@ -168,7 +110,6 @@ def tg(method: str, data: dict | None = None, timeout: int = 35) -> dict:
             bot_log(f"TG error {method}: {e}")
             return {"ok": False}
     return {"ok": False}
-
 
 def theme_kb(kb: InlineKeyboardMarkup) -> InlineKeyboardMarkup:
     bc = get_setting("btn_color", "colorful")
@@ -222,7 +163,6 @@ def theme_kb(kb: InlineKeyboardMarkup) -> InlineKeyboardMarkup:
         new_rows.append(new_row)
     return InlineKeyboardMarkup(new_rows)
 
-
 def theme_reply_kb(kb: ReplyKeyboardMarkup) -> ReplyKeyboardMarkup:
     bc = get_setting("btn_color", "colorful")
     if bc == "none":
@@ -268,7 +208,6 @@ def theme_reply_kb(kb: ReplyKeyboardMarkup) -> ReplyKeyboardMarkup:
         selective=getattr(kb, "selective", False),
         input_field_placeholder=getattr(kb, "input_field_placeholder", None)
     )
-
 
 def tg_send(chat, text: str, kb=None, extra: dict | None = None) -> dict:
     if isinstance(kb, InlineKeyboardMarkup):
