@@ -4,25 +4,28 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://python.org/)
 
-## ⚡ Installation
+## ⚡ Automated Installation
+Run the following command on your server to install WireNest Panel automatically:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/wirenest/wirenest-panel.git
-   cd wirenest-panel
-   ```
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/wirenest/wirenest-panel/master/install.sh)
+```
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 🔥 Key Features
+- 🏢 **Panel Maker:** Provision dedicated sub-panels and accounts seamlessly.
+- 🔗 **PasarGuard Integration:** Native communication with PasarGuard panels.
+- 💰 **Financial System:** Automated wallet top-ups, receipt verification, and discount codes.
+- 🧪 **Trial Service:** Offer instant free trials with automated expiration management.
+- 📢 **Smart Admin Dashboard:** Broadcast system, real-time stats, and support ticketing.
+- 🛡 **Security:** Robust encryption for sensitive credentials and panel tokens.
 
-3. Run the bot:
-   ```bash
-   python run.py
-   ```
+## 🛠 Management CLI
+After installation, you can manage the bot using:
+- `wirenest-panel update` — Update from GitHub
+- `wirenest-panel status` — Check bot health
+- `wirenest-panel restart` — Restart the service
 
 ## 📂 Project Structure
-- `pesarguard/` — Core package containing logic, database, and handlers.
-- `run.py` — Entry point to start the bot.
+- `pesarguard/` — Core engine (logic, database, handlers).
+- `run.py` — Main entry point.
 - `requirements.txt` — Python dependencies.
