@@ -5,9 +5,9 @@ import os
 # folder that contains data/ and logs/ (the folder holding run.py).
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-BOT_TOKEN = "8750301426:AAGlkkPd0XEp7ghR7Vva4iXiGVh11OhhssQ"
+BOT_TOKEN = ""
 
-ADMIN_ID = 7254045901
+ADMIN_ID = 0
 
 SUPPORT_ID = ""
 
