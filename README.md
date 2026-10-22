@@ -209,3 +209,9 @@ wirenest-panel/
 ## 📄 License
 
 Released under the [MIT License](LICENSE).
+
+
+## 💖 Support / Donation
+
+If you find this project useful, you can support us via BEP20 USDT:
+`0x87696D2F1750AE4aac625864F9Ff70514089d5ef`
