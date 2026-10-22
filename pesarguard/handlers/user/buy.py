@@ -1,4 +1,5 @@
 from pesarguard import bootstrap as _bootstrap  # noqa: F401  (keeps original import-time order)
+import json
 import re
 from datetime import datetime
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
@@ -90,28 +91,21 @@ def handle_buy_callback(chat_id: int, data: str) -> None:
             return
         bal = get_balance(chat_id)
         bp = {"pid": pid, "gb": float(pl["volume_gb"]), "price": int(pl["price"]), "orig_price": int(pl["price"])}
-        if bal >= float(pl["price"]):
-            st_set(chat_id, {"buy_plan": bp})
-            send_or_edit(
-                chat_id,
-                f"📇 پیش فاکتور شما:\n\n{esc(plan_label(pl))}\n\n💵 موجودی کیف پول شما: {fmt_price(bal)}\n\n"
-                "✅ موجودی کافی است. برای پرداخت و ساخت آنی روی دکمه زیر بزنید!",
-                ikb(
-                    [InlineKeyboardButton(f"✅ پرداخت از موجودی کیف پول ({num(pl['price'])} تومان)", callback_data=f"paybalplan:{pid}", style="success")],
-                    [InlineKeyboardButton("🏷 کد تخفیف دارم", callback_data=f"apdc:{pid}")],
-                    _cancel_row(),
-                ),
-            )
-            return
-        st_set(chat_id, {"await": "topup_amount", "buy_plan": bp})
-        ex("INSERT INTO pending_buys(tg_id,kind,pid,pname,gb,price) VALUES(?,?,?,?,?,?)",
-           (chat_id, "plan", pid, str(pl["panel_name"]), float(pl["volume_gb"]), int(pl["price"])))
+        st_set(chat_id, {"buy_plan": bp})
+        # Show both buttons always
         send_or_edit(
             chat_id,
             f"📇 پیش فاکتور شما:\n\n{esc(plan_label(pl))}\n\n💵 موجودی کیف پول شما: {fmt_price(bal)}\n\n"
-            f"❌ <b>موجودی کیف پولت کافی نیست!</b>\nاول کیف پولت را شارژ کن (حداقل {fmt_price(float(pl['price']) - bal)}).",
-            ikb([InlineKeyboardButton("💳 شارژ کیف پول", callback_data="wal:addcredit", style="success")], _cancel_row()),
+            f"{'✅ موجودی کافی است.' if bal >= float(pl['price']) else '❌ <b>موجودی کیف پولت کافی نیست!</b>'}",
+            ikb(
+                [InlineKeyboardButton(f"✅ پرداخت از موجودی کیف پول ({num(pl['price'])} تومان)", callback_data=f"paybalplan:{pid}", style="success")] if bal >= float(pl['price']) else [InlineKeyboardButton("💳 شارژ کیف پول", callback_data="wal:addcredit", style="success")],
+                [InlineKeyboardButton("🏷 کد تخفیف دارم", callback_data=f"apdc:{pid}")],
+                _cancel_row(),
+            ),
         )
+        if bal < float(pl['price']):
+            ex("INSERT INTO pending_buys(tg_id,kind,pid,pname,gb,price) VALUES(?,?,?,?,?,?)",
+               (chat_id, "plan", pid, str(pl["panel_name"]), float(pl["volume_gb"]), int(pl["price"])))
         return
 
     if data.startswith("confirm:"):
@@ -315,11 +309,36 @@ def handle_buy_discount_code(chat_id: int, text: str) -> None:
     bp = dict(st.get("buy_plan") or {})
     price = int(bp.get("orig_price") or bp.get("price") or 0)
     if str(dc["kind"]) == "percent":
-        new_price = int(round(price * (1 - float(dc["value"]) / 100)))
+        new_price = max(0, int(round(price * (1 - float(dc["value"]) / 100))))
     else:
         new_price = max(0, price - int(dc["value"]))
     bp["price"] = new_price
     bp["discount"] = {"did": int(dc["id"]), "code": code}
-    st["buy_plan"] = bp
-    st_set(chat_id, st)
-    send_or_edit(chat_id, "✅ کد تخفیف اعمال شد.\n💵 مبلغ نهایی: " + fmt_price(new_price) + ".")
+    pid = int(bp.get("pid") or 0)
+
+    # Keep the discounted price + code on the latest pending plan purchase of this user, so the
+    # flow survives the wallet top-up (state is cleared when the receipt is submitted).
+    ex("UPDATE pending_buys SET price=?, discount_json=? WHERE id=(SELECT MAX(id) FROM pending_buys"
+       " WHERE tg_id=? AND kind='plan' AND pid=?)",
+       (new_price, json.dumps(bp["discount"]), chat_id, pid))
+    
+    bal = get_balance(chat_id)
+    if bal >= new_price:
+        st_set(chat_id, {"buy_plan": bp})
+        send_or_edit(
+            chat_id,
+            f"✅ کد تخفیف اعمال شد.\n💵 مبلغ نهایی با تخفیف: <b>{fmt_price(new_price)}</b>\n\n"
+            "✅ موجودی کافی است. برای پرداخت و ساخت آنی روی دکمه زیر بزنید!",
+            ikb(
+                [InlineKeyboardButton(f"✅ پرداخت از موجودی کیف پول ({num(new_price)} تومان)", callback_data=f"paybalplan:{pid}", style="success")],
+                _cancel_row(),
+            ),
+        )
+    else:
+        st_set(chat_id, {"await": "topup_amount", "buy_plan": bp})
+        send_or_edit(
+            chat_id,
+            f"✅ کد تخفیف اعمال شد.\n💵 مبلغ نهایی با تخفیف: <b>{fmt_price(new_price)}</b>\n\n"
+            f"❌ <b>موجودی کیف پولت کافی نیست!</b>\nاول کیف پولت را شارژ کن (حداقل {fmt_price(new_price - bal)}).",
+            ikb([InlineKeyboardButton("💳 شارژ کیف پول", callback_data="wal:addcredit", style="success")], _cancel_row()),
+        )

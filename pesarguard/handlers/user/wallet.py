@@ -19,7 +19,7 @@ def wallet_add_credit(chat_id: int) -> None:
     price = 0
     bp = st.get("buy_plan")
     if isinstance(bp, dict):
-        price = int(bp.get("orig_price") or bp.get("price") or 0)
+        price = int(bp["price"] if bp.get("price") is not None else (bp.get("orig_price") or 0))
     elif st.get("xp_kind") == "extragb":
         price = int(st.get("xp_price") or 0)
     elif st.get("back_tariff"):

@@ -1,4 +1,5 @@
 from pesarguard import bootstrap as _bootstrap  # noqa: F401  (keeps original import-time order)
+import json
 import re
 from telegram import InlineKeyboardButton
 from pesarguard.database import add_balance, ex, get_balance, q_all, q_one, spend_balance
@@ -51,11 +52,24 @@ def handle_receipt_review(chat_id: int, data: str) -> None:
         b = q_one("SELECT * FROM pending_buys WHERE tg_id=? ORDER BY id DESC LIMIT 1", (uid,))
         if b and b["pid"]:
             prow = q_one("SELECT * FROM panel_plans WHERE id=?", (int(b["pid"]),))
-            if prow and get_balance(uid) >= float(prow["price"]):
-                st_set(uid, {"buy_plan": {"pid": int(prow["id"]), "gb": float(prow["volume_gb"]),
-                                          "price": int(prow["price"]), "orig_price": int(prow["price"])}})
+            # price saved with the pending purchase (discounted if a discount code was applied)
+            pay_price = int(prow["price"]) if prow else 0
+            disc = None
+            if prow and str(b["kind"]) == "plan":
+                if b["price"] is not None and 0 <= int(b["price"]) < int(prow["price"]):
+                    pay_price = int(b["price"])
+                try:
+                    disc = json.loads(b["discount_json"]) if b["discount_json"] else None
+                except Exception:
+                    disc = None
+            if prow and get_balance(uid) >= pay_price:
+                bp_new = {"pid": int(prow["id"]), "gb": float(prow["volume_gb"]),
+                          "price": pay_price, "orig_price": int(prow["price"])}
+                if disc and pay_price < int(prow["price"]):
+                    bp_new["discount"] = disc
+                st_set(uid, {"buy_plan": bp_new})
                 tg_send(uid, "✅ موجودی کافی شد. برای پرداخت و ساخت آنی پنل بزن!",
-                        ikb([InlineKeyboardButton(f"✅ پرداخت از موجودی کیف پول ({num(prow['price'])} تومان)", callback_data=f"paybalplan:{prow['id']}", style="success")]))
+                        ikb([InlineKeyboardButton(f"✅ پرداخت از موجودی کیف پول ({num(pay_price)} تومان)", callback_data=f"paybalplan:{prow['id']}", style="success")]))
 
 def receipt_fix_start(chat_id: int, rid: int) -> None:
     st_set(chat_id, {"await": f"rcfix:{rid}"})
